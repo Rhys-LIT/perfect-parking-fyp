@@ -1,0 +1,2 @@
+### Using Microsoft Word with git
+*.docx diff=pandoc
