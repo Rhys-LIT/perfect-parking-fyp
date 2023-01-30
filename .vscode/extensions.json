@@ -2,6 +2,9 @@
     "recommendations": [
         "streetsidesoftware.code-spell-checker",
         "davidanson.vscode-markdownlint",
-        "cweijan.vscode-office"
+        "cweijan.vscode-office",
+        "donjayamanne.python-extension-pack",
+        "gruntfuggly.todo-tree",
+        "qwtel.sqlite-viewer"
     ]
 }

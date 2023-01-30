@@ -1,0 +1,11 @@
+sequenceDiagram
+    User->>+PerfectParking: Parking near location GPS (Henry Street)?
+    PerfectParking->>+HenryStParkingLotMonitor: Parking avaiable?
+    PerfectParking->>+LowerHartstongeParkingLotMonitor: Parking avaiable?
+    PerfectParking->>+MallowStreetPart1ParkingLotMonitor: Parking avaiable?
+    PerfectParking->>+MallowStreetPart2ParkingLotMonitor: Parking avaiable?
+    HenryStParkingLotMonitor->>+PerfectParking: Yes, available 97%
+    LowerHartstongeParkingLotMonitor->>+PerfectParking: Yes, available 87%
+    MallowStreetPart1ParkingLotMonitor->>+PerfectParking: Yes, available 65%
+    MallowStreetPart2ParkingLotMonitor->>+PerfectParking: No, available 45%
+    PerfectParking->>+User: Yes, 3 parking lots available (HenrySt, LowerHartstonge, MallowStreetPart1)

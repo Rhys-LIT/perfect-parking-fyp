@@ -1,0 +1,24 @@
+erDiagram
+    ParkingLotMonitor ||..|| ParkingLot : has
+    User {
+        int Id PK
+        string Username
+        string Password
+    }
+    ParkingLotMonitor {
+        int Id PK
+        int ParkingLotId FK
+        double ProbabilityParkingAvailable
+        DataTime LastUpdated
+        Boolean Status
+    }
+    ParkingLot {
+        int Id PK
+        string Name
+        string Address
+        string Image
+        string Hours
+        Boolean IsPaidParking
+        string Latitude
+        string Longitude
+    }
