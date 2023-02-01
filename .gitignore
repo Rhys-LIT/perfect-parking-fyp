@@ -387,3 +387,6 @@ $RECYCLE.BIN/
 
 #WinMerge
 *.bak
+
+# Django Custom files
+PerfectParking/migrations/*
