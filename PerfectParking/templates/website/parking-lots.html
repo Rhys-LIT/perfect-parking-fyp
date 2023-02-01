@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+
+{% block title %}Parking Lots{% endblock %}
+
+{% block main %}
+<h1>Parking Lots</h1>
+
+<p id="mydesc">Parking Lots</p>
+<table class="table table-striped" aria-describedby="mydesc">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Hours</th>
+            <th>Is Paid Parking</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for parking_lot in parking_lots %}
+        <tr>
+            <td><a href="/parking_lot/{{ parking_lot.id }}">{{ parking_lot.name }}</a></td>
+            <td>{{ parking_lot.address }}</td>
+            <td>{{ parking_lot.hours }}</td>
+            <td>{{ parking_lot.isPaidParking }}</td>
+            <td>{{ parking_lot.latitude }}</td>
+            <td>{{ parking_lot.longitude }}</td>
+            <td><img src="{{ parking_lot.image }}" alt="Image of {{ parking_lot.name }}" /></td>
+        {% endfor %}
+    </tbody>
+
+{% endblock %}

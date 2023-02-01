@@ -1,78 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-   
-<head>
-    <title>PerfectParking {% block title %}{% endblock %}</title>
-   
+  <head>
+    <title>
+      PerfectParking{% block title %}
+      {% endblock %}
+    </title>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-</head>
-<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  </head>
+  <body>
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <nav>
+        <div class="container">
+            <div>
                 <a href="/"
-                   class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <svg class="bi me-2"
-                         width="40"
-                         height="32"
-                         role="img"
-                         aria-label="Bootstrap">
+                            width="40"
+                            height="32"
+                            role="img"
+                            aria-label="Bootstrap">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
         
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="<c:url value="/"/>"
-                           class="nav-link px-2 link-secondary">Home</a></li>
-                    <li><a href="<c:url value="/properties"/>"
-                           class="nav-link px-2 link-dark">Properties</a></li>
-                    <shiro:authenticated>
-                        <li><a href="<c:url value="/favorites"/>"
-                               class="nav-link px-2 link-dark">Favorites</a></li>
-                        <li><a href="<c:url value="/user/password-change"/>"
-                               class="nav-link px-2 link-dark">Change Password</a></li>
-                        <shiro:hasRole name="admin">
-                            <li><a href="<c:url value="/agent/vendors"/>"
-                                   class="nav-link px-2 link-dark">Vendors</a></li>
-                            <li><a href="<c:url value="/admin/users"/>"
-                                   class="nav-link px-2 link-dark">Users</a></li>
-                        </shiro:hasRole>
-                    </shiro:authenticated>
-                    <li><a href="<c:url value="/agents"/>"
-                           class="nav-link px-2 link-dark">Agents</a></li>
+                    <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="{% url 'parking-lots' %}" class="nav-link px-2 link-dark">Parking Lots</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Search</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Change Password</a></li>
                 </ul>
-        
-                <div class="col-md-3 text-end">
-                    <ul class="nav">
-                        <shiro:guest>
-                            <li class="nav-item"><a href="<c:url value="/sign-in"/>"
-                                                    class="nav-link px-2 link-dark">Sign in</a></li>
-                            <li class="nav-item"><a href="<c:url value="/sign-up"/>"
-                                                    class="nav-link px-2 link-dark">Sign up</a></li>
-                        </shiro:guest>
-                        <shiro:authenticated>
-                            <li class="nav-item"><a href="#"
-                                                    class="nav-link px-2 link-dark"><shiro:principal/></a>
-                                    <jsp:useBean id="userImage"
-                                                 scope="session"
-                                                 type="java.lang.String"/>
-                                <c:if test="${userImage != null && !userImage.isEmpty() && !userImage.equals('null')}">
-                                    <img src="<c:url value="/assets/images/agents/${userImage}"/>"
-                                         class="rounded-circle"
-                                         alt="Agent Image"/>
-                                </c:if>
-                            </li>
-                            <li class="nav-item"><a href="<c:url value="/sign-out"/>"
-                                                    class="nav-link px-2 link-dark">Sign out</a></li>
-                        </shiro:authenticated>
-                    </ul>
-                </div>
-        </nav>
+            </div>
+    
+            <div class="col-md-3 text-end">
+                <ul class="nav">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign in</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign up</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-    <main>{% block main %}{% endblock %}</main>
-    </body>
+    <main class="container">
+      {% block main %}
+      {% endblock %}
+    </main>
+  </body>
 </html>
