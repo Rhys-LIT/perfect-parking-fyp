@@ -21,7 +21,7 @@
     <tbody>
         {% for parking_lot in parking_lots %}
         <tr>
-            <td><a href="/parking_lot/{{ parking_lot.id }}">{{ parking_lot.name }}</a></td>
+            <td><a href="{% url 'parking-lot' parking_lot.id %}">{{ parking_lot.name }}</a></td>
             <td>{{ parking_lot.address }}</td>
             <td>{{ parking_lot.hours }}</td>
             <td>{{ parking_lot.isPaidParking }}</td>

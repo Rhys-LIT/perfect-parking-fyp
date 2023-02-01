@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+
+{% block title %}{{parking_lot.name}}{% endblock %}
+
+{% block main %}
+<h1>{{parking_lot.name}}</h1>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Details</h2>
+        <dl class="dl-horizontal">
+            <dt>Address</dt>
+            <dd>{{parking_lot.address}}</dd>
+            <dt>Hours</dt>
+            <dd>{{parking_lot.hours}}</dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <h2>Map</h2>
+        <div id="map">
+            
+
+        </div>
+    </div>
+{% endblock %}
