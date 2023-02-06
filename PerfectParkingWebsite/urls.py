@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
+import PerfectParking.viewsets as viewsets
+
+router = routers.DefaultRouter()
+router.register(r'users', viewsets.UserViewSet)
+router.register(r'groups', viewsets.GroupViewSet)
+router.register(r'parking-lots', viewsets.ParkingLotViewSet)
+router.register(r'parking-lot-monitors', viewsets.ParkingLotMonitorViewSet)
 
 urlpatterns = [
     path('', include('PerfectParking.urls')),
     path('admin/', admin.site.urls),
+    path('api-auth/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

@@ -37,9 +37,26 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-
 [https://docs.djangoproject.com/en/4.1/intro/tutorial01/](https://docs.djangoproject.com/en/4.1/intro/tutorial01/)
 
-```bash
+## Django Rest Command History
 
+### Install Django Rest Framework
+
+#### Pip
+
+```bash
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
 ```
+
+#### Conda
+
+```bash
+conda install -c conda-forge djangorestframework
+conda install -c conda-forge markdown
+conda install -c conda-forge django-filter
+```
+
+### 
