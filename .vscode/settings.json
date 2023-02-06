@@ -1,5 +1,14 @@
 {
     "cSpell.words": [
-        "Rhys"
+        "conda",
+        "createsuperuser",
+        "djangorestframework",
+        "makemigrations",
+        "Rhys",
+        "runserver",
+        "sqlmigrate",
+        "startapp",
+        "startproject",
+        "viewsets"
     ]
 }
