@@ -1,0 +1,20 @@
+@startuml user-access
+
+skinparam actorStyle awesome
+left to right direction
+"Monitor" as monitor
+"Unauthenticated User" as guest
+"User" as user
+"Update Parking Lot Status" as (updateParkingLotStatus)
+"Search for Parking" as (search)
+"Login" as (login)
+"Logout" as (logout)
+
+monitor --> logout
+guest --> login
+monitor --> updateParkingLotStatus
+guest --> updateParkingLotStatus
+user --> search
+user --> logout
+
+@enduml

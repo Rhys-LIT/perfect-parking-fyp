@@ -5,6 +5,9 @@
         "cweijan.vscode-office",
         "donjayamanne.python-extension-pack",
         "gruntfuggly.todo-tree",
-        "qwtel.sqlite-viewer"
+        "qwtel.sqlite-viewer",
+        "wmaurer.change-case",
+        "maptz.camelcasenavigation",
+        "jebbs.plantuml"
     ]
 }
