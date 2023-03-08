@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from .models import ParkingLot
 
 
@@ -8,7 +10,7 @@ class WebPages:
     HOME_PAGE = 'website/index.html'
     PARKING_LOT = 'website/parking-lot.html'
     PARKING_LOTS = 'website/parking-lots.html'
-    REGISTER_USER = 'website/register.html'
+    REGISTER_USER = 'website/register-user.html'
 
 
 def index(request):
@@ -41,9 +43,23 @@ def register_user(request):
     Returns:
         _type_: _description_
     """
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            # Save the user to the database
+            user = form.save()
+            # Add first name, last name, and email fields to the user model
+            user.first_name = request.POST['first_name']
+            user.last_name = request.POST['last_name']
+            user.email = request.POST['email']
+            user.save()
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+   
     
     # load the user details from the request
     # create a new user
-    
+     return render(request, WebPages.REGISTER_USER, {'form': form})
    
-    return render(request, WebPages.REGISTER_USER)
+    
