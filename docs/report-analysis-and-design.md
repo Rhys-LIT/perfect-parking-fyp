@@ -3,308 +3,193 @@
 
 ## Introduction
 
-Perfect Parking is a web application that will allow users to find parking in a city such as Limerick.
+Perfect Parking is a web application that will allow users to find parking in a city such as Limerick. The application will allow users to search for parking near a specific location, and will show the user the nearest parking to their location.
 
+## Use Case Diagram
 
-# Description of business problem being solved/purpose of system:
+![Alt text](diargrams/monitor-use-case/user-access.png)
 
-The purpose of perfect parking is to try and solve the widespread
-problem of traffic congestion and lack of parking especially in Limerick
-City. Parking is one of the main issues that causes traffic congestion
-especially in cities, people are selfish when they drive and begin to
-rush other road users that might be new in the city and looking for
-parking, when they are rushed and put under pressure, they can end up
-parking illegally on the side of the road which can cause traffic to be
-stopped. With my application perfect parking I'm hoping to ease the
-stress and anxiety that road users face in finding appropriate parking
-which gives them a price range that they might be looking for and a
-location straight to the parking lot while also knowing if there is
-parking available, this will eliminate traffic congestion, the waste of
-petrol and diesel from driving around looking for parking and also
-people's time.
+## Actors
 
-# Numbered/Ordered List -- Detailed Specification 
+- Administrator: The administrator is responsible for managing the application. The administrator can add new parking locations to the database, and can also remove parking locations from the database.
+- User: The user is the person who will be using the application. The user can search for parking near a specific location.
+- Guest: The guest is a person who is not logged in to the application. The guest can only search for parking near a specific location.
 
--   **Type** Map API
+## Use Case Descriptions
 
-Menu
+### Use Case: Find Parking
 
-Drilldown
+#### Description
 
-Map API
+A user searches for parking near a specific location.
 
--   **Location** Home page
+#### Actors
 
-> Login page
->
-> Navigation bar
->
-> Select parking
->
-> View parking
+- User
 
-1.  **User Functions**
+#### Trigger Event
 
-```{=html}
-<!-- -->
-```
-1.  Register
+- A user wants to find parking near a specific location.
 
-> **Type:** menu form item
->
-> **Location**: Home page (not logged in/registered users)
+#### Preconditions
 
-**Action**: once a Guest user opens the application they will be greeted
-with a log-in page, there will also be a **button** underneath the form
-that states, "don't have a log in register now". If the guest attempts
-to login and doesn't have a log-in, they will be prompted with an error
-message stating them to register. Once the guest selects the
-registration button, they will be brought to the register form, here
-they will be asked to enter e-mail, password, confirm password. Once
-registered their details will be sent and saved to the User Details
-table in the DB. They will then be redirected to the Log-in page.
+- The user is logged in to the application.
+- The website has permission to access the user's GPS location.
 
-2.  Login
+#### Post conditions
 
-**Type:** menu form item
+- The user is shown a list of parking locations near the location they searched for.
 
-**Location**: Login page (not logged in users)
+#### Main Flow
 
-**Action**: the user will provide an e-mail and password to login. These
-details will be verified by the DB by a lookup. If the details entered
-is correct the user will be logged in and be brought to the select
-parking/parking lookup page. If their information is incorrect, they
-will be prompted to renter e-mail and password.
+1. The user details the location they want to find parking near by:
+    - by searching for a specific address in the search bar.
+    - by clicking on a location on the map.
+    - by clicking on a location on the list of parking locations.
+    - using the current location of the user.
+2. The application shows the user a list of parking locations near the location they searched for.
 
-3.  Logout:
+#### Alternative Flows
 
-**Type:** menu item
+- If the user does not have permission to access their GPS location, the user can search for a specific address in the search bar.
 
-**Location**: Navigation bar item (for logged in users)
+### Use Case: Register User
 
-**Action:** when selected in the navigation bar of a logged in user the
-user will be logged out and sent back to the login page.
+#### Description
 
-4.  Select Parking
+A user registers for an account on the application.
 
-**Type**: Menu item
+#### Actors
 
-**Location:** Select parking location (Accessed from navigation bar)
+- Guest user
 
-**Action:** once a user is logged in they can access the **select
-parking** page, from here users can select parking in the city that they
-would like to view. There will be a list of all the different parking
-lots in the city.
+#### Trigger Event
 
-5.  View Parking
+- A guest user wants to register for an account on the application.
 
-**Type:** Parking Drilldown
+#### Preconditions
 
-**Location:** View parking page (Accessed through select parking)
+- The guest user is not logged in to the application.
+- The guest user has not registered for an account on the application.
+- The guest has a valid email address.
 
-**Action** this page will show all the information about the selected
-parking, it will show the parking price per hour, and per day. There
-will also be a map that can be viewed by the user and shows the location
-of the parking.
+#### Post conditions
 
-6.  Get direction.
+- A user account is created for the guest user.
 
-**Type:** Map API
+#### Main Flow
 
-**Location:** View parking page (Accessed from the map)
+1. The guest user clicks on the "Register" button.
+2. The guest user enters their details into the registration form.
+3. The guest user clicks on the "Register" button.
+4. The application creates a user account for the guest user.
+5. The guest logs in to the application.
 
-**Action:** when the user is viewing the map, if the user clicks the
-map, it will show information such as the address and the name of the
-parking, it will also prompt the user to get the directions from their
-location to the parking lot, this is done through google maps.
+#### Alternative Flows
 
-1.  View prices
+- If the guest user enters an email address that is already registered to an account, the application will display an error message.
 
-**Type:** button
+### Use Case: Login User
 
-**Location:** View parking page
+#### Description
 
-**Action:** when the user is viewing the parking there will be a button
-stating view prices, when the user presses this button, it will show the
-parking rates for that parking lot.
+A user logs in to the application.
 
-**Administration functions**
+#### Actors
 
-1.  Login:
+- User
 
-**Type:** menu form item
+#### Trigger Event
 
-**Location**: Login page (not logged in users)
+- A user wants to log in to the application.
 
-**Action**: the user will provide an e-mail and password to login. These
-details will be verified by the DB by a lookup. If the details entered
-is correct the user will be logged in and be brought to the select
-parking/parking lookup page. If their information is incorrect, they
-will be prompted to renter e-mail and password.
+#### Preconditions
 
-1.  Logout:
+- The user is not logged in to the application.
 
-**Type:** menu item
+#### Post conditions
 
-**Location**: Navigation bar item (for logged in users)
+- The user is logged in to the application.
 
-**Action:** when selected in the navigation bar of a logged in user the
-user will be logged out and sent back to the login page.
+#### Main Flow
 
-2.  View Registered Users:
+1. The user clicks on the "Login" button.
+2. The user enters their details into the login form.
+3. The user clicks on the "Login" button.
+4. The application logs the user in to the application.
 
-**Type**: Menu Item
+#### Alternative Flows
 
-**Location**: view all users
+- If the user enters an incorrect username and password, the application will display an error message.
+- If the user enters an username that is not registered to an account, the application will display an error message.
+- If the user account is disabled, the application will display an error message.
 
-**Action**: When selected this menu item will present a table of all
-user's IDs and usernames
+### Use Case: Update Parking Lot Status
 
-along with status (active).
+#### Description
 
-3.  Edit Price:
+A monitor bot automatically updates the status of a parking lot.
 
-**Type:** Button
+#### Actors
 
-**Location** Edit parking.
+- Monitor
 
-**Action:** when the admin presses the button it will allow him to
-update the price of parking per hour/day/week, when this is done the
-users will be greeted with a new price once it has been successfully
-updated.
+#### Trigger Event
 
-4.  view User
+- A monitor updates the status of a parking lot.
 
-**Type:** Menu item/button
+#### Preconditions
 
-**Location:** view user
+- The website application is running.
+- The monitor is connected to the internet.
+- The monitor has a valid API access token.
 
-**Action:** when the admin is viewing all users, they can then select a
-user which they wish the view the details for. When they press on the
-user it will view that one users' details.
+#### Post conditions
 
-5.  Delete user.
+- The status of the parking lot is updated.
 
-**Type:** button
+#### Main Flow
 
-**Location:** view user
+1. The monitor sends a PUT request to the application REST API.
+2. The application updates the status of the parking lot.
 
-**Action:** when the admin is viewing the user details, they will also
-have a button which they can use to delete user, this might have to be
-done in certain circumstances such as user has violated the terms and
-conditions, when the admin presses the delete user button it will delete
-all the user details from the database.
+#### Alternative Flows
 
-# Database design
+- If the monitor is not connected to the internet, the monitor will not be able to update the status of the parking lot.
+- If the monitor API access token is invalid or has expired, the monitor will not be able to update the status of the parking lot.
+- If the monitor sends an invalid request to the application REST API, the application will not update the status of the parking lot.
+- If the parking lot does not exist in the database, the application will not update the status of the parking lot.
 
-![Diagram Description automatically
-generated](media/image1.png){width="5.395833333333333in"
-height="5.15625in"}
 
-This database design consists of three tables: \"User\",
-\"ParkingLotMonitor\", and \"ParkingLot\".
+### Use Case: User changes password
 
--   The \"User\" table has three columns: \"Id\" (Primary Key),
-    \"Username\", and \"Password\".
+#### Description
 
--   The \"ParkingLotMonitor\" table has six columns: \"Id\" (Primary
-    Key), \"ParkingLotId\" (Foreign Key),
-    \"ProbabilityParkingAvailable\", \"LastUpdated\", \"Status\", and
-    \"DataTime\".
+A user changes their password.
 
--   The \"ParkingLot\" table has seven columns: \"Id\" (Primary Key),
-    \"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
-    \"Latitude\", and \"Longitude\".
+#### Actors
 
-the diagrams shows a relationship between the \"ParkingLotMonitor\" and
-\"ParkingLot\" tables through the use of the \"has\" symbol. The
-\"ParkingLotId\" column in the \"ParkingLotMonitor\" table acts as a
-connection point, serving as a foreign key to link the two tables.
+- User
 
-## User Parking Sequence diagram
+#### Trigger Event
 
-![](media/image2.png){width="6.268055555555556in" height="2.0875in"}
+- A user wants or is required to change their password.
 
-this is the sequence diagram of the process where a user is searching
-for parking near their location using the application. The user asks the
-app if there is parking available near their GPS location on Henry
-Street.
+#### Preconditions
 
-The app then queries multiple parking lot monitors,
-HenryStParkingLotMonitor, LowerHartstongeParkingLotMonitor,
-MallowStreetPart1ParkingLotMonitor, and
-MallowStreetPart2ParkingLotMonitor, to check if parking is available in
-each lot.
+- The user is logged in to the application.
 
-The HenryStParkingLotMonitor responds that parking is 97% available, the
-LowerHartstongeParkingLotMonitor responds 87%,
-MallowStreetPart1ParkingLotMonitor 65%, and
-MallowStreetPart2ParkingLotMonitor 45%.
+#### Post conditions
 
-Finally, the application then sends a response to the user indicating
-that there are 3 parking lots available near their location, with the
-names HenrySt, LowerHartstonge, and MallowStreetPart1.
+- The user's password is changed.
 
-# Prototype design for the pages
+#### Main Flow
 
-When I was thinking about how I would structure and layout my Perfect
-Parking web application I decided to draw up some diagrams to give me a
-better insight into what the pages would look like after the diagrams
-were hand drawn I was then able to make some HTML prototype pages so I
-can get a better vision into what they would look like in a web browser.
+1. The user clicks on the "Change Password" button.
+2. The user enters their details into the change password form.
+3. The user clicks on the "Change Password" button.
 
-## Drawn prototypes.
+#### Alternative Flows
 
-### Login/Parking page
-
-![](media/image3.emf){width="3.563138670166229in" height="5.775in"}
-
-Above is my Login page, this page is where the users will be brought to
-when they first open the application. Once the users are logged in they
-will be brought to the parking page this is where they will see a list
-of all the parking spaces.
-
-### View parking page
-
-![](media/image4.emf){width="3.433333333333333in"
-height="5.52930227471566in"}
-
-This is the view parking page, this page is opened when the user either
-searches or selects a parking lot from the parking page, here it will
-show information such as pictures of the car park, a map showing a
-pinned location of where the carpark is, this also allows you to get the
-direction to the parking lot by using google maps, you can also add this
-car park to your favourites and pay for your parking in advance if the
-user would like.
-
-### Book Parking/Payment page
-
-![](media/image5.emf){width="3.2256944444444446in"
-height="5.082889326334208in"}
-
-Once the user selects book parking, they will be brought to the booking
-page, here they can select the rate that they would like to park such as
-per hour or per day. Once the confirm parking button is pressed they
-will be brought to the payment page where they can input there card
-information to finish off the payment.
-
-### View users/view user (Admin)
-
-![](media/image6.emf){width="3.375in" height="5.3513867016622925in"}
-
-These two web application pages are for the admin, once the admin logs
-in they have the ability to view users and select a user, once the
-select a user has been selected the admin can do things such as suspend
-a user and edit user information.
-
-## HTML Prototypes
-
-### Login Page
-
-![](media/image7.png){width="6.268055555555556in"
-height="2.717361111111111in"}
-
-### Registration Page
-
-![](media/image8.png){width="6.268055555555556in"
-height="3.8756944444444446in"}
+- If the user enters an incorrect password, the application will display an error message.
+- If the user enters a new password that does not meet the password requirements, the application will display an error message.
