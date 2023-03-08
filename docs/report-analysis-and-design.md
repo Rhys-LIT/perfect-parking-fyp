@@ -1,8 +1,10 @@
-**NAME: Rhys Quilter: - K00241356**
 
-# Name of project 
+# Analysis and Design
 
-The name of my project is: Perfect Parking
+## Introduction
+
+Perfect Parking is a web application that will allow users to find parking in a city such as Limerick.
+
 
 # Description of business problem being solved/purpose of system:
 
