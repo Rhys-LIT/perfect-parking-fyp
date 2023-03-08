@@ -56,10 +56,10 @@ def register_user(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-   
+    return render(request, WebPages.REGISTER_USER, {'form': form})
     
     # load the user details from the request
     # create a new user
-     return render(request, WebPages.REGISTER_USER, {'form': form})
+    
    
     
