@@ -53,7 +53,7 @@ def register_user(request):
             user.last_name = request.POST['last_name']
             user.email = request.POST['email']
             user.save()
-            return redirect('home')
+            return redirect('parking-lots')
     else:
         form = UserCreationForm()
     return render(request, WebPages.REGISTER_USER, {'form': form})
