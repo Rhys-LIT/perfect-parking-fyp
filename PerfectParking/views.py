@@ -7,7 +7,12 @@ from .models import ParkingLot
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
+from django.views import generic
+from django.contrib.auth import logout
+from django.urls import reverse
 
+from django.urls import reverse_lazy
+from . import WebPaths
 
 class WebPages:
     HOME_PAGE = 'website/index.html'
@@ -38,25 +43,26 @@ def parking_lot(request, parking_lot_id):
     parking_lot = get_object_or_404(ParkingLot, pk=parking_lot_id)
     return render(request, WebPages.PARKING_LOT, {'parking_lot': parking_lot})
 
+     
+def logout_user(request):
+    logout(request)
+    return redirect(WebPages.HOME_PAGE)
+    
 def login_user(request):
-    """Logs the user in
-
-    Args:
-        request (_type_): _description_
-
-    Returns:
-        _type_: _description_
-    """
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            # login the user
-            user = form.get_user()
+    if request.method == "POST": #FORM SUBMITTED
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
             login(request, user)
-            return redirect('parking-lots')
-    else:
+            return redirect(WebPaths.PARKING_LOTS)
+        else:
+            return redirect(WebPaths.LOGIN)
+    else: #FORM NOT SUBMITTED
         form = AuthenticationForm()
-    return render(request, WebPages.LOGIN_USER, {'form': form})
+        return render(request, "registration/login.html", {'form': form})
+        #return render(request, 'registration/login.html')
+   
 
 def register_user(request):
     """Guest User registers to use the app
@@ -77,7 +83,7 @@ def register_user(request):
             user.last_name = request.POST['last_name']
             user.email = request.POST['email']
             user.save()
-            return redirect('parking-lots')
+            return redirect(WebPaths.LOGIN)
     else:
         form = UserCreationForm()
     return render(request, WebPages.REGISTER_USER, {'form': form})
