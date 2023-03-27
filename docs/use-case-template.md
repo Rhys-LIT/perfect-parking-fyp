@@ -5,31 +5,31 @@
 
 ### Use Case 1: Name
 
-#### Description
+**Description:**
 
 description.
 
-#### Actors
+**Actors:**
 
 - User
 
-#### Trigger Event
+**Trigger Event:**
 
 - description
 
-#### Preconditions
+**Preconditions:**
 
 - description
 
-#### Post conditions
+**Post conditions:**
 
 - description
 
-#### Main Flow
+**Main Flow:**
 
 1. description
 2. description
 
-#### Alternative Flows
+**Alternative Flows:**
 
 1. description
