@@ -15,17 +15,17 @@ Suggested Layout
 1. Discussion
 1. Conclusions
 1. Reference List/Bibliography
-1. Appendices (supporting materials
+1. Appendices (supporting materials)
 
 ## Title Page
 
-- [ ] Title
-- [ ] Name of Author(s)
-- [ ] Student id
-- [ ] Course Name
-- [ ] Supervisor
-- [ ] College Logo
-- [ ] Date: Year
+- [x] Title / One line Unique Selling Point (UPS)
+- [x] Name of Author(s)
+- [x] Student id
+- [x] Course Name
+- [x] Supervisor
+- [x] College Logo
+- [x] Date: Year
 
 ## References
 
@@ -39,7 +39,7 @@ Limited to 300 words
 
 - [ ] Margins 4cm left, 2cm right, 2.5cm top, 2.5cm bottom
 
-- [ ] you should use a Serif typeface. The recommended typeface s Times New Roman, the point size should be 12pt, and the colour black.
+- [ ] you should use a Serif typeface. The recommended typeface s Times New Roman, the point size should be 12pt, and the color black.
 - [ ] 1.5 Line Spacing
 - [ ] Paragraphs Spacing 0 pt before, 8 pt after
 - [ ] Code in your document may be presented with an alternative font and size, such as Consolas 9.5 or 10.
@@ -65,7 +65,7 @@ Limited to 300 words
 - [ ]  The title appears at the top in at least 24pt font
 - [ ]  Your full name (first name and surname) appears under this, also centred. This will be in a smaller point
 - [ ]  The award appears underneath this (e.g., BSc. (Honours) in Computer Networks and Systems Management). The year of submission appears underneath this (e.g., 2019). You may place the LIT logo on the cover page if you wish, but you must use a high-quality version if you do.
-- [ ]  The spine of the document must also include some information so that it can be identifiable on a library shelf. You need to include your name, the year, and the award, which can be abbreviated if it is too long to fit (e.g., BSc (Hons) CNSM.
+- [ ]  The spine of the document must also include some information so that it can be identifiable on a library shelf. You need to include your name, the year, and the award, which can be abbreviated if it is too long to fit (e.g., BSc (Hons) SD).
 - [ ]  The font used for the cover page should be selected to look good. The font used in the sample cover page is Georgia.
 
 ## Printing
