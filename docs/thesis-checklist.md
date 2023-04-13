@@ -37,28 +37,32 @@ Limited to 300 words
 
 ## Document Formats
 
-- [ ] Margins 4cm left, 2cm right, 2.5cm top, 2.5cm bottom
+### Paragraphs/Text
 
-- [ ] you should use a Serif typeface. The recommended typeface s Times New Roman, the point size should be 12pt, and the color black.
-- [ ] 1.5 Line Spacing
-- [ ] Paragraphs Spacing 0 pt before, 8 pt after
+- [x] Recommended typeface: Times New Roman, 12pt, and color black.
+- [x] 1.5 Line Spacing
+- [x] Paragraphs Spacing 0 pt before, 8 pt after
+- [x] Text should be set to fully justified in the Normal Style
 - [ ] Code in your document may be presented with an alternative font and size, such as Consolas 9.5 or 10.
 
-### headings
+### Headings
 
-- [ ] Recommend default spacing for your headings.
-- [ ] Heading 1 starts on a new page
-- [ ] Headings Bold, multi-level list
-- [ ] Page numbers should be inserted in the footer of the page and aligned to the right
-- [ ] You are required to use Roman Numerals for all of the pages before the Introduction
-- [ ] Appendices should have their own Heading numbering (start at 1) and be numbered separately from each other.
-- [ ] Justification
-  - [ ] Text should be set to fully justified in the Normal Style
-  - [ ] Text for anything other than Body text should be left-aligned, including headings, table contents, and Reference lists.
-- [ ] Figures should always appear after the end of the paragraph in which they are first referenced, or as close as possible to that point to avoid having gaps between areas of text.
-- [ ] Do not interrupt a paragraph or a sentence to insert a figure or table.
-- [ ] Do not precede figures and tables with Chapter numbers (e.g., 3.1, 3.2, 4.1, etc.). Figures should begin with Figure 1 and tables with Table 1.
-- [ ] A List of Figures and a List of Tables must be inserted in your document just after the Tables of Contents (see Section 5).
+- [x] Recommend default spacing for your headings.
+- [x] Heading 1 starts on a new page
+- [x] Headings Bold, multi-level list
+- [x] Appendices should have their own Heading numbering (start at 1) and be numbered separately from each other.
+
+### Pages
+
+- [x] Margins 4cm left, 2cm right, 2.5cm top, 2.5cm bottom
+- [x] Page numbers should be inserted in the footer of the page and aligned to the right
+- [x] You are required to use Roman Numerals for all of the pages before the Introduction
+
+  - [x] Text for anything other than Body text should be left-aligned, including headings, table contents, and Reference lists.
+- [x] Figures should always appear after the end of the paragraph in which they are first referenced, or as close as possible to that point to avoid having gaps between areas of text.
+- [x] Do not interrupt a paragraph or a sentence to insert a figure or table.
+- [x] Do not precede figures and tables with Chapter numbers (e.g., 3.1, 3.2, 4.1, etc.). Figures should begin with Figure 1 and tables with Table 1.
+- [x] A List of Figures and a List of Tables must be inserted in your document just after the Tables of Contents (see Section 5).
 
 ### The Binder Cover
 
@@ -70,4 +74,4 @@ Limited to 300 words
 
 ## Printing
 
-- [ ] The document should be printed on one side of the paper only.
+- [x] The document should be printed on one side of the paper only.
