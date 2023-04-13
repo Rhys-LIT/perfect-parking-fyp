@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+
+{% block title %}Parking Monitors{% endblock %}
+
+{% block main %}
+<h1>Parking Monitors</h1>
+
+<p id="mydesc">Parking Monitors</p>
+<table class="table table-striped" aria-describedby="mydesc">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Hours</th>
+            <th>Is Paid Parking</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Availible Parking Probability</th>
+            <th>Last Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for parking_monitor in parking_lot_monitors %}
+        <tr>
+            <td><a href="{% url 'parking-lot-monitor' parking_monitor.id %}">{{ parking_monitor.name }}</a></td>
+            <td>{{ parking_monitor.parkingLot.address }}</td>
+            <td>{{ parking_monitor.parkingLot.hours }}</td>
+            <td>{{ parking_monitor.parkingLot.isPaidParking }}</td>
+            <td>{{ parking_monitor.latitude }}</td>
+            <td>{{ parking_monitor.longitude }}</td>
+            <td>{{ parking_monitor.probabilityParkingAvailable }}</td>
+            <td>{{ parking_monitor.dateTimeLastUpdated }}</td>
+        {% endfor %}
+    </tbody>
+
+{% endblock %}
