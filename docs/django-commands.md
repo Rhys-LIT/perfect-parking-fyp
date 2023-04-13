@@ -20,12 +20,17 @@ python manage.py createsuperuser
 
 ## Migration
 
-Note `0001` increments with each migration.
 
 ```bash
 python manage.py makemigrations PerfectParking
+```
+
+```bash
 python manage.py sqlmigrate PerfectParking 0001
-python manage.py migrate
+```
+
+> Note `0001` is the migration number. This number will increment with each migration. Adjust the number accordingly to the latest migration.
+Migrations can be found in the [migrations](../PerfectParking/migrations/) folder.
 
 ```bash
 python manage.py migrate
