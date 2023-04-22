@@ -23,217 +23,278 @@ at TUS.
 
 # Abstract
 
-[]{#_Toc132388009 .anchor}*This project is a Parking application for
-academic purpose. The aim of my project is to create a parking system
-that will replace the outdated systems and to help stop the widespread
-problem that is parking in our cities. The applications that are used in
-Limerick City are simply not good enough. So, the goal in this project
-is to improve the effectiveness of finding parking spaces and to also
-relieve the stress of the users looking for parking by implementing new
-and innovative features. I will do this by using Django framework
-structure and by implementing methods such map API's that will show the
-user exactly where the parking is and by providing locations for them to
-follow straight to the location. I will also use a parking monitor
-powered by OpenCV to detect if a parking spot has been filled or made
-empty. By doing this I feel like it will also help with traffic
-congestion in the city as people won't need to keep driving around the
-block to find a convenient parking space.*
+*This project is a Parking application for academic purpose. The aim of
+my project is to create a parking system that will replace outdated
+systems and to help stop the widespread problem that is parking in our
+cities. The applications that are used in Limerick City are simply not
+good enough. So, the goal in this project is to improve the
+effectiveness of finding parking spaces and to also relieve the stress
+of the users looking for parking by implementing new and innovative
+features. I will do this by using the Django framework structure and by
+implementing methods such APIs that will show the user exactly where the
+parking is and by providing locations for them to follow straight to the
+location. I will also use a parking monitor powered by OpenCV to detect
+if a parking spot has been filled or made empty. By doing this I feel
+like it will also help with traffic congestion in the city as people
+won't need to keep driving around the block to find a convenient parking
+space.*
 
-# Table of Contents
+# Table of Contents {#table-of-contents .TOC-Heading}
 
 [Acknowledgments [ii](#acknowledgments)](#acknowledgments)
 
 [Abstract [iii](#abstract)](#abstract)
 
-[Table of Contents [iv](#_Toc132388009)](#_Toc132388009)
-
 [Table of Figure [viii](#table-of-figure)](#table-of-figure)
 
 [Chapter 1 Introduction [9](#introduction)](#introduction)
 
-[1.1 The academic objectives [9](#_Toc132388012)](#_Toc132388012)
+[1.1 The academic objectives
+[9](#the-academic-objectives)](#the-academic-objectives)
 
-[1.2 Problem Domain? [9](#problem-domain)](#problem-domain)
+[1.2 Problem Statement [9](#problem-statement)](#problem-statement)
 
 [1.3 Product title: a solution
-[9](#product-title-a-solution)](#product-title-a-solution)
+[11](#perfect-parking-a-solution)](#perfect-parking-a-solution)
 
-[1.4 Objectives [9](#objectives)](#objectives)
+[1.4 Objectives [11](#objectives)](#objectives)
 
 [1.5 The Scope of the solution
-[9](#the-scope-of-the-solution)](#the-scope-of-the-solution)
+[11](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
-[1.6 Report Structure [9](#report-structure)](#report-structure)
+[1.6 Report Structure [11](#report-structure)](#report-structure)
 
-[Chapter 2 Materials [11](#literature-review)](#literature-review)
+[Chapter 2 Literature Review
+[12](#literature-review)](#literature-review)
 
-[2.1 Existing Data
-[11](#object-recognition-and-ai)](#object-recognition-and-ai)
+[2.1 Big Data and Realtime Data
+[12](#big-data-and-realtime-data)](#big-data-and-realtime-data)
 
-[2.1.0 Others [11](#_Toc132388020)](#_Toc132388020)
+[2.1.1 What is big data? [12](#what-is-big-data)](#what-is-big-data)
 
-[2.2 How we can choose [11](#how-we-can-choose)](#how-we-can-choose)
+[2.1.2 Why is big data important?
+[12](#why-is-big-data-important)](#why-is-big-data-important)
 
-[2.2.1 Machine Learning [11](#machine-learning)](#machine-learning)
+[2.1.3 What is Real Time data
+[13](#what-is-real-time-data)](#what-is-real-time-data)
+
+[2.1.4 What is the importance of Real Time data?
+[13](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
+
+[2.1.5 Problems with gathering data.
+[14](#problems-with-gathering-data.)](#problems-with-gathering-data.)
+
+[2.1 Object Recognition and AI
+[14](#object-recognition-and-ai)](#object-recognition-and-ai)
+
+[2.2 How we can choose [14](#_Toc132876402)](#_Toc132876402)
+
+[2.2.1 Machine Learning [14](#machine-learning)](#machine-learning)
 
 [2.3 Conclusion: The Need for a Software Solution
-[11](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
+[14](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
 
 [Chapter 3 Project Management
-[12](#project-management)](#project-management)
+[15](#project-management)](#project-management)
 
-[3.1 Weekly Meetings [12](#weekly-meetings)](#weekly-meetings)
+[3.1 Weekly Meetings [15](#weekly-meetings)](#weekly-meetings)
 
 [3.2 Source code management (SCM)
-[12](#source-code-management-scm)](#source-code-management-scm)
+[15](#source-code-management-scm)](#source-code-management-scm)
 
-[3.3 Code Style Guide [12](#code-style-guide)](#code-style-guide)
+[3.3 Code Style Guide [15](#code-style-guide)](#code-style-guide)
 
 [3.4 Collaboration Tools
-[12](#collaboration-tools)](#collaboration-tools)
+[15](#collaboration-tools)](#collaboration-tools)
 
-[3.4.1 GitHub [12](#github)](#github)
+[3.4.1 GitHub [15](#github)](#github)
 
 [3.4.2 Microsoft Office Online
-[12](#microsoft-office-online)](#microsoft-office-online)
+[15](#microsoft-office-online)](#microsoft-office-online)
 
-[Chapter 4 Data Analytic Methods
-[13](#data-analytic-methods)](#data-analytic-methods)
+[Chapter 4 Data Analytic Methods [16](#_Toc132876412)](#_Toc132876412)
 
-[4.1 Artificial Intelligence
-[13](#artificial-intelligence)](#artificial-intelligence)
+[4.1 Artificial Intelligence [16](#_Toc132876413)](#_Toc132876413)
 
-[4.2 Categorization [13](#categorization)](#categorization)
+[4.2 Categorization [16](#_Toc132876414)](#_Toc132876414)
 
-[4.3 Estimation [13](#estimation)](#estimation)
+[4.3 Estimation [16](#_Toc132876415)](#_Toc132876415)
 
-[4.4 Machine Learning [13](#machine-learning-1)](#machine-learning-1)
+[4.4 Machine Learning [16](#_Toc132876416)](#_Toc132876416)
 
 [4.4.1 Garbage in, likely garbage out
-[13](#garbage-in-likely-garbage-out)](#garbage-in-likely-garbage-out)
+[16](#_Toc132876417)](#_Toc132876417)
 
 [4.5 Working with Data Structures Object Orientated Programming
-[13](#working-with-data-structures-object-orientated-programming)](#working-with-data-structures-object-orientated-programming)
+[16](#_Toc132876418)](#_Toc132876418)
 
-[4.6 Examples [13](#examples)](#examples)
+[4.6 Examples [16](#_Toc132876419)](#_Toc132876419)
 
-[4.7 Conclusion [13](#conclusion)](#conclusion)
+[4.7 Conclusion [16](#_Toc132876420)](#_Toc132876420)
 
-[Chapter 5 Data Analysis
-[15](#analysis-and-design)](#analysis-and-design)
+[Chapter 5 Analysis and Design
+[18](#analysis-and-design)](#analysis-and-design)
+
+[5.1 Unique Selling Point
+[18](#unique-selling-point)](#unique-selling-point)
+
+[5.2 The Application [18](#the-application)](#the-application)
+
+[5.3 Users Use Case Diagram
+[18](#users-use-case-diagram)](#users-use-case-diagram)
+
+[5.4 System Actors [19](#system-actors)](#system-actors)
+
+[5.5 Use Case Descriptions
+[19](#use-case-descriptions)](#use-case-descriptions)
+
+[5.5.1 Use Case: Find Parking
+[19](#use-case-find-parking)](#use-case-find-parking)
+
+[5.5.2 Use Case: Register User
+[20](#use-case-register-user)](#use-case-register-user)
+
+[5.5.3 Use Case: Update Parking Lot Status
+[21](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
+
+[5.5.4 Use Case: User changes password.
+[22](#use-case-user-changes-password.)](#use-case-user-changes-password.)
+
+[5.6 Identifying the free/busy car parking spaces
+[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+
+[5.7 Machine Learning / Artificial Intelligence (AI)
+[23](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
+
+[5.8 Sensors [23](#sensors)](#sensors)
+
+[5.8.1 Development limitations
+[23](#development-limitations)](#development-limitations)
+
+[5.9 Machine Learning Algorithms
+[23](#machine-learning-algorithms)](#machine-learning-algorithms)
+
+[5.10 Database design [24](#database-design)](#database-design)
+
+[5.11 User Parking Sequence diagram
+[25](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
 [5.1 Introduction and focus
-[15](#introduction-and-focus)](#introduction-and-focus)
+[25](#introduction-and-focus)](#introduction-and-focus)
 
-[5.2 Academic Aims [15](#academic-aims)](#academic-aims)
+[5.2 Academic Aims [26](#academic-aims)](#academic-aims)
 
 [5.2.1 Academic Requirements
-[15](#academic-requirements)](#academic-requirements)
+[26](#academic-requirements)](#academic-requirements)
 
 [5.3 Functional Requirements
-[15](#functional-requirements)](#functional-requirements)
+[26](#functional-requirements)](#functional-requirements)
 
 [5.4 Non-Functional Requirements
-[15](#non-functional-requirements)](#non-functional-requirements)
+[26](#non-functional-requirements)](#non-functional-requirements)
 
-[5.5 Statistics [15](#statistics)](#statistics)
+[5.5 Statistics [26](#statistics)](#statistics)
 
-[Chapter 6 Results [16](#results)](#results)
+[Chapter 6 Results [27](#implementation)](#implementation)
 
 [6.1 Project Plan: Priorities and Milestones
-[16](#project-plan-priorities-and-milestones)](#project-plan-priorities-and-milestones)
+[27](#_Toc132876445)](#_Toc132876445)
 
-[6.1.0 The Data Structure
-[16](#the-data-structure)](#the-data-structure)
+[6.1.0 The Data Structure [27](#_Toc132876446)](#_Toc132876446)
 
 [6.1.1 Populating the System with Data
-[16](#populating-the-system-with-data)](#populating-the-system-with-data)
+[27](#_Toc132876447)](#_Toc132876447)
 
-[6.1.2 Machine Learning [16](#machine-learning-2)](#machine-learning-2)
+[6.1.2 Machine Learning [27](#_Toc132876448)](#_Toc132876448)
 
-[6.1.3 Testing [16](#testing)](#testing)
+[6.1.3 Testing [27](#_Toc132876449)](#_Toc132876449)
 
-[6.1.4 Paths to completion
-[16](#paths-to-completion)](#paths-to-completion)
+[6.1.4 Paths to completion [27](#_Toc132876450)](#_Toc132876450)
 
-[6.2 Data Structures [16](#data-structures)](#data-structures)
+[6.2 Data Structures [27](#_Toc132876451)](#_Toc132876451)
 
-[6.3 System Architecture
-[16](#system-architecture)](#system-architecture)
+[6.3 System Architecture [27](#_Toc132876452)](#_Toc132876452)
 
-[6.3.1 Object Identification
-[16](#object-identification)](#object-identification)
+[6.3.1 Object Identification [27](#_Toc132876453)](#_Toc132876453)
 
-[6.4 Machine Learning [16](#machine-learning-3)](#machine-learning-3)
+[6.4 Machine Learning [27](#_Toc132876454)](#_Toc132876454)
 
-[6.5 Conclusion [16](#conclusion-1)](#conclusion-1)
+[6.5 Conclusion [27](#_Toc132876455)](#_Toc132876455)
 
-[Chapter 7 Implementation [17](#implementation)](#implementation)
+[Chapter 7 Implementation [28](#implementation)](#implementation)
 
-[7.1 Standards and Best Practice [17](#_Toc132388060)](#_Toc132388060)
+[7.1 Object Recognition in Images
+[28](#object-recognition-in-images)](#object-recognition-in-images)
 
-[7.1.1 Object Orientated Programming
-[17](#_Toc132388061)](#_Toc132388061)
+[7.2 Client and Server Architecture with Rest framework
+[28](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
 
-[7.1.2 Source Control and versioning
-[17](#source-control-and-versioning)](#source-control-and-versioning)
+[7.2.1 The Monitor [28](#the-monitor)](#the-monitor)
 
-[7.2 Development Environment
-[17](#development-environment)](#development-environment)
+[7.2.2 Server [29](#server)](#server)
 
-[7.3 Tools Used [17](#tools-used)](#tools-used)
+[7.2.3 How They Work Together
+[30](#how-they-work-together)](#how-they-work-together)
+
+[7.2.4 Source Control and versioning
+[31](#source-control-and-versioning)](#source-control-and-versioning)
+
+[7.3 Development Environment
+[31](#development-environment)](#development-environment)
+
+[7.4 Tools Used [31](#tools-used)](#tools-used)
 
 [Chapter 8 Conclusion and Recommendations
-[18](#conclusion-and-recommendations)](#conclusion-and-recommendations)
+[32](#conclusion-and-recommendations)](#conclusion-and-recommendations)
 
-[8.1 Conclusion [18](#conclusion-2)](#conclusion-2)
+[8.1 Conclusion [32](#conclusion)](#conclusion)
 
-[8.2 Recommendations [18](#recommendations)](#recommendations)
+[8.2 Recommendations [32](#recommendations)](#recommendations)
 
-[References [19](#_Toc132388068)](#_Toc132388068)
+[References [33](#_Toc132876468)](#_Toc132876468)
 
-[Glossary [20](#glossary)](#glossary)
+[Glossary [34](#glossary)](#glossary)
 
-[Appendix A Reflections [21](#reflections)](#reflections)
+[Appendix A Reflections [35](#reflections)](#reflections)
 
-[A.1 Report Structure [21](#report-structure-1)](#report-structure-1)
+[A.1 Report Structure [35](#report-structure-1)](#report-structure-1)
 
 [Appendix B Project Management
-[22](#project-management-1)](#project-management-1)
+[36](#project-management-1)](#project-management-1)
 
-[B.1 Report Structure [22](#report-structure-2)](#report-structure-2)
+[B.1 Report Structure [36](#report-structure-2)](#report-structure-2)
 
-[B.2 Code Style Guide [22](#code-style-guide-1)](#code-style-guide-1)
+[B.2 Code Style Guide [36](#code-style-guide-1)](#code-style-guide-1)
 
 [B.2.1 Naming conventions
-[22](#naming-conventions)](#naming-conventions)
+[36](#naming-conventions)](#naming-conventions)
 
 [B.2.2 Avoid magic constant numbers.
-[22](#avoid-magic-constant-numbers.)](#avoid-magic-constant-numbers.)
+[36](#avoid-magic-constant-numbers.)](#avoid-magic-constant-numbers.)
 
-[B.2.3 Variable naming [22](#variable-naming)](#variable-naming)
+[B.2.3 Variable naming [36](#variable-naming)](#variable-naming)
 
-[B.2.4 Methods [22](#methods)](#methods)
+[B.2.4 Methods [36](#methods)](#methods)
 
-[B.2.5 Imports [22](#imports)](#imports)
+[B.2.5 Imports [36](#imports)](#imports)
 
-[B.2.6 Comments [22](#comments)](#comments)
+[B.2.6 Comments [36](#comments)](#comments)
 
-[B.2.7 Documentation [22](#documentation)](#documentation)
+[B.2.7 Documentation [36](#documentation)](#documentation)
 
-[B.2.8 Classes [22](#classes)](#classes)
+[B.2.8 Classes [36](#classes)](#classes)
 
 [B.2.9 Spacing, Indentation
-[22](#spacing-indentation)](#spacing-indentation)
+[36](#spacing-indentation)](#spacing-indentation)
 
-[B.2.10 Literals [22](#literals)](#literals)
+[B.2.10 Literals [36](#literals)](#literals)
 
 [Appendix C Development Environment
-[23](#development-environment-1)](#development-environment-1)
+[37](#development-environment-1)](#development-environment-1)
 
 # Table of Figure
 
-[Figure 1TUS Logo [16](#_Toc132726758)](#_Toc132726758)
+[Figure 1TUS Logo [16](#_Toc132726956)](#_Toc132726956)
 
 [Figure 2- User Use Case Diagram [17](#_Toc132726957)](#_Toc132726957)
 
@@ -244,17 +305,17 @@ block to find a convenient parking space.*
 
 # Introduction
 
-[]{#_Toc132388012 .anchor}Due to an increase in in the number of cars
-being used in limerick city and other cities in Ireland, finding a
-solution to car parks has now become vital. The old-fashioned way of
-parking was that everyone would just leave their cars parked in the
-streets until they were needed again, this however caused major traffic
-congestions in towns and cities. Shop owners also got hugely impacted as
-there wouldn't be enough room for staff to park no mind the customers
-looking to go into their shops which was damaging for their business, it
-is undeniable that car parks are a very important factor in society, by
-having parking spaces it reduces illegal parking which would have
-increased congestions on the road and increasing travel time.
+Due to an increase in in the number of cars being used in limerick city
+and other cities in Ireland, finding a solution to car parks has now
+become vital. The old-fashioned way of parking was that everyone would
+just leave their cars parked in the streets until they were needed
+again, this however caused major traffic congestions in towns and
+cities. Shop owners also got hugely impacted as there wouldn't be enough
+room for staff to park no mind the customers looking to go into their
+shops which was damaging for their business, it is undeniable that car
+parks are a very important factor in society, by having parking spaces
+it reduces illegal parking which would have increased congestions on the
+road and increasing travel time.
 
 It is fair to say that parking back in the 1980s -- 1990s wasn't such a
 big issue as there wasn't very many cars on the road as people couldn't
@@ -279,45 +340,71 @@ working with AI and object detection in images.
 The chosen problem used for this study is to help to reduce the traffic
 congestion in cities such as Limerick.
 
-## Problem Domain?
+## Problem Statement
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs
+**Ineffective ways of finding an available parking space which is a
+waste of time, very fuel consuming and causes traffic jams.**
 
-1.  Numbered Bullet list.
+when road users are looking to find an available parking space they end
+up wasting time and using a lot of fuel from them driving around the car
+park or the block multiple times hopping to find a space, on average
+people spend 17 hours per year driving around looking for parking spaces
+(Quellmalz, 2021). By developing Perfect Parking, It is hoped to make
+the parking process in college campus and in the city seamless and
+stress free, by doing this I'm hoping to eliminate the time and fuel
+waste road users encounter while looking for parking.
 
-2.  Numbered Bullet list
+**Lack of visual parking space availability.**
 
-3.  Numbered Bullet item.
+When road users are driving the visuals of the eye are limited, the
+vision is blocked by many obstacles such as the cars frame causing blind
+spots, other cars, trees and much more. It can be understood that the
+road users can find it difficult to spot an available parking space if
+it's in the distance or behind other cars. This has turned into an
+important problem with road users and as a result they waist time and
+fuel trying to spot an available space.
 
-    a.  Numbered Bullet item.
+**Lack of knowledge of towns or cities.**
 
-    b.  Numbered Bullet item.
+Limerick is a city where people migrate to for education or tourism, and
+with this brings more road users. When drivers first come to Limerick
+City, they must learn the road routes and with this where the parking
+is. A lot of road users that drive in a new place start to panic and get
+anxious when they try and find parking. This can cause them to be in the
+wrong lanes and cause traffic congestion. But with my app it will allow
+users to plan their route to the parking of their choice and follow
+directions on the phone to the car park. By doing this that it will keep
+new road users in the city calm so they can enjoy their holiday or for
+students teach them the road routes and the best places to park.
 
-4.  Numbered Bullet list
-
-## Product title: a solution
+## Perfect Parking: a solution
 
 ## Objectives
 
 ## The Scope of the solution
 
+No city or college live feeds
+
+Prerecorded video demonstration car (object) detection and a sever
+demonstration end user usage and product viability.
+
 ## Report Structure
 
-This document has cover pages ...
-
-An Abstract
-
-TOC and TOF are generated automatically.
-
-The Chapters the following styles
-
-Paragraphs are 12pt Aril Justified with 1.5-line spaces and 6pt before
-with 3 pt after.
+The following is the report structure for the Perfect Parking Thesis.
+The report starts with a cover page, followed by an Acknowledgments
+section where the author expresses gratitude to those who contributed to
+the project. The report also includes an Abstract, which provides a
+brief overview of the project\'s purpose, scope, methods, and findings.
+A table of contents and a table of figures are generated automatically,
+providing a quick and easy way for readers to navigate through the
+report.
 
 # Literature Review
 
 ## Big Data and Realtime Data
+
+A large amount of live data will be required to provide a comprehensive
+parking software application solution.
 
 ### What is big data? 
 
@@ -373,21 +460,20 @@ its collected and is immediately available without and delay, this is
 crucial for supporting live, in the moment decision making. This real
 time data is a big part of our everyday lives, it powers everything from
 bank transactions and GPS this was also seen in the many Covid-19 maps
-that emerged during the pandemic. (Anon., 2021)
+that emerged during the pandemic. (Splunk, 2021)
 
 We see a lot more of real time data then we think, Google collects
-endless amounts of real time data and the way they do it is actually
-very smart, they use a device that 6.6 billion people in the world have
-and that being smart phones. (Anon., 2022) if people have smart phones,
-then nearly everyone has the google map application and GPS in their
-phones. When people sign into google on their phone Google starts
-creating real time data through the GPS and other apps, for example,
-when your using Google Maps on your phone it shows loads of data such as
-the estimated time of arrival to your destination and also if there is
-any traffic on your route, Google knows this by using real time data
-from other people that are taking that route and that might be stuck in
-traffic and this is all taken from the GPS location on smart phones.
-(Ashish, 2022)
+endless amounts of real time data and the way they do it is very smart,
+they use a device that 6.6 billion people in the world have and that
+being smart phones. (Turner, 2023) if people have smart phones, then
+nearly everyone has the google map application and GPS in their phones.
+When people sign into google on their phone Google starts creating real
+time data through the GPS and other apps, for example, when your using
+Google Maps on your phone it shows loads of data such as the estimated
+time of arrival to your destination and also if there is any traffic on
+your route, Google knows this by using real time data from other people
+that are taking that route and that might be stuck in traffic and this
+is all taken from the GPS location on smart phones. (Ashish, 2022)
 
 ### What is the importance of Real Time data?
 
@@ -406,7 +492,7 @@ of the parking spaces this allows users to see what actual spaces are
 available, this is the most ideal as it allows people that need disabled
 parking to see if that type of parking space is available.
 
-### Problems with gathering data.
+## Problems with gathering data.
 
 When tech companies are building applications such as parking
 applications, they are given a budget by the parking company, and this
@@ -435,14 +521,9 @@ brings even more problems, these problems being:
 This chapter will begin by outlining the (cf. 1.1) for the purpose of
 writing a Report for a Project and outlining paragraphs.
 
-## How we can choose
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
 ### Machine Learning
 
-## Conclusion: The Need for a Software Solution 
+## Conclusion: The Need for a Software Solution
 
 # Project Management
 
@@ -463,53 +544,6 @@ writing a Report for a Project and outlining paragraphs.
 ### GitHub
 
 ### Microsoft Office Online
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-# Data Analytic Methods
-
-under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
-(cf. 1.1.1)
-
-## Artificial Intelligence
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Categorization
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Estimation
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Machine Learning
-
-### Garbage in, likely garbage out
-
-## Working with Data Structures Object Orientated Programming
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Examples
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Conclusion
-
-This chapter has outlined the ...
-
-![A picture containing shape Description automatically
-generated](./images/thesis/media/image3.png){width="2.6041666666666665in"
-height="2.6041666666666665in"}
-
-[]{#_Toc132726758 .anchor}Figure TUS Logo
 
 This chapter will begin by outlining the (cf. 1.1) for the purpose of
 writing a Report for a Project and outlining paragraphs.
@@ -539,21 +573,24 @@ nearest parking to their location.
 ## Users Use Case Diagram
 
 ![Alt
-text](./images/thesis/media/image4.png){width="5.694444444444445in"
+text](./images/thesis/media/image3.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc132726957 .anchor}Figure - User Use Case Diagram
+[]{#_Toc132726957 .anchor}Figure 2- User Use Case Diagram
 
 ## System Actors
 
 -   Administrator: The administrator is responsible for managing the
     application. The administrator can add new parking locations to the
-    database, and can also remove parking locations from the database.
+    database and can also remove parking locations from the database.
+
 -   User: The user is the person who will be using the application. The
     user can search for parking near a specific location.
+
 -   Guest: The guest is a person who is not logged in to the
     application. The guest can only search for parking near a specific
     location.
+
 -   Monitor Bot: A monitor is a bot that will be monitoring a car park.
     The monitor will be updating the status of the car park.
 
@@ -561,7 +598,7 @@ height="4.458333333333333in"}
 
 ### Use Case: Find Parking
 
-**Description:**
+Description:
 
 A user searches for parking near a specific location.
 
@@ -569,23 +606,23 @@ A user searches for parking near a specific location.
 
 -   User
 
-**Trigger Event:**
+Trigger Event:
 
 -   A user wants to find parking near a specific location.
 
-**Preconditions:**
+Preconditions:
 
 -   The user is logged in to the application.
 -   The website has permission to access the user's GPS location.
 
-**Post conditions:**
+Post conditions:
 
 -   The user is shown a list of parking locations near the location they
     searched for.
 
-**Main Flow:**
+Main Flow:
 
-1.  The user details the location they want to find parking near by:
+1.  The user details the location they want to find parking nearby:
     -   by searching for a specific address in the search bar.
     -   by clicking on a location on the map.
     -   by clicking on a location on the list of parking locations.
@@ -593,14 +630,14 @@ A user searches for parking near a specific location.
 2.  The application shows the user a list of parking locations near the
     location they searched for.
 
-**Alternative Flows:**
+Alternative Flows:
 
 -   If the user does not have permission to access their GPS location,
     the user can search for a specific address in the search bar.
 
 ### Use Case: Register User
 
-**Description:**
+Description:
 
 A user registers for an account on the application.
 
@@ -608,21 +645,21 @@ A user registers for an account on the application.
 
 -   Guest user
 
-**Trigger Event:**
+Trigger Event:
 
 -   A guest user wants to register for an account on the application.
 
-**Preconditions:**
+Preconditions:
 
 -   The guest user is not logged in to the application.
 -   The guest user has not registered for an account on the application.
 -   The guest has a valid email address.
 
-**Post conditions:**
+Post conditions:
 
 -   A user account is created for the guest user.
 
-**Main Flow:**
+Main Flow:
 
 1.  The guest user clicks on the "Register" button.
 2.  The guest user enters their details into the registration form.
@@ -630,12 +667,12 @@ A user registers for an account on the application.
 4.  The application creates a user account for the guest user.
 5.  The guest logs in to the application.
 
-**Alternative Flows:**
+Alternative Flows:
 
 -   If the guest user enters an email address that is already registered
     to an account, the application will display an error message.
 
-**Use Case: Login User:**
+Use Case: Login User:
 
 **Description:**
 
@@ -645,26 +682,26 @@ A user logs in to the application.
 
 -   User
 
-**Trigger Event:**
+Trigger Event:
 
 -   A user wants to log in to the application.
 
-**Preconditions:**
+Preconditions:
 
 -   The user is not logged in to the application.
 
-**Post conditions:**
+Post conditions:
 
 -   The user is logged in to the application.
 
-**Main Flow:**
+Main Flow:
 
 1.  The user clicks on the "Login" button.
 2.  The user enters their details into the login form.
 3.  The user clicks on the "Login" button.
 4.  The application logs the user in to the application.
 
-**Alternative Flows:**
+Alternative Flows:
 
 -   If the user enters an incorrect username and password, the
     application will display an error message.
@@ -675,7 +712,7 @@ A user logs in to the application.
 
 ### Use Case: Update Parking Lot Status
 
-**Description:**
+Description:
 
 A monitor bot automatically updates the status of a parking lot.
 
@@ -683,26 +720,26 @@ A monitor bot automatically updates the status of a parking lot.
 
 -   Monitor
 
-**Trigger Event:**
+Trigger Event:
 
 -   A monitor updates the status of a parking lot.
 
-**Preconditions:**
+Preconditions:
 
 -   The website application is running.
 -   The monitor is connected to the internet.
 -   The monitor has a valid API access token.
 
-**Post conditions:**
+Post conditions:
 
 -   The status of the parking lot is updated.
 
-**Main Flow:**
+Main Flow:
 
 1.  The monitor sends a PUT request to the application REST API.
 2.  The application updates the status of the parking lot.
 
-**Alternative Flows:**
+Alternative Flows:
 
 -   If the monitor is not connected to the internet, the monitor will
     not be able to update the status of the parking lot.
@@ -717,7 +754,7 @@ A monitor bot automatically updates the status of a parking lot.
 
 **Description:**
 
-A user changes their password.
+-   A user changes their password.
 
 **Actors:**
 
@@ -738,13 +775,16 @@ A user changes their password.
 **Main Flow:**
 
 1.  The user clicks on the "Change Password" button.
+
 2.  The user enters their details into the change password form.
+
 3.  The user clicks on the "Change Password" button.
 
 **Alternative Flows:**
 
 -   If the user enters an incorrect password, the application will
     display an error message.
+
 -   If the user enters a new password that does not meet the password
     requirements, the application will display an error message.
 
@@ -793,10 +833,10 @@ file instead of a camera.
 ## Database design
 
 ![Diagram Description automatically
-generated](./images/thesis/media/image5.png){width="5.395833333333333in"
+generated](./images/thesis/media/image4.png){width="5.395833333333333in"
 height="5.15625in"}
 
-[]{#_Toc132726761 .anchor}Figure - Database Design
+[]{#_Toc132726761 .anchor}Figure 3 - Database Design
 
 This database design consists of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
@@ -821,10 +861,10 @@ connection point, serving as a foreign key to link the two tables.
 ## User Parking Sequence diagram
 
 ![A screenshot of a computer Description automatically
-generated](./images/thesis/media/image6.png){width="6.268055555555556in"
+generated](./images/thesis/media/image5.png){width="6.268055555555556in"
 height="2.0875in"}
 
-[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 4- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -877,35 +917,6 @@ writing a Report for a Project and outlining paragraphs.
 
 ## Statistics
 
-# Results
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Project Plan: Priorities and Milestones
-
-### The Data Structure
-
-### Populating the System with Data
-
-### Machine Learning
-
-### Testing
-
-### Paths to completion
-
-## Data Structures
-
-## System Architecture
-
-### Object Identification
-
-## Machine Learning
-
-## Conclusion
-
-This chapter has outlined the ...
-
 # Implementation
 
 ## Object Recognition in Images
@@ -922,15 +933,15 @@ uses the Haar Cascade Classifier, which is a machine learning-based
 approach for object detection. The Haar Cascade Classifier works by
 detecting features in an image that are characteristic of the object
 being detected, such as edges, corners, and lines. These features are
-then used to classify the object.
+then used to classify the object. Haar Cascade Classifiers can be
+trained to recognize specific objects, such as faces, eyes, and cars,
+and the code is able to detect and localize these objects within an
+image.
 
 The project code uses the Haar Cascade Classifier to detect and
-recognize different objects within an image. The projects trains the
-classifier to recognize specific objects, such as faces, eyes, and cars,
-and the code is able to detect and localize these objects within an
-image. The project also implements various pre-processing techniques,
-such as image resizing and normalization, to improve the accuracy of the
-object detection.
+recognize different objects within an image. The project also implements
+various pre-processing techniques, such as image resizing and
+normalization, to improve the accuracy of the object detection.
 
 ## Client and Server Architecture with Rest framework
 
@@ -972,7 +983,8 @@ for drawing contours and labels on an image. It takes an image and a set
 of coordinates, draws the contour around the coordinates, and places a
 label on the contour with a specified color, font, and thickness.
 
-Finally, color.py contains color constants that are used in other files.
+Finally, color.py contains colour constants that are used in other
+files.
 
 In terms of architecture, the code follows a modular design pattern,
 with each file containing a set of related functions or classes. The
@@ -1052,7 +1064,20 @@ writing a Report for a Project and outlining paragraphs.
 
 ## Tools Used
 
-This chapter has outlined the ...
+The following tools were used in the development of this project: VS
+code, a code editor that provides an excellent development environment;
+Django Python web framework, which allowed for rapid development of the
+project and easy maintenance, Anaconda, a package management and
+deployment tool that made it easy to install and manage required
+libraries and dependencies, OpenCV, an open source computer vision and
+machine learning software library, which was used for image processing
+and analysis, GitHub, a code repository that allowed for version control
+and collaboration with my supervisor, Microsoft Word, which was used to
+write the thesis, and Canva, a graphic design platform used to create
+the project poster. These tools were chosen for their reliability, ease
+of use, and suitability for the project requirements. By utilizing these
+tools, the project was able to be completed more efficiently, with
+greater accuracy and precision.
 
 # Conclusion and Recommendations
 
@@ -1103,7 +1128,7 @@ Anon., 2022. \[Online\]\
 Available at:
 [https://www.bankmycell.com/blog/how-many-phones-are-in-the-world]{.underline}
 
-ul.ie., 2022. \[Online\]\
+Anon., 2022. \[Online\]\
 Available at:
 [https://www.ul.ie/presidents-office/university-profile/facts-and-figures]{.underline}
 
@@ -1122,6 +1147,11 @@ Available at:
 Botelho, B., n.d. *Big Data.* \[Online\]\
 Available at:
 [https://www.techtarget.com/searchdatamanagement/definition/big-data]{.underline}
+
+Quellmalz, R., 2021. *6 surprising facts about parking you probably dont
+know.* \[Online\]\
+Available at:
+[https://www.spotparking.com.au/insights/facts-about-parking-you-probably-didnt-know]{.underline}
 
 # Glossary
 
@@ -1145,20 +1175,9 @@ Available at:
 
 # Project Management {#project-management-1 .Appendix:-H1}
 
-\"I bring order to chaos\" - The Borg Queen, 2373
-
-A few sentences about how the project was managed. A bit about the code,
-the document, the research, budget and timing, management frameworks and
-so on.
-
 ## Report Structure {#report-structure-2 .Appendix:-H2}
 
 ## Code Style Guide {#code-style-guide-1 .Appendix:-H2}
-
-\"This appears to be a region of space that doesn\'t have many rules.
-But I believe we can learn something from the events that have unfolded.
-In a part of space where there are few rules, it\'s more important than
-ever that we hold fast to our own.\" -- Captain Janeway, 2372
 
 ### Naming conventions {#naming-conventions .Appendix:-H3}
 
