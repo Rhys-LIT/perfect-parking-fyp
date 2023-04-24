@@ -18,13 +18,13 @@ John Jennings
 
 I would like to thank my supervisor John Jennings for helping me to
 complete my research. In addition, I would like to thank my parents Sean
-and Beverley, and my girlfriend Laura with their support during my time
+and Beverley, and my girlfriend Laura for their support during my time
 at TUS.
 
 # Abstract
 
 *This project is a Parking application for academic purpose. The aim of
-my project is to create a parking system that will replace outdated
+Perfect Parking is to create a parking system that will replace outdated
 systems and to help stop the widespread problem that is parking in our
 cities. The applications that are used in Limerick City are simply not
 good enough. So, the goal in this project is to improve the
@@ -227,7 +227,7 @@ space.*
 [28](#object-recognition-in-images)](#object-recognition-in-images)
 
 [7.2 Client and Server Architecture with Rest framework
-[28](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
+[28](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
 
 [7.2.1 The Monitor [28](#the-monitor)](#the-monitor)
 
@@ -371,11 +371,12 @@ with this brings more road users. When drivers first come to Limerick
 City, they must learn the road routes and with this where the parking
 is. A lot of road users that drive in a new place start to panic and get
 anxious when they try and find parking. This can cause them to be in the
-wrong lanes and cause traffic congestion. But with my app it will allow
-users to plan their route to the parking of their choice and follow
-directions on the phone to the car park. By doing this that it will keep
-new road users in the city calm so they can enjoy their holiday or for
-students teach them the road routes and the best places to park.
+wrong lanes and cause traffic congestion. But with the Perfect Parking
+app it will allow users to plan their route to the parking of their
+choice and follow directions on the phone to the car park. By doing this
+that it will keep new road users in the city calm so they can enjoy
+their holiday or for students teach them the road routes and the best
+places to park.
 
 ## Perfect Parking: a solution
 
@@ -518,12 +519,158 @@ brings even more problems, these problems being:
 
 ## Object Recognition and AI
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
+Object recognition refers to the process of teaching a computer how to
+identify and classify objects within digital images or videos. It\'s
+like teaching a child to recognize different objects such as cars,
+chairs, or animals. Artificial intelligence, or AI, is the field of
+computer science that deals with creating machines that can perform
+tasks that typically require human intelligence, such as learning,
+reasoning, and problem-solving. AI techniques like deep learning, which
+is a subset of machine learning, are often used in object recognition
+systems to train algorithms to recognize and classify objects. This
+technology has a wide range of applications, from self-driving cars to
+medical diagnosis to robotics. (Tech Target, n.d.)
 
 ### Machine Learning
 
+A subset of artificial intelligence called machine learning involves
+training algorithms to recognize patterns and correlations in data.
+
+### Computer Vision
+
+The powerful library OpenCV provides a wide range of features for
+computer vision applications. It is widely used across many different
+industries, including robotics, driverless cars, medical imaging, and
+more.
+
+To extract useful information or features, OpenCV processes visual data,
+such as photos or videos. Image filtering, feature detection, object
+recognition, and tracking are just a few of the techniques that OpenCV
+offers to process and analyze visual data. (Boesch, 2023)
+
+### Object Detection
+
+Object detection is a technique in computer vision that involves
+detecting objects of interest within an image or video stream. Finding
+the object(s) within a picture and categorizing them into various
+categories are the goals of object detection. Since object detection
+requires locating and recognizing multiple objects inside a picture, it
+is a more advanced technique than object recognition. (Patel, 2020)
+
+### Cascading classifiers
+
+One kind of machine learning technique used in computer vision for
+object detection is called a cascading classifier. In their
+groundbreaking study \"Rapid Object Detection using a Boosted Cascade of
+Simple Features\" published in 2001, Viola and Jones introduced them for
+the first time. The approach is based on the concept of \"cascading\"
+the solution of a complex detection problem into several smaller, easier
+sub-problems. (Michael Jones, 2001)
+
+The basic idea behind cascading classifiers is to use a series of
+classifiers, each with increasing complexity, to detect objects of
+interest. Utilizing a series of classifiers, each with a higher level of
+complexity, to find things of interest is the main notion underlying
+cascading classifiers. The input image is classified as either
+containing the object of interest or not by each classifier in the
+cascade using a collection of features. Each classifier\'s attributes
+are chosen based on their capacity to distinguish between positive and
+negative samples. (Lee, 2022)
+
+One of the main advantages of cascading classifiers is their ability to
+achieve high detection rates with low false positive rates. This is
+accomplished by employing a number of classifiers, each of which is
+trained to quickly reject negative samples. As a result, there are fewer
+false positives because the algorithm can swiftly reject pictures that
+don\'t include the object of interest. (Bąk, 2023)
+
+When used in object detection tasks like face detection, cascading
+classifiers have been shown to be highly accurate and effective. (Bąk,
+2023) Several pre-trained cascading classifiers, including the
+well-known Haar cascades for face detection, are available in OpenCV for
+object detection.
+
+### Haar-like feature
+
+An image feature type used in computer vision for object detection is
+called a Haar-like feature. They have the name of the Haar wavelet,
+which Alfred Haar, a Hungarian mathematician, initially proposed in
+1909. (Seal, n.d.) The mathematical function known as the Haar wavelet
+can be used to break down a signal or image into a collection of wavelet
+coefficients.
+
+By comparing the average pixel values in adjacent rectangular regions of
+an image, Haar-like features can be extracted from the Haar wavelet. The
+difference between the sum of pixel intensities in a rectangular region
+with a light colour and the sum of pixel intensities in a rectangle
+region with a dark colour is the precise definition of Haar-like
+features. (Arunachalam, 2014)
+
+These rectangular areas can be positioned anywhere in the image and come
+in a variety of sizes and shapes. It is feasible to gather details about
+the texture and structure of a picture at various levels of granularity
+by computing Haar-like features at various scales and positions in the
+image.
+
+The Viola-Jones object detection technique, a well-liked algorithm for
+face detection in photos, makes use of Haar-like features. In this
+approach, a classifier is trained to differentiate between positive
+instances (pictures containing the item of interest, such as faces) and
+negative examples (images devoid of the object of interest), using a set
+of Haar-like characteristics computed for each sub-region of an input
+image. (Tyagi, 2021)
+
+One of the advantages of using Haar-like features for object detection
+is their computational efficiency. They are suitable for real-time
+applications like video surveillance since they are rapid and effective
+to compute utilising integral images. (Bąk, 2023)
+
 ## Conclusion: The Need for a Software Solution
+
+In this project, I\'m creating a parking application for educational
+purposes in an effort to solve the widespread parking issue in our
+cities. Time is lost, gasoline is consumed, and traffic is backed up due
+to Limerick City\'s old and inefficient parking systems. In order to
+increase the efficiency of identifying parking spaces and reduce the
+stress experienced by users searching for parking spaces, a new and
+creative software solution is required.
+
+I want to develop a fluid and stress-free parking experience for road
+users by utilizing the Django framework structure and putting into
+practice techniques like APIs that display users exactly where parking
+is available and provide directions straight to the area. Additionally,
+I will use a parking monitor powered by OpenCV to detect if a parking
+spot has been filled or made empty, further improving the effectiveness
+of the system.
+
+The present approaches for locating parking spaces are inefficient and
+wasteful, requiring a large amount of time and fuel. People spend an
+average of 17 hours a year searching for parking spaces, according to
+(McCoy, n.d.) and Irish people waste four days a year. (Sawer, 2017) I
+intend to end this time and energy waste by creating Perfect Parking,
+which will be advantageous to both users and the environment.
+
+The lack of obvious availability of parking spaces is another issue with
+the present parking schemes. Due to the limited vision created by
+numerous obstructions like the car\'s frame, trees, or other vehicles,
+drivers frequently struggle to find an open parking place. Users now
+spend much more time and fuel because of this issue.
+
+Furthermore, for new road users, finding parking spaces in a new place
+can be a challenging task. In Limerick City, students and tourists come
+from different regions to study or visit, and they must learn the road
+routes and where the parking is. This lack of knowledge can cause them
+to be in the wrong lanes and create traffic congestion. However, by
+providing users with the option to plan their route to the parking of
+their choice and follow directions on their phones to the car park, the
+application can help users navigate the city\'s roads and reduce traffic
+congestion.
+
+To conclude, there is a pressing need for a software solution to address
+the problems associated with parking in our cities. Perfect Parking aims
+to provide a solution that is innovative, effective, and user-friendly,
+with the potential to reduce time and fuel consumption, improve traffic
+flow, and create a stress-free parking experience for all road users.
 
 # Project Management
 
@@ -576,7 +723,7 @@ nearest parking to their location.
 text](./images/thesis/media/image3.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc132726957 .anchor}Figure 2- User Use Case Diagram
+[]{#_Toc132726957 .anchor}Figure - User Use Case Diagram
 
 ## System Actors
 
@@ -836,7 +983,7 @@ file instead of a camera.
 generated](./images/thesis/media/image4.png){width="5.395833333333333in"
 height="5.15625in"}
 
-[]{#_Toc132726761 .anchor}Figure 3 - Database Design
+[]{#_Toc132726761 .anchor}Figure - Database Design
 
 This database design consists of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
@@ -853,7 +1000,7 @@ This database design consists of three tables: \"User\",
     \"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
     \"Latitude\", and \"Longitude\".
 
-The diagrams shows a relationship between the \"ParkingLotMonitor\" and
+The diagrams show a relationship between the \"ParkingLotMonitor\" and
 \"ParkingLot\" tables through the use of the \"has\" symbol. The
 \"ParkingLotId\" column in the \"ParkingLotMonitor\" table acts as a
 connection point, serving as a foreign key to link the two tables.
@@ -864,7 +1011,7 @@ connection point, serving as a foreign key to link the two tables.
 generated](./images/thesis/media/image5.png){width="6.268055555555556in"
 height="2.0875in"}
 
-[]{#_Toc132726762 .anchor}Figure 4- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -928,24 +1075,115 @@ extraction, machine learning, and deep learning. OpenCV is a popular
 library for computer vision and image processing that provides various
 tools and functions for performing object recognition.
 
-The project is implements object recognition using OpenCV. The project
-uses the Haar Cascade Classifier, which is a machine learning-based
-approach for object detection. The Haar Cascade Classifier works by
-detecting features in an image that are characteristic of the object
-being detected, such as edges, corners, and lines. These features are
-then used to classify the object. Haar Cascade Classifiers can be
-trained to recognize specific objects, such as faces, eyes, and cars,
-and the code is able to detect and localize these objects within an
-image.
+The project implements object recognition using OpenCV. The project uses
+the Haar Cascade Classifier, which is a machine learning-based approach
+for object detection. The Haar Cascade Classifier works by detecting
+features in an image that are characteristic of the object being
+detected, such as edges, corners, and lines. These features are then
+used to classify the object. Haar Cascade Classifiers can be trained to
+recognize specific objects, such as faces, eyes, and cars, and the code
+is able to detect and localize these objects within an image.
 
 The project code uses the Haar Cascade Classifier to detect and
 recognize different objects within an image. The project also implements
 various pre-processing techniques, such as image resizing and
 normalization, to improve the accuracy of the object detection.
 
+## How Object Recognition and AI Is Used in Perfect Parking
+
+The project makes use of the free and open-source OpenCV computer vision
+library to identify and track vehicles in designated parking spaces as
+well as to deliver real-time updates on parking spot availability. The
+programme overlays the designated parking spaces into the video,
+initialising them as available or occupied dependent on the presence of
+cars.
+
+In the project, deep learning methods were used to train the object
+recognition system to identify and categorize parking spaces as occupied
+or vacant. This makes it a strong and adaptable tool for monitoring
+parking spaces, the program was able to learn and adjust to various
+lighting situations, car shapes and sizes, and other environmental
+parameters. The program was able to correctly identify when a car was
+present in a location by analyzing the average pixel intensity within
+the marked area after being trained on sizable datasets of labelled
+photos.
+
 ## Client and Server Architecture with Rest framework
 
 ### The Monitor
+
+The Perfect Parking Server receives parking status data from client
+applications. A client monitor app is responsible for processing video
+and determining if parking is available. A proof-of-concept project by
+Olga Rocheeva was sourced on GitHub and built upon to work with Perfect
+Parking. (Rocheeva, 2018)
+
+To setup a client, an administrator must mark out the spaces in an image
+of the video field before running the client application.
+
+To determine whether a car is present in the spot, the client python
+file motion_detector.py checks the average pixel intensity within the
+parking spots and comparing it to a threshold value. A location is
+regarded as available if the average intensity is below the threshold
+value and seen as occupied if it is above.
+
+1\. def detect_motion(self):
+
+2\.     \# \...
+
+3\.     coordinates = self.\_coordinates(p)
+
+4\.     logging.debug(\"coordinates: %s\", coordinates)
+
+5\.  
+
+6\.     rect = open_cv.boundingRect(coordinates)
+
+7\.     logging.debug(\"rect: %s\", rect)
+
+8\.  
+
+9\.     new_coordinates = coordinates.copy()
+
+10\.     new_coordinates\[:, 0\] = coordinates\[:, 0\] - rect\[0\]
+
+11\.     new_coordinates\[:, 1\] = coordinates\[:, 1\] - rect\[1\]
+
+12\.     logging.debug(\"new_coordinates: %s\", new_coordinates)
+
+13\.  
+
+14\.     \# \...
+
+15\.  
+
+16\.     mask = open_cv.drawContours(
+
+17\.         np.zeros((rect\[3\], rect\[2\]), dtype=np.uint8),
+
+18\.         \[new_coordinates\],
+
+19\.         contourIdx=-1,
+
+20\.         color=255,
+
+21\.         thickness=-1,
+
+22\.         lineType=open_cv.LINE_8)
+
+23\.  
+
+24\.     mask = mask == 255
+
+25\.     self.mask.append(mask)
+
+26\.     logging.debug(\"mask: %s\", self.mask)
+
+27\.     \# \...
+
+28\.  
+
+Protecting Private Data (Useranems, passords)
 
 The code in the server consists of five Python files: color.py,
 coordinates_generator.py, drawing_utils.py, motion_detector.py, and
@@ -1078,6 +1316,23 @@ the project poster. These tools were chosen for their reliability, ease
 of use, and suitability for the project requirements. By utilizing these
 tools, the project was able to be completed more efficiently, with
 greater accuracy and precision.
+
+## Django Rest API
+
+Django is a popular web development framework that is written in Python.
+It provides a set of tools and features that make it easy to build
+complex web applications quickly and efficiently. Django was created by
+Adrian Holovaty and Simon Willison in 2005, it features a vast
+collection of classes, libraries and modules that can be implemented in
+individual projects. With Django, you can create web applications that
+follow the Model-View-Controller (MVC) architecture, which helps to
+separate the different components of your application and make it easier
+to manage. Additionally, Django comes with a lot of built-in
+functionality, including an ORM for database interactions, an admin
+interface for managing site content, and a templating system for
+rendering HTML pages. Overall, Django is a powerful and flexible
+framework that is well-suited for building all kinds of web
+applications. (Johnson, n.d.)
 
 # Conclusion and Recommendations
 
