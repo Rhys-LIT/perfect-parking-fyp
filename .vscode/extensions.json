@@ -8,6 +8,7 @@
         "qwtel.sqlite-viewer",
         "wmaurer.change-case",
         "maptz.camelcasenavigation",
-        "jebbs.plantuml"
+        "jebbs.plantuml",
+        "alanwalk.markdown-navigation"
     ]
 }

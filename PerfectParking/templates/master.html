@@ -29,16 +29,21 @@
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
                     <li><a href="{% url 'parking-lots' %}" class="nav-link px-2 link-dark">Parking Lots</a></li>
+                    <li><a href="{% url 'parking-lot-monitors' %}" class="nav-link px-2 link-dark">Parking Lot Monitors</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Search</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Change Password</a></li>
                 </ul>
             </div>
     
+
             <div class="col-md-3 text-end">
                 <ul class="nav">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign in</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign up</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Sign out</a></li>
+                  {% if user.is_authenticated %}
+                  <li class="nav-item"><a href="{% url 'logout' %}"class="nav-link px-2 link-dark">Sign out</a></li>
+                  {% else %}
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link px-2 link-dark">Sign in</a></li>
+                    <li class="nav-item"><a href="{% url 'register-user' %}" class="nav-link px-2 link-dark">Sign up</a></li>
+                  {% endif %}
                 </ul>
             </div>
         </div>

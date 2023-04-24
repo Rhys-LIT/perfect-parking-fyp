@@ -1,0 +1,60 @@
+{% extends 'master.html' %}
+{% block title %}Registration{% endblock %}
+
+{% block main %}
+
+<h2>Register</h2>
+  
+<form method="post" class="needs-validation" novalidate>
+  {% csrf_token %}
+  <div class="mb-3">
+    {{ form.as_p }}
+  </div>
+  <div class="mb-3">
+    <label for="id_first_name" class="form-label">First Name:</label>
+    <input type="text" class="form-control" name="first_name" required>
+    <div class="invalid-feedback">
+      Please enter your first name.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="id_last_name" class="form-label">Last Name:</label>
+    <input type="text" class="form-control" name="last_name" required>
+    <div class="invalid-feedback">
+      Please enter your last name.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="id_email" class="form-label">Email:</label>
+    <input type="email" class="form-control" name="email" required>
+    <div class="invalid-feedback">
+      Please enter a valid email address.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<script>
+  // Enable client-side validation with Bootstrap's built-in form validation
+  // See https://getbootstrap.com/docs/5.1/forms/validation/
+  (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
+{% endblock %}

@@ -42,6 +42,8 @@ Built in user accounts are:
 
 ## Documentation
 
+All documentation is located in the [docs](./docs/readme.md) folder.
+
 - [Proposal](./docs/proposal.md)
 - [Literature Review](./docs/literature-review.md)
 - [Analysis and Design](./docs/analysis-and-design.md)

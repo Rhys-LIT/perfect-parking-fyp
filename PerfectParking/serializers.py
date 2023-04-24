@@ -21,4 +21,4 @@ class ParkingLotSerializer(serializers.HyperlinkedModelSerializer):
 class ParkingLotMonitorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ParkingLotMonitor
-        fields = ['id', 'name', 'latitude', 'longitude', 'ProbabilityParkingAvailable']
+        fields = ['id', 'name', 'latitude', 'longitude', 'probabilityParkingAvailable']

@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
+        "authtoken",
         "conda",
+        "Consolas",
         "createsuperuser",
         "djangorestframework",
         "makemigrations",
@@ -10,5 +12,9 @@
         "startapp",
         "startproject",
         "viewsets"
-    ]
+    ],
+    "plantuml.diagramsRoot": "docs\\diargrams",
+    "plantuml.exportFormat": "png",
+    "plantuml.exportIncludeFolderHeirarchy": false,
+    "plantuml.exportOutDir": "docs\\diargrams",
 }

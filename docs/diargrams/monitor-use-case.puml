@@ -2,7 +2,7 @@
 
 skinparam actorStyle awesome
 left to right direction
-"Monitor" as monitor
+"Monitor Bot" as monitor
 "Unauthenticated User" as guest
 "User" as user
 "Update Parking Lot Status" as (updateParkingLotStatus)

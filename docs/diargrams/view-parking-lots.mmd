@@ -1,0 +1,10 @@
+graph TD
+    subgraph User Account
+      UA(User Account) -- Login --> LS(Login System)
+    end
+    subgraph Login System
+      LS -- Authenticate --> PLL(Parking Lot List)
+    end
+    subgraph Parking Lot List
+      PLL -- Display --> PL(Parking Lot)
+    end

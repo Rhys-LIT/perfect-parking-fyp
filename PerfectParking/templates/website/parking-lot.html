@@ -11,6 +11,8 @@
             <dd>{{parking_lot.address}}</dd>
             <dt>Hours</dt>
             <dd>{{parking_lot.hours}}</dd>
+            <dt>Total Spaces</dt>
+            <dd>{{parking_lot.parking_spaces}}</dd>
         </dl>
     </div>
     <div class="col-md-6">
@@ -36,6 +38,10 @@
                     width: 600px;
                 }</style>
             </div>
+        </div>
+        <h2>Images</h2>
+        <div class="row">
+            <img src="{{parking_lot.image.url}}" class="img-responsive" alt="Responsive image"/>
         </div>
     </div>
 {% endblock %}
