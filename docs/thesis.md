@@ -359,13 +359,12 @@ demonstration end user usage and product viability.
 ## Report Structure
 
 The following is the report structure for the Perfect Parking Thesis.
-The report starts with a cover page, followed by an Acknowledgments
-section where the author expresses gratitude to those who contributed to
-the project. The report also includes an Abstract, which provides a
-brief overview of the project\'s purpose, scope, methods, and findings.
-A table of contents and a table of figures are generated automatically,
-providing a quick and easy way for readers to navigate through the
-report.
+The report has four chapets, lit review, analaysisi, design and
+colulusions gratitude to those who contributed to the project. The
+report also includes an Abstract, which provides a brief overview of the
+project\'s purpose, scope, methods, and findings. A table of contents
+and a table of figures are generated automatically, providing a quick
+and easy way for readers to navigate through the report.
 
 # Literature Review
 
@@ -671,7 +670,7 @@ nearest parking to their location.
 text](./images/thesis/media/image3.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc132726957 .anchor}Figure - User Use Case Diagram
+[]{#_Toc132726957 .anchor}Figure 2- User Use Case Diagram
 
 ## System Actors
 
@@ -960,7 +959,7 @@ file instead of a camera.
 generated](./images/thesis/media/image4.png){width="5.395833333333333in"
 height="5.15625in"}
 
-[]{#_Toc132726761 .anchor}Figure - Database Design
+[]{#_Toc132726761 .anchor}Figure 3 - Database Design
 
 This database design consists of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
@@ -988,7 +987,7 @@ connection point, serving as a foreign key to link the two tables.
 generated](./images/thesis/media/image5.png){width="6.268055555555556in"
 height="2.0875in"}
 
-[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 4- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
