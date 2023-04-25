@@ -39,7 +39,7 @@ like it will also help with traffic congestion in the city as people
 won't need to keep driving around the block to find a convenient parking
 space.*
 
-# Table of Contents {#table-of-contents .TOC-Heading}
+# Table of Contents {#table-of-contents .unnumbered}
 
 [Acknowledgments [ii](#acknowledgments)](#acknowledgments)
 
@@ -54,13 +54,13 @@ space.*
 
 [1.2 Problem Statement [9](#problem-statement)](#problem-statement)
 
-[1.3 Product title: a solution
-[11](#perfect-parking-a-solution)](#perfect-parking-a-solution)
+[1.3 Perfect Parking: a solution
+[10](#perfect-parking-a-solution)](#perfect-parking-a-solution)
 
-[1.4 Objectives [11](#objectives)](#objectives)
+[1.4 Objectives [10](#objectives)](#objectives)
 
 [1.5 The Scope of the solution
-[11](#the-scope-of-the-solution)](#the-scope-of-the-solution)
+[10](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
 [1.6 Report Structure [11](#report-structure)](#report-structure)
 
@@ -81,216 +81,183 @@ space.*
 [2.1.4 What is the importance of Real Time data?
 [13](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
 
-[2.1.5 Problems with gathering data.
+[2.2 Problems with gathering data.
 [14](#problems-with-gathering-data.)](#problems-with-gathering-data.)
 
 [2.1 Object Recognition and AI
 [14](#object-recognition-and-ai)](#object-recognition-and-ai)
 
-[2.2 How we can choose [14](#_Toc132876402)](#_Toc132876402)
+[2.1.0 Machine Learning [14](#machine-learning)](#machine-learning)
 
-[2.2.1 Machine Learning [14](#machine-learning)](#machine-learning)
+[2.1.1 Computer Vision [15](#computer-vision)](#computer-vision)
 
-[2.3 Conclusion: The Need for a Software Solution
-[14](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
+[2.1.2 Object Detection [15](#object-detection)](#object-detection)
+
+[2.1.3 Cascading classifiers
+[15](#cascading-classifiers)](#cascading-classifiers)
+
+[2.1.4 Haar-like feature [16](#haar-like-feature)](#haar-like-feature)
+
+[2.2 Conclusion: The Need for a Software Solution
+[17](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
 
 [Chapter 3 Project Management
-[15](#project-management)](#project-management)
+[19](#project-management)](#project-management)
 
-[3.1 Weekly Meetings [15](#weekly-meetings)](#weekly-meetings)
+[3.1 Weekly Meetings [19](#weekly-meetings)](#weekly-meetings)
 
 [3.2 Source code management (SCM)
-[15](#source-code-management-scm)](#source-code-management-scm)
+[19](#source-code-management-scm)](#source-code-management-scm)
 
-[3.3 Code Style Guide [15](#code-style-guide)](#code-style-guide)
+[3.3 Code Style Guide [19](#code-style-guide)](#code-style-guide)
 
 [3.4 Collaboration Tools
-[15](#collaboration-tools)](#collaboration-tools)
+[19](#collaboration-tools)](#collaboration-tools)
 
-[3.4.1 GitHub [15](#github)](#github)
+[3.4.1 GitHub [19](#github)](#github)
 
 [3.4.2 Microsoft Office Online
-[15](#microsoft-office-online)](#microsoft-office-online)
+[19](#microsoft-office-online)](#microsoft-office-online)
 
-[Chapter 4 Data Analytic Methods [16](#_Toc132876412)](#_Toc132876412)
+[Chapter 4 Analysis and Design
+[20](#analysis-and-design)](#analysis-and-design)
 
-[4.1 Artificial Intelligence [16](#_Toc132876413)](#_Toc132876413)
+[4.1 Unique Selling Point
+[20](#unique-selling-point)](#unique-selling-point)
 
-[4.2 Categorization [16](#_Toc132876414)](#_Toc132876414)
+[4.2 The Application [20](#the-application)](#the-application)
 
-[4.3 Estimation [16](#_Toc132876415)](#_Toc132876415)
+[4.3 Users Use Case Diagram
+[21](#users-use-case-diagram)](#users-use-case-diagram)
 
-[4.4 Machine Learning [16](#_Toc132876416)](#_Toc132876416)
+[4.4 System Actors [21](#system-actors)](#system-actors)
 
-[4.4.1 Garbage in, likely garbage out
-[16](#_Toc132876417)](#_Toc132876417)
+[4.5 Use Case Descriptions
+[21](#use-case-descriptions)](#use-case-descriptions)
 
-[4.5 Working with Data Structures Object Orientated Programming
-[16](#_Toc132876418)](#_Toc132876418)
+[4.5.1 Use Case: Find Parking
+[21](#use-case-find-parking)](#use-case-find-parking)
 
-[4.6 Examples [16](#_Toc132876419)](#_Toc132876419)
+[4.5.2 Use Case: Register User
+[22](#use-case-register-user)](#use-case-register-user)
 
-[4.7 Conclusion [16](#_Toc132876420)](#_Toc132876420)
+[4.5.3 Use Case: Update Parking Lot Status
+[23](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
 
-[Chapter 5 Analysis and Design
-[18](#analysis-and-design)](#analysis-and-design)
+[4.5.4 Use Case: User changes password.
+[24](#use-case-user-changes-password.)](#use-case-user-changes-password.)
 
-[5.1 Unique Selling Point
-[18](#unique-selling-point)](#unique-selling-point)
+[4.6 Identifying the free/busy car parking spaces
+[25](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
-[5.2 The Application [18](#the-application)](#the-application)
+[4.7 Machine Learning / Artificial Intelligence (AI)
+[25](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
 
-[5.3 Users Use Case Diagram
-[18](#users-use-case-diagram)](#users-use-case-diagram)
+[4.8 Sensors [25](#a-look-to-the-future)](#a-look-to-the-future)
 
-[5.4 System Actors [19](#system-actors)](#system-actors)
+[4.8.1 Development limitations
+[26](#development-limitations)](#development-limitations)
 
-[5.5 Use Case Descriptions
-[19](#use-case-descriptions)](#use-case-descriptions)
+[4.9 Machine Learning Algorithms
+[26](#machine-learning-algorithms)](#machine-learning-algorithms)
 
-[5.5.1 Use Case: Find Parking
-[19](#use-case-find-parking)](#use-case-find-parking)
+[4.10 Database design [26](#database-design)](#database-design)
 
-[5.5.2 Use Case: Register User
-[20](#use-case-register-user)](#use-case-register-user)
+[4.11 User Parking Sequence diagram
+[27](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
-[5.5.3 Use Case: Update Parking Lot Status
-[21](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
+[4.1 Introduction and focus [28](#_Toc133322575)](#_Toc133322575)
 
-[5.5.4 Use Case: User changes password.
-[22](#use-case-user-changes-password.)](#use-case-user-changes-password.)
+[4.2 Academic Aims [28](#_Toc133322576)](#_Toc133322576)
 
-[5.6 Identifying the free/busy car parking spaces
-[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[4.2.1 Academic Requirements [28](#_Toc133322577)](#_Toc133322577)
 
-[5.7 Machine Learning / Artificial Intelligence (AI)
-[23](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
+[4.3 Functional Requirements [28](#_Toc133322578)](#_Toc133322578)
 
-[5.8 Sensors [23](#sensors)](#sensors)
+[4.4 Non-Functional Requirements [28](#_Toc133322579)](#_Toc133322579)
 
-[5.8.1 Development limitations
-[23](#development-limitations)](#development-limitations)
+[4.5 Statistics [28](#_Toc133322580)](#_Toc133322580)
 
-[5.9 Machine Learning Algorithms
-[23](#machine-learning-algorithms)](#machine-learning-algorithms)
+[Chapter 5 Implementation [29](#implementation)](#implementation)
 
-[5.10 Database design [24](#database-design)](#database-design)
+[5.1 Object Recognition in Images
+[29](#object-recognition-in-images)](#object-recognition-in-images)
 
-[5.11 User Parking Sequence diagram
-[25](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
+[5.2 How Object Recognition and AI Is Used in Perfect Parking
+[29](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
 
-[5.1 Introduction and focus
-[25](#introduction-and-focus)](#introduction-and-focus)
+[5.3 Client and Server Architecture with Rest framework
+[30](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
 
-[5.2 Academic Aims [26](#academic-aims)](#academic-aims)
+[5.3.1 The Monitor [30](#the-monitor)](#the-monitor)
 
-[5.2.1 Academic Requirements
-[26](#academic-requirements)](#academic-requirements)
+[5.3.2 Server [32](#server)](#server)
 
-[5.3 Functional Requirements
-[26](#functional-requirements)](#functional-requirements)
+[5.3.3 How They Work Together
+[33](#how-they-work-together)](#how-they-work-together)
 
-[5.4 Non-Functional Requirements
-[26](#non-functional-requirements)](#non-functional-requirements)
+[5.3.4 Source Control and versioning
+[33](#source-control-and-versioning)](#source-control-and-versioning)
 
-[5.5 Statistics [26](#statistics)](#statistics)
+[5.4 Development Environment
+[33](#development-environment)](#development-environment)
 
-[Chapter 6 Results [27](#implementation)](#implementation)
+[5.5 Tools Used [33](#tools-used)](#tools-used)
 
-[6.1 Project Plan: Priorities and Milestones
-[27](#_Toc132876445)](#_Toc132876445)
+[5.6 Django Rest API [34](#django-rest-api)](#django-rest-api)
 
-[6.1.0 The Data Structure [27](#_Toc132876446)](#_Toc132876446)
+[5.6.1 Perfect Parking with Django
+[34](#perfect-parking-with-django)](#perfect-parking-with-django)
 
-[6.1.1 Populating the System with Data
-[27](#_Toc132876447)](#_Toc132876447)
+[5.7 Anaconda [35](#anaconda)](#anaconda)
 
-[6.1.2 Machine Learning [27](#_Toc132876448)](#_Toc132876448)
+[Chapter 6 Conclusion and Recommendations
+[36](#conclusion-and-recommendations)](#conclusion-and-recommendations)
 
-[6.1.3 Testing [27](#_Toc132876449)](#_Toc132876449)
+[6.1 Conclusion [36](#conclusion)](#conclusion)
 
-[6.1.4 Paths to completion [27](#_Toc132876450)](#_Toc132876450)
+[6.2 Recommendations [36](#recommendations)](#recommendations)
 
-[6.2 Data Structures [27](#_Toc132876451)](#_Toc132876451)
+[References [37](#_Toc133322597)](#_Toc133322597)
 
-[6.3 System Architecture [27](#_Toc132876452)](#_Toc132876452)
+[Glossary [38](#glossary)](#glossary)
 
-[6.3.1 Object Identification [27](#_Toc132876453)](#_Toc132876453)
+[Appendix A Reflections [39](#reflections)](#reflections)
 
-[6.4 Machine Learning [27](#_Toc132876454)](#_Toc132876454)
-
-[6.5 Conclusion [27](#_Toc132876455)](#_Toc132876455)
-
-[Chapter 7 Implementation [28](#implementation)](#implementation)
-
-[7.1 Object Recognition in Images
-[28](#object-recognition-in-images)](#object-recognition-in-images)
-
-[7.2 Client and Server Architecture with Rest framework
-[28](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
-
-[7.2.1 The Monitor [28](#the-monitor)](#the-monitor)
-
-[7.2.2 Server [29](#server)](#server)
-
-[7.2.3 How They Work Together
-[30](#how-they-work-together)](#how-they-work-together)
-
-[7.2.4 Source Control and versioning
-[31](#source-control-and-versioning)](#source-control-and-versioning)
-
-[7.3 Development Environment
-[31](#development-environment)](#development-environment)
-
-[7.4 Tools Used [31](#tools-used)](#tools-used)
-
-[Chapter 8 Conclusion and Recommendations
-[32](#conclusion-and-recommendations)](#conclusion-and-recommendations)
-
-[8.1 Conclusion [32](#conclusion)](#conclusion)
-
-[8.2 Recommendations [32](#recommendations)](#recommendations)
-
-[References [33](#_Toc132876468)](#_Toc132876468)
-
-[Glossary [34](#glossary)](#glossary)
-
-[Appendix A Reflections [35](#reflections)](#reflections)
-
-[A.1 Report Structure [35](#report-structure-1)](#report-structure-1)
+[A.1 Report Structure [39](#report-structure-1)](#report-structure-1)
 
 [Appendix B Project Management
-[36](#project-management-1)](#project-management-1)
+[40](#project-management-1)](#project-management-1)
 
-[B.1 Report Structure [36](#report-structure-2)](#report-structure-2)
+[B.1 Report Structure [40](#report-structure-2)](#report-structure-2)
 
-[B.2 Code Style Guide [36](#code-style-guide-1)](#code-style-guide-1)
+[B.2 Code Style Guide [40](#code-style-guide-1)](#code-style-guide-1)
 
 [B.2.1 Naming conventions
-[36](#naming-conventions)](#naming-conventions)
+[40](#naming-conventions)](#naming-conventions)
 
 [B.2.2 Avoid magic constant numbers.
-[36](#avoid-magic-constant-numbers.)](#avoid-magic-constant-numbers.)
+[40](#avoid-magic-constant-numbers.)](#avoid-magic-constant-numbers.)
 
-[B.2.3 Variable naming [36](#variable-naming)](#variable-naming)
+[B.2.3 Variable naming [40](#variable-naming)](#variable-naming)
 
-[B.2.4 Methods [36](#methods)](#methods)
+[B.2.4 Methods [40](#methods)](#methods)
 
-[B.2.5 Imports [36](#imports)](#imports)
+[B.2.5 Imports [40](#imports)](#imports)
 
-[B.2.6 Comments [36](#comments)](#comments)
+[B.2.6 Comments [40](#comments)](#comments)
 
-[B.2.7 Documentation [36](#documentation)](#documentation)
+[B.2.7 Documentation [40](#documentation)](#documentation)
 
-[B.2.8 Classes [36](#classes)](#classes)
+[B.2.8 Classes [40](#classes)](#classes)
 
 [B.2.9 Spacing, Indentation
-[36](#spacing-indentation)](#spacing-indentation)
+[40](#spacing-indentation)](#spacing-indentation)
 
-[B.2.10 Literals [36](#literals)](#literals)
+[B.2.10 Literals [40](#literals)](#literals)
 
 [Appendix C Development Environment
-[37](#development-environment-1)](#development-environment-1)
+[41](#development-environment-1)](#development-environment-1)
 
 # Table of Figure
 
@@ -326,7 +293,7 @@ is a big city for students to come and study in with there being over
 16,000 students attending university of limerick and just under 2000
 students in TUS and Mary I, this brings so much more motor vehicles into
 limerick city which is a city already struggling with car parking.
-(Anon., 2022)
+(University of Limerick, 2022)
 
 The goal is to try and reduce this issue by building a new innovative
 parking app and to try to help motorists stop stressing about this
@@ -495,27 +462,8 @@ parking to see if that type of parking space is available.
 
 ## Problems with gathering data.
 
-When tech companies are building applications such as parking
-applications, they are given a budget by the parking company, and this
-enables them to put in these parking sensors or put in barriers to
-gather the real-time data for the users. This is where I face a big
-problem with gathering this data, since TUS carpark and other car parks
-in the city is monitored by another parking company called APCOA I am
-very limited to what data I can gather. Since I'm building this
-application on a very small scale gathering real-time data is going to
-be nearly impossible. One solution that I did think of would be to build
-my own parking space sensor using a raspberry pi and putting this down
-in a parking space in either my college or in the city, with doing this
-brings even more problems, these problems being:
-
--   Permission must be sought from APCAO to allow a sensor to be placed
-    on their parking premises.
-
--   If I do get permission since the sensor would only be on a raspberry
-    pi it could easily get damaged or stolen.
-
--   I would only be able to build one sensor for one single parking spot
-    which wouldn't gather much real-time data for the users.
+Generic paragraph of the problems of collecting big bag, non-domain
+specific
 
 ## Object Recognition and AI
 
@@ -955,7 +903,12 @@ be trained using data collected from the sensors. The machine learning
 algorithm will then be used to identify if a car parking space is free
 or busy.
 
-## Sensors
+## A look to the future
+
+Senors and a collting of large amounts of personal data are beyonf the
+ospe of this project ...
+
+### Sensors
 
 Overhead Cameras will watch the car parking space and will feed the
 video stream to a local client application. The local client application
@@ -964,7 +917,31 @@ is free or busy. The local client application will then send the status
 of the car parking space to the central server if it detects a change in
 the status of the car parking space.
 
-### Development limitations
+### Collecting of data
+
+When tech companies are building applications such as parking
+applications, they are given a budget by the parking company, and this
+enables them to put in these parking sensors or put in barriers to
+gather the real-time data for the users. This is where I face a big
+problem with gathering this data, since TUS carpark and other car parks
+in the city is monitored by another parking company called APCOA I am
+very limited to what data I can gather. Since I'm building this
+application on a very small scale gathering real-time data is going to
+be nearly impossible. One solution that I did think of would be to build
+my own parking space sensor using a raspberry pi and putting this down
+in a parking space in either my college or in the city, with doing this
+brings even more problems, these problems being:
+
+-   Permission must be sought from APCAO to allow a sensor to be placed
+    on their parking premises.
+
+-   If I do get permission since the sensor would only be on a raspberry
+    pi it could easily get damaged or stolen.
+
+-   I would only be able to build one sensor for one single parking spot
+    which wouldn't gather much real-time data for the users.
+
+## Development limitations
 
 This being a trial application, with a limited budget and permission
 problems, for the purpose of a university project, the client
@@ -1032,37 +1009,6 @@ MallowStreetPart2ParkingLotMonitor 45%.
 Finally, the application then sends a response to the user indicating
 that there are 3 parking lots available near their location, with the
 names HenrySt, LowerHartstonge, and MallowStreetPart1.
-
-## Introduction and focus 
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Academic Aims
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
--   Bullets
-
--   Bullets
-
-### Academic Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Functional Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Non-Functional Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Statistics
 
 # Implementation
 
@@ -1234,7 +1180,7 @@ the motion detection system with other systems.
 
 ### Server
 
-The client-side code for this Django project consists of several files,
+The server-side code for this Django project consists of several files,
 including admin.py, apps.py, models.py, serializers.py, urls.py, and
 views.py.
 
@@ -1333,6 +1279,70 @@ interface for managing site content, and a templating system for
 rendering HTML pages. Overall, Django is a powerful and flexible
 framework that is well-suited for building all kinds of web
 applications. (Johnson, n.d.)
+
+### Perfect Parking with Django
+
+The Perfect Parking application was created using the popular web
+framework Django for a variety of reasons.
+
+Firstly, Django is a high-level web framework that follows the
+Model-View-Controller (MVC) architectural pattern, which promotes code
+organization and separation of concerns. This allows for the development
+of complex programmes with numerous components without compromising the
+maintainability of the code.
+
+Secondly, Django provides a lot of built-in functionality out of the
+box, which saves time and effort during development. For example, Django
+includes an Object-Relational Mapping (ORM) system that allows
+developers to interact with databases using Python objects, as well as a
+robust authentication system for user management.
+
+Thirdly, Django has an engaged community that actively supports the
+framework\'s growth and upkeep. This indicates that a wide variety of
+third-party packages and extensions are readily available and can
+increase the capabilities of the framework and speed up development.
+
+Along with these benefits, Django\'s outstanding documentation,
+scalability, and security capabilities are some of the other benefits of
+adopting it for web development. Django is also open-source and free,
+which makes it available to a variety of developers and organisations.
+
+Overall, the decision to use Django for the Perfect Parking application
+was based on its combination of ease of use, built-in functionality, and
+strong community support, which makes it a popular choice for building
+web applications of all sizes and complexities.
+
+## Anaconda
+
+Anaconda is a popular distribution of the Python programming language
+that is widely used for data science and scientific computing. It comes
+with a sizable number of pre-installed libraries and tools that are
+frequently used in these domains, including Jupyter Notebook, NumPy,
+Pandas, and Matplotlib.
+
+Anaconda is designed to make it easy to set up and manage Python
+environments, which are essentially separate installations of Python
+with their own dependencies and libraries. When working on several
+projects with various requirements, this is especially helpful because
+it enables you to keep them separate from one another.
+
+The Conda package manager, which lets you easily install, update, and
+manage additional software packages and libraries, is included with
+Anaconda in addition to Python and its libraries. When working with
+non-Python libraries that are necessary for your project, this can be
+helpful.
+
+Utilising Anaconda has several benefits, one of which is how much easier
+it makes it to set up a Python environment for data research or
+scientific computing. It removes the need to individually install and
+configure each library, which can be a time-consuming and error-prone
+operation, by offering a pre-built distribution with many of the
+frequently used libraries already installed.
+
+Overall, Anaconda is a robust and adaptable tool that is well-liked by
+those who work in data research and scientific computing. Researchers,
+developers, and data analysts all favour it because of how simple it is
+to use and the extensive library of tools that are already installed.
 
 # Conclusion and Recommendations
 
