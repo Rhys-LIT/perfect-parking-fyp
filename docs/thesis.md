@@ -39,7 +39,7 @@ like it will also help with traffic congestion in the city as people
 won't need to keep driving around the block to find a convenient parking
 space.*
 
-# Table of Contents {#table-of-contents .TOC-Heading}
+# Table of Contents {#table-of-contents .unnumbered}
 
 [Acknowledgments [ii](#acknowledgments)](#acknowledgments)
 
@@ -54,13 +54,13 @@ space.*
 
 [1.2 Problem Statement [9](#problem-statement)](#problem-statement)
 
-[1.3 Product title: a solution
-[11](#perfect-parking-a-solution)](#perfect-parking-a-solution)
+[1.3 Perfect Parking: a solution
+[10](#perfect-parking-a-solution)](#perfect-parking-a-solution)
 
-[1.4 Objectives [11](#objectives)](#objectives)
+[1.4 Objectives [10](#objectives)](#objectives)
 
 [1.5 The Scope of the solution
-[11](#the-scope-of-the-solution)](#the-scope-of-the-solution)
+[10](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
 [1.6 Report Structure [11](#report-structure)](#report-structure)
 
@@ -81,227 +81,189 @@ space.*
 [2.1.4 What is the importance of Real Time data?
 [13](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
 
-[2.1.5 Problems with gathering data.
+[2.2 Problems with gathering data.
 [14](#problems-with-gathering-data.)](#problems-with-gathering-data.)
 
 [2.1 Object Recognition and AI
 [14](#object-recognition-and-ai)](#object-recognition-and-ai)
 
-[2.2 How we can choose [14](#_Toc132876402)](#_Toc132876402)
+[2.1.0 Machine Learning [14](#machine-learning)](#machine-learning)
 
-[2.2.1 Machine Learning [14](#machine-learning)](#machine-learning)
+[2.1.1 Computer Vision [15](#computer-vision)](#computer-vision)
 
-[2.3 Conclusion: The Need for a Software Solution
-[14](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
+[2.1.2 Object Detection [15](#object-detection)](#object-detection)
+
+[2.1.3 Cascading classifiers
+[15](#cascading-classifiers)](#cascading-classifiers)
+
+[2.1.4 Haar-like feature [16](#haar-like-feature)](#haar-like-feature)
+
+[2.2 Conclusion: The Need for a Software Solution
+[17](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
 
 [Chapter 3 Project Management
-[15](#project-management)](#project-management)
+[19](#project-management)](#project-management)
 
-[3.1 Weekly Meetings [15](#weekly-meetings)](#weekly-meetings)
+[3.1 Weekly Meetings [19](#weekly-meetings)](#weekly-meetings)
 
 [3.2 Source code management (SCM)
-[15](#source-code-management-scm)](#source-code-management-scm)
+[19](#source-code-management-scm)](#source-code-management-scm)
 
-[3.3 Code Style Guide [15](#code-style-guide)](#code-style-guide)
+[3.3 Code Style Guide [19](#code-style-guide)](#code-style-guide)
 
 [3.4 Collaboration Tools
-[15](#collaboration-tools)](#collaboration-tools)
+[19](#collaboration-tools)](#collaboration-tools)
 
-[3.4.1 GitHub [15](#github)](#github)
+[3.4.1 GitHub [19](#github)](#github)
 
 [3.4.2 Microsoft Office Online
-[15](#microsoft-office-online)](#microsoft-office-online)
+[19](#microsoft-office-online)](#microsoft-office-online)
 
-[Chapter 4 Data Analytic Methods [16](#_Toc132876412)](#_Toc132876412)
+[Chapter 4 Analysis and Design
+[20](#analysis-and-design)](#analysis-and-design)
 
-[4.1 Artificial Intelligence [16](#_Toc132876413)](#_Toc132876413)
+[4.1 Unique Selling Point
+[20](#unique-selling-point)](#unique-selling-point)
 
-[4.2 Categorization [16](#_Toc132876414)](#_Toc132876414)
+[4.2 The Application [20](#the-application)](#the-application)
 
-[4.3 Estimation [16](#_Toc132876415)](#_Toc132876415)
+[4.3 Users Use Case Diagram
+[21](#users-use-case-diagram.)](#users-use-case-diagram.)
 
-[4.4 Machine Learning [16](#_Toc132876416)](#_Toc132876416)
+[4.4 System Actors [21](#system-actors)](#system-actors)
 
-[4.4.1 Garbage in, likely garbage out
-[16](#_Toc132876417)](#_Toc132876417)
+[4.5 Use Case Descriptions
+[21](#use-case-descriptions)](#use-case-descriptions)
 
-[4.5 Working with Data Structures Object Orientated Programming
-[16](#_Toc132876418)](#_Toc132876418)
+[4.5.1 Use Case: Find Parking
+[21](#use-case-find-parking)](#use-case-find-parking)
 
-[4.6 Examples [16](#_Toc132876419)](#_Toc132876419)
+[4.5.2 Use Case: Register User
+[22](#use-case-register-user)](#use-case-register-user)
 
-[4.7 Conclusion [16](#_Toc132876420)](#_Toc132876420)
+[4.5.3 Use Case: Update Parking Lot Status
+[23](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
 
-[Chapter 5 Analysis and Design
-[18](#analysis-and-design)](#analysis-and-design)
+[4.5.4 Use Case: User changes password.
+[24](#use-case-user-changes-password.)](#use-case-user-changes-password.)
 
-[5.1 Unique Selling Point
-[18](#unique-selling-point)](#unique-selling-point)
+[4.6 Identifying the free/busy car parking spaces
+[25](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
-[5.2 The Application [18](#the-application)](#the-application)
+[4.7 Machine Learning / Artificial Intelligence (AI)
+[25](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
 
-[5.3 Users Use Case Diagram
-[18](#users-use-case-diagram)](#users-use-case-diagram)
+[4.8 Sensors [25](#a-look-to-the-future)](#a-look-to-the-future)
 
-[5.4 System Actors [19](#system-actors)](#system-actors)
+[4.8.1 Development limitations
+[26](#development-limitations)](#development-limitations)
 
-[5.5 Use Case Descriptions
-[19](#use-case-descriptions)](#use-case-descriptions)
+[4.9 Machine Learning Algorithms
+[26](#machine-learning-algorithms)](#machine-learning-algorithms)
 
-[5.5.1 Use Case: Find Parking
-[19](#use-case-find-parking)](#use-case-find-parking)
+[4.10 Database design [26](#database-design)](#database-design)
 
-[5.5.2 Use Case: Register User
-[20](#use-case-register-user)](#use-case-register-user)
+[4.11 User Parking Sequence diagram
+[27](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
-[5.5.3 Use Case: Update Parking Lot Status
-[21](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
+[4.1 Introduction and focus [28](#_Toc133322575)](#_Toc133322575)
 
-[5.5.4 Use Case: User changes password.
-[22](#use-case-user-changes-password.)](#use-case-user-changes-password.)
+[4.2 Academic Aims [28](#_Toc133322576)](#_Toc133322576)
 
-[5.6 Identifying the free/busy car parking spaces
-[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[4.2.1 Academic Requirements [28](#_Toc133322577)](#_Toc133322577)
 
-[5.7 Machine Learning / Artificial Intelligence (AI)
-[23](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
+[4.3 Functional Requirements [28](#_Toc133322578)](#_Toc133322578)
 
-[5.8 Sensors [23](#sensors)](#sensors)
+[4.4 Non-Functional Requirements [28](#_Toc133322579)](#_Toc133322579)
 
-[5.8.1 Development limitations
-[23](#development-limitations)](#development-limitations)
+[4.5 Statistics [28](#_Toc133322580)](#_Toc133322580)
 
-[5.9 Machine Learning Algorithms
-[23](#machine-learning-algorithms)](#machine-learning-algorithms)
+[Chapter 5 Implementation [29](#implementation)](#implementation)
 
-[5.10 Database design [24](#database-design)](#database-design)
+[5.1 Object Recognition in Images
+[29](#object-recognition-in-images)](#object-recognition-in-images)
 
-[5.11 User Parking Sequence diagram
-[25](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
+[5.2 How Object Recognition and AI Is Used in Perfect Parking
+[29](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
 
-[5.1 Introduction and focus
-[25](#introduction-and-focus)](#introduction-and-focus)
+[5.3 Client and Server Architecture with Rest framework
+[30](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
 
-[5.2 Academic Aims [26](#academic-aims)](#academic-aims)
+[5.3.1 The Monitor [30](#the-monitor)](#the-monitor)
 
-[5.2.1 Academic Requirements
-[26](#academic-requirements)](#academic-requirements)
+[5.3.2 Server [32](#server)](#server)
 
-[5.3 Functional Requirements
-[26](#functional-requirements)](#functional-requirements)
+[5.3.3 How They Work Together
+[33](#how-they-work-together)](#how-they-work-together)
 
-[5.4 Non-Functional Requirements
-[26](#non-functional-requirements)](#non-functional-requirements)
+[5.3.4 Source Control and versioning
+[33](#project-management)](#project-management)
 
-[5.5 Statistics [26](#statistics)](#statistics)
+[5.4 Development Environment [33](#_Toc133322589)](#_Toc133322589)
 
-[Chapter 6 Results [27](#implementation)](#implementation)
+[5.5 Tools Used [33](#tools-used)](#tools-used)
 
-[6.1 Project Plan: Priorities and Milestones
-[27](#_Toc132876445)](#_Toc132876445)
+[5.6 Django Rest API [34](#django-rest-api)](#django-rest-api)
 
-[6.1.0 The Data Structure [27](#_Toc132876446)](#_Toc132876446)
+[5.6.1 Perfect Parking with Django
+[34](#perfect-parking-with-django)](#perfect-parking-with-django)
 
-[6.1.1 Populating the System with Data
-[27](#_Toc132876447)](#_Toc132876447)
+[5.7 Anaconda [35](#anaconda)](#anaconda)
 
-[6.1.2 Machine Learning [27](#_Toc132876448)](#_Toc132876448)
+[Chapter 6 Conclusion and Recommendations
+[36](#_Toc133322594)](#_Toc133322594)
 
-[6.1.3 Testing [27](#_Toc132876449)](#_Toc132876449)
+[6.1 Conclusion [36](#_Toc133322595)](#_Toc133322595)
 
-[6.1.4 Paths to completion [27](#_Toc132876450)](#_Toc132876450)
+[6.2 Recommendations [36](#_Toc133322596)](#_Toc133322596)
 
-[6.2 Data Structures [27](#_Toc132876451)](#_Toc132876451)
+[References [37](#_Toc133322597)](#_Toc133322597)
 
-[6.3 System Architecture [27](#_Toc132876452)](#_Toc132876452)
+[Glossary [38](#glossary)](#glossary)
 
-[6.3.1 Object Identification [27](#_Toc132876453)](#_Toc132876453)
+[Appendix A Reflections [39](#reflections)](#reflections)
 
-[6.4 Machine Learning [27](#_Toc132876454)](#_Toc132876454)
-
-[6.5 Conclusion [27](#_Toc132876455)](#_Toc132876455)
-
-[Chapter 7 Implementation [28](#implementation)](#implementation)
-
-[7.1 Object Recognition in Images
-[28](#object-recognition-in-images)](#object-recognition-in-images)
-
-[7.2 Client and Server Architecture with Rest framework
-[28](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
-
-[7.2.1 The Monitor [28](#the-monitor)](#the-monitor)
-
-[7.2.2 Server [29](#server)](#server)
-
-[7.2.3 How They Work Together
-[30](#how-they-work-together)](#how-they-work-together)
-
-[7.2.4 Source Control and versioning
-[31](#source-control-and-versioning)](#source-control-and-versioning)
-
-[7.3 Development Environment
-[31](#development-environment)](#development-environment)
-
-[7.4 Tools Used [31](#tools-used)](#tools-used)
-
-[Chapter 8 Conclusion and Recommendations
-[32](#conclusion-and-recommendations)](#conclusion-and-recommendations)
-
-[8.1 Conclusion [32](#conclusion)](#conclusion)
-
-[8.2 Recommendations [32](#recommendations)](#recommendations)
-
-[References [33](#_Toc132876468)](#_Toc132876468)
-
-[Glossary [34](#glossary)](#glossary)
-
-[Appendix A Reflections [35](#reflections)](#reflections)
-
-[A.1 Report Structure [35](#report-structure-1)](#report-structure-1)
+[A.1 Report Structure [39](#_Toc133322600)](#_Toc133322600)
 
 [Appendix B Project Management
-[36](#project-management-1)](#project-management-1)
+[40](#project-management-1)](#project-management-1)
 
-[B.1 Report Structure [36](#report-structure-2)](#report-structure-2)
+[B.1 Report Structure [40](#report-structure-1)](#report-structure-1)
 
-[B.2 Code Style Guide [36](#code-style-guide-1)](#code-style-guide-1)
+[B.2 Code Style Guide [40](#_Toc133322603)](#_Toc133322603)
 
-[B.2.1 Naming conventions
-[36](#naming-conventions)](#naming-conventions)
+[B.2.1 Naming conventions [40](#_Toc133322604)](#_Toc133322604)
 
 [B.2.2 Avoid magic constant numbers.
-[36](#avoid-magic-constant-numbers.)](#avoid-magic-constant-numbers.)
+[40](#_Toc133322605)](#_Toc133322605)
 
-[B.2.3 Variable naming [36](#variable-naming)](#variable-naming)
+[B.2.3 Variable naming [40](#_Toc133322606)](#_Toc133322606)
 
-[B.2.4 Methods [36](#methods)](#methods)
+[B.2.4 Methods [40](#_Toc133322607)](#_Toc133322607)
 
-[B.2.5 Imports [36](#imports)](#imports)
+[B.2.5 Imports [40](#_Toc133322608)](#_Toc133322608)
 
-[B.2.6 Comments [36](#comments)](#comments)
+[B.2.6 Comments [40](#_Toc133322609)](#_Toc133322609)
 
-[B.2.7 Documentation [36](#documentation)](#documentation)
+[B.2.7 Documentation [40](#_Toc133322610)](#_Toc133322610)
 
-[B.2.8 Classes [36](#classes)](#classes)
+[B.2.8 Classes [40](#_Toc133322611)](#_Toc133322611)
 
-[B.2.9 Spacing, Indentation
-[36](#spacing-indentation)](#spacing-indentation)
+[B.2.9 Spacing, Indentation [40](#_Toc133322612)](#_Toc133322612)
 
-[B.2.10 Literals [36](#literals)](#literals)
+[B.2.10 Literals [40](#_Toc133322613)](#_Toc133322613)
 
 [Appendix C Development Environment
-[37](#development-environment-1)](#development-environment-1)
+[41](#_Toc133322614)](#_Toc133322614)
 
 # Table of Figure
 
-[Figure 1TUS Logo [16](#_Toc132726956)](#_Toc132726956)
+[Figure 2: User Use Case Diagram [19](#_Toc133414128)](#_Toc133414128)
 
-[Figure 2- User Use Case Diagram [17](#_Toc132726957)](#_Toc132726957)
-
-[Figure 3 - Database Design [23](#_Toc132726761)](#_Toc132726761)
+[Figure 3 - Database Design [25](#_Toc132726761)](#_Toc132726761)
 
 [Figure 4- User Parking Sequence Diagram
-[24](#_Toc132726762)](#_Toc132726762)
+[26](#_Toc132726762)](#_Toc132726762)
 
 # Introduction
 
@@ -317,16 +279,16 @@ parks are a very important factor in society, by having parking spaces
 it reduces illegal parking which would have increased congestions on the
 road and increasing travel time.
 
-It is fair to say that parking back in the 1980s -- 1990s wasn't such a
-big issue as there wasn't very many cars on the road as people couldn't
-afford to have a car unless they were wealthy, nowadays however it is
-very hard to find available parking spaces in places such as cities, and
-of course universities especially during rush hour. Since limerick City
-is a big city for students to come and study in with there being over
-16,000 students attending university of limerick and just under 2000
-students in TUS and Mary I, this brings so much more motor vehicles into
-limerick city which is a city already struggling with car parking.
-(Anon., 2022)
+Parking back in the 1980s -- 1990s wasn't such a big issue as there
+wasn't very many cars on the road as people couldn't afford to have a
+car unless they were wealthy, nowadays however it is very hard to find
+available parking spaces in places such as cities, and of course
+universities especially during rush hour. Since limerick City is a big
+city for students to come and study in with there being over 16,000
+students attending university of limerick and just under 2000 students
+in TUS and Mary I, this brings so much more motor vehicles into limerick
+city which is a city already struggling with car parking. (University of
+Limerick, 2022)
 
 The goal is to try and reduce this issue by building a new innovative
 parking app and to try to help motorists stop stressing about this
@@ -342,17 +304,16 @@ congestion in cities such as Limerick.
 
 ## Problem Statement
 
-**Ineffective ways of finding an available parking space which is a
-waste of time, very fuel consuming and causes traffic jams.**
-
-when road users are looking to find an available parking space they end
-up wasting time and using a lot of fuel from them driving around the car
-park or the block multiple times hopping to find a space, on average
-people spend 17 hours per year driving around looking for parking spaces
-(Quellmalz, 2021). By developing Perfect Parking, It is hoped to make
-the parking process in college campus and in the city seamless and
-stress free, by doing this I'm hoping to eliminate the time and fuel
-waste road users encounter while looking for parking.
+Ineffective ways of finding an available parking space which is a waste
+of time, very fuel consuming and causes traffic jams. hen road users are
+looking to find an available parking space they end up wasting time and
+using a lot of fuel from them driving around the car park or the block
+multiple times hopping to find a space, on average people spend 17 hours
+per year driving around looking for parking spaces (Quellmalz, 2021). By
+developing Perfect Parking, It is hoped to make the parking process in
+college campus and in the city seamless and stress free, by doing this
+I'm hoping to eliminate the time and fuel waste road users encounter
+while looking for parking.
 
 **Lack of visual parking space availability.**
 
@@ -384,21 +345,26 @@ places to park.
 
 ## The Scope of the solution
 
-No city or college live feeds
-
-Prerecorded video demonstration car (object) detection and a sever
-demonstration end user usage and product viability.
+The scope of the Perfect Parking solution is limited to the use of
+prerecorded video demonstrations to showcase the car detection
+capabilities of the application. Due to time and budget constraints,
+live feeds from cities or colleges were not included in the scope of the
+project. Instead, prerecorded videos were used to demonstrate the
+application\'s ability to detect available parking spaces. The solution
+also includes a server demonstration to showcase the end-user usage of
+the application and its overall viability as a product. By focusing on
+these key aspects of the application, the scope of the solution is
+narrowed, allowing for a more focused and efficient development process.
 
 ## Report Structure
 
 The following is the report structure for the Perfect Parking Thesis.
-The report starts with a cover page, followed by an Acknowledgments
-section where the author expresses gratitude to those who contributed to
-the project. The report also includes an Abstract, which provides a
-brief overview of the project\'s purpose, scope, methods, and findings.
-A table of contents and a table of figures are generated automatically,
-providing a quick and easy way for readers to navigate through the
-report.
+The report has four chapets, lit review, analaysisi, design and
+colulusions gratitude to those who contributed to the project. The
+report also includes an Abstract, which provides a brief overview of the
+project\'s purpose, scope, methods, and findings. A table of contents
+and a table of figures are generated automatically, providing a quick
+and easy way for readers to navigate through the report.
 
 # Literature Review
 
@@ -495,27 +461,8 @@ parking to see if that type of parking space is available.
 
 ## Problems with gathering data.
 
-When tech companies are building applications such as parking
-applications, they are given a budget by the parking company, and this
-enables them to put in these parking sensors or put in barriers to
-gather the real-time data for the users. This is where I face a big
-problem with gathering this data, since TUS carpark and other car parks
-in the city is monitored by another parking company called APCOA I am
-very limited to what data I can gather. Since I'm building this
-application on a very small scale gathering real-time data is going to
-be nearly impossible. One solution that I did think of would be to build
-my own parking space sensor using a raspberry pi and putting this down
-in a parking space in either my college or in the city, with doing this
-brings even more problems, these problems being:
-
--   Permission must be sought from APCAO to allow a sensor to be placed
-    on their parking premises.
-
--   If I do get permission since the sensor would only be on a raspberry
-    pi it could easily get damaged or stolen.
-
--   I would only be able to build one sensor for one single parking spot
-    which wouldn't gather much real-time data for the users.
+Generic paragraph of the problems of collecting big bag, non-domain
+specific
 
 ## Object Recognition and AI
 
@@ -627,21 +574,21 @@ to compute utilising integral images. (Bąk, 2023)
 
 ## Conclusion: The Need for a Software Solution
 
-In this project, I\'m creating a parking application for educational
-purposes in an effort to solve the widespread parking issue in our
-cities. Time is lost, gasoline is consumed, and traffic is backed up due
-to Limerick City\'s old and inefficient parking systems. In order to
+In this project, The parking application is being created for
+educational purposes in an effort to solve the widespread parking issue
+in our cities. Time is lost, gasoline is consumed, and traffic is backed
+up due to Limerick City\'s old and inefficient parking systems. To
 increase the efficiency of identifying parking spaces and reduce the
 stress experienced by users searching for parking spaces, a new and
 creative software solution is required.
 
-I want to develop a fluid and stress-free parking experience for road
-users by utilizing the Django framework structure and putting into
-practice techniques like APIs that display users exactly where parking
-is available and provide directions straight to the area. Additionally,
-I will use a parking monitor powered by OpenCV to detect if a parking
-spot has been filled or made empty, further improving the effectiveness
-of the system.
+Perfect Parking aims to develop a fluid and stress-free parking
+experience for road users by utilizing the Django framework structure
+and putting into practice techniques like APIs that display users
+exactly where parking is available and provide directions straight to
+the area. Additionally, a parking monitor powered by OpenCV will be used
+to detect if a parking spot has been filled or made empty, further
+improving the effectiveness of the system.
 
 The present approaches for locating parking spaces are inefficient and
 wasteful, requiring a large amount of time and fuel. People spend an
@@ -672,29 +619,6 @@ to provide a solution that is innovative, effective, and user-friendly,
 with the potential to reduce time and fuel consumption, improve traffic
 flow, and create a stress-free parking experience for all road users.
 
-# Project Management
-
-under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
-(cf. 1.1.1)
-
-## Weekly Meetings
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Source code management (SCM)
-
-## Code Style Guide
-
-## Collaboration Tools
-
-### GitHub
-
-### Microsoft Office Online
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
 # Analysis and Design
 
 ## Unique Selling Point
@@ -717,13 +641,13 @@ parking in a city. The application will allow users to search for
 parking near a specific location, and will show the user data the
 nearest parking to their location.
 
-## Users Use Case Diagram
+## Users Use-case Diagram.
 
 ![Alt
 text](./images/thesis/media/image3.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc132726957 .anchor}Figure - User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure : User Use Case Diagram
 
 ## System Actors
 
@@ -955,7 +879,19 @@ be trained using data collected from the sensors. The machine learning
 algorithm will then be used to identify if a car parking space is free
 or busy.
 
-## Sensors
+## A look to the future
+
+While developing the Perfect Parking application there was a major
+challenge when it came to incorporating parking sensors into the
+application. Due to budget and time constraints, it was determined that
+such sensors were beyond the scope of the project. While doing the
+project it was recognized that parking sensors would have been a
+valuable addition to the application but understood that this would
+require collecting large amounts of personal data from users. Since the
+project was not focused on data collection, the idea of the parking
+monitor came to light and so took priority over the parking sensors.
+
+### Sensors
 
 Overhead Cameras will watch the car parking space and will feed the
 video stream to a local client application. The local client application
@@ -964,7 +900,31 @@ is free or busy. The local client application will then send the status
 of the car parking space to the central server if it detects a change in
 the status of the car parking space.
 
-### Development limitations
+### Collecting of data
+
+When tech companies are building applications such as parking
+applications, they are given a budget by the parking company, and this
+enables them to put in these parking sensors or put in barriers to
+gather the real-time data for the users. This is where I face a big
+problem with gathering this data, since TUS carpark and other car parks
+in the city is monitored by another parking company called APCOA I am
+very limited to what data I can gather. Since I'm building this
+application on a very small scale gathering real-time data is going to
+be nearly impossible. One solution that I did think of would be to build
+my own parking space sensor using a raspberry pi and putting this down
+in a parking space in either my college or in the city, with doing this
+brings even more problems, these problems being:
+
+-   Permission must be sought from APCAO to allow a sensor to be placed
+    on their parking premises.
+
+-   If I do get permission since the sensor would only be on a raspberry
+    pi it could easily get damaged or stolen.
+
+-   I would only be able to build one sensor for one single parking spot
+    which wouldn't gather much real-time data for the users.
+
+## Development limitations
 
 This being a trial application, with a limited budget and permission
 problems, for the purpose of a university project, the client
@@ -985,25 +945,33 @@ height="5.15625in"}
 
 []{#_Toc132726761 .anchor}Figure - Database Design
 
-This database design consists of three tables: \"User\",
+The database for this project is composed of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
 
--   The \"User\" table has three columns: \"Id\" (Primary Key),
-    \"Username\", and \"Password\".
+The \"User\" table has three columns: \"Id\" (primary key),
+\"Username\", and \"Password\". This table stores the login information
+for users of the parking application.
 
--   The \"ParkingLotMonitor\" table has six columns: \"Id\" (Primary
-    Key), \"ParkingLotId\" (Foreign Key),
-    \"ProbabilityParkingAvailable\", \"LastUpdated\", \"Status\", and
-    \"DataTime\".
+The \"ParkingLotMonitor\" table has six columns: \"Id\" (primary key),
+\"ParkingLotId\" (foreign key), \"ProbabilityParkingAvailable\",
+\"LastUpdated\", \"Status\", and \"DataTime\". This table tracks the
+parking availability at each parking lot monitored by the application.
+The \"ParkingLotId\" column acts as a connection point, linking the
+\"ParkingLotMonitor\" table to the \"ParkingLot\" table.
 
--   The \"ParkingLot\" table has seven columns: \"Id\" (Primary Key),
-    \"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
-    \"Latitude\", and \"Longitude\".
+The \"ParkingLot\" table has seven columns: \"Id\" (primary key),
+\"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
+\"Latitude\", and \"Longitude\". This table stores information about
+each parking lot, including its name, address, image, hours of
+operation, and whether it is a paid parking lot. The \"Latitude\" and
+\"Longitude\" columns allow the parking application to display the
+parking lot location on a map.
 
-The diagrams show a relationship between the \"ParkingLotMonitor\" and
-\"ParkingLot\" tables through the use of the \"has\" symbol. The
-\"ParkingLotId\" column in the \"ParkingLotMonitor\" table acts as a
-connection point, serving as a foreign key to link the two tables.
+The diagrams depict a relationship between the \"ParkingLotMonitor\" and
+\"ParkingLot\" tables using the \"has\" symbol. The \"ParkingLotId\"
+column in the \"ParkingLotMonitor\" table serves as a foreign key to
+link the two tables, allowing the application to track parking
+availability at each parking lot.
 
 ## User Parking Sequence diagram
 
@@ -1032,37 +1000,6 @@ MallowStreetPart2ParkingLotMonitor 45%.
 Finally, the application then sends a response to the user indicating
 that there are 3 parking lots available near their location, with the
 names HenrySt, LowerHartstonge, and MallowStreetPart1.
-
-## Introduction and focus 
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Academic Aims
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
--   Bullets
-
--   Bullets
-
-### Academic Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Functional Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Non-Functional Requirements
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
-
-## Statistics
 
 # Implementation
 
@@ -1234,7 +1171,7 @@ the motion detection system with other systems.
 
 ### Server
 
-The client-side code for this Django project consists of several files,
+The server-side code for this Django project consists of several files,
 including admin.py, apps.py, models.py, serializers.py, urls.py, and
 views.py.
 
@@ -1250,6 +1187,10 @@ latitude, longitude, image, and parking_spaces. The ParkingLotMonitor
 model has fields for id, parkingLot, name, latitude,longitude,
 probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
 status, and image.
+
+![Diagram Description automatically
+generated](./images/thesis/media/image6.png){width="1.6993766404199475in"
+height="3.2812445319335084in"}
 
 serializers.py defines the serializers used to convert the ParkingLot
 and ParkingLotMonitor models to JSON format for use in the app\'s API.
@@ -1289,33 +1230,88 @@ displaying the data in the website for probability of parking available
 so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
-### Source Control and versioning
+![Graphical user interface, text, application Description automatically
+generated](./images/thesis/media/image7.png){width="4.080948162729658in"
+height="2.5342760279965004in"}
 
-The solutions presented in this chapter are the best practices and
-patterns of all those tried in various versions throughout the
-lifecycles of the systems defines in section 1.2.
+## Project Management
 
-## Development Environment
+under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
+(cf. 1.1.1)
+
+### Weekly Meetings
 
 This chapter will begin by outlining the (cf. 1.1) for the purpose of
 writing a Report for a Project and outlining paragraphs.
 
+### Source code management (SCM)
+
+### Code Style Guide
+
+### Collaboration Tools
+
+#### GitHub
+
+#### Microsoft Office Online
+
+This chapter will begin by outlining the (cf. 1.1) for the purpose of
+writing a Report for a Project and outlining paragraphs.
+
+## Source Control and versioning
+
+For source control and versioning, GitHub was utilized to manage the
+codebase for the project. GitHub was chosen because of prior experience
+using it during other studies, and it provided a reliable platform for
+version control and collaboration with the supervisor.
+
+To keep the code organized and easily manageable, the repository was
+organised into different branches for each week of development. This
+allowed for easy upkeep and to keep track of changes made during each
+week and easily roll back to previous versions if needed.
+
+Additionally, the supervisor was added as a collaborator on the
+repository, allowing him to view the progress and provide feedback on
+the code and documents. This facilitated effective communication and
+ensured that the project was aligned with the objectives.
+
+One significant advantage of using GitHub was that it provided a safe
+and secure backup of the code. In the event of file corruption, it would
+be possible to pull down the last push request and continue the work
+without losing progress.
+
+Overall, the use of GitHub as a source control and versioning tool
+allowed for effective management of the development of the Perfect
+Parking project, collaborate with the supervisor, and ensure the safety
+and integrity of the codebase.
+
 ## Tools Used
 
-The following tools were used in the development of this project: VS
-code, a code editor that provides an excellent development environment;
-Django Python web framework, which allowed for rapid development of the
-project and easy maintenance, Anaconda, a package management and
-deployment tool that made it easy to install and manage required
-libraries and dependencies, OpenCV, an open source computer vision and
-machine learning software library, which was used for image processing
-and analysis, GitHub, a code repository that allowed for version control
-and collaboration with my supervisor, Microsoft Word, which was used to
-write the thesis, and Canva, a graphic design platform used to create
-the project poster. These tools were chosen for their reliability, ease
-of use, and suitability for the project requirements. By utilizing these
-tools, the project was able to be completed more efficiently, with
-greater accuracy and precision.
+Tools:
+
+-   VS Code, a code editor that provides an excellent development
+    environment.
+
+-   Anaconda, a package management, and deployment tool that made it
+    easy to install and manage required libraries and dependencies.
+
+-   GitHub, a code repository that allowed for version control and
+    collaboration with my supervisor.
+
+-   Microsoft Word, which was used to write the thesis.
+
+-   Canva, a graphic design platform used to create the project poster.
+
+Languages and Frameworks:
+
+-   Django Python web framework, which allowed for rapid development of
+    the project and easy maintenance.
+
+-   OpenCV, an open-source computer vision and machine learning software
+    library, which was used for image processing and analysis
+
+By utilizing these tools, languages, and frameworks, the project was
+able to be completed more efficiently, with greater accuracy and
+precision.
 
 ## Django Rest API
 
@@ -1334,79 +1330,395 @@ rendering HTML pages. Overall, Django is a powerful and flexible
 framework that is well-suited for building all kinds of web
 applications. (Johnson, n.d.)
 
-# Conclusion and Recommendations
+### Perfect Parking with Django
 
-## Conclusion
+The Perfect Parking application was created using the popular web
+framework Django for a variety of reasons.
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
+Firstly, Django is a high-level web framework that follows the
+Model-View-Controller (MVC) architectural pattern, which promotes code
+organization and separation of concerns. This allows for the development
+of complex programmes with numerous components without compromising the
+maintainability of the code.
 
-## Recommendations
+Secondly, Django provides a lot of built-in functionality out of the
+box, which saves time and effort during development. For example, Django
+includes an Object-Relational Mapping (ORM) system that allows
+developers to interact with databases using Python objects, as well as a
+robust authentication system for user management.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Thirdly, Django has an engaged community that actively supports the
+framework\'s growth and upkeep. This indicates that a wide variety of
+third-party packages and extensions are readily available and can
+increase the capabilities of the framework and speed up development.
 
-```{=html}
-<!-- -->
-```
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Along with these benefits, Django\'s outstanding documentation,
+scalability, and security capabilities are some of the other benefits of
+adopting it for web development. Django is also open-source and free,
+which makes it available to a variety of developers and organisations.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Overall, the decision to use Django for the Perfect Parking application
+was based on its combination of ease of use, built-in functionality, and
+strong community support, which makes it a popular choice for building
+web applications of all sizes and complexities.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+## Anaconda
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Anaconda is a popular distribution of the Python programming language
+that is widely used for data science and scientific computing. It comes
+with a sizable number of pre-installed libraries and tools that are
+frequently used in these domains, including Jupyter Notebook, NumPy,
+Pandas, and Matplotlib.
 
-```{=html}
-<!-- -->
-```
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Anaconda is designed to make it easy to set up and manage Python
+environments, which are essentially separate installations of Python
+with their own dependencies and libraries. When working on several
+projects with various requirements, this is especially helpful because
+it enables you to keep them separate from one another.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+The Conda package manager, which lets you easily install, update, and
+manage additional software packages and libraries, is included with
+Anaconda in addition to Python and its libraries. When working with
+non-Python libraries that are necessary for your project, this can be
+helpful.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+Utilising Anaconda has several benefits, one of which is how much easier
+it makes it to set up a Python environment for data research or
+scientific computing. It removes the need to individually install and
+configure each library, which can be a time-consuming and error-prone
+operation, by offering a pre-built distribution with many of the
+frequently used libraries already installed.
+
+Overall, Anaconda is a robust and adaptable tool that is well-liked by
+those who work in data research and scientific computing. Researchers,
+developers, and data analysts all favour it because of how simple it is
+to use and the extensive library of tools that are already installed.
+
+### How to Install Anaconda
+
+-   Download the Appropriate Anaconda installer from the [Anaconda
+    Website](https://www.anaconda.com/download/)
+
+-   Open VS Code and open a new terminal window by selecting
+    \"Terminal\" from the top menu and then selecting \"New Terminal.
+
+-   Navigate to the directory where you downloaded the Anaconda
+    installer using the command **cd \<directory\>**.
+
+-   For example, if you downloaded the Anaconda installer for Windows
+    and saved it in your Downloads folder, you would type the following
+    command in the terminal:
+
+1\.     cd Downloads
+
+-   Run the Anaconda installer by typing the command **bash \<Anaconda
+    installer filename\>** in the terminal, where **\<Anaconda installer
+    filename\>** is the name of the Anaconda installer file you
+    downloaded.
+
+1\. bash Anaconda3-2021.05\--x86_64.sh   
+
+-   Follow the instructions in the Anaconda installer to complete the
+    installation process.
+
+-   Once the installation is complete, you can use Anaconda in the VS
+    Code terminal by activating the Anaconda environment with the
+    command **conda activate**. You can then use the various Anaconda
+    packages and tools in the terminal as needed.
+
+-   For example, if you want to use the Pandas library in your Python
+    script, you can first activate the Anaconda environment by typing
+    the following command in the terminal:
+
+1\.     conda activate
+
+-   Then, you can import the Pandas library in your Python script using
+    the following line of code:
+
+1\.     import pandas as pd
+
+-   This will allow you to use the various functions and methods
+    provided by the Pandas library in your project.
+
+# Testing and Results
+
+## Unit Testing
+
+Unit tests are a type of software testing that involves testing
+individual units or components of a larger software system. Unit
+testing\'s goal is to verify that every single piece of code is
+operating as intended and adhering to design specifications. (TechTarget
+, 2023)
+
+In most cases, developers write unit tests as they write the
+application\'s code, these tests are usually automated. They are made to
+be quickly and regularly executed, enabling programmers to and correct
+flaws early in the development cycle. (Ingrassellino, 2021)
+
+Developers write code to test every individual function, method, or
+class in the software system during unit testing. To make sure that the
+code generates the desired output for each combination of inputs, they
+supply test data and anticipated results for each unit before running
+the tests. (Kolodiy, n.d.)
+
+For software to be dependable, manageable, and scalable, unit tests are
+crucial. They can assist in identifying issues early in the development
+process, which makes fixing them simpler and less expensive.
+Additionally, they aid in ensuring that modifications to the code don\'t
+ruin already-existing functionality. (Ingrassellino, 2021)
+
+Overall, unit tests are an important part of the software development
+process and are essential for ensuring the quality and reliability of
+software applications.
+
+### Unit Tests Used in The Project
+
+this unit test is verifying that the update_server_parking_monitor_data
+method is correctly updating the parking monitor data on the server and
+returning the expected response status code.
+
+1\. def test_update_server_parking_monitor_data(self):
+
+2\.     parking_monitor_data = ParkingMonitorData()
+
+3\.     free_spaces_in_frame: float = 3
+
+4\.     probability_parking_available: .5 \# (3/6)
+
+5\.     response: request.Response = MotionDetector
+
+6\. .update_server_parking_monitor_data(parking_monitor_data,
+
+7\. free_spaces_in_frame, probability_parking_available)
+
+8\.     expected_response_status_code = 200
+
+9\.     self.assertEqual(response.status_code,
+expected_response_status_code)
+
+ParkingLot/tests/test.py
+
+To run the tests, open a terminal and enter the code:
+
+1\. python -m unittest /parking_lot/tests/parking_lot_tests.py
+
+Unit Test Terminal run command.
+
+## Behaviour Driven Development (BBD) Testing
+
+A software development process called behaviour-driven development (BDD)
+expands on the ideas behind test-driven development (TDD). But it
+emphasises cooperation and communication more than ever between
+technical and non-technical stakeholders. The goal of BDD is to
+guarantee that everyone involved with the development process is aware
+of the specifications and goals for the software that is being created.
+(Tricentis, 2018)
+
+Instead of just developing and passing tests, BDD focuses on defining
+and implementing the software\'s expected behaviour. This is
+accomplished by using the specialised language \"Gherkin,\" which
+enables programmers, testers, and business stakeholders to specify the
+desired behaviour of the software in a form that is clear to all
+parties. (Das, 2022)
+
+One of the key benefits of BDD is that it helps to ensure that everyone
+involved in the development process is on the same page. The danger of
+miscommunication and misunderstandings between technical and
+non-technical stakeholders is reduced by establishing a common
+vocabulary and outlining the desired behaviour of the software up front.
+(Das, 2022)
+
+BDD also has the potential to raise the bar on the software that is
+being created. Developers and testers may make sure that the software
+satisfies the needs and expectations of the end users by concentrating
+on the desired behaviour of the product.
+
+BDD also promotes team member participation and communication, which can
+assist to break down silos and make sure that everyone is working
+towards the same objective. This can lead to greater efficiency and
+productivity, as well as a more positive and collaborative working
+environment. (Testingxperts, 2023)
+
+Overall, Behaviour-driven development (BDD) is an approach to software
+development that places a strong emphasis on collaboration and
+communication between technical and non-technical stakeholders. By
+defining the desired behavior of the software upfront and using a common
+language, it can help to ensure that everyone involved in the
+development process is working towards a common goal and that the
+software being developed meets the requirements and expectations of the
+end-users.
+
+![Behavior Driven Development (BDD) Cycle - Slide
+1](./images/thesis/media/image8.png){width="4.025in"
+height="2.2642989938757654in"}
+
+Figure : BDD development cycle (Collidu, n.d.)
+
+### BDD In Perfect Parking
+
+BDD testing was not used during the development of the Perfect Parking
+application due to limited time available for its implementation. As a
+solo developer in the project, collaboration with others was not
+possible, the time and effort required for BDD testing was perceived as
+a barrier to meeting project deadlines.
+
+However, if there were plans to develop a large new project, there are
+still several reasons why BDD testing would be considered. First, BDD
+testing can help ensure that software meets the business requirements
+and user needs, which can result in a higher quality product that better
+meets the needs of users.
+
+Finally, BDD testing can also help improve developers understanding of
+the project requirements and improve the efficiency of the development
+process.
+
+Overall, while limited time and a lack of collaboration may have made it
+difficult to implement BDD testing in the development of the Perfect
+Parking application, there are still many benefits to using BDD testing
+in a new solo project that make it worth considering.
+
+## TDD Testing
+
+## Functionality
+
+During testing, the Perfect Parking application demonstrated strong
+functionality in displaying the availability of parking spots based on
+real-time data collected by the ParkingLotMonitor. The ParkingLotMonitor
+allows the user to mark out parking spots that they want to be
+continuously monitored for their occupancy status. Whenever there is a
+change in the availability of a parking spot the mapped-out spaces turn
+green for available and red for occupied, the monitor sends the
+probability of it being available to the Perfect Parking application.
+The application then displays the availability of the car park to the
+user in real-time by displaying the probability of available parking
+spaces, Overall, the application\'s functionality met the project\'s
+objectives and proved to be a valuable tool for drivers seeking parking
+in urban or congested areas. However, some minor issues were identified
+during testing, such as if a shadow is casted over a parking spot and it
+changes the colour gradient in the space the monitor would think that
+the space is full when in theory it's not. If the project was to go
+further in the future this minor issue would be fixed.
+
+## Usability
+
+The usability of the ParkingLotMonitor and Perfect Parking website were
+both tested during the evaluation process. The ParkingLotMonitor
+interface was found to be intuitive and user-friendly, allowing a user
+to easily mark out and monitor parking spots. The monitor also
+accurately reported the availability of parking spots in real-time, with
+color-coding providing a clear visual indication of the status of each
+spot. The Perfect Parking website was also found to be intuitive and
+easy to use. The website provided an interface where users could view
+the availability of parking spots in real-time. The website allowed
+signed-in users to view a car park\'s availability, and when the car
+park was selected, it showed a Google map of the parking location, where
+they could get directions to the car park if they wish. Overall, the
+usability of both the ParkingLotMonitor and Perfect Parking website was
+strong, with minimal issues or confusion reported during testing.
 
 # References
-
-Anon., 2021. \[Online\]\
-Available at:
-[https://www.splunk.com/en_us/data-insider/what-is-real-time-data.html]{.underline}
-
-Anon., 2022. \[Online\]\
-Available at:
-[https://www.bankmycell.com/blog/how-many-phones-are-in-the-world]{.underline}
-
-Anon., 2022. \[Online\]\
-Available at:
-[https://www.ul.ie/presidents-office/university-profile/facts-and-figures]{.underline}
 
 Anon., n.d. \[Online\]\
 Available at:
 [https://techvidvan.com/tutorials/why-big-data/]{.underline}
 
+Arunachalam, H., 2014. *Image Segmentation for the Extraction of Face.*
+, Rajiv Gandhi: s.n.
+
 Ashish, 2022. \[Online\]\
 Available at:
 [https://www.scienceabc.com/innovation/how-does-google-maps-know-about-traffic-conditions.html#:\~:text=Google%20Traffic%20works%20by%20crowdsourcing,geographic%20location%20with%20the%20app.]{.underline}
+
+Bąk, K., 2023. *Cascade Classifier: Approach to Object Detection.*
+\[Online\]\
+Available at:
+[https://53jk1.medium.com/cascade-classifier-approach-to-object-detection-890ef859cc53]{.underline}\
+\[Accessed 24 04 2023\].
 
 Barnett, M., 2017. \[Online\]\
 Available at:
 [https://www.fourthsource.com/data/importance-real-time-data-five-reasons-need-22014]{.underline}
 
+Boesch, G., 2023. *What is OpenCV? The Complete Guide (2023).*
+\[Online\]\
+Available at: [https://viso.ai/computer-vision/opencv/]{.underline}\
+\[Accessed 23 May 2023\].
+
 Botelho, B., n.d. *Big Data.* \[Online\]\
 Available at:
 [https://www.techtarget.com/searchdatamanagement/definition/big-data]{.underline}
+
+Johnson, S., n.d. *What Is Django and What Is Django Used for?.*
+\[Online\]\
+Available at:
+[https://www.stxnext.com/blog/what-is-django/]{.underline}\
+\[Accessed 24 04 2023\].
+
+Lee, D., 2022. *Cascade Classifiers.* \[Online\]\
+Available at:
+[https://apmonitor.com/pds/index.php/Main/CascadeClassifier]{.underline}\
+\[Accessed 24th April 2023\].
+
+McCoy, K., n.d. *Drivers spend an average of 17 hours a year searching
+for parking spots.* \[Online\]\
+Available at:
+[https://eu.usatoday.com/story/money/2017/07/12/parking-pain-causes-financial-and-personal-strain/467637001/]{.underline}\
+\[Accessed 24 04 2023\].
+
+Michael Jones, P. V., 2001. *Rapid Object Detection using a Boosted
+Cascade of Simple.* \[Online\]\
+Available at:
+[https://www.cs.cmu.edu/\~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf]{.underline}\
+\[Accessed 23 May 2023\].
+
+Patel, A., 2020. *What is Object Detection?.* \[Online\]\
+Available at:
+[https://medium.com/ml-research-lab/what-is-object-detection-51f9d872ece7]{.underline}\
+\[Accessed 23 May 2023\].
 
 Quellmalz, R., 2021. *6 surprising facts about parking you probably dont
 know.* \[Online\]\
 Available at:
 [https://www.spotparking.com.au/insights/facts-about-parking-you-probably-didnt-know]{.underline}
+
+Rocheeva, O., 2018. *Parking Space Detection in OpenCV.* \[Online\]\
+Available at: [https://github.com/olgarose/ParkingLot]{.underline}\
+\[Accessed 20 Febuary 2023\].
+
+Sawer, P., 2017. *Search for parking spaces cost drivers four days a
+year.* \[Online\]\
+Available at:
+[https://www.independent.ie/regionals/herald/news/search-for-parking-spaces-costs-drivers-four-days-a-year-35416591.html]{.underline}\
+\[Accessed 24 04 2023\].
+
+Seal, A., n.d. Thermal Human face recognition based on Haar wavelet. In:
+s.l.:s.n., p. 12.
+
+Splunk, 2021. \[Online\]\
+Available at:
+[https://www.splunk.com/en_us/data-insider/what-is-real-time-data.html]{.underline}\
+\[Accessed 03 April 2023\].
+
+Tech Target, n.d. *object recognition.* \[Online\]\
+Available at:
+[https://www.techtarget.com/whatis/definition/object-recognition]{.underline}\
+\[Accessed 21st May 2023\].
+
+Turner, A., 2023. *How Many Smartphones Are In The World?.* \[Online\]\
+Available at:
+[https://www.bankmycell.com/blog/how-many-phones-are-in-the-world]{.underline}\
+\[Accessed 20 April 2023\].
+
+Tyagi, M., 2021. *Viola Jones Algorithm and Haar Cascade Classifier.*
+\[Online\]\
+Available at:
+[https://towardsdatascience.com/viola-jones-algorithm-and-haar-cascade-classifier-ee3bfb19f7d8]{.underline}\
+\[Accessed 24 04 2023\].
+
+University of Limerick, 2022. *Facts and figures.* \[Online\]\
+Available at:
+[https://www.ul.ie/presidents-office/university-profile/facts-and-figures]{.underline}\
+\[Accessed 16 01 2023\].
 
 # Glossary
 
@@ -1426,32 +1738,6 @@ Available at:
 
 # Reflections {#reflections .Appendix:-H1}
 
-## Report Structure {#report-structure-1 .Appendix:-H2}
-
 # Project Management {#project-management-1 .Appendix:-H1}
 
-## Report Structure {#report-structure-2 .Appendix:-H2}
-
-## Code Style Guide {#code-style-guide-1 .Appendix:-H2}
-
-### Naming conventions {#naming-conventions .Appendix:-H3}
-
-### Avoid magic constant numbers. {#avoid-magic-constant-numbers. .Appendix:-H3}
-
-### Variable naming {#variable-naming .Appendix:-H3}
-
-### Methods {#methods .Appendix:-H3}
-
-### Imports {#imports .Appendix:-H3}
-
-### Comments {#comments .Appendix:-H3}
-
-### Documentation {#documentation .Appendix:-H3}
-
-### Classes {#classes .Appendix:-H3}
-
-### Spacing, Indentation {#spacing-indentation .Appendix:-H3}
-
-### Literals {#literals .Appendix:-H3}
-
-# Development Environment {#development-environment-1 .Appendix:-H1}
+## Report Structure {#report-structure-1 .Appendix:-H2}
