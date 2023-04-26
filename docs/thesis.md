@@ -199,8 +199,7 @@ space.*
 [5.3.4 Source Control and versioning
 [33](#source-control-and-versioning)](#source-control-and-versioning)
 
-[5.4 Development Environment
-[33](#development-environment)](#development-environment)
+[5.4 Development Environment [33](#_Toc133322589)](#_Toc133322589)
 
 [5.5 Tools Used [33](#tools-used)](#tools-used)
 
@@ -212,11 +211,11 @@ space.*
 [5.7 Anaconda [35](#anaconda)](#anaconda)
 
 [Chapter 6 Conclusion and Recommendations
-[36](#conclusion-and-recommendations)](#conclusion-and-recommendations)
+[36](#_Toc133322594)](#_Toc133322594)
 
-[6.1 Conclusion [36](#conclusion)](#conclusion)
+[6.1 Conclusion [36](#_Toc133322595)](#_Toc133322595)
 
-[6.2 Recommendations [36](#recommendations)](#recommendations)
+[6.2 Recommendations [36](#_Toc133322596)](#_Toc133322596)
 
 [References [37](#_Toc133322597)](#_Toc133322597)
 
@@ -257,7 +256,7 @@ space.*
 [B.2.10 Literals [40](#literals)](#literals)
 
 [Appendix C Development Environment
-[41](#development-environment-1)](#development-environment-1)
+[41](#development-environment)](#development-environment)
 
 # Table of Figure
 
@@ -284,16 +283,16 @@ parks are a very important factor in society, by having parking spaces
 it reduces illegal parking which would have increased congestions on the
 road and increasing travel time.
 
-It is fair to say that parking back in the 1980s -- 1990s wasn't such a
-big issue as there wasn't very many cars on the road as people couldn't
-afford to have a car unless they were wealthy, nowadays however it is
-very hard to find available parking spaces in places such as cities, and
-of course universities especially during rush hour. Since limerick City
-is a big city for students to come and study in with there being over
-16,000 students attending university of limerick and just under 2000
-students in TUS and Mary I, this brings so much more motor vehicles into
-limerick city which is a city already struggling with car parking.
-(University of Limerick, 2022)
+Parking back in the 1980s -- 1990s wasn't such a big issue as there
+wasn't very many cars on the road as people couldn't afford to have a
+car unless they were wealthy, nowadays however it is very hard to find
+available parking spaces in places such as cities, and of course
+universities especially during rush hour. Since limerick City is a big
+city for students to come and study in with there being over 16,000
+students attending university of limerick and just under 2000 students
+in TUS and Mary I, this brings so much more motor vehicles into limerick
+city which is a city already struggling with car parking. (University of
+Limerick, 2022)
 
 The goal is to try and reduce this issue by building a new innovative
 parking app and to try to help motorists stop stressing about this
@@ -351,10 +350,16 @@ places to park.
 
 ## The Scope of the solution
 
-No city or college live feeds
-
-Prerecorded video demonstration car (object) detection and a sever
-demonstration end user usage and product viability.
+The scope of the Perfect Parking solution is limited to the use of
+prerecorded video demonstrations to showcase the car detection
+capabilities of the application. Due to time and budget constraints,
+live feeds from cities or colleges were not included in the scope of the
+project. Instead, prerecorded videos were used to demonstrate the
+application\'s ability to detect available parking spaces. The solution
+also includes a server demonstration to showcase the end-user usage of
+the application and its overall viability as a product. By focusing on
+these key aspects of the application, the scope of the solution is
+narrowed, allowing for a more focused and efficient development process.
 
 ## Report Structure
 
@@ -574,21 +579,21 @@ to compute utilising integral images. (Bąk, 2023)
 
 ## Conclusion: The Need for a Software Solution
 
-In this project, I\'m creating a parking application for educational
-purposes in an effort to solve the widespread parking issue in our
-cities. Time is lost, gasoline is consumed, and traffic is backed up due
-to Limerick City\'s old and inefficient parking systems. In order to
+In this project, The parking application is being created for
+educational purposes in an effort to solve the widespread parking issue
+in our cities. Time is lost, gasoline is consumed, and traffic is backed
+up due to Limerick City\'s old and inefficient parking systems. To
 increase the efficiency of identifying parking spaces and reduce the
 stress experienced by users searching for parking spaces, a new and
 creative software solution is required.
 
-I want to develop a fluid and stress-free parking experience for road
-users by utilizing the Django framework structure and putting into
-practice techniques like APIs that display users exactly where parking
-is available and provide directions straight to the area. Additionally,
-I will use a parking monitor powered by OpenCV to detect if a parking
-spot has been filled or made empty, further improving the effectiveness
-of the system.
+Perfect Parking aims to develop a fluid and stress-free parking
+experience for road users by utilizing the Django framework structure
+and putting into practice techniques like APIs that display users
+exactly where parking is available and provide directions straight to
+the area. Additionally, a parking monitor powered by OpenCV will be used
+to detect if a parking spot has been filled or made empty, further
+improving the effectiveness of the system.
 
 The present approaches for locating parking spaces are inefficient and
 wasteful, requiring a large amount of time and fuel. People spend an
@@ -904,8 +909,15 @@ or busy.
 
 ## A look to the future
 
-Senors and a collting of large amounts of personal data are beyonf the
-ospe of this project ...
+While developing the Perfect Parking application there was a major
+challenge when it came to incorporating parking sensors into the
+application. Due to budget and time constraints, it was determined that
+such sensors were beyond the scope of the project. While doing the
+project it was recognized that parking sensors would have been a
+valuable addition to the application but understood that this would
+require collecting large amounts of personal data from users. Since the
+project was not focused on data collection, the idea of the parking
+monitor came to light and so took priority over the parking sensors.
 
 ### Sensors
 
@@ -961,25 +973,33 @@ height="5.15625in"}
 
 []{#_Toc132726761 .anchor}Figure 3 - Database Design
 
-This database design consists of three tables: \"User\",
+The database for this project is composed of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
 
--   The \"User\" table has three columns: \"Id\" (Primary Key),
-    \"Username\", and \"Password\".
+The \"User\" table has three columns: \"Id\" (primary key),
+\"Username\", and \"Password\". This table stores the login information
+for users of the parking application.
 
--   The \"ParkingLotMonitor\" table has six columns: \"Id\" (Primary
-    Key), \"ParkingLotId\" (Foreign Key),
-    \"ProbabilityParkingAvailable\", \"LastUpdated\", \"Status\", and
-    \"DataTime\".
+The \"ParkingLotMonitor\" table has six columns: \"Id\" (primary key),
+\"ParkingLotId\" (foreign key), \"ProbabilityParkingAvailable\",
+\"LastUpdated\", \"Status\", and \"DataTime\". This table tracks the
+parking availability at each parking lot monitored by the application.
+The \"ParkingLotId\" column acts as a connection point, linking the
+\"ParkingLotMonitor\" table to the \"ParkingLot\" table.
 
--   The \"ParkingLot\" table has seven columns: \"Id\" (Primary Key),
-    \"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
-    \"Latitude\", and \"Longitude\".
+The \"ParkingLot\" table has seven columns: \"Id\" (primary key),
+\"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
+\"Latitude\", and \"Longitude\". This table stores information about
+each parking lot, including its name, address, image, hours of
+operation, and whether it is a paid parking lot. The \"Latitude\" and
+\"Longitude\" columns allow the parking application to display the
+parking lot location on a map.
 
-The diagrams show a relationship between the \"ParkingLotMonitor\" and
-\"ParkingLot\" tables through the use of the \"has\" symbol. The
-\"ParkingLotId\" column in the \"ParkingLotMonitor\" table acts as a
-connection point, serving as a foreign key to link the two tables.
+The diagrams depict a relationship between the \"ParkingLotMonitor\" and
+\"ParkingLot\" tables using the \"has\" symbol. The \"ParkingLotId\"
+column in the \"ParkingLotMonitor\" table serves as a foreign key to
+link the two tables, allowing the application to track parking
+availability at each parking lot.
 
 ## User Parking Sequence diagram
 
@@ -1196,6 +1216,10 @@ model has fields for id, parkingLot, name, latitude,longitude,
 probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
 status, and image.
 
+![Diagram Description automatically
+generated](./images/thesis/media/image6.png){width="2.1642836832895886in"
+height="4.178909667541557in"}
+
 serializers.py defines the serializers used to convert the ParkingLot
 and ParkingLotMonitor models to JSON format for use in the app\'s API.
 
@@ -1234,33 +1258,65 @@ displaying the data in the website for probability of parking available
 so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
-### Source Control and versioning
+![Diagram Description automatically
+generated](./images/thesis/media/image7.png){width="5.143096019247594in"
+height="1.8546478565179352in"}
 
-The solutions presented in this chapter are the best practices and
-patterns of all those tried in various versions throughout the
-lifecycles of the systems defines in section 1.2.
+## Source Control and versioning
 
-## Development Environment
+For source control and versioning, GitHub was utilized to manage the
+codebase for the project. GitHub was chosen because of prior experience
+using it during other studies, and it provided a reliable platform for
+version control and collaboration with the supervisor.
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
+To keep the code organized and easily manageable, the repository was
+organised into different branches for each week of development. This
+allowed for easy upkeep and to keep track of changes made during each
+week and easily roll back to previous versions if needed.
+
+Additionally, the supervisor was added as a collaborator on the
+repository, allowing him to view the progress and provide feedback on
+the code and documents. This facilitated effective communication and
+ensured that the project was aligned with the objectives.
+
+One significant advantage of using GitHub was that it provided a safe
+and secure backup of the code. In the event of file corruption, it would
+be possible to pull down the last push request and continue the work
+without losing progress.
+
+Overall, the use of GitHub as a source control and versioning tool
+allowed for effective management of the development of the Perfect
+Parking project, collaborate with the supervisor, and ensure the safety
+and integrity of the codebase.
 
 ## Tools Used
 
-The following tools were used in the development of this project: VS
-code, a code editor that provides an excellent development environment;
-Django Python web framework, which allowed for rapid development of the
-project and easy maintenance, Anaconda, a package management and
-deployment tool that made it easy to install and manage required
-libraries and dependencies, OpenCV, an open source computer vision and
-machine learning software library, which was used for image processing
-and analysis, GitHub, a code repository that allowed for version control
-and collaboration with my supervisor, Microsoft Word, which was used to
-write the thesis, and Canva, a graphic design platform used to create
-the project poster. These tools were chosen for their reliability, ease
-of use, and suitability for the project requirements. By utilizing these
-tools, the project was able to be completed more efficiently, with
-greater accuracy and precision.
+Tools:
+
+-   VS Code, a code editor that provides an excellent development
+    environment.
+
+-   Anaconda, a package management, and deployment tool that made it
+    easy to install and manage required libraries and dependencies.
+
+-   GitHub, a code repository that allowed for version control and
+    collaboration with my supervisor.
+
+-   Microsoft Word, which was used to write the thesis.
+
+-   Canva, a graphic design platform used to create the project poster.
+
+Languages and Frameworks:
+
+-   Django Python web framework, which allowed for rapid development of
+    the project and easy maintenance.
+
+-   OpenCV, an open-source computer vision and machine learning software
+    library, which was used for image processing and analysis
+
+By utilizing these tools, languages, and frameworks, the project was
+able to be completed more efficiently, with greater accuracy and
+precision.
 
 ## Django Rest API
 
@@ -1343,44 +1399,90 @@ those who work in data research and scientific computing. Researchers,
 developers, and data analysts all favour it because of how simple it is
 to use and the extensive library of tools that are already installed.
 
-# Conclusion and Recommendations
+### How to Install Anaconda
 
-## Conclusion
+-   Download the Appropriate Anaconda installer from the [Anaconda
+    Website](https://www.anaconda.com/download/)
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
+-   Open VS Code and open a new terminal window by selecting
+    \"Terminal\" from the top menu and then selecting \"New Terminal.
 
-## Recommendations
+-   Navigate to the directory where you downloaded the Anaconda
+    installer using the command **cd \<directory\>**.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+-   For example, if you downloaded the Anaconda installer for Windows
+    and saved it in your Downloads folder, you would type the following
+    command in the terminal:
 
-```{=html}
-<!-- -->
-```
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+1\.     cd Downloads
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+-   Run the Anaconda installer by typing the command **bash \<Anaconda
+    installer filename\>** in the terminal, where **\<Anaconda installer
+    filename\>** is the name of the Anaconda installer file you
+    downloaded.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+1\. bash Anaconda3-2021.05\--x86_64.sh   
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+-   Follow the instructions in the Anaconda installer to complete the
+    installation process.
 
-```{=html}
-<!-- -->
-```
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+-   Once the installation is complete, you can use Anaconda in the VS
+    Code terminal by activating the Anaconda environment with the
+    command **conda activate**. You can then use the various Anaconda
+    packages and tools in the terminal as needed.
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+-   For example, if you want to use the Pandas library in your Python
+    script, you can first activate the Anaconda environment by typing
+    the following command in the terminal:
 
--   This chapter will begin by outlining the (cf. 1.1) for the purpose
-    of writing a Report for a Project and outlining paragraphs.
+1\.     conda activate
+
+-   Then, you can import the Pandas library in your Python script using
+    the following line of code:
+
+1\.     import pandas as pd
+
+-   This will allow you to use the various functions and methods
+    provided by the Pandas library in your project.
+
+# Testing and Results
+
+## Functionality
+
+During testing, the Perfect Parking application demonstrated strong
+functionality in displaying the availability of parking spots based on
+real-time data collected by the ParkingLotMonitor. The ParkingLotMonitor
+allows the user to mark out parking spots that they want to be
+continuously monitored for their occupancy status. Whenever there is a
+change in the availability of a parking spot the mapped-out spaces turn
+green for available and red for occupied, the monitor sends the
+probability of it being available to the Perfect Parking application.
+The application then displays the availability of the car park to the
+user in real-time by displaying the probability of available parking
+spaces, Overall, the application\'s functionality met the project\'s
+objectives and proved to be a valuable tool for drivers seeking parking
+in urban or congested areas. However, some minor issues were identified
+during testing, such as if a shadow is casted over a parking spot and it
+changes the colour gradient in the space the monitor would think that
+the space is full when in theory it's not. If the project was to go
+further in the future this minor issue would be fixed.
+
+## Usability
+
+The usability of the ParkingLotMonitor and Perfect Parking website were
+both tested during the evaluation process. The ParkingLotMonitor
+interface was found to be intuitive and user-friendly, allowing a user
+to easily mark out and monitor parking spots. The monitor also
+accurately reported the availability of parking spots in real-time, with
+color-coding providing a clear visual indication of the status of each
+spot. The Perfect Parking website was also found to be intuitive and
+easy to use. The website provided an interface where users could view
+the availability of parking spots in real-time. The website allowed
+signed-in users to view a car park\'s availability, and when the car
+park was selected, it showed a Google map of the parking location, where
+they could get directions to the car park if they wish. Overall, the
+usability of both the ParkingLotMonitor and Perfect Parking website was
+strong, with minimal issues or confusion reported during testing.
 
 # References
 
@@ -1463,4 +1565,4 @@ Available at:
 
 ### Literals {#literals .Appendix:-H3}
 
-# Development Environment {#development-environment-1 .Appendix:-H1}
+# Development Environment {#development-environment .Appendix:-H1}
