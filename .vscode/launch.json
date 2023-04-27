@@ -17,7 +17,7 @@
             "justMyCode": true
         },
         {
-            "name": "PerfectParkingClient",
+            "name": "Client - ParkingLot",
             "type": "python",
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
