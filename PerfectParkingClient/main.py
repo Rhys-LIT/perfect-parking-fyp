@@ -1,7 +1,8 @@
 import time
 from colors import COLOR_RED
 from coordinates_generator import CoordinatesGenerator
-from motion_detector import MotionDetector, ParkingMonitorData
+from motion_detector import MotionDetector
+from perfectparking import ParkingMonitorData
 import argparse
 import logging
 import yaml
