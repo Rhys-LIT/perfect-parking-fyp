@@ -391,4 +391,4 @@ $RECYCLE.BIN/
 # Django Custom files
 PerfectParking/migrations/*
 local.cmd
-docs/to-do.md
+
