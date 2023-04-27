@@ -158,8 +158,7 @@ space.*
 [4.8.1 Development limitations
 [26](#development-limitations)](#development-limitations)
 
-[4.9 Machine Learning Algorithms
-[26](#machine-learning-algorithms)](#machine-learning-algorithms)
+[4.9 Machine Learning Algorithms [26](#_Toc133322572)](#_Toc133322572)
 
 [4.10 Database design [26](#database-design)](#database-design)
 
@@ -310,7 +309,7 @@ looking to find an available parking space they end up wasting time and
 using a lot of fuel from them driving around the car park or the block
 multiple times hopping to find a space, on average people spend 17 hours
 per year driving around looking for parking spaces (Quellmalz, 2021). By
-developing Perfect Parking, It is hoped to make the parking process in
+developing Perfect Parking, it is hoped to make the parking process in
 college campus and in the city seamless and stress free, by doing this
 I'm hoping to eliminate the time and fuel waste road users encounter
 while looking for parking.
@@ -359,12 +358,13 @@ narrowed, allowing for a more focused and efficient development process.
 ## Report Structure
 
 The following is the report structure for the Perfect Parking Thesis.
-The report has four chapets, lit review, analaysisi, design and
-colulusions gratitude to those who contributed to the project. The
-report also includes an Abstract, which provides a brief overview of the
-project\'s purpose, scope, methods, and findings. A table of contents
-and a table of figures are generated automatically, providing a quick
-and easy way for readers to navigate through the report.
+The report has six chapters, Introduction, literature review, analysis
+and design, Implementation, Testing and results and conclusions
+gratitude to those who contributed to the project. The report also
+includes an Abstract, which provides a brief overview of the project\'s
+purpose, scope, methods, and findings. A table of contents and a table
+of figures are generated automatically, providing a quick and easy way
+for readers to navigate through the report.
 
 # Literature Review
 
@@ -396,7 +396,7 @@ called Meta Group.
 Big data doesn't equate to any specific amount of data, big data
 deployments often involve terabytes, petabytes or even in some cases
 exabytes of data that is created and collected over time. (Botelho,
-n.d.).
+2020).
 
 ### Why is big data important?
 
@@ -406,8 +406,8 @@ more a company can gather its data the more the company can grow.
 
 Big data provides valuable insights into customers that companies can
 use to refine their marketing, advertising, and promotions by doing this
-they can increase customer engagement and conversion rates. (Anon.,
-n.d.)
+they can increase customer engagement and conversion rates. (TechVidan,
+2022)
 
 Big data is huge in the medical industry, medical researchers can
 identify disease signs and risk factors, this can help the doctors
@@ -417,7 +417,7 @@ organizations and government agencies up to date information on
 infectious diseases threats or outbreaks, we have seen this in the past
 with the pandemic and how the HSE in Ireland were able to monitor the
 amount of covid -- 19 infections per county, and how they were able to
-create the Covid App with this data. (Botelho, n.d.)
+create the Covid App with this data. (Botelho, 2020)
 
 ### What is Real Time data
 
@@ -570,11 +570,11 @@ image. (Tyagi, 2021)
 One of the advantages of using Haar-like features for object detection
 is their computational efficiency. They are suitable for real-time
 applications like video surveillance since they are rapid and effective
-to compute utilising integral images. (Bąk, 2023)
+to compute utilizing integral images. (Bąk, 2023)
 
 ## Conclusion: The Need for a Software Solution
 
-In this project, The parking application is being created for
+In this project, the parking application is being created for
 educational purposes in an effort to solve the widespread parking issue
 in our cities. Time is lost, gasoline is consumed, and traffic is backed
 up due to Limerick City\'s old and inefficient parking systems. To
@@ -638,16 +638,16 @@ time and reducing stress.
 
 Perfect Parking is a web application that will allow users to find
 parking in a city. The application will allow users to search for
-parking near a specific location, and will show the user data the
-nearest parking to their location.
+parking near a specific location and will show the user data the nearest
+parking to their location.
 
 ## Users Use-case Diagram.
 
 ![Alt
-text](./images/thesis/media/image3.png){width="5.694444444444445in"
+text](./docs/images/thesis/media/image3.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc133414128 .anchor}Figure : User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure 1: User Use Case Diagram
 
 ## System Actors
 
@@ -745,11 +745,11 @@ Alternative Flows:
 
 Use Case: Login User:
 
-**Description:**
+Description:
 
 A user logs in to the application.
 
-**Actors:**
+Actors:
 
 -   User
 
@@ -770,7 +770,7 @@ Main Flow:
 1.  The user clicks on the "Login" button.
 2.  The user enters their details into the login form.
 3.  The user clicks on the "Login" button.
-4.  The application logs the user in to the application.
+4.  The application logs the user into the application.
 
 Alternative Flows:
 
@@ -928,22 +928,16 @@ brings even more problems, these problems being:
 
 This being a trial application, with a limited budget and permission
 problems, for the purpose of a university project, the client
-application will receive a video stream from a prerecorded local video
+application will receive a video stream from a pre-recorded local video
 file instead of a camera.
-
-## Machine Learning Algorithms
-
--   OpenCV <https://opencv.org/>
--   Hough Line Transform
-    <https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html>
 
 ## Database design
 
 ![Diagram Description automatically
-generated](./images/thesis/media/image4.png){width="5.395833333333333in"
+generated](./docs/images/thesis/media/image4.png){width="5.395833333333333in"
 height="5.15625in"}
 
-[]{#_Toc132726761 .anchor}Figure - Database Design
+[]{#_Toc132726761 .anchor}Figure 2 - Database Design
 
 The database for this project is composed of three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\".
@@ -976,30 +970,35 @@ availability at each parking lot.
 ## User Parking Sequence diagram
 
 ![A screenshot of a computer Description automatically
-generated](./images/thesis/media/image5.png){width="6.268055555555556in"
+generated](./docs/images/thesis/media/image5.png){width="6.268055555555556in"
 height="2.0875in"}
 
-[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 3- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
 app if there is parking available near their GPS location on Henry
 Street.
 
-The app then queries multiple parking lot monitors,
-HenryStParkingLotMonitor, LowerHartstongeParkingLotMonitor,
-MallowStreetPart1ParkingLotMonitor, and
-MallowStreetPart2ParkingLotMonitor, to check if parking is available in
-each lot.
+To check if parking is available in each lot the software queries
+multiple parking lot monitors:
 
-The HenryStParkingLotMonitor responds that parking is 97% available, the
-LowerHartstongeParkingLotMonitor responds 87%,
-MallowStreetPart1ParkingLotMonitor 65%, and
-MallowStreetPart2ParkingLotMonitor 45%.
+-   Henry St Parking Lot Monitor
+
+-   LowerHartstongeParkingLotMonitor
+
+-   MallowStreetPart1ParkingLotMonitor
+
+-   and MallowStreetPart2ParkingLotMonitor
+
+The Henry St Parking Lot Monitor responds that parking is 97% available,
+the Lower Hartstonge Parking Lot Monitor responds 87%,
+MallowStreetPart1ParkingLotMonitor 65%, and Mallow Street Part2 Parking
+Lot Monitor 45%.
 
 Finally, the application then sends a response to the user indicating
 that there are 3 parking lots available near their location, with the
-names HenrySt, LowerHartstonge, and MallowStreetPart1.
+names Henry St, Lower Hartstonge, and Mallow Street Part1.
 
 # Implementation
 
@@ -1189,7 +1188,7 @@ probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
 status, and image.
 
 ![Diagram Description automatically
-generated](./images/thesis/media/image6.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image6.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
 serializers.py defines the serializers used to convert the ParkingLot
@@ -1231,7 +1230,7 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./images/thesis/media/image7.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image7.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
 ## Project Management
@@ -1307,7 +1306,7 @@ Languages and Frameworks:
     the project and easy maintenance.
 
 -   OpenCV, an open-source computer vision and machine learning software
-    library, which was used for image processing and analysis
+    library, which was used for image processing and analysis.
 
 By utilizing these tools, languages, and frameworks, the project was
 able to be completed more efficiently, with greater accuracy and
@@ -1368,26 +1367,26 @@ Anaconda is a popular distribution of the Python programming language
 that is widely used for data science and scientific computing. It comes
 with a sizable number of pre-installed libraries and tools that are
 frequently used in these domains, including Jupyter Notebook, NumPy,
-Pandas, and Matplotlib.
+Pandas, and Matplotlib. (Root, 2020)
 
 Anaconda is designed to make it easy to set up and manage Python
 environments, which are essentially separate installations of Python
 with their own dependencies and libraries. When working on several
 projects with various requirements, this is especially helpful because
-it enables you to keep them separate from one another.
+it enables you to keep them separate from one another. (Root, 2020)
 
 The Conda package manager, which lets you easily install, update, and
 manage additional software packages and libraries, is included with
 Anaconda in addition to Python and its libraries. When working with
 non-Python libraries that are necessary for your project, this can be
-helpful.
+helpful. (McKinney, 2022)
 
 Utilising Anaconda has several benefits, one of which is how much easier
 it makes it to set up a Python environment for data research or
 scientific computing. It removes the need to individually install and
 configure each library, which can be a time-consuming and error-prone
 operation, by offering a pre-built distribution with many of the
-frequently used libraries already installed.
+frequently used libraries already installed. (O Reilly, n.d.)
 
 Overall, Anaconda is a robust and adaptable tool that is well-liked by
 those who work in data research and scientific computing. Researchers,
@@ -1542,17 +1541,17 @@ environment. (Testingxperts, 2023)
 Overall, Behaviour-driven development (BDD) is an approach to software
 development that places a strong emphasis on collaboration and
 communication between technical and non-technical stakeholders. By
-defining the desired behavior of the software upfront and using a common
-language, it can help to ensure that everyone involved in the
+defining the desired behaviour of the software upfront and using a
+common language, it can help to ensure that everyone involved in the
 development process is working towards a common goal and that the
 software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./images/thesis/media/image8.png){width="4.025in"
+1](./docs/images/thesis/media/image8.png){width="4.025in"
 height="2.2642989938757654in"}
 
-Figure : BDD development cycle (Collidu, n.d.)
+Figure 4: BDD development cycle (Collidu, n.d.)
 
 ### BDD In Perfect Parking
 
@@ -1577,7 +1576,107 @@ difficult to implement BDD testing in the development of the Perfect
 Parking application, there are still many benefits to using BDD testing
 in a new solo project that make it worth considering.
 
-## TDD Testing
+## Test Driven Development (TDD)
+
+A software development process called Test-Driven Development (TDD)
+places a strong emphasis on creating automated tests before creating any
+production code. In test-driven development (TDD), the developer creates
+a test that outlines a desired software feature or behaviour, runs the
+test to discover its failure, and then writes the code to make the test
+pass. The process is then repeated with additional tests until the
+desired functionality is complete. (Unadkat, 2023)
+
+With TDD, the developer is forced to consider the desired behaviour of
+the code before actually developing it because tests must be written
+first. This produces more modular, maintainable code that is also less
+prone to problems. It also allows for easier refactoring of code later,
+as the tests act as a safety net to catch any unintended changes that
+may have been introduced. (Santacroce, 2022)
+
+TDD typically involves theses following steps:
+
+-   **Writing a failing test:** The developer purposefully constructs a
+    test that fails even though it defines the desired behaviour of the
+    code. The test is written before writing any code for production.
+
+-   **Write the minimum amount of code to make the test pass:** The
+    developer then creates the minimum amount of code required to pass
+    the failing test. This code was written exclusively for the purpose
+    of passing the test.
+
+-   **Refactor the code:** When the test passes, the developer can
+    refactor the code without affecting its functionality in order to
+    make it easier to maintain.
+
+-   **Repeat:** The developer then repeats the process with additional
+    tests until the desired functionality is complete. (Steinfeld, 2020)
+
+![What is TDD (Test Driven
+Development)?](./docs/images/thesis/media/image9.png){width="3.4380238407699037in"
+height="2.775in"}
+
+Figure 5: How TDD Works (BasuMallick, 2022)
+
+TDD can help increase productivity in addition to code quality by
+decreasing time spent on debugging and by establishing a clear set of
+requirements for the software being built. It does, however, require
+some upfront effort in writing the tests upfront, which may not be
+desirable for smaller projects or teams with fewer resources.
+
+Overall, TDD is a powerful technique for writing high-quality,
+maintainable code, and can be especially useful in larger, more complex
+software projects.
+
+### TDD in Perfect Parking
+
+TDD wasn't used in the development of Perfect Parking for several
+reasons. Firstly, when working on a solo project, it didn't feel
+necessary to write the tests because the code could be simply tested as
+its written. Additionally, it can be difficult to justify the additional
+time investment required for TDD when working on the project solo.
+However, even on a solo project, TDD can help to ensure that the code is
+of high quality and easier to maintain. Additionally, writing tests
+upfront can help to prevent regressions and ensure that the code works
+as expected, even if you come back to the project months or years later.
+
+Secondly, TDD also wasn't used in the development of the solo project,
+such as the Perfect Parking application, was due to the limited
+knowledge of TDD and the lack of time to learn how to implement it
+effectively.
+
+In conclusion, there are several good reasons why TDD might not have
+been used in the creation of your Perfect Parking. These include
+the lack of familiarity with TDD and the lack of free time to learn more
+about it. However, learning about TDD might be a worthwhile time and
+effort investment if interested in developing abilities and producing
+higher quality code.
+
+If another project was to be developed in the future TDD would be
+implemented for several reasons:
+
+Firstly, TDD can help ensure that the code is well-structured and
+maintainable, which can be especially important for larger projects.
+
+Secondly, TDD can help improve the quality of the code. By promoting
+modular, reusable, and maintainable code, TDD can ensure that each
+component of the code works as intended and fits into the larger system.
+
+Thirdly, TDD can increase confidence in code changes. By having a
+comprehensive suite of tests, developers can be confident that their
+code changes will not negatively affect other parts of the system.
+
+Lastly, TDD can improve collaboration between developers and teams. By
+providing a common language for discussing code changes and ensuring
+that everyone is on the same page in terms of what the code should do,
+TDD can reduce communication errors and misunderstandings between
+developers.
+
+In conclusion, using TDD in a software development project can result in
+higher-quality code, a better user experience, and increased developer
+efficiency. TDD can ensure the success of upcoming project by
+identifying problems earlier in the development process, encouraging
+modular and maintainable code, boosting confidence in code
+modifications, and enhancing teamwork.
 
 ## Functionality
 
@@ -1618,10 +1717,6 @@ strong, with minimal issues or confusion reported during testing.
 
 # References
 
-Anon., n.d. \[Online\]\
-Available at:
-[https://techvidvan.com/tutorials/why-big-data/]{.underline}
-
 Arunachalam, H., 2014. *Image Segmentation for the Extraction of Face.*
 , Rajiv Gandhi: s.n.
 
@@ -1639,20 +1734,55 @@ Barnett, M., 2017. \[Online\]\
 Available at:
 [https://www.fourthsource.com/data/importance-real-time-data-five-reasons-need-22014]{.underline}
 
+BasuMallick, C., 2022. *What Is TDD (Test Driven Development)? Process,
+Importance, and Limitations.* \[Online\]\
+Available at:
+[https://www.spiceworks.com/tech/devops/articles/what-is-tdd/]{.underline}\
+\[Accessed 27 04 2023\].
+
 Boesch, G., 2023. *What is OpenCV? The Complete Guide (2023).*
 \[Online\]\
 Available at: [https://viso.ai/computer-vision/opencv/]{.underline}\
 \[Accessed 23 May 2023\].
 
-Botelho, B., n.d. *Big Data.* \[Online\]\
+Botelho, B., 2020. *Big Data.* \[Online\]\
 Available at:
-[https://www.techtarget.com/searchdatamanagement/definition/big-data]{.underline}
+[https://www.techtarget.com/searchdatamanagement/definition/big-data]{.underline}\
+\[Accessed 16 02 2022\].
+
+Collidu, n.d. *Behavior Driven Development (BDD).* \[Online\]\
+Available at:
+[https://www.collidu.com/presentation-behavior-driven-development-bdd]{.underline}\
+\[Accessed 26 04 2023\].
+
+Das, S., 2022. *BDD Testing: A Detailed Guide.* \[Online\]\
+Available at:
+[https://www.browserstack.com/guide/what-is-bdd-testing]{.underline}\
+\[Accessed 26 04 2023\].
+
+Das, S., 2022. *Benefits of Test Management and BDD in Software Testing
+Process.* \[Online\]\
+Available at:
+[https://www.browserstack.com/guide/benefits-of-test-management-and-bdd]{.underline}\
+\[Accessed 26 04 2023\].
+
+Ingrassellino, J., 2021. *Why Should Software Testers Understand Unit
+Testing?.* \[Online\]\
+Available at:
+[https://applitools.com/blog/why-should-software-testers-understand-unit-testing/]{.underline}\
+\[Accessed 26 04 2023\].
 
 Johnson, S., n.d. *What Is Django and What Is Django Used for?.*
 \[Online\]\
 Available at:
 [https://www.stxnext.com/blog/what-is-django/]{.underline}\
 \[Accessed 24 04 2023\].
+
+Kolodiy, S., n.d. *Unit Testing and Coding: Why Testable Code Matters.*
+\[Online\]\
+Available at:
+[https://www.toptal.com/qa/how-to-write-testable-code-and-why-it-matters]{.underline}\
+\[Accessed 26 04 2023\].
 
 Lee, D., 2022. *Cascade Classifiers.* \[Online\]\
 Available at:
@@ -1665,11 +1795,20 @@ Available at:
 [https://eu.usatoday.com/story/money/2017/07/12/parking-pain-causes-financial-and-personal-strain/467637001/]{.underline}\
 \[Accessed 24 04 2023\].
 
+McKinney, D., 2022. *What is Conda.* \[Online\]\
+Available at: [https://cloudsmith.com/blog/what-is-conda/]{.underline}\
+\[Accessed 27 04 2023\].
+
 Michael Jones, P. V., 2001. *Rapid Object Detection using a Boosted
 Cascade of Simple.* \[Online\]\
 Available at:
 [https://www.cs.cmu.edu/\~efros/courses/LBMV07/Papers/viola-cvpr-01.pdf]{.underline}\
 \[Accessed 23 May 2023\].
+
+O Reilly, n.d. *Advantages of Anaconda.* \[Online\]\
+Available at:
+[https://www.oreilly.com/library/view/mobile-artificial-intelligence/9781789344073/9ef54367-7a36-4064-ae81-e65ce25e80bb.xhtml]{.underline}\
+\[Accessed 27 04 2023\].
 
 Patel, A., 2020. *What is Object Detection?.* \[Online\]\
 Available at:
@@ -1685,6 +1824,17 @@ Rocheeva, O., 2018. *Parking Space Detection in OpenCV.* \[Online\]\
 Available at: [https://github.com/olgarose/ParkingLot]{.underline}\
 \[Accessed 20 Febuary 2023\].
 
+Root, D., 2020. *An Overview of The Anaconda Distribution.* \[Online\]\
+Available at:
+[https://towardsdatascience.com/an-overview-of-the-anaconda-distribution-9479ff1859e6]{.underline}\
+\[Accessed 27 04 2023\].
+
+Santacroce, F., 2022. *Test-Driven Development (TDD): A Time-Tested
+Recipe for Quality Software.* \[Online\]\
+Available at:
+[https://semaphoreci.com/blog/test-driven-development]{.underline}\
+\[Accessed 27 04 2023\].
+
 Sawer, P., 2017. *Search for parking spaces cost drivers four days a
 year.* \[Online\]\
 Available at:
@@ -1699,10 +1849,38 @@ Available at:
 [https://www.splunk.com/en_us/data-insider/what-is-real-time-data.html]{.underline}\
 \[Accessed 03 April 2023\].
 
+Steinfeld, G., 2020. *5 steps of test-driven development.* \[Online\]\
+Available at:
+[https://developer.ibm.com/articles/5-steps-of-test-driven-development/]{.underline}\
+\[Accessed 27 04 2023\].
+
 Tech Target, n.d. *object recognition.* \[Online\]\
 Available at:
 [https://www.techtarget.com/whatis/definition/object-recognition]{.underline}\
 \[Accessed 21st May 2023\].
+
+TechTarget , 2023. *Unit testing.* \[Online\]\
+Available at:
+[https://www.techtarget.com/searchsoftwarequality/definition/unit-testing]{.underline}\
+\[Accessed 26 04 2023\].
+
+TechVidan, 2022. *Why Big Data -- Benefits and Importance of Big data.*
+\[Online\]\
+Available at:
+[https://techvidvan.com/tutorials/why-big-data/]{.underline}\
+\[Accessed 15 02 2023\].
+
+Testingxperts, 2023. *BDD (Behavior Driven Development) Testing: 7
+Benefits that Ensure High Product Quality.* \[Online\]\
+Available at:
+[https://www.testingxperts.com/blog/bdd-testing#:\~:text=BDD%20testing%20uses%20a%20plain,teams%20on%20the%20same%20page.]{.underline}\
+\[Accessed 26 04 2023\].
+
+Tricentis, 2018. *What is BDD (Behavior-Driven Development)?.*
+\[Online\]\
+Available at:
+[https://www.tricentis.com/blog/bdd-behavior-driven-development]{.underline}\
+\[Accessed 26 04 2023\].
 
 Turner, A., 2023. *How Many Smartphones Are In The World?.* \[Online\]\
 Available at:
@@ -1714,6 +1892,11 @@ Tyagi, M., 2021. *Viola Jones Algorithm and Haar Cascade Classifier.*
 Available at:
 [https://towardsdatascience.com/viola-jones-algorithm-and-haar-cascade-classifier-ee3bfb19f7d8]{.underline}\
 \[Accessed 24 04 2023\].
+
+Unadkat, J., 2023. *What is Test Driven Development (TDD)?.* \[Online\]\
+Available at:
+[https://www.browserstack.com/guide/what-is-test-driven-development]{.underline}\
+\[Accessed 27 04 2023\].
 
 University of Limerick, 2022. *Facts and figures.* \[Online\]\
 Available at:
