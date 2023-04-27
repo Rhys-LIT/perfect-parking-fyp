@@ -1,0 +1,10 @@
+sequenceDiagram
+    Website Client Users-->>Server:   (User 1) Display response (data in website)
+    Website Client Users-->>Server:   (User 2) Display response (data in website)
+    Parking Monitor Client->>Server:  Send request (data, headers) to url (REST API endpoint)
+    Server-->>Parking Monitor Client: Send response (status code) 200 OK, 400 Bad Request<br/>, 404 Not Found, 500 Internal Server Error
+    Website Client Users-->>Server:   (User 1) Display (updated) response (data in website)
+    Website Client Users-->>Server:   (User 3) Display response (data in website)
+    Parking Monitor Client->>Server:  Send request (data, headers) to url (REST API endpoint)
+    Server-->>Parking Monitor Client: Send response (status code) 200 OK, 400 Bad Request<br/>, 404 Not Found, 500 Internal Server Error
+    Website Client Users-->>Server:   (User 2) Display (updated) response (data in website)
