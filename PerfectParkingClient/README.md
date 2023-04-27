@@ -1,3 +1,30 @@
+
+# Perfect Parking Video Monitor Client
+
+An app that allows users to find parking spots in the city of Limerick for my FYP.
+
+## Requirements
+
+- Python
+
+## Run
+
+1. Clone the repository
+
+    ```bash
+    git clone https://github.com/Rhys-LIT/perfect-parking-fyp.git
+    ```
+
+2. Install dependencies
+
+    ```py
+    pip install -r requirements.txt
+    ```
+
+3. Run the app
+    Open VS Code and run the app by pressing the `F5` Key or  
+    Open a terminal and run the following command:
+
 # Parking Space Detection in OpenCV
 For a fun weekend project, I decided to play around with the OpenCV (Open Source Computer Vision) library in python.
 

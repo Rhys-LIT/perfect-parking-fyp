@@ -1,9 +1,10 @@
-import argparse
-import yaml
+import time
+from colors import COLOR_RED
 from coordinates_generator import CoordinatesGenerator
-from motion_detector import MotionDetector
-from colors import *
+from motion_detector import MotionDetector, ParkingMonitorData
+import argparse
 import logging
+import yaml
 
 
 def main():
@@ -21,9 +22,14 @@ def main():
             generator.generate()
 
     with open(data_file, "r") as data:
-        points = yaml.load(data)
-        detector = MotionDetector(args.video_file, points, int(start_frame))
-        detector.detect_motion()
+        points = yaml.full_load(data)
+        parking_monitor_data = ParkingMonitorData()
+        detector = MotionDetector(args.video_file, points, int(start_frame), parking_monitor_data)
+        while True:
+            was_stopped = detector.detect_motion()
+            if was_stopped:
+                break
+           
 
 
 def parse_args():

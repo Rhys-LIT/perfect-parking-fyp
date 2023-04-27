@@ -1,0 +1,6 @@
+numpy==1.21.6
+opencv_contrib_python==4.7.0.68
+PyYAML==6.0
+requests==2.29.0
+certifi==2022.12.7
+setuptools==67.7.1

@@ -1,0 +1,11 @@
+[ParkingLotMonitor]
+Id=1
+Name=Henry Street #4
+Latitude=52.663797090256100
+Longitude=-8.628752240173640
+
+[App]
+Token=YOUR_TOKEN
+Username=YOUR_USERNAME
+Password=YOUR_PASSWORD
+ServerUrl=http://127.0.0.1:8000/api-auth/parking-lot-monitors/

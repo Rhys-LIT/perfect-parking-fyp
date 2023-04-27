@@ -5,6 +5,7 @@
         "Consolas",
         "createsuperuser",
         "djangorestframework",
+        "imshow",
         "makemigrations",
         "Rhys",
         "runserver",
