@@ -32,7 +32,7 @@ An app that allows users to find parking spots in the city of Limerick for my FY
 4. Open the app in your browser
     <http://localhost:8000>
 
-Built in user accounts are:
+Built-in user accounts are:
 
 | Username       | Password  | Role  | Note                             |
 |----------------|-----------|-------|----------------------------------|
