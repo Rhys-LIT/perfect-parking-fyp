@@ -713,7 +713,7 @@ several suggestions that could encourage people to drive more in the
 future. In the top three are traffic congestion, and access to parking.
 (CSO.ie, 2019)
 
-![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
+![](./images/thesis/media/image3.png){width="5.896527777777778in"
 height="3.160416666666667in"}
 
 []{#_Toc133573279 .anchor}Figure 1: CSO.ie - Factors that would
@@ -790,7 +790,7 @@ negotiations, and reacting to change over planning ahead. (atlassian,
 n.d.)
 
 ![Les raisons pour utiliser les méthodes Agile en
-entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
+entreprise](./images/thesis/media/image4.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
 []{#_Toc133573289 .anchor}Figure 2: Agile Development (Feer, 2020)
@@ -914,7 +914,7 @@ monitored car parks. The \"ParkingLotMonitor\" table is linked to the
 parking application to track parking availability at each location.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
+generated](./images/thesis/media/image5.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
 []{#_Toc132726761 .anchor}Figure 3 - Database Design
@@ -938,7 +938,7 @@ height="5.071345144356956in"}
 ### Users/Bots use-case Diagram.
 
 ![Alt
-text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
+text](./images/thesis/media/image6.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
 []{#_Toc133414128 .anchor}Figure 4: User Use Case Diagram
@@ -1159,7 +1159,7 @@ Alternative Flows:
 ## User Parking Sequence diagram
 
 ![Graphical user interface, application, table Description automatically
-generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
+generated](./images/thesis/media/image7.png){width="5.905555555555556in"
 height="2.1in"}
 
 []{#_Toc132726762 .anchor}Figure 5- User Parking Sequence Diagram
@@ -1200,7 +1200,7 @@ of the parking lots available with some information about the different
 parking lots.
 
 ![Graphical user interface, application Description automatically
-generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
+generated](./images/thesis/media/image8.png){width="6.6075240594925635in"
 height="2.218305993000875in"}
 
 []{#_Toc133573281 .anchor}Figure 6: Parking Lots View
@@ -1211,7 +1211,7 @@ Clicking on a parking lot name will display information on the selected
 parking lot such as a map and an image of the car park as well as other
 information about that specific parking lot.
 
-![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
+![](./images/thesis/media/image9.png){width="5.865909886264217in"
 height="4.149245406824147in"}
 
 []{#_Toc133573282 .anchor}Figure 7: Parking Lot View
@@ -1224,7 +1224,7 @@ will be asked to share the location by the browser. Information such as
 the probability of parking available is displayed which updates whenever
 there is a change in parking behaviour.
 
-![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
+![](./images/thesis/media/image10.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
 
 []{#_Toc133573283 .anchor}Figure 8: Parking lot Monitors View
@@ -1238,7 +1238,7 @@ every time there is a change and the website is refreshed. In the image
 below you can see that the probability has changed for this specific
 parking lot compared to Figure 5 above.
 
-![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
+![](./images/thesis/media/image11.png){width="6.650247156605424in"
 height="4.893287401574804in"}
 
 []{#_Toc133573284 .anchor}Figure 9: Parking Lot Monitor View
@@ -1250,7 +1250,7 @@ browser will ask you to share your location. This is done so the Search
 near me feature can be used.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
+generated](./images/thesis/media/image12.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
 []{#_Toc133573285 .anchor}Figure 10: Location Sharing
@@ -1262,7 +1262,7 @@ that are monitored by how close they are to your location.
 
 ![A picture containing graphical user interface Description
 automatically
-generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
+generated](./images/thesis/media/image13.png){width="5.905555555555556in"
 height="3.0840277777777776in"}
 
 []{#_Toc133573286 .anchor}Figure 11: Search Near Me Feature
@@ -1287,7 +1287,7 @@ This is the Django Rest Framework API Root page; you can see all the
 endpoints from the application.
 
 ![Table Description automatically
-generated](./docs/images/thesis/media/image14.png){width="5.905555555555556in"
+generated](./images/thesis/media/image14.png){width="5.905555555555556in"
 height="2.29375in"}
 
 Figure 12: Django Rest Framework API Root
@@ -1296,13 +1296,13 @@ The two of the most interesting endpoints would be parking-lots and
 parking-lot-monitors:
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image15.png){width="5.905555555555556in"
+generated](./images/thesis/media/image15.png){width="5.905555555555556in"
 height="4.209722222222222in"}
 
 Figure 13: Parking Lot List
 
 ![Graphical user interface, application, Word Description automatically
-generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
+generated](./images/thesis/media/image16.png){width="5.905555555555556in"
 height="4.06875in"}
 
 Figure 14: Parking Lot Monitor List
@@ -1809,7 +1809,7 @@ models.py defines the data structures of ParkingLot and
 ParkingLotMoniton.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image17.png){width="1.6993766404199475in"
+generated](./images/thesis/media/image17.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
 Figure 15: Class Diagram
@@ -1853,7 +1853,7 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image18.png){width="4.080948162729658in"
+generated](./images/thesis/media/image18.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
 []{#_Toc133573290 .anchor}Figure 16: How they work together
@@ -1969,7 +1969,7 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image19.png){width="4.025in"
+1](./images/thesis/media/image19.png){width="4.025in"
 height="2.2642989938757654in"}
 
 []{#_Toc133573291 .anchor}Figure 17: BDD development cycle (Collidu,
@@ -2034,7 +2034,7 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image20.png){width="3.4380238407699037in"
+Development)?](./images/thesis/media/image20.png){width="3.4380238407699037in"
 height="2.775in"}
 
 []{#_Toc133573292 .anchor}Figure 18: How TDD Works (BasuMallick, 2022)
