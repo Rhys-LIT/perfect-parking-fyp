@@ -3,7 +3,40 @@
 {% block title %}Parking Monitors{% endblock %}
 
 {% block main %}
+<script type="text/javascript">
+	var displayElement = document.getElementById("display");
+    var searchNearMeButton = document.getElementById("search-near-me-button");
+
+
+	function setPosition() {
+		if (navigator && navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(assignPositionToForm);
+            searchNearMeButton.disabled = false;
+		}
+		else {
+			displayElement.innerHTML = "Geolocation is not supported by this browser.";
+            searchNearMeButton.disabled = true;
+		}
+	}
+	function assignPositionToForm(position) {
+		document.getElementById("latitude").value = position.coords.latitude;
+		document.getElementById("longitude").value = position.coords.longitude;
+	}
+	
+    $(document).ready(documentReady);
+
+    function documentReady() {
+       setPosition();
+    }
+</script>
 <h1>Parking Monitors</h1>
+<form method="post">
+    {% csrf_token %}
+    <p id="display" class="text-danger"></p>
+    <input type="hidden" name="latitude" id="latitude"/>
+    <input type="hidden" name="longitude" id="longitude"/>
+    <button type="submit" id="search-near-me-button" class="btn btn-primary">Search Near Me</button>
+</form>
 
 <p id="mydesc">Parking Monitors</p>
 <table class="table table-striped" aria-describedby="mydesc">
