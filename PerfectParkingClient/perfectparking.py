@@ -20,6 +20,7 @@ class ParkingMonitorData:
         self.name = config_parser["ParkingLotMonitor"]["Name"]
         self.latitude = config_parser["ParkingLotMonitor"]["Latitude"]
         self.longitude = config_parser["ParkingLotMonitor"]["Longitude"]
+        self.parking_spaces = config_parser["ParkingLotMonitor"]["ParkingSpaces"]
 
         self.app_token = config_parser["App"]["Token"]
         self.app_username = config_parser["App"]["Username"]
@@ -64,7 +65,7 @@ class RestApiUtility:
             "name": parking_monitor_data.name,
             "latitude": parking_monitor_data.latitude,
             "longitude":  parking_monitor_data.longitude,
-            "probabilityParkingAvailable": probability_parking_available,
+            "probabilityParkingAvailable": "{:.2f}".format(probability_parking_available),
             # "image": image_base_64_encoded,
             # "free_spaces": free_spaces
         }
