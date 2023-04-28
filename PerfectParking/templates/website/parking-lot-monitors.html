@@ -1,5 +1,6 @@
 {% extends 'master.html' %}
-
+{% load get_distance_from_lat_lang %}
+{% load humanize %}
 {% block title %}Parking Monitors{% endblock %}
 
 {% block main %}
@@ -48,7 +49,7 @@
             <th>Is Paid Parking</th>
             <th>Latitude</th>
             <th>Longitude</th>
-            <th>Availible Parking Probability</th>
+            <th>Available Parking Probability</th>
             {% if user_point %}
             <th>Distance</th>
             {% endif %}
@@ -62,11 +63,12 @@
             <td>{{ parking_monitor.parkingLot.address }}</td>
             <td>{{ parking_monitor.parkingLot.hours }}</td>
             <td>{{ parking_monitor.parkingLot.isPaidParking }}</td>
-            <td>{{ parking_monitor.latitude }}</td>
-            <td>{{ parking_monitor.longitude }}</td>
-            <td>{{ parking_monitor.probabilityParkingAvailable }}</td>
+            <td>{{ parking_monitor.latitude|floatformat:5 }}</td>
+            <td>{{ parking_monitor.longitude|floatformat:5 }}</td>
+            <td>{{ parking_monitor.probabilityParkingAvailable|floatformat:2 }}</td>
+			
             {% if user_point %}
-            <td>{% parking_monitor.get_distance_from_lat_lang user_point.latitude user_point.longitude %}</td>
+            <td>{% get_distance_from_lat_lang parking_monitor user_point.latitude user_point.longitude %}</td>
             {% endif %}
             <td>{{ parking_monitor.dateTimeLastUpdated }}</td>
         {% endfor %}
