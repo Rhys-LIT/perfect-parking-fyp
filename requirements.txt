@@ -2,4 +2,4 @@ Django==3.2.18
 djangorestframework==3.14.0
 sqlparse==0.4.4
 Pillow==8.3.1
-
+haversine==2.8.0

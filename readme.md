@@ -40,6 +40,13 @@ Built-in user accounts are:
 | admin1         | letmein   | admin | Built in admin account           |
 | parkingMonitor | Letmein1$ | user  | Account for parking monitor apps |
 
+## Tools Used
+
+- [VS Code](https://code.visualstudio.com/)
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](http://www.django-rest-framework.org/)
+
+
 ## Documentation
 
 All documentation is located in the [docs](./docs/readme.md) folder.
