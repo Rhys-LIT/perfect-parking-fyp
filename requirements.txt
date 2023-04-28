@@ -1,5 +1,5 @@
 Django==3.2.18
+django-geo==0.8
 djangorestframework==3.14.0
 sqlparse==0.4.4
 Pillow==8.3.1
-

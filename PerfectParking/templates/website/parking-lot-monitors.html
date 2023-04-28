@@ -49,6 +49,9 @@
             <th>Latitude</th>
             <th>Longitude</th>
             <th>Availible Parking Probability</th>
+            {% if user_point %}
+            <th>Distance</th>
+            {% endif %}
             <th>Last Updated</th>
         </tr>
     </thead>
@@ -62,6 +65,9 @@
             <td>{{ parking_monitor.latitude }}</td>
             <td>{{ parking_monitor.longitude }}</td>
             <td>{{ parking_monitor.probabilityParkingAvailable }}</td>
+            {% if user_point %}
+            <th>{{ parking_monitor.get_distance_from_lat_lang(user_point.latitude, user_point.longitude) }}</th>
+            {% endif %}
             <td>{{ parking_monitor.dateTimeLastUpdated }}</td>
         {% endfor %}
     </tbody>

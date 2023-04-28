@@ -1,4 +1,6 @@
+import random
 from django.db import models
+from django.contrib.gis.geos import Point
 
 # Create your models here.
 class ParkingLot(models.Model):
@@ -14,6 +16,29 @@ class ParkingLot(models.Model):
     
     def __str__(self):
         return self.name
+
+    def get_dummy_distance(self) -> float:
+        return random.randint(1, 100)
+
+
+    def get_distance_from_lat_lang(self, latitude: float, longitude: float) -> float:
+        return self.get_distance_from_point(Point(latitude, longitude))
+    
+    def get_distance_from_point(self, user_point: Point) -> float:
+        """Gets the distance from the user GPS coordinates to the parking lot coordinates.
+
+        Returns:
+            float: _description_
+        """
+        return self.get_gps_point().distance(user_point) * 100
+    
+    def get_gps_point(self) -> Point:
+        """Gets the GPS coordinates of the parking lot.
+
+        Returns:
+            Point: _description_
+        """
+        return Point(self.latitude, self.longitude)
     
 class ParkingLotMonitor(models.Model):
     id = models.AutoField(primary_key=True)

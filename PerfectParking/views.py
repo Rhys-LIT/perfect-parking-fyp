@@ -16,13 +16,13 @@ from . import WebPaths
 
 
 class WebPages:
-    HOME_PAGE = 'website/index.html'
-    PARKING_LOT = 'website/parking-lot.html'
-    PARKING_LOT_MONITOR = 'website/parking-lot-monitor.html'
-    PARKING_LOT_MONITORS = 'website/parking-lot-monitors.html'
-    PARKING_LOTS = 'website/parking-lots.html'
-    REGISTER_USER = 'website/register-user.html'
-    LOGIN_USER = 'website/login-user.html'
+    HOME_PAGE = "website/index.html"
+    PARKING_LOT = "website/parking-lot.html"
+    PARKING_LOT_MONITOR = "website/parking-lot-monitor.html"
+    PARKING_LOT_MONITORS = "website/parking-lot-monitors.html"
+    PARKING_LOTS = "website/parking-lots.html"
+    REGISTER_USER = "website/register-user.html"
+    LOGIN_USER = "website/login-user.html"
 
 
 def index(request):
@@ -31,8 +31,8 @@ def index(request):
 
 def login_user(request):
     if request.method == "POST":  # FORM SUBMITTED
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST["username"]
+        password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -41,8 +41,7 @@ def login_user(request):
             return redirect(WebPaths.LOGIN)
     else:  # FORM NOT SUBMITTED
         form = AuthenticationForm()
-        return render(request, "registration/login.html", {'form': form})
-        # return render(request, 'registration/login.html')
+        return render(request, "registration/login.html", {"form": form})
 
 
 def logout_user(request):
@@ -52,11 +51,11 @@ def logout_user(request):
 
 def parking_lot(request, parking_lot_id):
     parking_lot = get_object_or_404(ParkingLot, pk=parking_lot_id)
-    return render(request, WebPages.PARKING_LOT, {'parking_lot': parking_lot})
+    return render(request, WebPages.PARKING_LOT, {"parking_lot": parking_lot})
 
 
 def parking_lots(request):
-    """Builds the parking lots page. 
+    """Builds the parking lots page.
 
     Args:
         request (HttpRequest): _description_
@@ -65,17 +64,22 @@ def parking_lots(request):
         _type_: _description_
     """
     parking_lots: list = ParkingLot.objects.all()
-    return render(request, WebPages.PARKING_LOTS, {'parking_lots': parking_lots})
+    return render(request, WebPages.PARKING_LOTS, {"parking_lots": parking_lots})
 
 
 def parking_lot_monitor(request, parking_lot_monitor_id):
     parking_lot_monitor = get_object_or_404(
-        ParkingLotMonitor, pk=parking_lot_monitor_id)
-    return render(request, WebPages.PARKING_LOT_MONITOR, {'parking_lot_monitor': parking_lot_monitor})
+        ParkingLotMonitor, pk=parking_lot_monitor_id
+    )
+    return render(
+        request,
+        WebPages.PARKING_LOT_MONITOR,
+        {"parking_lot_monitor": parking_lot_monitor},
+    )
 
 
 def parking_lot_monitors(request):
-    """Builds the parking lot monitors page. 
+    """Builds the parking lot monitors page.
 
     Args:
         request (HttpRequest): _description_
@@ -84,7 +88,22 @@ def parking_lot_monitors(request):
         _type_: _description_
     """
     parking_lot_monitors: list = ParkingLotMonitor.objects.all()
-    return render(request, WebPages.PARKING_LOT_MONITORS, {'parking_lot_monitors': parking_lot_monitors})
+
+    if request.method == "POST":  # FORM SUBMITTED
+        latitude = request.POST["latitude"]
+        longitude = request.POST["longitude"]
+
+        context = {
+            "parking_lot_monitors": parking_lot_monitors,
+            "user_point": {"latitude": latitude, "longitude": longitude},
+        }
+        return render(request, WebPages.PARKING_LOT_MONITORS, context)
+
+    return render(
+        request,
+        WebPages.PARKING_LOT_MONITORS,
+        {"parking_lot_monitors": parking_lot_monitors},
+    )
 
 
 def register_user(request):
@@ -96,20 +115,20 @@ def register_user(request):
     Returns:
         _type_: _description_
     """
-    if request.method == 'POST':
+    if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             # Save the user to the database
             user = form.save()
             # Add first name, last name, and email fields to the user model
-            user.first_name = request.POST['first_name']
-            user.last_name = request.POST['last_name']
-            user.email = request.POST['email']
+            user.first_name = request.POST["first_name"]
+            user.last_name = request.POST["last_name"]
+            user.email = request.POST["email"]
             user.save()
             return redirect(WebPaths.LOGIN)
     else:
         form = UserCreationForm()
-    return render(request, WebPages.REGISTER_USER, {'form': form})
+    return render(request, WebPages.REGISTER_USER, {"form": form})
 
     # load the user details from the request
     # create a new user
