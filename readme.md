@@ -21,6 +21,8 @@ An app that allows users to find parking spots in the city of Limerick for my FY
     pip install -r requirements.txt
     ```
 
+    on Windows, you can run the file [install.bat](./install.bat) to install the dependencies.
+
 3. Run the app
     Open VS Code and run the app by pressing the `F5` Key or  
     Open a terminal and run the following command:
@@ -45,7 +47,6 @@ Built-in user accounts are:
 - [VS Code](https://code.visualstudio.com/)
 - [Django](https://www.djangoproject.com/)
 - [Django REST Framework](http://www.django-rest-framework.org/)
-
 
 ## Documentation
 
