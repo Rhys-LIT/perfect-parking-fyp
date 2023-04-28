@@ -21,6 +21,26 @@ complete my research. In addition, I would like to thank my parents Sean
 and Beverley, and my girlfriend Laura for their support during my time
 at TUS.
 
+# Ethical Declaration
+
+I wish to declare that this project and document is wholly my own work
+except where I have made explicit reference to the work of others. I
+have read the Department of Information Technology Final Year Project
+guidelines and relevant institutional regulations, and hereby declare
+that this document is in line with these requirements.
+
+I have discussed, agreed, and complied with whatever confidentiality or
+anonymity terms of reference were deemed appropriate by those
+participating in the research and dealt appropriately with any other
+ethical matters arising, in line with the TUS Research Ethics Guidelines
+for Undergraduate and Taught Postgraduate Programmes policy document.
+
+  -----------------------------------------------------------------------
+  **Rhys Quilter**                    May 1, 2023
+  ----------------------------------- -----------------------------------
+
+  -----------------------------------------------------------------------
+
 # Abstract
 
 *This project is a Parking application for academic purpose. The aim of
@@ -31,19 +51,19 @@ good enough. So, the goal in this project is to improve the
 effectiveness of finding parking spaces and to also relieve the stress
 of the users looking for parking by implementing new and innovative
 features. I will do this by using the Django framework structure and by
-implementing methods such APIs that will show the user exactly where the
-parking is and by providing locations for them to follow straight to the
-location. I will also use a parking monitor powered by OpenCV to detect
-if a parking spot has been filled or made empty. By doing this I feel
-like it will also help with traffic congestion in the city as people
-won't need to keep driving around the block to find a convenient parking
-space.*
+implementing methods such as APIs that will show the user exactly where
+the parking is and by providing locations for them to follow straight to
+the location. I will also use a parking monitor powered by OpenCV to
+detect if a parking spot has been filled or made empty. By doing this I
+feel like it will also help with traffic congestion in the city as
+people won't need to keep driving around the block to find a convenient
+parking space.*
 
 # Table of Contents {#table-of-contents .unnumbered}
 
 [Acknowledgments [ii](#acknowledgments)](#acknowledgments)
 
-[Abstract [iii](#abstract)](#abstract)
+[Abstract [iii](#ethical-declaration)](#ethical-declaration)
 
 [Table of Figure [viii](#table-of-figure)](#table-of-figure)
 
@@ -52,7 +72,8 @@ space.*
 [1.1 The academic objectives
 [9](#the-academic-objectives)](#the-academic-objectives)
 
-[1.2 Problem Statement [9](#problem-statement)](#problem-statement)
+[1.2 Problem Statement
+[9](#the-problem-statement)](#the-problem-statement)
 
 [1.3 Perfect Parking: a solution
 [10](#perfect-parking-a-solution)](#perfect-parking-a-solution)
@@ -70,9 +91,9 @@ space.*
 [2.1 Big Data and Realtime Data
 [12](#big-data-and-realtime-data)](#big-data-and-realtime-data)
 
-[2.1.1 What is big data? [12](#what-is-big-data)](#what-is-big-data)
+[2.1.1 What is Big Data? [12](#what-is-big-data)](#what-is-big-data)
 
-[2.1.2 Why is big data important?
+[2.1.2 Why is Big Data important?
 [12](#why-is-big-data-important)](#why-is-big-data-important)
 
 [2.1.3 What is Real Time data
@@ -90,7 +111,7 @@ space.*
 [2.1.0 Machine Learning [14](#_Toc133322545)](#_Toc133322545)
 
 [2.1.1 Computer Vision
-[15](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
+[15](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
 
 [2.1.2 Object Detection [15](#_Toc133322547)](#_Toc133322547)
 
@@ -98,10 +119,10 @@ space.*
 [15](#cascading-classifiers)](#cascading-classifiers)
 
 [2.1.4 Haar-like feature
-[16](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
+[16](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
 
 [2.2 Conclusion: The Need for a Software Solution
-[17](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
+[17](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
 
 [Chapter 3 Project Management
 [19](#project-management)](#project-management)
@@ -124,7 +145,7 @@ space.*
 [4.1 Unique Selling Point [20](#_Toc133322559)](#_Toc133322559)
 
 [4.2 The Application
-[20](#computer-vision-opencv)](#computer-vision-opencv)
+[20](#the-main-software-application)](#the-main-software-application)
 
 [4.3 Users Use Case Diagram
 [21](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
@@ -178,11 +199,10 @@ space.*
 
 [Chapter 5 Implementation [29](#implementation)](#implementation)
 
-[5.1 Object Recognition in Images
-[29](#object-recognition-in-images)](#object-recognition-in-images)
+[5.1 Object Recognition in Images [29](#_Toc133322582)](#_Toc133322582)
 
 [5.2 How Object Recognition and AI Is Used in Perfect Parking
-[29](#how-object-recognition-and-ai-is-used-in-perfect-parking)](#how-object-recognition-and-ai-is-used-in-perfect-parking)
+[29](#how-object-recognition-works-in-perfect-parking-clients)](#how-object-recognition-works-in-perfect-parking-clients)
 
 [5.3 Client and Server Architecture with Rest framework
 [30](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
@@ -219,14 +239,13 @@ space.*
 
 [Glossary [38](#glossary)](#glossary)
 
-[Appendix A Reflections [39](#reflections)](#reflections)
+[Appendix A Reflections [39](#_Toc133322599)](#_Toc133322599)
 
 [A.1 Report Structure [39](#_Toc133322600)](#_Toc133322600)
 
-[Appendix B Project Management
-[40](#project-management-1)](#project-management-1)
+[Appendix B Project Management [40](#_Toc133322601)](#_Toc133322601)
 
-[B.1 Report Structure [40](#report-structure-1)](#report-structure-1)
+[B.1 Report Structure [40](#_Toc133322602)](#_Toc133322602)
 
 [B.2 Code Style Guide [40](#_Toc133322603)](#_Toc133322603)
 
@@ -256,12 +275,40 @@ space.*
 
 # Table of Figure
 
-[Figure 2: User Use Case Diagram [19](#_Toc133414128)](#_Toc133414128)
+[Figure 1: CSO.ie - Factors that would encourage more driving,
+[18](#_Toc133573279)](#_Toc133573279)
 
-[Figure 3 - Database Design [25](#_Toc132726761)](#_Toc132726761)
+[Figure 2: User Use Case Diagram [22](#_Toc133414128)](#_Toc133414128)
 
-[Figure 4- User Parking Sequence Diagram
-[26](#_Toc132726762)](#_Toc132726762)
+[Figure 3: Parking Lots View [27](#_Toc133573281)](#_Toc133573281)
+
+[Figure 4: Parking Lot View [27](#_Toc133573282)](#_Toc133573282)
+
+[Figure 5: Parking lot Monitors View
+[28](#_Toc133573283)](#_Toc133573283)
+
+[Figure 6: Parking Lot Monitor View
+[29](#_Toc133573284)](#_Toc133573284)
+
+[Figure 7: Location Sharing [29](#_Toc133573285)](#_Toc133573285)
+
+[Figure 8: Search Near Me Feature [30](#_Toc133573286)](#_Toc133573286)
+
+[Figure 9 - Database Design [32](#_Toc132726761)](#_Toc132726761)
+
+[Figure 10- User Parking Sequence Diagram
+[33](#_Toc132726762)](#_Toc132726762)
+
+[Figure 11: Agile Development (Feer, 2020)
+[34](#_Toc133573289)](#_Toc133573289)
+
+[Figure 12: How they work together [40](#_Toc133573290)](#_Toc133573290)
+
+[Figure 13: BDD development cycle (Collidu, n.d.)
+[47](#_Toc133573291)](#_Toc133573291)
+
+[Figure 14: How TDD Works (BasuMallick, 2022)
+[48](#_Toc133573292)](#_Toc133573292)
 
 # Introduction
 
@@ -295,12 +342,11 @@ parking crisis.
 ## The academic objectives
 
 The academic objectives of this project are to study and gain experience
-working with AI and object detection in images.
+working with AI and object detection in images. The chosen problem used
+for this study is to help to reduce the traffic congestion in cities
+such as Limerick.
 
-The chosen problem used for this study is to help to reduce the traffic
-congestion in cities such as Limerick.
-
-## Problem Statement
+## The problem statement
 
 Ineffective ways of finding an available parking space which is a waste
 of time, very fuel consuming and causes traffic jams. hen road users are
@@ -313,7 +359,7 @@ college campus and in the city seamless and stress free, by doing this
 I'm hoping to eliminate the time and fuel waste road users encounter
 while looking for parking.
 
-**Lack of visual parking space availability.**
+Lack of visual parking space availability.
 
 When road users are driving the visuals of the eye are limited, the
 vision is blocked by many obstacles such as the cars frame causing blind
@@ -321,9 +367,9 @@ spots, other cars, trees and much more. It can be understood that the
 road users can find it difficult to spot an available parking space if
 it's in the distance or behind other cars. This has turned into an
 important problem with road users and as a result they waist time and
-fuel trying to spot an available space.
+fuel trying to spot an available space. (Ponnambalam, 2020)
 
-**Lack of knowledge of towns or cities.**
+Lack of knowledge of towns or cities.
 
 Limerick is a city where people migrate to for education or tourism, and
 with this brings more road users. When drivers first come to Limerick
@@ -339,9 +385,28 @@ places to park.
 
 ## Perfect Parking: a solution
 
+The time for a car park solution is long overdue in many Irish towns,
+the solution is to create an application that monitors parking spaces
+and sends updates to a web application for the users to query.
+
 ## Objectives
 
-## The Scope of the solution
+Perfect Parking application aims to develop a user-friendly parking
+system that utilizes object detection technology. The technology watches
+a video feed and allows the user to query for parking spaces in parking
+areas. Once the parking monitor detects a change to a parking space it
+pushes an update to the website with a probability of parking being
+available. This application could be used in parking lots and towns
+nationwide.
+
+The objectives of this project solution are:
+
+-   To provide a solution that can determine the status of the parking
+    spots i.e., free or occupied.
+
+-   To reduce the time motorists spend looking for parking in cities.
+
+## The scope of the solution
 
 The scope of the Perfect Parking solution is limited to the use of
 prerecorded video demonstrations to showcase the car detection
@@ -354,9 +419,18 @@ the application and its overall viability as a product. By focusing on
 these key aspects of the application, the scope of the solution is
 narrowed, allowing for a more focused and efficient development process.
 
-## Report Structure
+## Solution developed.
 
-This thesis is structured with five chapters:
+The developed solution is an AI application to assist drivers finding
+parking in busy cities. The applications are written in Python; The
+server is built on Django framework and, the client use the OpenCV
+library to achieve computer object detection. The source code for the
+applications can be viewed at
+<https://github.com/rhys-lit/perfect-parking-fyp> .
+
+## Report structure
+
+This thesis is structured into five chapters:
 
 Literature Review:
 
@@ -395,17 +469,17 @@ about how this project could be scaled up in the future.
 A large amount of live data will be required to provide a comprehensive
 parking software application solution.
 
-### What is big data? 
+### What is Big Data? 
 
-Big data is a combination of structured, semi structured, and
+Big Data is a combination of structured, semi structured, and
 unstructured data that is collected by organizations, this data can be
 mined for information to be used in many projects such as machine
 learning, predictive modelling, and other analytics applications. Big
-data is often characterized by the three Vs.
+Data is often characterized by the three Vs.
 
 -   The large **Volume** of data in many environments.
 
--   The wide **Variety** of data types frequently stored in big data
+-   The wide **Variety** of data types frequently stored in Big Data
     systems.
 
 -   The **velocity** at which much of the data is generated, collected,
@@ -415,23 +489,23 @@ These characteristics were first identified in 2001 by Doug Laney, they
 were then further popularized in 2005 by an analyst at a consulting firm
 called Meta Group.
 
-Big data doesn't equate to any specific amount of data, big data
+Big Data doesn't equate to any specific amount of data, Big Data
 deployments often involve terabytes, petabytes or even in some cases
 exabytes of data that is created and collected over time. (Botelho,
 2020).
 
-### Why is big data important?
+### Why is Big Data important?
 
-Big data importance lies in the fact of how a company utilizes the
+Big Data importance lies in the fact of how a company utilizes the
 gathered data. Every company uses its gathered data in its own way, the
 more a company can gather its data the more the company can grow.
 
-Big data provides valuable insights into customers that companies can
+Big Data provides valuable insights into customers that companies can
 use to refine their marketing, advertising, and promotions by doing this
 they can increase customer engagement and conversion rates. (TechVidan,
 2022)
 
-Big data is huge in the medical industry, medical researchers can
+Big Data is huge in the medical industry, medical researchers can
 identify disease signs and risk factors, this can help the doctors
 diagnose illnesses and medical conditions in patients. A combination of
 data from electronic health records and the web can give healthcare
@@ -483,8 +557,20 @@ parking to see if that type of parking space is available.
 
 ## Problems with gathering data.
 
-Generic paragraph of the problems of collecting big bag, non-domain
-specific
+Collecting Big Data can be a challenging task that presents various
+problems, irrespective of the domain or industry. The sheer amount of
+data involved, which may be tiresome and challenging to handle, is one
+of the main problems. Furthermore, the development and implementation of
+the specialized tools and techniques needed for Big Data collection can
+be expensive and time-consuming. Additionally, because the data is
+frequently gathered from a variety of sources, some of which might not
+be trustworthy, ensuring the quality and accuracy of the data can be a
+significant challenge. In addition, Big Data analysis and interpretation
+can be challenging tasks that need for specialized knowledge and
+abilities to spot patterns, trends, and insights. Addressing these
+challenges effectively is critical to realizing the potential benefits
+of Big Data, including improved decision-making, increased efficiency,
+and enhanced innovation. (Sharma, 2022)
 
 ## Object Recognition and AI
 
@@ -540,7 +626,7 @@ When used in object detection tasks like face detection, cascading
 classifiers have been shown to be highly accurate and effective. (Bąk,
 2023).
 
-### Classifier Background (Haar-like features)
+### The background of Classifiers (Haar-like features)
 
 Classifiers are based upon Haar wavelets theory using Haar-like
 features, which are extracted from images using rectangular filters and
@@ -567,6 +653,15 @@ the texture and structure of a picture at various levels of granularity
 by computing Haar-like features at various scales and positions in the
 image.
 
+A Haar Cascade Classifier basically works by detecting features in an
+image that are characteristic of the object to be scanned for, such as
+edges, corners, and lines. These features are then used to classify the
+object.
+
+Haar Cascade Classifiers can be trained to recognize specific objects,
+such as faces, eyes, and cars, and the code is able to detect and
+localize these objects within an image.
+
 The Viola-Jones object detection technique, a well-liked algorithm for
 face detection in photos, makes use of Haar-like features. In this
 approach, a classifier is trained to differentiate between positive
@@ -592,16 +687,16 @@ harness the potential of AI to enhance parking management.
 
 ### Irish Trends
 
-These statistics suggest that there are several factors that could
-encourage people to drive more in the future, such as improved traffic
-congestion, access to parking, and lower costs. This is where the
-Perfect Parking application can help, by reducing the traffic congestion
-and reducing the fuel prices. (CSO.ie, 2019)
+Statistics from the Central Statistics office (CSO) of Ireland gives
+several suggestions that could encourage people to drive more in the
+future. In the top three are traffic congestion, and access to parking.
+(CSO.ie, 2019)
 
 ![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
 height="3.160416666666667in"}
 
-Figure 1: CSO.ie - Factors that would encourage more driving,
+[]{#_Toc133573279 .anchor}Figure 1: CSO.ie - Factors that would
+encourage more driving,
 
 ### Global Trends
 
@@ -669,7 +764,21 @@ availability, pricing, stay-hours, zones, and disability status.
 Additional benefits include reducing traffic congestion, fuel savings,
 time and reducing stress.
 
-### Computer Vision: OpenCV
+## The Main Software Application
+
+Perfect Parking is a web application that will allow users to find
+parking in a city. The application will allow users to search for
+parking near a specific location and will show the user data the nearest
+parking to their location.
+
+## The supporting client Applications
+
+The client applications monitor the video feeds and other sensors of
+parking lots across a city and provides live updates to the Perfect
+Parking website once a change in the car park is detected such as a spot
+becomes available or is taken.
+
+## Computer Vision: OpenCV
 
 The powerful library OpenCV provides a wide range of features for
 computer vision applications. It is widely used across many different
@@ -686,25 +795,6 @@ cascades for face detection, are available in OpenCV for object
 detection. A parking monitor app powered by OpenCV will be used to
 detect if a parking spot has been filled or made empty, further
 improving the effectiveness of the system.
-
-## The Main Software Application
-
-Perfect Parking is a web application that will allow users to find
-parking in a city. The application will allow users to search for
-parking near a specific location and will show the user data the nearest
-parking to their location.
-
-## The supporting client Applications
-
-The client application sends data to the server and monitors the video
-feeds. The client application works as a parking lot monitor on certain
-car parks across Limerick city and provides live updates to the Perfect
-Parking website once a change in the car park is detected such as a spot
-becomes available or full.
-
-Sensors could also be used in the same way as the monitor but instead of
-monitoring video feeds it would send updates to the server once an
-object passes through it.
 
 ## Users/Bots use-case Diagram.
 
@@ -738,7 +828,7 @@ Description:
 
 A user searches for parking near a specific location.
 
-**Actors:**
+Actors:
 
 -   User
 
@@ -760,11 +850,16 @@ Post conditions:
 Main Flow:
 
 1.  The user details the location they want to find parking nearby:
-    -   by searching for a specific address in the search bar.
-    -   by clicking on a location on the map.
-    -   by clicking on a location on the list of parking locations.
-    -   using the current location of the user.
-2.  The application shows the user a list of parking locations near the
+
+2.  by searching for a specific address in the search bar.
+
+3.  by clicking on a location on the map.
+
+4.  by clicking on a location on the list of parking locations.
+
+5.  using the current location of the user.
+
+6.  The application shows the user a list of parking locations near the
     location they searched for.
 
 Alternative Flows:
@@ -823,35 +918,40 @@ A user logs in to the application.
 
 Actors:
 
--   User
+[User]{.mark}
 
 Trigger Event:
 
--   A user wants to log in to the application.
+[A user wants to log in to the application.]{.mark}
 
 Preconditions:
 
--   The user is not logged in to the application.
+[The user is not logged in to the application.]{.mark}
 
 Post conditions:
 
--   The user is logged in to the application.
+[The user is logged in to the application.]{.mark}
 
 Main Flow:
 
-1.  The user clicks on the "Login" button.
-2.  The user enters their details into the login form.
-3.  The user clicks on the "Login" button.
-4.  The application logs the user into the application.
+[The user clicks on the "Login" button.]{.mark}
+
+[The user enters their details into the login form.]{.mark}
+
+[The user clicks on the "Login" button.]{.mark}
+
+[The application logs the user into the application.]{.mark}
 
 Alternative Flows:
 
--   If the user enters an incorrect username and password, the
-    application will display an error message.
--   If the user enters an username that is not registered to an account,
-    the application will display an error message.
--   If the user account is disabled, the application will display an
-    error message.
+[If the user enters an incorrect username and password, the application
+will display an error message.]{.mark}
+
+[If the user enters an username that is not registered to an account,
+the application will display an error message.]{.mark}
+
+[If the user account is disabled, the application will display an error
+message.]{.mark}
 
 ### Use Case: Update Parking Lot Status
 
@@ -859,39 +959,41 @@ Description:
 
 A monitor bot automatically updates the status of a parking lot.
 
-**Actors:**
+Actors:
 
 -   Monitor
 
 Trigger Event:
 
--   A monitor updates the status of a parking lot.
+[A monitor updates the status of a parking lot.]{.mark}
 
 Preconditions:
 
--   The website application is running.
--   The monitor is connected to the internet.
--   The monitor has a valid API access token.
+-   
 
 Post conditions:
 
--   The status of the parking lot is updated.
+[The status of the parking lot is updated.]{.mark}
 
 Main Flow:
 
-1.  The monitor sends a PUT request to the application REST API.
-2.  The application updates the status of the parking lot.
+[The monitor sends a PUT request to the application REST API.]{.mark}
+
+[The application updates the status of the parking lot.]{.mark}
 
 Alternative Flows:
 
--   If the monitor is not connected to the internet, the monitor will
-    not be able to update the status of the parking lot.
--   If the monitor API access token is invalid or has expired, the
-    monitor will not be able to update the status of the parking lot.
--   If the monitor sends an invalid request to the application REST API,
-    the application will not update the status of the parking lot.
--   If the parking lot does not exist in the database, the application
-    will not update the status of the parking lot.
+[If the monitor is not connected to the internet, the monitor will not
+be able to update the status of the parking lot.]{.mark}
+
+[If the monitor API access token is invalid or has expired, the monitor
+will not be able to update the status of the parking lot.]{.mark}
+
+[If the monitor sends an invalid request to the application REST API,
+the application will not update the status of the parking lot.]{.mark}
+
+[If the parking lot does not exist in the database, the application will
+not update the status of the parking lot.]{.mark}
 
 ### Use Case: User changes password.
 
@@ -930,6 +1032,80 @@ Alternative Flows:
 
 -   If the user enters a new password that does not meet the password
     requirements, the application will display an error message.
+
+## Website Layout
+
+### Parking Lots View
+
+Clicking on the parking lots in the navigation bar will display a list
+of the parking lots available with some information about the different
+parking lots.
+
+![Graphical user interface, application Description automatically
+generated](./docs/images/thesis/media/image5.png){width="6.6075240594925635in"
+height="2.218305993000875in"}
+
+[]{#_Toc133573281 .anchor}Figure 3: Parking Lots View
+
+### Parking Lot View
+
+Clicking on a parking lot name will display information on the selected
+parking lot such as a map and an image of the car park as well as other
+information about that specific parking lot.
+
+![](./docs/images/thesis/media/image6.png){width="5.9092760279965in"
+height="4.1913178040244965in"}
+
+[]{#_Toc133573282 .anchor}Figure 4: Parking Lot View
+
+### Parking Monitors
+
+Clicking on the parking Monitors in the navigation bar will display a
+list of the parking lots available that are being monitored. Information
+such as the probability of parking available is displayed which updates
+whenever there is a change in parking behaviour.
+
+![](./docs/images/thesis/media/image7.png){width="6.52001312335958in"
+height="3.1174004811898515in"}
+
+[]{#_Toc133573283 .anchor}Figure 5: Parking lot Monitors View
+
+### Parking Lot Monitor 
+
+Clicking on the parking Monitor name it will display information on that
+specific parking monitor such as a location on the google map number of
+free spaces and the probability of the spaces available which updates
+every time there is a change and the website is refreshed. In the image
+below you can see that the probability has changed for this specific
+parking lot compared to Figure 5 above.
+
+![](./docs/images/thesis/media/image8.png){width="6.731159230096238in"
+height="4.923308180227472in"}
+
+[]{#_Toc133573284 .anchor}Figure 6: Parking Lot Monitor View
+
+### Know your Location Feature
+
+When the parking lot monitors page is loaded for the first time the
+browser will ask you to share your location. This is done so the Search
+near me feature can be used.
+
+![Graphical user interface, text, application Description automatically
+generated](./docs/images/thesis/media/image9.png){width="3.4689293525809273in"
+height="2.8643963254593174in"}
+
+[]{#_Toc133573285 .anchor}Figure 7: Location Sharing
+
+### Search Near Me
+
+When the search near me button is clicked it organises the parking lots
+that are monitored by how close they are to your location.
+
+![Text Description automatically
+generated](./docs/images/thesis/media/image10.png){width="6.5859503499562555in"
+height="2.8941305774278216in"}
+
+[]{#_Toc133573286 .anchor}Figure 8: Search Near Me Feature
 
 ## Identifying the free/busy car parking spaces
 
@@ -987,8 +1163,8 @@ sensor using a raspberry pi and putting this down in a parking space in
 either the college or in the city, with doing this brings even more
 problems, these problems being:
 
--   Permission must be sought from APCAO to allow a sensor to be placed
-    on their parking premises.
+-   Permission must be sought from the parking company APCAO to allow a
+    sensor to be placed on their parking premises.
 
 -   If permission is granted the sensor would only be on a raspberry pi
     it could easily get damaged or stolen.
@@ -1006,10 +1182,10 @@ file instead of a camera.
 ## Database design
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
-height="5.15625in"}
+generated](./docs/images/thesis/media/image11.png){width="5.395833333333333in"
+height="5.071345144356956in"}
 
-[]{#_Toc132726761 .anchor}Figure 3 - Database Design
+[]{#_Toc132726761 .anchor}Figure 9 - Database Design
 
 The database for this project comprises three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\". Login information for users
@@ -1023,11 +1199,11 @@ parking application to track parking availability at each location.
 
 ## User Parking Sequence diagram
 
-![A screenshot of a computer Description automatically
-generated](./docs/images/thesis/media/image6.png){width="6.268055555555556in"
-height="2.0875in"}
+![Graphical user interface, application, table Description automatically
+generated](./docs/images/thesis/media/image12.png){width="5.905555555555556in"
+height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure 4- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 10- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1039,20 +1215,22 @@ multiple parking lot monitors:
 
 -   Henry St Parking Lot Monitor
 
--   Lower Hartstonge Parking Lot Monitor
+-   O' Connell Street Parking Lot Monitor
 
--   Mallow Street Part1 Parking Lot Monitor
+-   Merchants Quay Parking Lot Monitor
 
--   and Mallow Street Part2 Parking Lot Monitor
+-   Barrington Street Parking Lot Monitor
+
+-   St. Johns Parking Lot Monitor
 
 The Henry St Parking Lot Monitor responds that parking is 97% available,
-the Lower Hartstonge Parking Lot Monitor responds 87%,
-MallowStreetPart1ParkingLotMonitor 65%, and Mallow Street Part2 Parking
-Lot Monitor 45%.
+O'Connell Street Parking Lot Monitor responds 87%, Merchants Quay
+Parking Lot Monitor 65%, Barrington Street Parking Lot Monitor 45%. And
+St. Johns Parking Lot Monitor 75%
 
 Finally, the application then sends a response to the user indicating
-that there are 3 parking lots available near their location, with the
-names Henry St, Lower Hartstonge, and Mallow Street Part1.
+that there are 5 parking lots available near their location, with the
+names The Henry St, O'Connell Street, Merchants Quay, Barrington Street.
 
 ## Agile Development
 
@@ -1072,61 +1250,17 @@ negotiations, and reacting to change over planning ahead. (atlassian,
 n.d.)
 
 ![Les raisons pour utiliser les méthodes Agile en
-entreprise](./docs/images/thesis/media/image7.jpeg){width="4.258333333333334in"
+entreprise](./docs/images/thesis/media/image13.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
-Figure 5: Agile Development (Feer, 2020)
+[]{#_Toc133573289 .anchor}Figure 11: Agile Development (Feer, 2020)
 
 # Implementation
 
 In this chapter the implementation of Perfect parking is discussed with
 regard to (1) .. (2) .. (3) .. and 4
 
-## Object Recognition in Images
-
-Object recognition in images is a popular computer vision task that
-involves detecting and localizing objects of interest within an image.
-This can be achieved using various techniques, such as feature
-extraction, machine learning, and deep learning. OpenCV is a popular
-library for computer vision and image processing that provides various
-tools and functions for performing object recognition.
-
-The project implements object recognition using OpenCV. The project uses
-the Haar Cascade Classifier, which is a machine learning-based approach
-for object detection. The Haar Cascade Classifier works by detecting
-features in an image that are characteristic of the object being
-detected, such as edges, corners, and lines. These features are then
-used to classify the object. Haar Cascade Classifiers can be trained to
-recognize specific objects, such as faces, eyes, and cars, and the code
-is able to detect and localize these objects within an image.
-
-The project code uses the Haar Cascade Classifier to detect and
-recognize different objects within an image. The project also implements
-various pre-processing techniques, such as image resizing and
-normalization, to improve the accuracy of the object detection.
-
-## How Object Recognition and AI Is Used in Perfect Parking
-
-The project makes use of the free and open-source OpenCV computer vision
-library to identify and track vehicles in designated parking spaces as
-well as to deliver real-time updates on parking spot availability. The
-programme overlays the designated parking spaces into the video,
-initialising them as available or occupied dependent on the presence of
-cars.
-
-In the project, deep learning methods were used to train the object
-recognition system to identify and categorize parking spaces as occupied
-or vacant. This makes it a strong and adaptable tool for monitoring
-parking spaces, the program was able to learn and adjust to various
-lighting situations, car shapes and sizes, and other environmental
-parameters. The program was able to correctly identify when a car was
-present in a location by analyzing the average pixel intensity within
-the marked area after being trained on sizable datasets of labelled
-photos.
-
-## Client and Server Architecture with Rest framework
-
-### The Monitor
+## How Object Recognition works in Perfect Parking clients
 
 The Perfect Parking Server receives parking status data from client
 applications. A client monitor app is responsible for processing video
@@ -1134,14 +1268,36 @@ and determining if parking is available. A proof-of-concept project by
 Olga Rocheeva was sourced on GitHub and built upon to work with Perfect
 Parking. (Rocheeva, 2018)
 
-To setup a client, an administrator must mark out the spaces in an image
-of the video field before running the client application.
+## ParkingLot by Rocheeva
 
-To determine whether a car is present in the spot, the client python
-file motion_detector.py checks the average pixel intensity within the
-parking spots and comparing it to a threshold value. A location is
-regarded as available if the average intensity is below the threshold
-value and seen as occupied if it is above.
+The project ParkingLot preforms various pre-processing techniques on an
+image such grey-scaling and blurring to reduce noise to improve the
+accuracy of the object detection to identify if vehicles are present or
+not in the designated parking spaces. The programme overlays the
+designated parking spaces onto the video, initialising them as available
+or occupied depending on the presence of cars. The code can identify
+when a car is present in a location by analyzing the average pixel
+intensity within the marked area and comparing it to a threshold value.
+A location is regarded as available if the average intensity is below
+the threshold value and seen as occupied if it is above the threshold.
+
+### Determining a parking space's status
+
+The function detectmotion() in motion_detector.py is responsible for
+determining if the status of parking spaces.
+
+### A quick note on source code quality
+
+The function detectmotion() has Cognitive Complexity value of 33 well
+above the allowed 15 according to sonarlint and refactoring the function
+is recommended. Also, the code seems to lack a consistent intuitive
+naming convention coupled with a sever lack of much needed comments.
+
+### How a parking space status is determined
+
+As best as far as this author can figure; the following sections of
+detect motion are responsible for determining the average pixel insanity
+of a marked location (coordinates).
 
 1\. def detect_motion(self):
 
@@ -1149,13 +1305,13 @@ value and seen as occupied if it is above.
 
 3\.     coordinates = self.\_coordinates(p)
 
-4\.     logging.debug(\"coordinates: %s\", coordinates)
+4\.    
 
 5\.  
 
 6\.     rect = open_cv.boundingRect(coordinates)
 
-7\.     logging.debug(\"rect: %s\", rect)
+7\.    
 
 8\.  
 
@@ -1165,7 +1321,7 @@ value and seen as occupied if it is above.
 
 11\.     new_coordinates\[:, 1\] = coordinates\[:, 1\] - rect\[1\]
 
-12\.     logging.debug(\"new_coordinates: %s\", new_coordinates)
+12\.     \# \...
 
 13\.  
 
@@ -1193,60 +1349,249 @@ value and seen as occupied if it is above.
 
 25\.     self.mask.append(mask)
 
-26\.     logging.debug(\"mask: %s\", self.mask)
+26\.    
 
 27\.     \# \...
 
 28\.  
 
-Protecting Private Data (Useranems, passords)
+## Modifying ParkingLot
 
-The code in the server consists of five Python files: color.py,
-coordinates_generator.py, drawing_utils.py, motion_detector.py, and
-main.py. The code provides functionality to generate coordinates for an
-image and detect motion in a video using OpenCV.
+Changes
 
-Let\'s look at the architecture of the Monitor code, starting with the
-entry point, main.py. This script handles command-line arguments using
-argparse, parses the YAML data file generated by
-coordinates_generator.py and passes it to motion_detector.py. If an
-image file is passed as an argument, it generates the YAML file with the
-coordinates. main.py then calls the detect_motion() function of the
-MotionDetector class in motion_detector.py.
+-   Config files to hold application configuration data and sensitive
+    information.
 
-The MotionDetector class is the main driver for motion detection. It
-reads frames from the video and compares them to the previous frame
-using cv2.absdiff(). If the difference is above a certain threshold, it
-marks the frame as containing motion and uses the cv2.findContours()
-function to find contours around the moving objects. It then loops
-through each contour and checks if it is inside any of the regions
-defined by the YAML file. If a contour is found inside a region, it
-sends an HTTP POST request to a specified URL using the requests
-library.
+> 1\. \[ParkingLotMonitor\]
+>
+> 2\. Id=1
+>
+> 3\. Name=Henry Street
+>
+> 4\. Latitude=52.663797090256100
+>
+> 5\. Longitude=-8.628752240173640
+>
+> 6\.  
+>
+> 7\. \[App\]
+>
+> 8\. Token=YOUR_TOKEN
+>
+> 9\. Username=YOUR_USERNAME
+>
+> 10\. Password=YOUR_PASSWORD
+>
+> 11\. ServerUrl=http://127.0.0.1:8000/api-auth/parking-lot-monitors/
 
-The CoordinatesGenerator class in coordinates_generator.py is
-responsible for generating the YAML data file. It reads an image file
-and allows the user to click on four points to define a region of
-interest. It then writes the coordinates of the rectangle defined by
-those points to the YAML file. The class uses cv2.namedWindow() and
-cv2.setMouseCallback() to handle mouse events and updates the image
-displayed to the user with each mouse click.
+sample config.ini
 
-The draw_contours() function in drawing_utils.py is a utility function
-for drawing contours and labels on an image. It takes an image and a set
-of coordinates, draws the contour around the coordinates, and places a
-label on the contour with a specified color, font, and thickness.
+-   A Plain Old Common Object (POCO) ParkingMonitorData class was added
+    to hold data about a parking lot monitor i.e., A Parking Lot
+    Monitor's Id, Name, Latitude, Longitude, Number of Parking Spaces,
+    and the App's Authentication Token, Username, Password, and the
+    Server's URL. The ParkingMonitorData class uses Config Parser to
+    load the Parking Lot Monitor's data from config files keeping best
+    practices of separating sensitive data from the source code.
 
-Finally, color.py contains colour constants that are used in other
-files.
+> 1\. from configparser import ConfigParser
+>
+> 2\.  
+>
+> 3\. class ParkingMonitorData:
+>
+> 4\.  
+>
+> 5\.     def \_\_init\_\_(self, config_filepath: str =
+> \"PerfectParkingClient/config.ini\"):
+>
+> 6\.         config_parser: ConfigParser = ConfigParser()
+>
+> 7\.  
+>
+> 8\.         config_parser.read(config_filepath)
+>
+> 9\.  
+>
+> 10\.         self.id =
+> config_parser\[\"ParkingLotMonitor\"\]\[\"Id\"\]
+>
+> 11\.         self.name =
+> config_parser\[\"ParkingLotMonitor\"\]\[\"Name\"\]
+>
+> 12\.         self.latitude =
+> config_parser\[\"ParkingLotMonitor\"\]\[\"Latitude\"\]
+>
+> 13\.         self.longitude =
+> config_parser\[\"ParkingLotMonitor\"\]\[\"Longitude\"\]
+>
+> 14\.         self.parking_spaces =
+> config_parser\[\"ParkingLotMonitor\"\]\[\"ParkingSpaces\"\]
+>
+> 15\.  
+>
+> 16\.         self.app_token = config_parser\[\"App\"\]\[\"Token\"\]
+>
+> 17\.         self.app_username =
+> config_parser\[\"App\"\]\[\"Username\"\]
+>
+> 18\.         self.app_password =
+> config_parser\[\"App\"\]\[\"Password\"\]
+>
+> 19\.         self.server_url =
+> config_parser\[\"App\"\]\[\"ServerUrl\"\]
 
-In terms of architecture, the code follows a modular design pattern,
-with each file containing a set of related functions or classes. The
-main entry point is main.py, which coordinates the execution of the
-other files. The code uses several third-party libraries, including
-OpenCV, numpy, and requests. The MotionDetector class communicates with
-an external system using HTTP POST requests, making it easy to integrate
-the motion detection system with other systems.
+perfectparking.py -- class ParkingMonitorData
+
+-   For educational and assessment purposes only the config files
+    (containing usernames and passwords) have been uploaded to GitHub.
+    The gitignore file was modified to allow sentivitve .ini fiels to be
+    postd to gituhub
+
+> 1\. #\*.ini
+
+.gitignore
+
+-   The constructor of MotionDetector was modified to inject in
+    ParkingMonitorData.
+
+> 1\. #\...
+>
+> 2\. class MotionDetector:
+>
+> 3\.     LAPLACIAN = 1.4
+>
+> 4\.     DETECT_DELAY = 1
+>
+> 5\.  
+>
+> 6\.     def \_\_init\_\_(self, video, coordinates, start_frame,
+> parking_monitor_data: ParkingMonitorData):
+>
+> 7\.         self.video = video
+>
+> 8\.         self.coordinates_data = coordinates
+>
+> 9\.         self.start_frame = start_frame
+>
+> 10\.         self.contours = \[\]
+>
+> 11\.         self.bounds = \[\]
+>
+> 12\.         self.mask = \[\]
+>
+> 13\.         self.parking_monitor_data = parking_monitor_data
+>
+> 14\.         #\...  
+
+motion_detector.py - class MotionDetector
+
+-   A "method on_free_parking_spaces_changed" was added to handle the
+    event of a change to the number of available parking spaces.
+
+> 1\. def on_free_parking_spaces_changed(self, spaces_in_frame: int,
+> free_spaces_in_frame: float) -\> None:
+>
+> 2\.     probability_parking_available =
+> free_spaces_in_frame/spaces_in_frame
+>
+> 3\.     RestApiUtility.update_server_parking_monitor_data(
+>
+> 4\.         self.parking_monitor_data, free_spaces_in_frame,
+> probability_parking_available)  
+
+motion_detector.py - class MotionDetector - new method
+
+-   A Rest API class was added to send updates to the server.
+
+> 1\. from requests.auth import HTTPBasicAuth
+>
+> 2\. import requests
+>
+> 3\.  
+>
+> 4\. #\...
+>
+> 5\. class RestApiUtility:
+>
+> 6\.    
+>
+> 7\.     \@staticmethod
+>
+> 8\.     def update_server_parking_monitor_data(parking_monitor_data:
+> ParkingMonitorData, free_spaces_in_frame: float,
+>
+> 9\.                                          
+>  probability_parking_available: float) -\> requests.Response:
+>
+> 10\.         \"\"\"\...\"\"\"
+>
+> 11\.  
+>
+> 12\.     \@staticmethod
+>
+> 13\.     def build_parking_monitor_data_json(parking_monitor_data:
+> ParkingMonitorData, free_spaces_in_frame: float,
+>
+> 14\.                                        
+> probability_parking_available: float) -\> dict:
+>
+> 15\.         \"\"\"\...\"\"\"
+>
+> 16\.  
+>
+> 17\.     \@staticmethod
+>
+> 18\.     def
+> build_and_send_parking_monitor_data_put_request(parking_monitor_data:
+> ParkingMonitorData,
+>
+> 19\.                                                        
+> request_json: dict) -\> requests.Response:
+>
+> 20\.         \"\"\"\...\"\"\"
+>
+> 21\.  
+>
+> 22\.     \@staticmethod
+>
+> 23\.     def send_put_request(parking_monitor_data:
+> ParkingMonitorData, request_headers: dict,
+>
+> 24\.                          request_json: dict, request_url: str)
+> -\> requests.Response:
+>
+> 25\.         http_basic_auth =
+> HTTPBasicAuth(parking_monitor_data.app_username,
+>
+> 26\.                                        
+> parking_monitor_data.app_password)
+>
+> 27\.         response = requests.put(request_url,
+>
+> 28\.                                 auth=http_basic_auth,
+>
+> 29\.                                 headers=request_headers,
+>
+> 30\.                                 json=request_json)
+>
+> 31\.  
+>
+> 32\.         return response
+
+perfectparking.py -- class RestApiUtility
+
+This Method calls my/third person class RestAPI with prepares and sends
+a PUT request if the updated Parking monitor data to the server.
+
+## Perfect Parking Client additions to "ParkingLot"
+
+RestApi as well as to deliver real-time updates on parking spot
+availability
+
+## Client and Server Architecture with Rest framework
+
+### The Monitor
 
 ### Server
 
@@ -1268,7 +1613,7 @@ probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
 status, and image.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image8.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image14.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
 serializers.py defines the serializers used to convert the ParkingLot
@@ -1310,10 +1655,10 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image9.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image15.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-Figure 6: How they work together
+[]{#_Toc133573290 .anchor}Figure 12: How they work together
 
 ## Project Management
 
@@ -1621,10 +1966,11 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image10.png){width="4.025in"
+1](./docs/images/thesis/media/image16.png){width="4.025in"
 height="2.2642989938757654in"}
 
-Figure 7: BDD development cycle (Collidu, n.d.)
+[]{#_Toc133573291 .anchor}Figure 13: BDD development cycle (Collidu,
+n.d.)
 
 ### BDD In Perfect Parking
 
@@ -1685,10 +2031,10 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image11.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image17.png){width="3.4380238407699037in"
 height="2.775in"}
 
-Figure 8: How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure 14: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
@@ -1790,12 +2136,22 @@ strong, with minimal issues or confusion reported during testing.
 
 # References
 
+abdalslam, 2023. *Parking Management Statistics, Trends And Facts 2023.*
+\[Online\]\
+Available at:
+[https://abdalslam.com/parking-management-statistics#parking-management-statistics]{.underline}\
+\[Accessed 27 04 2023\].
+
 Arunachalam, H., 2014. *Image Segmentation for the Extraction of Face.*
 , Rajiv Gandhi: s.n.
 
 Ashish, 2022. \[Online\]\
 Available at:
 [https://www.scienceabc.com/innovation/how-does-google-maps-know-about-traffic-conditions.html#:\~:text=Google%20Traffic%20works%20by%20crowdsourcing,geographic%20location%20with%20the%20app.]{.underline}
+
+atlassian, n.d. *What is Agile?.* \[Online\]\
+Available at: [https://www.atlassian.com/agile]{.underline}\
+\[Accessed 27 04 2023\].
 
 Bąk, K., 2023. *Cascade Classifier: Approach to Object Detection.*
 \[Online\]\
@@ -1828,6 +2184,11 @@ Available at:
 [https://www.collidu.com/presentation-behavior-driven-development-bdd]{.underline}\
 \[Accessed 26 04 2023\].
 
+CSO.ie, 2019. *National Travel Survey 2019.* \[Online\]\
+Available at:
+[https://www.cso.ie/en/releasesandpublications/ep/p-nts/nationaltravelsurvey2019/carusage/]{.underline}\
+\[Accessed 27 04 2023\].
+
 Das, S., 2022. *BDD Testing: A Detailed Guide.* \[Online\]\
 Available at:
 [https://www.browserstack.com/guide/what-is-bdd-testing]{.underline}\
@@ -1838,6 +2199,11 @@ Process.* \[Online\]\
 Available at:
 [https://www.browserstack.com/guide/benefits-of-test-management-and-bdd]{.underline}\
 \[Accessed 26 04 2023\].
+
+Feer, J. v. d., 2020. *Be a Boss.* \[Online\]\
+Available at:
+[https://fiches-pratiques.chefdentreprise.com/Thematique/gestion-1050/FichePratique/Les-raisons-utiliser-methodes-Agile-entreprise-354321.htm]{.underline}\
+\[Accessed 27 04 2023\].
 
 Ingrassellino, J., 2021. *Why Should Software Testers Understand Unit
 Testing?.* \[Online\]\
@@ -1888,6 +2254,12 @@ Available at:
 [https://medium.com/ml-research-lab/what-is-object-detection-51f9d872ece7]{.underline}\
 \[Accessed 23 May 2023\].
 
+Ponnambalam, C. T., 2020. *Searching for Street Parking: Effects on
+Driver Vehicle Control, Workload, Physiology, and Glances.* \[Online\]\
+Available at:
+[https://www.frontiersin.org/articles/10.3389/fpsyg.2020.574262/full]{.underline}\
+\[Accessed 12 12 2022\].
+
 Quellmalz, R., 2021. *6 surprising facts about parking you probably dont
 know.* \[Online\]\
 Available at:
@@ -1937,7 +2309,7 @@ Available at:
 [https://www.techtarget.com/searchsoftwarequality/definition/unit-testing]{.underline}\
 \[Accessed 26 04 2023\].
 
-TechVidan, 2022. *Why Big Data -- Benefits and Importance of Big data.*
+TechVidan, 2022. *Why Big Data -- Benefits and Importance of Big Data.*
 \[Online\]\
 Available at:
 [https://techvidvan.com/tutorials/why-big-data/]{.underline}\
@@ -1991,9 +2363,3 @@ Available at:
                      for the purpose of writing a Report for a Project
                      and outlining paragraphs
   ------------------ ----------------------------------------------------
-
-# Reflections {#reflections .Appendix:-H1}
-
-# Project Management {#project-management-1 .Appendix:-H1}
-
-## Report Structure {#report-structure-1 .Appendix:-H2}
