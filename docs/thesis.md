@@ -63,252 +63,267 @@ parking space.*
 
 [Acknowledgments [ii](#acknowledgments)](#acknowledgments)
 
-[Abstract [iii](#ethical-declaration)](#ethical-declaration)
+[Ethical Declaration [iii](#ethical-declaration)](#ethical-declaration)
 
-[Table of Figure [viii](#table-of-figure)](#table-of-figure)
+[Abstract [iv](#abstract)](#abstract)
 
-[Chapter 1 Introduction [9](#introduction)](#introduction)
+[Table of Contents [v](#_Toc133600664)](#_Toc133600664)
+
+[Table of Figure [ix](#table-of-figure)](#table-of-figure)
+
+[Chapter 1 Introduction [10](#introduction)](#introduction)
 
 [1.1 The academic objectives
-[9](#the-academic-objectives)](#the-academic-objectives)
+[10](#the-academic-objectives)](#the-academic-objectives)
 
-[1.2 Problem Statement
-[9](#the-problem-statement)](#the-problem-statement)
+[1.2 The problem statement
+[10](#the-problem-statement)](#the-problem-statement)
 
 [1.3 Perfect Parking: a solution
-[10](#perfect-parking-a-solution)](#perfect-parking-a-solution)
+[11](#perfect-parking-a-solution)](#perfect-parking-a-solution)
 
-[1.4 Objectives [10](#objectives)](#objectives)
+[1.4 Objectives [11](#objectives)](#objectives)
 
-[1.5 The Scope of the solution
-[10](#the-scope-of-the-solution)](#the-scope-of-the-solution)
+[1.5 The scope of the solution
+[12](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
-[1.6 Report Structure [11](#report-structure)](#report-structure)
+[1.6 Solution developed.
+[12](#solution-developed.)](#solution-developed.)
+
+[1.7 Report structure [12](#report-structure)](#report-structure)
 
 [Chapter 2 Literature Review
-[12](#literature-review)](#literature-review)
+[14](#literature-review)](#literature-review)
 
 [2.1 Big Data and Realtime Data
-[12](#big-data-and-realtime-data)](#big-data-and-realtime-data)
+[14](#big-data-and-realtime-data)](#big-data-and-realtime-data)
 
-[2.1.1 What is Big Data? [12](#what-is-big-data)](#what-is-big-data)
+[2.1.1 What is Big Data? [14](#what-is-big-data)](#what-is-big-data)
 
 [2.1.2 Why is Big Data important?
-[12](#why-is-big-data-important)](#why-is-big-data-important)
+[14](#why-is-big-data-important)](#why-is-big-data-important)
 
 [2.1.3 What is Real Time data
-[13](#what-is-real-time-data)](#what-is-real-time-data)
+[15](#what-is-real-time-data)](#what-is-real-time-data)
 
 [2.1.4 What is the importance of Real Time data?
-[13](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
+[15](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
 
 [2.2 Problems with gathering data.
-[14](#problems-with-gathering-data.)](#problems-with-gathering-data.)
+[16](#problems-with-gathering-data.)](#problems-with-gathering-data.)
 
-[2.1 Object Recognition and AI
-[14](#object-recognition-and-ai)](#object-recognition-and-ai)
+[2.3 Object Recognition and AI
+[16](#object-recognition-and-ai)](#object-recognition-and-ai)
 
-[2.1.0 Machine Learning [14](#_Toc133322545)](#_Toc133322545)
+[2.3.1 Object Detection [16](#_Toc133600682)](#_Toc133600682)
 
-[2.1.1 Computer Vision
-[15](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
+[2.3.2 Cascading classifiers
+[16](#cascading-classifiers)](#cascading-classifiers)
 
-[2.1.2 Object Detection [15](#_Toc133322547)](#_Toc133322547)
-
-[2.1.3 Cascading classifiers
-[15](#cascading-classifiers)](#cascading-classifiers)
-
-[2.1.4 Haar-like feature
-[16](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
-
-[2.2 Conclusion: The Need for a Software Solution
+[2.3.3 The background of Classifiers (Haar-like features)
 [17](#the-background-of-classifiers-haar-like-features)](#the-background-of-classifiers-haar-like-features)
 
-[Chapter 3 Project Management
-[19](#project-management)](#project-management)
+[2.4 Parking Business Sector
+[18](#parking-business-sector)](#parking-business-sector)
 
-[3.1 Weekly Meetings [19](#weekly-meetings)](#weekly-meetings)
+[2.4.1 Irish Trends [19](#irish-trends)](#irish-trends)
 
-[3.2 Source code management (SCM) [19](#_Toc133322553)](#_Toc133322553)
+[2.4.2 Global Trends [19](#global-trends)](#global-trends)
 
-[3.3 Code Style Guide [19](#code-style-guide)](#code-style-guide)
+[2.5 A Software Solution
+[19](#a-software-solution)](#a-software-solution)
 
-[3.4 Collaboration Tools [19](#_Toc133322555)](#_Toc133322555)
+[Chapter 3 Analysis and Design
+[21](#analysis-and-design)](#analysis-and-design)
 
-[3.4.1 GitHub [19](#_Toc133322556)](#_Toc133322556)
+[3.1 The Main Software Application
+[21](#the-main-software-application)](#the-main-software-application)
 
-[3.4.2 Microsoft Office Online [19](#_Toc133322557)](#_Toc133322557)
+[3.2 The supporting client Applications
+[21](#the-supporting-client-applications)](#the-supporting-client-applications)
 
-[Chapter 4 Analysis and Design
-[20](#analysis-and-design)](#analysis-and-design)
+[3.3 Computer Vision: OpenCV
+[21](#computer-vision-opencv)](#computer-vision-opencv)
 
-[4.1 Unique Selling Point [20](#_Toc133322559)](#_Toc133322559)
+[3.4 Users/Bots use-case Diagram.
+[22](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
 
-[4.2 The Application
-[20](#the-main-software-application)](#the-main-software-application)
+[3.5 System Actors [22](#system-actors)](#system-actors)
 
-[4.3 Users Use Case Diagram
-[21](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
+[3.6 Use Case Descriptions
+[23](#use-case-descriptions)](#use-case-descriptions)
 
-[4.4 System Actors [21](#system-actors)](#system-actors)
+[3.6.1 Use Case: Find Parking
+[23](#use-case-find-parking)](#use-case-find-parking)
 
-[4.5 Use Case Descriptions
-[21](#use-case-descriptions)](#use-case-descriptions)
+[3.6.2 Use Case: Register User
+[24](#use-case-register-user)](#use-case-register-user)
 
-[4.5.1 Use Case: Find Parking
-[21](#use-case-find-parking)](#use-case-find-parking)
+[3.6.3 Use Case: Update Parking Lot Status
+[25](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
 
-[4.5.2 Use Case: Register User
-[22](#use-case-register-user)](#use-case-register-user)
+[3.6.4 Use Case: User changes password.
+[26](#use-case-user-changes-password.)](#use-case-user-changes-password.)
 
-[4.5.3 Use Case: Update Parking Lot Status
-[23](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
+[3.7 Website Layout [27](#website-layout)](#website-layout)
 
-[4.5.4 Use Case: User changes password.
-[24](#use-case-user-changes-password.)](#use-case-user-changes-password.)
+[3.7.1 Parking Lots View [27](#parking-lots-view)](#parking-lots-view)
 
-[4.6 Identifying the free/busy car parking spaces
-[25](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[3.7.2 Parking Lot View [27](#parking-lot-view)](#parking-lot-view)
 
-[4.7 Machine Learning / Artificial Intelligence (AI)
-[25](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
+[3.7.3 Parking Lot Monitors
+[28](#parking-lot-monitors)](#parking-lot-monitors)
 
-[4.8 Sensors [25](#a-look-to-the-future)](#a-look-to-the-future)
+[3.7.4 Parking Lot Monitor
+[29](#parking-lot-monitor)](#parking-lot-monitor)
 
-[4.8.1 Development limitations
-[26](#development-limitations)](#development-limitations)
+[3.7.5 Know your Location Feature
+[29](#know-your-location-feature)](#know-your-location-feature)
 
-[4.9 Machine Learning Algorithms [26](#_Toc133322572)](#_Toc133322572)
+[3.7.6 Search Near Me [30](#search-near-me)](#search-near-me)
 
-[4.10 Database design [26](#database-design)](#database-design)
+[3.8 Identifying the free/busy car parking spaces
+[30](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
-[4.11 User Parking Sequence diagram
-[27](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
+[3.9 Machine Learning / Artificial Intelligence (AI)
+[31](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
 
-[4.1 Introduction and focus [28](#_Toc133322575)](#_Toc133322575)
+[3.10 A look to the future
+[31](#a-look-to-the-future)](#a-look-to-the-future)
 
-[4.2 Academic Aims [28](#_Toc133322576)](#_Toc133322576)
+[3.10.1 Sensors [31](#sensors)](#sensors)
 
-[4.2.1 Academic Requirements [28](#_Toc133322577)](#_Toc133322577)
+[3.10.2 Collecting of data
+[31](#collecting-of-data)](#collecting-of-data)
 
-[4.3 Functional Requirements [28](#_Toc133322578)](#_Toc133322578)
+[3.11 Development limitations
+[32](#development-limitations)](#development-limitations)
 
-[4.4 Non-Functional Requirements [28](#_Toc133322579)](#_Toc133322579)
+[3.12 Database design [33](#database-design)](#database-design)
 
-[4.5 Statistics [28](#_Toc133322580)](#_Toc133322580)
+[3.13 User Parking Sequence diagram
+[34](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
-[Chapter 5 Implementation [29](#implementation)](#implementation)
+[3.14 Agile Development [34](#agile-development)](#agile-development)
 
-[5.1 Object Recognition in Images [29](#_Toc133322582)](#_Toc133322582)
+[Chapter 4 Implementation [36](#implementation)](#implementation)
 
-[5.2 How Object Recognition and AI Is Used in Perfect Parking
-[29](#how-object-recognition-works-in-perfect-parking-clients)](#how-object-recognition-works-in-perfect-parking-clients)
+[4.1 How Object Recognition works in Perfect Parking clients
+[36](#how-object-recognition-works-in-perfect-parking-clients)](#how-object-recognition-works-in-perfect-parking-clients)
 
-[5.3 Client and Server Architecture with Rest framework
-[30](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
+[4.2 ParkingLot by Rocheeva
+[36](#parkinglot-by-rocheeva)](#parkinglot-by-rocheeva)
 
-[5.3.1 The Monitor [30](#the-monitor)](#the-monitor)
+[4.2.1 Determining a parking space's status
+[36](#determining-a-parking-spaces-status)](#determining-a-parking-spaces-status)
 
-[5.3.2 Server [32](#server)](#server)
+[4.2.2 A quick note on source code quality
+[36](#a-quick-note-on-source-code-quality)](#a-quick-note-on-source-code-quality)
 
-[5.3.3 How They Work Together
-[33](#how-they-work-together)](#how-they-work-together)
+[4.2.3 How a parking space status is determined
+[36](#how-a-parking-space-status-is-determined)](#how-a-parking-space-status-is-determined)
 
-[5.3.4 Source Control and versioning
-[33](#project-management)](#project-management)
+[4.3 Modifying ParkingLot
+[37](#modifying-parkinglot)](#modifying-parkinglot)
 
-[5.4 Development Environment [33](#_Toc133322589)](#_Toc133322589)
+[4.4 Perfect Parking Client additions to "ParkingLot"
+[39](#perfect-parking-client-additions-to-parkinglot)](#perfect-parking-client-additions-to-parkinglot)
 
-[5.5 Tools Used [33](#tools-used)](#tools-used)
+[4.5 Client and Server Architecture with Rest framework
+[40](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
 
-[5.6 Django Rest API [34](#django-rest-api)](#django-rest-api)
+[4.5.1 The Monitor [40](#the-monitor)](#the-monitor)
 
-[5.6.1 Perfect Parking with Django
-[34](#perfect-parking-with-django)](#perfect-parking-with-django)
+[4.5.2 Server [40](#server)](#server)
 
-[5.7 Anaconda [35](#anaconda)](#anaconda)
+[4.5.3 How They Work Together
+[41](#how-they-work-together)](#how-they-work-together)
 
-[Chapter 6 Conclusion and Recommendations
-[36](#_Toc133322594)](#_Toc133322594)
+[4.6 Project Management [42](#project-management)](#project-management)
 
-[6.1 Conclusion [36](#_Toc133322595)](#_Toc133322595)
+[4.6.1 Weekly Meetings [42](#weekly-meetings)](#weekly-meetings)
 
-[6.2 Recommendations [36](#_Toc133322596)](#_Toc133322596)
+[4.6.2 Code Style Guide [42](#code-style-guide)](#code-style-guide)
 
-[References [37](#_Toc133322597)](#_Toc133322597)
+[4.7 Source Control and versioning
+[42](#source-control-and-versioning)](#source-control-and-versioning)
 
-[Glossary [38](#glossary)](#glossary)
+[4.8 Tools Used [43](#tools-used)](#tools-used)
 
-[Appendix A Reflections [39](#_Toc133322599)](#_Toc133322599)
+[4.9 Django Rest API [43](#django-rest-api)](#django-rest-api)
 
-[A.1 Report Structure [39](#_Toc133322600)](#_Toc133322600)
+[4.9.1 Perfect Parking with Django
+[44](#perfect-parking-with-django)](#perfect-parking-with-django)
 
-[Appendix B Project Management [40](#_Toc133322601)](#_Toc133322601)
+[4.10 Anaconda [45](#anaconda)](#anaconda)
 
-[B.1 Report Structure [40](#_Toc133322602)](#_Toc133322602)
+[4.10.1 How to Install Anaconda
+[45](#how-to-install-anaconda)](#how-to-install-anaconda)
 
-[B.2 Code Style Guide [40](#_Toc133322603)](#_Toc133322603)
+[Chapter 5 Testing and Results
+[47](#testing-and-results)](#testing-and-results)
 
-[B.2.1 Naming conventions [40](#_Toc133322604)](#_Toc133322604)
+[5.1 Unit Testing [47](#unit-testing)](#unit-testing)
 
-[B.2.2 Avoid magic constant numbers.
-[40](#_Toc133322605)](#_Toc133322605)
+[5.1.1 Unit Tests Used in The Project
+[47](#unit-tests-used-in-the-project)](#unit-tests-used-in-the-project)
 
-[B.2.3 Variable naming [40](#_Toc133322606)](#_Toc133322606)
+[5.2 Behaviour Driven Development (BBD) Testing
+[48](#behaviour-driven-development-bbd-testing)](#behaviour-driven-development-bbd-testing)
 
-[B.2.4 Methods [40](#_Toc133322607)](#_Toc133322607)
+[5.2.1 BDD In Perfect Parking
+[49](#bdd-in-perfect-parking)](#bdd-in-perfect-parking)
 
-[B.2.5 Imports [40](#_Toc133322608)](#_Toc133322608)
+[5.3 Test Driven Development (TDD)
+[49](#test-driven-development-tdd)](#test-driven-development-tdd)
 
-[B.2.6 Comments [40](#_Toc133322609)](#_Toc133322609)
+[5.3.1 TDD in Perfect Parking
+[51](#tdd-in-perfect-parking)](#tdd-in-perfect-parking)
 
-[B.2.7 Documentation [40](#_Toc133322610)](#_Toc133322610)
+[5.4 Functionality [52](#functionality)](#functionality)
 
-[B.2.8 Classes [40](#_Toc133322611)](#_Toc133322611)
+[5.5 Usability [52](#usability)](#usability)
 
-[B.2.9 Spacing, Indentation [40](#_Toc133322612)](#_Toc133322612)
+[References [54](#_Toc133600746)](#_Toc133600746)
 
-[B.2.10 Literals [40](#_Toc133322613)](#_Toc133322613)
-
-[Appendix C Development Environment
-[41](#_Toc133322614)](#_Toc133322614)
+[Glossary [59](#glossary)](#glossary)
 
 # Table of Figure
 
 [Figure 1: CSO.ie - Factors that would encourage more driving,
-[18](#_Toc133573279)](#_Toc133573279)
+[19](#_Toc133573279)](#_Toc133573279)
 
 [Figure 2: User Use Case Diagram [22](#_Toc133414128)](#_Toc133414128)
 
 [Figure 3: Parking Lots View [27](#_Toc133573281)](#_Toc133573281)
 
-[Figure 4: Parking Lot View [27](#_Toc133573282)](#_Toc133573282)
+[Figure 4: Parking Lot View [28](#_Toc133573282)](#_Toc133573282)
 
 [Figure 5: Parking lot Monitors View
 [28](#_Toc133573283)](#_Toc133573283)
 
-[Figure 6: Parking Lot Monitor View
+[Figure 7: Parking Lot Monitor View
 [29](#_Toc133573284)](#_Toc133573284)
 
-[Figure 7: Location Sharing [29](#_Toc133573285)](#_Toc133573285)
+[Figure 8: Location Sharing [30](#_Toc133573285)](#_Toc133573285)
 
-[Figure 8: Search Near Me Feature [30](#_Toc133573286)](#_Toc133573286)
+[Figure 9: Search Near Me Feature [30](#_Toc133573286)](#_Toc133573286)
 
-[Figure 9 - Database Design [32](#_Toc132726761)](#_Toc132726761)
+[Figure 10 - Database Design [33](#_Toc132726761)](#_Toc132726761)
 
-[Figure 10- User Parking Sequence Diagram
-[33](#_Toc132726762)](#_Toc132726762)
+[Figure 11- User Parking Sequence Diagram
+[34](#_Toc132726762)](#_Toc132726762)
 
-[Figure 11: Agile Development (Feer, 2020)
-[34](#_Toc133573289)](#_Toc133573289)
+[Figure 12: Agile Development (Feer, 2020)
+[35](#_Toc133573289)](#_Toc133573289)
 
-[Figure 12: How they work together [40](#_Toc133573290)](#_Toc133573290)
+[Figure 13: How they work together [42](#_Toc133573290)](#_Toc133573290)
 
-[Figure 13: BDD development cycle (Collidu, n.d.)
-[47](#_Toc133573291)](#_Toc133573291)
+[Figure 14: BDD development cycle (Collidu, n.d.)
+[49](#_Toc133573291)](#_Toc133573291)
 
-[Figure 14: How TDD Works (BasuMallick, 2022)
-[48](#_Toc133573292)](#_Toc133573292)
+[Figure 15: How TDD Works (BasuMallick, 2022)
+[50](#_Toc133573292)](#_Toc133573292)
 
 # Introduction
 
@@ -918,40 +933,40 @@ A user logs in to the application.
 
 Actors:
 
-[User]{.mark}
+-   User
 
 Trigger Event:
 
-[A user wants to log in to the application.]{.mark}
+-   A user wants to log in to the application.
 
 Preconditions:
 
-[The user is not logged in to the application.]{.mark}
+-   The user is not logged in to the application.
 
 Post conditions:
 
-[The user is logged in to the application.]{.mark}
+-   The user is logged in to the application.
 
 Main Flow:
 
-[The user clicks on the "Login" button.]{.mark}
+1.  The user clicks on the "Login" button.
 
-[The user enters their details into the login form.]{.mark}
+2.  The user enters their details into the login form.
 
-[The user clicks on the "Login" button.]{.mark}
+3.  The user clicks on the "Login" button.
 
-[The application logs the user into the application.]{.mark}
+4.  The application logs the user into the application.
 
 Alternative Flows:
 
-[If the user enters an incorrect username and password, the application
-will display an error message.]{.mark}
+-   If the user enters an incorrect username and password, the
+    application will display an error message.
 
-[If the user enters an username that is not registered to an account,
-the application will display an error message.]{.mark}
+-   If the user enters a username that is not registered to an account,
+    the application will display an error message.
 
-[If the user account is disabled, the application will display an error
-message.]{.mark}
+-   If the user account is disabled, the application will display an
+    error message.
 
 ### Use Case: Update Parking Lot Status
 
@@ -965,35 +980,35 @@ Actors:
 
 Trigger Event:
 
-[A monitor updates the status of a parking lot.]{.mark}
+-   A monitor updates the status of a parking lot.
 
 Preconditions:
 
--   
+-   The status of the parking lot is not updated
 
 Post conditions:
 
-[The status of the parking lot is updated.]{.mark}
+-   The status of the parking lot is updated.
 
 Main Flow:
 
-[The monitor sends a PUT request to the application REST API.]{.mark}
+-   The monitor sends a PUT request to the application REST API.
 
-[The application updates the status of the parking lot.]{.mark}
+-   The application updates the status of the parking lot.
 
 Alternative Flows:
 
-[If the monitor is not connected to the internet, the monitor will not
-be able to update the status of the parking lot.]{.mark}
+-   If the monitor is not connected to the internet, the monitor will
+    not be able to update the status of the parking lot.
 
-[If the monitor API access token is invalid or has expired, the monitor
-will not be able to update the status of the parking lot.]{.mark}
+-   If the monitor API access token is invalid or has expired, the
+    monitor will not be able to update the status of the parking lot.
 
-[If the monitor sends an invalid request to the application REST API,
-the application will not update the status of the parking lot.]{.mark}
+-   If the monitor sends an invalid request to the application REST API,
+    the application will not update the status of the parking lot.
 
-[If the parking lot does not exist in the database, the application will
-not update the status of the parking lot.]{.mark}
+-   If the parking lot does not exist in the database, the application
+    will not update the status of the parking lot.
 
 ### Use Case: User changes password.
 
@@ -1053,17 +1068,18 @@ Clicking on a parking lot name will display information on the selected
 parking lot such as a map and an image of the car park as well as other
 information about that specific parking lot.
 
-![](./docs/images/thesis/media/image6.png){width="5.9092760279965in"
-height="4.1913178040244965in"}
+![](./docs/images/thesis/media/image6.png){width="5.865909886264217in"
+height="4.149245406824147in"}
 
 []{#_Toc133573282 .anchor}Figure 4: Parking Lot View
 
-### Parking Monitors
+### Parking Lot Monitors
 
 Clicking on the parking Monitors in the navigation bar will display a
-list of the parking lots available that are being monitored. Information
-such as the probability of parking available is displayed which updates
-whenever there is a change in parking behaviour.
+list of the parking lots available that are being monitored. The user
+will be asked to share the location by the browser. Information such as
+the probability of parking available is displayed which updates whenever
+there is a change in parking behaviour.
 
 ![](./docs/images/thesis/media/image7.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
@@ -1079,10 +1095,10 @@ every time there is a change and the website is refreshed. In the image
 below you can see that the probability has changed for this specific
 parking lot compared to Figure 5 above.
 
-![](./docs/images/thesis/media/image8.png){width="6.731159230096238in"
-height="4.923308180227472in"}
+![](./docs/images/thesis/media/image8.png){width="6.650247156605424in"
+height="4.893287401574804in"}
 
-[]{#_Toc133573284 .anchor}Figure 6: Parking Lot Monitor View
+[]{#_Toc133573284 .anchor}Figure 7: Parking Lot Monitor View
 
 ### Know your Location Feature
 
@@ -1094,18 +1110,19 @@ near me feature can be used.
 generated](./docs/images/thesis/media/image9.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
-[]{#_Toc133573285 .anchor}Figure 7: Location Sharing
+[]{#_Toc133573285 .anchor}Figure 8: Location Sharing
 
 ### Search Near Me
 
 When the search near me button is clicked it organises the parking lots
 that are monitored by how close they are to your location.
 
-![Text Description automatically
-generated](./docs/images/thesis/media/image10.png){width="6.5859503499562555in"
-height="2.8941305774278216in"}
+![A picture containing graphical user interface Description
+automatically
+generated](./docs/images/thesis/media/image10.png){width="5.905555555555556in"
+height="3.0840277777777776in"}
 
-[]{#_Toc133573286 .anchor}Figure 8: Search Near Me Feature
+[]{#_Toc133573286 .anchor}Figure 9: Search Near Me Feature
 
 ## Identifying the free/busy car parking spaces
 
@@ -1185,7 +1202,7 @@ file instead of a camera.
 generated](./docs/images/thesis/media/image11.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
-[]{#_Toc132726761 .anchor}Figure 9 - Database Design
+[]{#_Toc132726761 .anchor}Figure 10 - Database Design
 
 The database for this project comprises three tables: \"User\",
 \"ParkingLotMonitor\", and \"ParkingLot\". Login information for users
@@ -1203,7 +1220,7 @@ parking application to track parking availability at each location.
 generated](./docs/images/thesis/media/image12.png){width="5.905555555555556in"
 height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure 10- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 11- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1253,7 +1270,7 @@ n.d.)
 entreprise](./docs/images/thesis/media/image13.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
-[]{#_Toc133573289 .anchor}Figure 11: Agile Development (Feer, 2020)
+[]{#_Toc133573289 .anchor}Figure 12: Agile Development (Feer, 2020)
 
 # Implementation
 
@@ -1271,9 +1288,9 @@ Parking. (Rocheeva, 2018)
 ## ParkingLot by Rocheeva
 
 The project ParkingLot preforms various pre-processing techniques on an
-image such grey-scaling and blurring to reduce noise to improve the
-accuracy of the object detection to identify if vehicles are present or
-not in the designated parking spaces. The programme overlays the
+image such as grey-scaling and blurring to reduce noise, to improve the
+accuracy of the object detection and to identify if vehicles are present
+or not in the designated parking spaces. The programme overlays the
 designated parking spaces onto the video, initialising them as available
 or occupied depending on the presence of cars. The code can identify
 when a car is present in a location by analyzing the average pixel
@@ -1289,9 +1306,10 @@ determining if the status of parking spaces.
 ### A quick note on source code quality
 
 The function detectmotion() has Cognitive Complexity value of 33 well
-above the allowed 15 according to sonarlint and refactoring the function
-is recommended. Also, the code seems to lack a consistent intuitive
-naming convention coupled with a sever lack of much needed comments.
+above the allowed 15 according to sonarlint (Sonar Rules, n.d.) and
+refactoring the function is recommended. Also, the code seems to lack a
+consistent intuitive naming convention coupled with a sever lack of much
+needed comments.
 
 ### How a parking space status is determined
 
@@ -1445,8 +1463,8 @@ perfectparking.py -- class ParkingMonitorData
 
 -   For educational and assessment purposes only the config files
     (containing usernames and passwords) have been uploaded to GitHub.
-    The gitignore file was modified to allow sentivitve .ini fiels to be
-    postd to gituhub
+    The gitignore file was modified to allow sensitive .ini files to be
+    posted to GitHub.
 
 > 1\. #\*.ini
 
@@ -1581,13 +1599,13 @@ motion_detector.py - class MotionDetector - new method
 
 perfectparking.py -- class RestApiUtility
 
-This Method calls my/third person class RestAPI with prepares and sends
-a PUT request if the updated Parking monitor data to the server.
+The purpose of this class is to update and send parking monitor data to
+a server using HTTP PUT request.
 
 ## Perfect Parking Client additions to "ParkingLot"
 
 RestApi as well as to deliver real-time updates on parking spot
-availability
+availability.
 
 ## Client and Server Architecture with Rest framework
 
@@ -1658,7 +1676,7 @@ client and server are linked together in a web application.
 generated](./docs/images/thesis/media/image15.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-[]{#_Toc133573290 .anchor}Figure 12: How they work together
+[]{#_Toc133573290 .anchor}Figure 13: How they work together
 
 ## Project Management
 
@@ -1667,8 +1685,13 @@ under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
 
 ### Weekly Meetings
 
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
+During the time doing the final year project weekly supervisor meetings
+were held. These meetings were very useful for asking questions, and
+keeping the project on track, the supervisor was very supportive and
+gave great feedback when it was needed to ensure that the project was
+kept on track. With his guidance and great knowledge it allowed the
+Perfect Parking application to be completed with a high standard and
+within a timely manner.
 
 ### Code Style Guide
 
@@ -1969,7 +1992,7 @@ end-users.
 1](./docs/images/thesis/media/image16.png){width="4.025in"
 height="2.2642989938757654in"}
 
-[]{#_Toc133573291 .anchor}Figure 13: BDD development cycle (Collidu,
+[]{#_Toc133573291 .anchor}Figure 14: BDD development cycle (Collidu,
 n.d.)
 
 ### BDD In Perfect Parking
@@ -2034,7 +2057,7 @@ TDD typically involves theses following steps:
 Development)?](./docs/images/thesis/media/image17.png){width="3.4380238407699037in"
 height="2.775in"}
 
-[]{#_Toc133573292 .anchor}Figure 14: How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure 15: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
@@ -2289,6 +2312,17 @@ Available at:
 Seal, A., n.d. Thermal Human face recognition based on Haar wavelet. In:
 s.l.:s.n., p. 12.
 
+Sharma, R., 2022. *Top 6 Major Challenges of Big Data & Simple Solutions
+To Solve Them.* \[Online\]\
+Available at:
+[https://www.upgrad.com/blog/major-challenges-of-big-data]{.underline}\
+\[Accessed 15 01 2023\].
+
+Sonar Rules, n.d. *Python static code analysis.* \[Online\]\
+Available at:
+[https://rules.sonarsource.com/python/RSPEC-3776]{.underline}\
+\[Accessed 28 04 2023\].
+
 Splunk, 2021. \[Online\]\
 Available at:
 [https://www.splunk.com/en_us/data-insider/what-is-real-time-data.html]{.underline}\
@@ -2309,7 +2343,7 @@ Available at:
 [https://www.techtarget.com/searchsoftwarequality/definition/unit-testing]{.underline}\
 \[Accessed 26 04 2023\].
 
-TechVidan, 2022. *Why Big Data -- Benefits and Importance of Big Data.*
+TechVidan, 2022. *Why Big Data -- Benefits and Importance of Big data.*
 \[Online\]\
 Available at:
 [https://techvidvan.com/tutorials/why-big-data/]{.underline}\
