@@ -88,7 +88,7 @@ parking space.*
 [12](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
 [1.6 Solution developed.
-[12](#solution-developed.)](#solution-developed.)
+[12](#development-limitations)](#development-limitations)
 
 [1.7 Report structure [12](#report-structure)](#report-structure)
 
@@ -134,7 +134,7 @@ parking space.*
 [19](#a-software-solution)](#a-software-solution)
 
 [Chapter 3 Analysis and Design
-[21](#analysis-and-design)](#analysis-and-design)
+[21](#agile-development)](#agile-development)
 
 [3.1 The Main Software Application
 [21](#the-main-software-application)](#the-main-software-application)
@@ -143,15 +143,15 @@ parking space.*
 [21](#the-supporting-client-applications)](#the-supporting-client-applications)
 
 [3.3 Computer Vision: OpenCV
-[21](#computer-vision-opencv)](#computer-vision-opencv)
+[21](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
 [3.4 Users/Bots use-case Diagram.
 [22](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
 
-[3.5 System Actors [22](#system-actors)](#system-actors)
+[3.5 System Actors [22](#anaconda)](#anaconda)
 
 [3.6 Use Case Descriptions
-[23](#use-case-descriptions)](#use-case-descriptions)
+[23](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
 
 [3.6.1 Use Case: Find Parking
 [23](#use-case-find-parking)](#use-case-find-parking)
@@ -165,7 +165,8 @@ parking space.*
 [3.6.4 Use Case: User changes password.
 [26](#use-case-user-changes-password.)](#use-case-user-changes-password.)
 
-[3.7 Website Layout [27](#website-layout)](#website-layout)
+[3.7 Website Layout
+[27](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
 [3.7.1 Parking Lots View [27](#parking-lots-view)](#parking-lots-view)
 
@@ -186,10 +187,9 @@ parking space.*
 [30](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
 [3.9 Machine Learning / Artificial Intelligence (AI)
-[31](#machine-learning-artificial-intelligence-ai)](#machine-learning-artificial-intelligence-ai)
+[31](#rest-api-layout)](#rest-api-layout)
 
-[3.10 A look to the future
-[31](#a-look-to-the-future)](#a-look-to-the-future)
+[3.10 A look to the future [31](#_Toc133600709)](#_Toc133600709)
 
 [3.10.1 Sensors [31](#sensors)](#sensors)
 
@@ -199,7 +199,7 @@ parking space.*
 [3.11 Development limitations
 [32](#development-limitations)](#development-limitations)
 
-[3.12 Database design [33](#database-design)](#database-design)
+[3.12 Database design [33](#anaconda)](#anaconda)
 
 [3.13 User Parking Sequence diagram
 [34](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
@@ -209,10 +209,9 @@ parking space.*
 [Chapter 4 Implementation [36](#implementation)](#implementation)
 
 [4.1 How Object Recognition works in Perfect Parking clients
-[36](#how-object-recognition-works-in-perfect-parking-clients)](#how-object-recognition-works-in-perfect-parking-clients)
+[36](#project-management)](#project-management)
 
-[4.2 ParkingLot by Rocheeva
-[36](#parkinglot-by-rocheeva)](#parkinglot-by-rocheeva)
+[4.2 ParkingLot by Rocheeva [36](#the-client-app)](#the-client-app)
 
 [4.2.1 Determining a parking space's status
 [36](#determining-a-parking-spaces-status)](#determining-a-parking-spaces-status)
@@ -230,9 +229,9 @@ parking space.*
 [39](#perfect-parking-client-additions-to-parkinglot)](#perfect-parking-client-additions-to-parkinglot)
 
 [4.5 Client and Server Architecture with Rest framework
-[40](#client-and-server-architecture-with-rest-framework)](#client-and-server-architecture-with-rest-framework)
+[40](#perfect-parking-with-django)](#perfect-parking-with-django)
 
-[4.5.1 The Monitor [40](#the-monitor)](#the-monitor)
+[4.5.1 The Monitor [40](#_Toc133600725)](#_Toc133600725)
 
 [4.5.2 Server [40](#server)](#server)
 
@@ -241,14 +240,14 @@ parking space.*
 
 [4.6 Project Management [42](#project-management)](#project-management)
 
-[4.6.1 Weekly Meetings [42](#weekly-meetings)](#weekly-meetings)
+[4.6.1 Weekly Meetings [42](#_Toc133600729)](#_Toc133600729)
 
-[4.6.2 Code Style Guide [42](#code-style-guide)](#code-style-guide)
+[4.6.2 Code Style Guide [42](#_Toc133600730)](#_Toc133600730)
 
 [4.7 Source Control and versioning
 [42](#source-control-and-versioning)](#source-control-and-versioning)
 
-[4.8 Tools Used [43](#tools-used)](#tools-used)
+[4.8 Tools Used [43](#project-management)](#project-management)
 
 [4.9 Django Rest API [43](#django-rest-api)](#django-rest-api)
 
@@ -284,7 +283,7 @@ parking space.*
 
 [5.5 Usability [52](#usability)](#usability)
 
-[References [54](#_Toc133600746)](#_Toc133600746)
+[References [54](#future-development)](#future-development)
 
 [Glossary [59](#glossary)](#glossary)
 
@@ -434,7 +433,14 @@ the application and its overall viability as a product. By focusing on
 these key aspects of the application, the scope of the solution is
 narrowed, allowing for a more focused and efficient development process.
 
-## Solution developed.
+### Development limitations
+
+This being a trial application, with a limited budget and permission
+problems, for the purpose of a university project, the client
+application will receive a video stream from a pre-recorded local video
+file instead of a camera.
+
+## Solution developed
 
 The developed solution is an AI application to assist drivers finding
 parking in busy cities. The applications are written in Python; The
@@ -766,6 +772,29 @@ to provide a solution that is innovative, effective, and user-friendly,
 with the potential to reduce time and fuel consumption, improve traffic
 flow, and create a stress-free parking experience for all road users.
 
+## Agile Development
+
+Agile development is a software development methodology that emphasizes
+flexibility, collaboration, and iterative development. Agile development
+teams divide the work into smaller, more manageable chunks called
+\"sprints\" rather than working on a project in a linear fashion with a
+precise plan set in stone from the beginning. A working prototype or
+product increment that can be tested and evaluated is produced by each
+sprint, which lasts typically two to four weeks. Agile development
+promotes regular communication and collaboration between team members
+and stakeholders and favours working software over documentation. The
+Agile manifesto identifies four basic values: valuing people over
+processes and technologies, emphasizing working software over thorough
+documentation, prioritizing communication with customers over contract
+negotiations, and reacting to change over planning ahead. (atlassian,
+n.d.)
+
+![Les raisons pour utiliser les méthodes Agile en
+entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
+height="4.258333333333334in"}
+
+[]{#_Toc133573289 .anchor}Figure 2: Agile Development (Feer, 2020)
+
 # Analysis and Design
 
 Parking is an issue that contributes to traffic congestion, especially
@@ -793,7 +822,19 @@ parking lots across a city and provides live updates to the Perfect
 Parking website once a change in the car park is detected such as a spot
 becomes available or is taken.
 
-## Computer Vision: OpenCV
+### Identifying the free/busy car parking spaces
+
+A key design goal of the application is to find a low-cost, accurate,
+and scalable solution to identify if a car parking space is free or
+busy. To accomplish this goal, the application will use a combination of
+sensors and machine learning to identify if a car parking space is free
+or busy. The sensors will monitor the car parking space and will send
+data to a central server. The central server will then use a machine
+learning algorithm to identify if the car parking space is free or busy.
+
+## 
+
+### Computer Vision: OpenCV
 
 The powerful library OpenCV provides a wide range of features for
 computer vision applications. It is widely used across many different
@@ -811,13 +852,72 @@ detection. A parking monitor app powered by OpenCV will be used to
 detect if a parking spot has been filled or made empty, further
 improving the effectiveness of the system.
 
-## Users/Bots use-case Diagram.
+### Anaconda
 
-![Alt
-text](./docs/images/thesis/media/image4.png){width="5.694444444444445in"
-height="4.458333333333333in"}
+Anaconda is a popular distribution of the Python programming language
+that is widely used for data science and scientific computing. It comes
+with a sizable number of pre-installed libraries and tools that are
+frequently used in these domains, including Jupyter Notebook, NumPy,
+Pandas, and Matplotlib. (Root, 2020)
 
-[]{#_Toc133414128 .anchor}Figure 2: User Use Case Diagram
+Anaconda is designed to make it easy to set up and manage Python
+environments, which are essentially separate installations of Python
+with their own dependencies and libraries. When working on several
+projects with various requirements, this is especially helpful because
+it enables you to keep them separate from one another. (Root, 2020)
+
+The Conda package manager, which lets you easily install, update, and
+manage additional software packages and libraries, is included with
+Anaconda in addition to Python and its libraries. When working with
+non-Python libraries that are necessary for your project, this can be
+helpful. (McKinney, 2022)
+
+Utilising Anaconda has several benefits, one of which is how much easier
+it makes it to set up a Python environment for data research or
+scientific computing. It removes the need to individually install and
+configure each library, which can be a time-consuming and error-prone
+operation, by offering a pre-built distribution with many of the
+frequently used libraries already installed. (O Reilly, n.d.)
+
+Overall, Anaconda is a robust and adaptable tool that is well-liked by
+those who work in data research and scientific computing. Researchers,
+developers, and data analysts all favour it because of how simple it is
+to use and the extensive library of tools that are already installed.
+
+### Django Rest API
+
+Django is a popular web development framework that is written in Python.
+It provides a set of tools and features that make it easy to build
+complex web applications quickly and efficiently. Django was created by
+Adrian Holovaty and Simon Willison in 2005, it features a vast
+collection of classes, libraries and modules that can be implemented in
+individual projects. With Django, you can create web applications that
+follow the Model-View-Controller (MVC) architecture, which helps to
+separate the different components of your application and make it easier
+to manage. Additionally, Django comes with a lot of built-in
+functionality, including an ORM for database interactions, an admin
+interface for managing site content, and a templating system for
+rendering HTML pages. Overall, Django is a powerful and flexible
+framework that is well-suited for building all kinds of web
+applications. (Johnson, n.d.)
+
+## Database design
+
+The database for this project comprises three tables: \"User\",
+\"ParkingLotMonitor\", and \"ParkingLot\". Login information for users
+of the parking application is kept in the \"User\" table. The
+\"ParkingLot\" table keeps records of each parking lot\'s name, address,
+image, operating hours, and method of payment while the
+\"ParkingLotMonitor\" table keeps track of parking availability for
+monitored car parks. The \"ParkingLotMonitor\" table is linked to the
+\"ParkingLot\" table through the \"ParkingLotId\" column to enable the
+parking application to track parking availability at each location.
+
+![Diagram Description automatically
+generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
+height="5.071345144356956in"}
+
+[]{#_Toc132726761 .anchor}Figure 3 - Database Design
 
 ## System Actors
 
@@ -834,6 +934,14 @@ height="4.458333333333333in"}
 
 -   Monitor Bot: A monitor is a bot that will be monitoring a car park.
     The monitor will be updating the status of the car park.
+
+### Users/Bots use-case Diagram.
+
+![Alt
+text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
+height="4.458333333333333in"}
+
+[]{#_Toc133414128 .anchor}Figure 4: User Use Case Diagram
 
 ## Use Case Descriptions
 
@@ -1048,179 +1156,13 @@ Alternative Flows:
 -   If the user enters a new password that does not meet the password
     requirements, the application will display an error message.
 
-## Website Layout
-
-### Parking Lots View
-
-Clicking on the parking lots in the navigation bar will display a list
-of the parking lots available with some information about the different
-parking lots.
-
-![Graphical user interface, application Description automatically
-generated](./docs/images/thesis/media/image5.png){width="6.6075240594925635in"
-height="2.218305993000875in"}
-
-[]{#_Toc133573281 .anchor}Figure 3: Parking Lots View
-
-### Parking Lot View
-
-Clicking on a parking lot name will display information on the selected
-parking lot such as a map and an image of the car park as well as other
-information about that specific parking lot.
-
-![](./docs/images/thesis/media/image6.png){width="5.865909886264217in"
-height="4.149245406824147in"}
-
-[]{#_Toc133573282 .anchor}Figure 4: Parking Lot View
-
-### Parking Lot Monitors
-
-Clicking on the parking Monitors in the navigation bar will display a
-list of the parking lots available that are being monitored. The user
-will be asked to share the location by the browser. Information such as
-the probability of parking available is displayed which updates whenever
-there is a change in parking behaviour.
-
-![](./docs/images/thesis/media/image7.png){width="6.52001312335958in"
-height="3.1174004811898515in"}
-
-[]{#_Toc133573283 .anchor}Figure 5: Parking lot Monitors View
-
-### Parking Lot Monitor 
-
-Clicking on the parking Monitor name it will display information on that
-specific parking monitor such as a location on the google map number of
-free spaces and the probability of the spaces available which updates
-every time there is a change and the website is refreshed. In the image
-below you can see that the probability has changed for this specific
-parking lot compared to Figure 5 above.
-
-![](./docs/images/thesis/media/image8.png){width="6.650247156605424in"
-height="4.893287401574804in"}
-
-[]{#_Toc133573284 .anchor}Figure 7: Parking Lot Monitor View
-
-### Know your Location Feature
-
-When the parking lot monitors page is loaded for the first time the
-browser will ask you to share your location. This is done so the Search
-near me feature can be used.
-
-![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image9.png){width="3.4689293525809273in"
-height="2.8643963254593174in"}
-
-[]{#_Toc133573285 .anchor}Figure 8: Location Sharing
-
-### Search Near Me
-
-When the search near me button is clicked it organises the parking lots
-that are monitored by how close they are to your location.
-
-![A picture containing graphical user interface Description
-automatically
-generated](./docs/images/thesis/media/image10.png){width="5.905555555555556in"
-height="3.0840277777777776in"}
-
-[]{#_Toc133573286 .anchor}Figure 9: Search Near Me Feature
-
-## Identifying the free/busy car parking spaces
-
-A key design goal of the application is to find a low-cost, accurate,
-and scalable solution to identify if a car parking space is free or
-busy. To accomplish this goal, the application will use a combination of
-sensors and machine learning to identify if a car parking space is free
-or busy. The sensors will monitor the car parking space and will send
-data to a central server. The central server will then use a machine
-learning algorithm to identify if the car parking space is free or busy.
-
-## Machine Learning / Artificial Intelligence (AI)
-
-Machine learning is a subset of artificial intelligence (AI) that uses
-algorithms to learn from data and make predictions. Machine learning is
-a key component of the application as it will be used to identify if a
-car parking space is free or busy. The machine learning algorithm will
-be trained using data collected from the sensors. The machine learning
-algorithm will then be used to identify if a car parking space is free
-or busy.
-
-## A look to the future
-
-While developing the Perfect Parking application there was a challenge
-when it came to incorporating parking sensors into the application. Due
-to budget and time constraints, it was determined that such sensors were
-beyond the scope of the project. While doing the project it was
-recognized that parking sensors would have been a valuable addition to
-the application but understood that this would require collecting large
-amounts of personal data from users. Since the project was not focused
-on data collection, the idea of the parking monitor came to light and so
-took priority over the parking sensors.
-
-### Sensors
-
-Overhead Cameras will watch the car parking space and will feed the
-video stream to a local client application. The local client application
-will use machine learning algorithms to identify if a car parking space
-is free or busy. The local client application will then send the status
-of the car parking space to the central server if it detects a change in
-the status of the car parking space.
-
-### Collecting of data
-
-When tech companies are building applications such as parking
-applications, they are given a budget by the parking company, and this
-enables them to put in these parking sensors or put in barriers to
-gather the real-time data for the users. This is where there is a big
-problem with gathering this data for Perfect Parking, since TUS carpark
-and other car parks in the city is monitored by another parking company
-called APCOA there is limitations gathering this data. Since Perfect
-Parking is on a very small scale, gathering real-time data is going to
-be nearly impossible. One solution would be to build a parking space
-sensor using a raspberry pi and putting this down in a parking space in
-either the college or in the city, with doing this brings even more
-problems, these problems being:
-
--   Permission must be sought from the parking company APCAO to allow a
-    sensor to be placed on their parking premises.
-
--   If permission is granted the sensor would only be on a raspberry pi
-    it could easily get damaged or stolen.
-
--   Only one sensor could be built for one single parking spot which
-    wouldn't gather much real-time data for the users.
-
-## Development limitations
-
-This being a trial application, with a limited budget and permission
-problems, for the purpose of a university project, the client
-application will receive a video stream from a pre-recorded local video
-file instead of a camera.
-
-## Database design
-
-![Diagram Description automatically
-generated](./docs/images/thesis/media/image11.png){width="5.395833333333333in"
-height="5.071345144356956in"}
-
-[]{#_Toc132726761 .anchor}Figure 10 - Database Design
-
-The database for this project comprises three tables: \"User\",
-\"ParkingLotMonitor\", and \"ParkingLot\". Login information for users
-of the parking application is kept in the \"User\" table. The
-\"ParkingLot\" table keeps records of each parking lot\'s name, address,
-image, operating hours, and method of payment while the
-\"ParkingLotMonitor\" table keeps track of parking availability for
-monitored car parks. The \"ParkingLotMonitor\" table is linked to the
-\"ParkingLot\" table through the \"ParkingLotId\" column to enable the
-parking application to track parking availability at each location.
-
 ## User Parking Sequence diagram
 
 ![Graphical user interface, application, table Description automatically
-generated](./docs/images/thesis/media/image12.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
 height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure 11- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 5- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1249,33 +1191,241 @@ Finally, the application then sends a response to the user indicating
 that there are 5 parking lots available near their location, with the
 names The Henry St, O'Connell Street, Merchants Quay, Barrington Street.
 
-## Agile Development
+## Website Layout
 
-Agile development is a software development methodology that emphasizes
-flexibility, collaboration, and iterative development. Agile development
-teams divide the work into smaller, more manageable chunks called
-\"sprints\" rather than working on a project in a linear fashion with a
-precise plan set in stone from the beginning. A working prototype or
-product increment that can be tested and evaluated is produced by each
-sprint, which lasts typically two to four weeks. Agile development
-promotes regular communication and collaboration between team members
-and stakeholders and favors working software over documentation. The
-Agile manifesto identifies four basic values: valuing people over
-processes and technologies, emphasizing working software over thorough
-documentation, prioritizing communication with customers over contract
-negotiations, and reacting to change over planning ahead. (atlassian,
-n.d.)
+### Parking Lots View
 
-![Les raisons pour utiliser les méthodes Agile en
-entreprise](./docs/images/thesis/media/image13.jpeg){width="4.258333333333334in"
-height="4.258333333333334in"}
+Clicking on the parking lots in the navigation bar will display a list
+of the parking lots available with some information about the different
+parking lots.
 
-[]{#_Toc133573289 .anchor}Figure 12: Agile Development (Feer, 2020)
+![Graphical user interface, application Description automatically
+generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
+height="2.218305993000875in"}
+
+[]{#_Toc133573281 .anchor}Figure 6: Parking Lots View
+
+### Parking Lot View
+
+Clicking on a parking lot name will display information on the selected
+parking lot such as a map and an image of the car park as well as other
+information about that specific parking lot.
+
+![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
+height="4.149245406824147in"}
+
+[]{#_Toc133573282 .anchor}Figure 7: Parking Lot View
+
+### Parking Lot Monitors
+
+Clicking on the parking Monitors in the navigation bar will display a
+list of the parking lots available that are being monitored. The user
+will be asked to share the location by the browser. Information such as
+the probability of parking available is displayed which updates whenever
+there is a change in parking behaviour.
+
+![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
+height="3.1174004811898515in"}
+
+[]{#_Toc133573283 .anchor}Figure 8: Parking lot Monitors View
+
+### Parking Lot Monitor 
+
+Clicking on the parking Monitor name it will display information on that
+specific parking monitor such as a location on the google map number of
+free spaces and the probability of the spaces available which updates
+every time there is a change and the website is refreshed. In the image
+below you can see that the probability has changed for this specific
+parking lot compared to Figure 5 above.
+
+![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
+height="4.893287401574804in"}
+
+[]{#_Toc133573284 .anchor}Figure 9: Parking Lot Monitor View
+
+### Know your Location Feature
+
+When the parking lot monitors page is loaded for the first time the
+browser will ask you to share your location. This is done so the Search
+near me feature can be used.
+
+![Graphical user interface, text, application Description automatically
+generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
+height="2.8643963254593174in"}
+
+[]{#_Toc133573285 .anchor}Figure 10: Location Sharing
+
+### Search Near Me
+
+When the search near me button is clicked it organises the parking lots
+that are monitored by how close they are to your location.
+
+![A picture containing graphical user interface Description
+automatically
+generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
+height="3.0840277777777776in"}
+
+[]{#_Toc133573286 .anchor}Figure 11: Search Near Me Feature
+
+## Rest API layout
+
+Django Rest Framework is a powerful and flexible toolkit for building
+Web APIs. Some of the key features of interest in the Django Rest
+framework:
+
+-   The Web Browsable API that allows developers to explore and interact
+    with the API using a web browser.
+
+-   Authentication policies
+
+-   Serialization: Django Rest Framework provides powerful serialization
+    capabilities
+
+### Django Rest Framework
+
+This is the Django Rest Framework API Root page; you can see all the
+endpoints from the application.
+
+![Table Description automatically
+generated](./docs/images/thesis/media/image14.png){width="5.905555555555556in"
+height="2.29375in"}
+
+Figure 12: Django Rest Framework API Root
+
+The two of the most interesting endpoints would be parking-lots and
+parking-lot-monitors:
+
+![Graphical user interface, text, application Description automatically
+generated](./docs/images/thesis/media/image15.png){width="5.905555555555556in"
+height="4.209722222222222in"}
+
+Figure 13: Parking Lot List
+
+![Graphical user interface, application, Word Description automatically
+generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
+height="4.06875in"}
+
+Figure 14: Parking Lot Monitor List
+
+## Machine Learning / Artificial Intelligence (AI)
+
+Machine learning is a subset of artificial intelligence (AI) that uses
+algorithms to learn from data and make predictions. Machine learning is
+a key component of the application as it will be used to identify if a
+car parking space is free or busy. The machine learning algorithm will
+be trained using data collected from the sensors. The machine learning
+algorithm will then be used to identify if a car parking space is free
+or busy.
 
 # Implementation
 
 In this chapter the implementation of Perfect parking is discussed with
 regard to (1) .. (2) .. (3) .. and 4
+
+## Project Management
+
+During the time doing the final year project weekly supervisor meetings
+were held. These meetings were very useful for asking questions, and
+keeping the project on track, the supervisor was very supportive and
+gave great feedback when it was needed to ensure that the project was
+kept on track. With his guidance and great knowledge, it allowed the
+Perfect Parking application to be completed with a high standard and
+within a timely manner.
+
+## Source Control and versioning
+
+For source control and versioning, GitHub was utilized to manage the
+codebase for the project. GitHub was chosen because of prior experience
+using it during other studies, and it provided a reliable platform for
+version control and collaboration with the supervisor. It allows for
+easy upkeep and to keep track of changes made during each week and
+easily roll back to previous versions if needed.
+
+Additionally, the supervisor was added as a collaborator on the
+repository, allowing him to view the progress and provide feedback on
+the code and documents. This facilitated effective communication and
+ensured that the project was aligned with the objectives.
+
+One significant advantage of using GitHub was that it provided a safe
+and secure backup of the code. In the event of file corruption, it would
+be possible to pull down the last push request and continue the work
+without losing progress.
+
+## Tools Used
+
+Python: An interpreted, object-oriented, high-level programming language
+with dynamic semantics.
+
+Libraries and Frameworks:
+
+-   Django web framework, which allowed for rapid development of the
+    application website/server and easy maintenance.
+
+-   OpenCV, an open-source computer vision and machine learning software
+    library, which was used for image processing and analysis.
+
+Tools:
+
+-   VS Code: A lightweight code editor with support for many languages
+    and debugging.
+
+-   Anaconda: a package management, and deployment tool to install and
+    manage required libraries and dependencies.
+
+-   Microsoft Word: used to write the documentation.
+
+-   Canva: a graphic design platform used to create the project poster.
+
+-   Mermaid.live: used to create markdown diagrams.
+
+By utilizing these tools, languages, and frameworks, the project was
+completed more efficiently, with greater accuracy and precision.
+
+### How to Install Anaconda
+
+-   Download the Appropriate Anaconda installer from the [Anaconda
+    Website](https://www.anaconda.com/download/)
+
+-   Open VS Code and open a new terminal window by selecting
+    \"Terminal\" from the top menu and then selecting \"New Terminal.
+
+-   Navigate to the directory where you downloaded the Anaconda
+    installer using the command **cd \<directory\>**.
+
+-   For example, if you downloaded the Anaconda installer for Windows
+    and saved it in your Downloads folder, you would type the following
+    command in the terminal:
+
+> 1\.     cd Downloads
+
+-   Run the Anaconda installer by typing the command **bash \<Anaconda
+    installer filename\>** in the terminal, where **\<Anaconda installer
+    filename\>** is the name of the Anaconda installer file you
+    downloaded.
+
+> 1\. bash Anaconda3-2021.05\--x86_64.sh   
+
+-   Follow the instructions in the Anaconda installer to complete the
+    installation process.
+
+-   Once the installation is complete, you can use Anaconda in the VS
+    Code terminal by activating the Anaconda environment with the
+    command **conda activate**. You can then use the various Anaconda
+    packages and tools in the terminal as needed.
+
+-   For example, if you want to use the Pandas library in your Python
+    script, you can first activate the Anaconda environment by typing
+    the following command in the terminal:
+
+> 1\.     conda activate
+
+-   Then, you can import the Pandas library in your Python script using
+    the following line of code:
+
+> 1\.     import pandas as pd
+
+-   This will allow you to use the various functions and methods
+    provided by the Pandas library in your project.
 
 ## How Object Recognition works in Perfect Parking clients
 
@@ -1285,7 +1435,9 @@ and determining if parking is available. A proof-of-concept project by
 Olga Rocheeva was sourced on GitHub and built upon to work with Perfect
 Parking. (Rocheeva, 2018)
 
-## ParkingLot by Rocheeva
+## The Client App
+
+### ParkingLot by Rocheeva
 
 The project ParkingLot preforms various pre-processing techniques on an
 image such as grey-scaling and blurring to reduce noise, to improve the
@@ -1298,12 +1450,12 @@ intensity within the marked area and comparing it to a threshold value.
 A location is regarded as available if the average intensity is below
 the threshold value and seen as occupied if it is above the threshold.
 
-### Determining a parking space's status
+#### Determining a parking space's status
 
 The function detectmotion() in motion_detector.py is responsible for
 determining if the status of parking spaces.
 
-### A quick note on source code quality
+#### A quick note on source code quality
 
 The function detectmotion() has Cognitive Complexity value of 33 well
 above the allowed 15 according to sonarlint (Sonar Rules, n.d.) and
@@ -1311,7 +1463,7 @@ refactoring the function is recommended. Also, the code seems to lack a
 consistent intuitive naming convention coupled with a sever lack of much
 needed comments.
 
-### How a parking space status is determined
+#### How a parking space status is determined
 
 As best as far as this author can figure; the following sections of
 detect motion are responsible for determining the average pixel insanity
@@ -1373,7 +1525,7 @@ of a marked location (coordinates).
 
 28\.  
 
-## Modifying ParkingLot
+### Modifying ParkingLot
 
 Changes
 
@@ -1599,17 +1751,47 @@ motion_detector.py - class MotionDetector - new method
 
 perfectparking.py -- class RestApiUtility
 
-The purpose of this class is to update and send parking monitor data to
-a server using HTTP PUT request.
+-   The purpose of this class is to update and send parking monitor data
+    to a server using HTTP PUT request.
 
-## Perfect Parking Client additions to "ParkingLot"
+### Perfect Parking Client additions to "ParkingLot"
 
 RestApi as well as to deliver real-time updates on parking spot
 availability.
 
-## Client and Server Architecture with Rest framework
+## Perfect Parking with Django
 
-### The Monitor
+The Perfect Parking application was created using the popular web
+framework Django for a variety of reasons.
+
+Firstly, Django is a high-level web framework that follows the
+Model-View-Controller (MVC) architectural pattern, which promotes code
+organization and separation of concerns. This allows for the development
+of complex programmes with numerous components without compromising the
+maintainability of the code.
+
+Secondly, Django provides a lot of built-in functionality out of the
+box, which saves time and effort during development. For example, Django
+includes an Object-Relational Mapping (ORM) system that allows
+developers to interact with databases using Python objects, as well as a
+robust authentication system for user management.
+
+Thirdly, Django has an engaged community that actively supports the
+framework\'s growth and upkeep. This indicates that a wide variety of
+third-party packages and extensions are readily available and can
+increase the capabilities of the framework and speed up development.
+
+Along with these benefits, Django\'s outstanding documentation,
+scalability, and security capabilities are some of the other benefits of
+adopting it for web development. Django is also open-source and free,
+which makes it available to a variety of developers and organisations.
+
+Overall, the decision to use Django for the Perfect Parking application
+was based on its combination of ease of use, built-in functionality, and
+strong community support, which makes it a popular choice for building
+web applications of all sizes and complexities.
+
+## Client and Server Architecture with Rest framework
 
 ### Server
 
@@ -1623,16 +1805,14 @@ with Django\'s admin site.
 apps.py defines the app\'s configuration, including its name and default
 auto field.
 
-models.py defines the ParkingLot and ParkingLotMonitor models. The
-ParkingLot model has fields for id, name, address, hours, isPaidParking,
-latitude, longitude, image, and parking_spaces. The ParkingLotMonitor
-model has fields for id, parkingLot, name, latitude,longitude,
-probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
-status, and image.
+models.py defines the data structures of ParkingLot and
+ParkingLotMoniton.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image14.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image17.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
+
+Figure 15: Class Diagram
 
 serializers.py defines the serializers used to convert the ParkingLot
 and ParkingLotMonitor models to JSON format for use in the app\'s API.
@@ -1673,210 +1853,10 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image15.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image18.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-[]{#_Toc133573290 .anchor}Figure 13: How they work together
-
-## Project Management
-
-under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
-(cf. 1.1.1)
-
-### Weekly Meetings
-
-During the time doing the final year project weekly supervisor meetings
-were held. These meetings were very useful for asking questions, and
-keeping the project on track, the supervisor was very supportive and
-gave great feedback when it was needed to ensure that the project was
-kept on track. With his guidance and great knowledge it allowed the
-Perfect Parking application to be completed with a high standard and
-within a timely manner.
-
-### Code Style Guide
-
-## Source Control and versioning
-
-For source control and versioning, GitHub was utilized to manage the
-codebase for the project. GitHub was chosen because of prior experience
-using it during other studies, and it provided a reliable platform for
-version control and collaboration with the supervisor.
-
-To keep the code organized and easily manageable, the repository was
-organised into different branches for each week of development. This
-allowed for easy upkeep and to keep track of changes made during each
-week and easily roll back to previous versions if needed.
-
-Additionally, the supervisor was added as a collaborator on the
-repository, allowing him to view the progress and provide feedback on
-the code and documents. This facilitated effective communication and
-ensured that the project was aligned with the objectives.
-
-One significant advantage of using GitHub was that it provided a safe
-and secure backup of the code. In the event of file corruption, it would
-be possible to pull down the last push request and continue the work
-without losing progress.
-
-Overall, the use of GitHub as a source control and versioning tool
-allowed for effective management of the development of the Perfect
-Parking project, collaborate with the supervisor, and ensure the safety
-and integrity of the codebase.
-
-## Tools Used
-
-Tools:
-
--   VS Code, a code editor that provides an excellent development
-    environment.
-
--   Anaconda, a package management, and deployment tool that made it
-    easy to install and manage required libraries and dependencies.
-
--   GitHub, a code repository that allowed for version control and
-    collaboration with my supervisor.
-
--   Microsoft Word, which was used to write the thesis.
-
--   Canva, a graphic design platform used to create the project poster.
-
-Languages and Frameworks:
-
--   Django Python web framework, which allowed for rapid development of
-    the project and easy maintenance.
-
--   OpenCV, an open-source computer vision and machine learning software
-    library, which was used for image processing and analysis.
-
-By utilizing these tools, languages, and frameworks, the project was
-able to be completed more efficiently, with greater accuracy and
-precision.
-
-## Django Rest API
-
-Django is a popular web development framework that is written in Python.
-It provides a set of tools and features that make it easy to build
-complex web applications quickly and efficiently. Django was created by
-Adrian Holovaty and Simon Willison in 2005, it features a vast
-collection of classes, libraries and modules that can be implemented in
-individual projects. With Django, you can create web applications that
-follow the Model-View-Controller (MVC) architecture, which helps to
-separate the different components of your application and make it easier
-to manage. Additionally, Django comes with a lot of built-in
-functionality, including an ORM for database interactions, an admin
-interface for managing site content, and a templating system for
-rendering HTML pages. Overall, Django is a powerful and flexible
-framework that is well-suited for building all kinds of web
-applications. (Johnson, n.d.)
-
-### Perfect Parking with Django
-
-The Perfect Parking application was created using the popular web
-framework Django for a variety of reasons.
-
-Firstly, Django is a high-level web framework that follows the
-Model-View-Controller (MVC) architectural pattern, which promotes code
-organization and separation of concerns. This allows for the development
-of complex programmes with numerous components without compromising the
-maintainability of the code.
-
-Secondly, Django provides a lot of built-in functionality out of the
-box, which saves time and effort during development. For example, Django
-includes an Object-Relational Mapping (ORM) system that allows
-developers to interact with databases using Python objects, as well as a
-robust authentication system for user management.
-
-Thirdly, Django has an engaged community that actively supports the
-framework\'s growth and upkeep. This indicates that a wide variety of
-third-party packages and extensions are readily available and can
-increase the capabilities of the framework and speed up development.
-
-Along with these benefits, Django\'s outstanding documentation,
-scalability, and security capabilities are some of the other benefits of
-adopting it for web development. Django is also open-source and free,
-which makes it available to a variety of developers and organisations.
-
-Overall, the decision to use Django for the Perfect Parking application
-was based on its combination of ease of use, built-in functionality, and
-strong community support, which makes it a popular choice for building
-web applications of all sizes and complexities.
-
-## Anaconda
-
-Anaconda is a popular distribution of the Python programming language
-that is widely used for data science and scientific computing. It comes
-with a sizable number of pre-installed libraries and tools that are
-frequently used in these domains, including Jupyter Notebook, NumPy,
-Pandas, and Matplotlib. (Root, 2020)
-
-Anaconda is designed to make it easy to set up and manage Python
-environments, which are essentially separate installations of Python
-with their own dependencies and libraries. When working on several
-projects with various requirements, this is especially helpful because
-it enables you to keep them separate from one another. (Root, 2020)
-
-The Conda package manager, which lets you easily install, update, and
-manage additional software packages and libraries, is included with
-Anaconda in addition to Python and its libraries. When working with
-non-Python libraries that are necessary for your project, this can be
-helpful. (McKinney, 2022)
-
-Utilising Anaconda has several benefits, one of which is how much easier
-it makes it to set up a Python environment for data research or
-scientific computing. It removes the need to individually install and
-configure each library, which can be a time-consuming and error-prone
-operation, by offering a pre-built distribution with many of the
-frequently used libraries already installed. (O Reilly, n.d.)
-
-Overall, Anaconda is a robust and adaptable tool that is well-liked by
-those who work in data research and scientific computing. Researchers,
-developers, and data analysts all favour it because of how simple it is
-to use and the extensive library of tools that are already installed.
-
-### How to Install Anaconda
-
--   Download the Appropriate Anaconda installer from the [Anaconda
-    Website](https://www.anaconda.com/download/)
-
--   Open VS Code and open a new terminal window by selecting
-    \"Terminal\" from the top menu and then selecting \"New Terminal.
-
--   Navigate to the directory where you downloaded the Anaconda
-    installer using the command **cd \<directory\>**.
-
--   For example, if you downloaded the Anaconda installer for Windows
-    and saved it in your Downloads folder, you would type the following
-    command in the terminal:
-
-1\.     cd Downloads
-
--   Run the Anaconda installer by typing the command **bash \<Anaconda
-    installer filename\>** in the terminal, where **\<Anaconda installer
-    filename\>** is the name of the Anaconda installer file you
-    downloaded.
-
-1\. bash Anaconda3-2021.05\--x86_64.sh   
-
--   Follow the instructions in the Anaconda installer to complete the
-    installation process.
-
--   Once the installation is complete, you can use Anaconda in the VS
-    Code terminal by activating the Anaconda environment with the
-    command **conda activate**. You can then use the various Anaconda
-    packages and tools in the terminal as needed.
-
--   For example, if you want to use the Pandas library in your Python
-    script, you can first activate the Anaconda environment by typing
-    the following command in the terminal:
-
-1\.     conda activate
-
--   Then, you can import the Pandas library in your Python script using
-    the following line of code:
-
-1\.     import pandas as pd
-
--   This will allow you to use the various functions and methods
-    provided by the Pandas library in your project.
+[]{#_Toc133573290 .anchor}Figure 16: How they work together
 
 # Testing and Results
 
@@ -1989,10 +1969,10 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image16.png){width="4.025in"
+1](./docs/images/thesis/media/image19.png){width="4.025in"
 height="2.2642989938757654in"}
 
-[]{#_Toc133573291 .anchor}Figure 14: BDD development cycle (Collidu,
+[]{#_Toc133573291 .anchor}Figure 17: BDD development cycle (Collidu,
 n.d.)
 
 ### BDD In Perfect Parking
@@ -2054,10 +2034,10 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image17.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image20.png){width="3.4380238407699037in"
 height="2.775in"}
 
-[]{#_Toc133573292 .anchor}Figure 15: How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure 18: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
@@ -2156,6 +2136,87 @@ park was selected, it showed a Google map of the parking location, where
 they could get directions to the car park if they wish. Overall, the
 usability of both the ParkingLotMonitor and Perfect Parking website was
 strong, with minimal issues or confusion reported during testing.
+
+# Conclusions 
+
+Based on the research and analysis conducted in this project, it can be
+concluded that the use of AI and object detection in images is an
+effective solution for identifying the status of parking spots
+(free/taken) in towns and cities such as Limerick. By implementing this
+technology, it is possible to monitor car parks in real-time,
+
+## Future Development
+
+While developing the Perfect Parking application there was a challenge
+when it came to incorporating parking sensors into the application. Due
+to budget and time constraints, it was determined that such sensors were
+beyond the scope of the project. While doing the project it was
+recognized that parking sensors would have been a valuable addition to
+the application but understood that this would require collecting large
+amounts of personal data from users.
+
+### Sensors
+
+Overhead Cameras will watch the car parking space and will feed the
+video stream to a local client application.
+
+### Collecting of data
+
+A possible solution is to build a parking space sensor using a raspberry
+pi and putting this down in a parking space in either the college or in
+the city, but be aware of doing this brings problems:
+
+-   Permission must be sought from the parking companies to allow
+    sensors to be placed on their parking premises.
+
+-   If permission is granted the sensor would only be on a raspberry pi
+    it could easily get damaged or stolen.
+
+## Knowledge gained
+
+In this FYP, I have gained a deep understanding of computer vision
+techniques and their practical applications using OpenCV. Additionally,
+I have learned about the historical development of Haar classifiers and
+wavelets, which has helped me to appreciate the evolution of these key
+concepts in the field.
+
+Furthermore, I have honed my programming skills, particularly in Python,
+through the implementation of this project. This experience has taught
+me valuable lessons in project management, design, and implementation. I
+am proud of my accomplishments and feel that I have made a meaningful
+contribution to the field of computer vision through my work.
+
+Overall, the knowledge I have gained and the skills I have developed
+have broadened my understanding of computer vision and have prepared me
+to take on new challenges in this exciting and rapidly evolving field. I
+am grateful for the opportunity to have pursued this research and look
+forward to applying my new skills and knowledge in future endeavours.
+
+## Thesis wrap up
+
+To conclude this thesis, it has been a challenging yet rewarding journey
+that has allowed me to delve deeply into the field of computer vision.
+Through my research and implementation of the FYP project, I have gained
+valuable knowledge and skills that will serve me well in my future
+academic and professional pursuits.
+
+I have explored the rich history of Haar classifiers and wavelets and
+gained a thorough understanding of computer vision techniques using
+OpenCV. Additionally, I have honed my programming skills, particularly
+in Python, and developed valuable experience in managing and
+implementing a large-scale project.
+
+Overall, I believe that this thesis represents a meaningful contribution
+to the field of computer vision, and I hope that it will inspire further
+research and innovation in this area. I am grateful for the guidance and
+support of my Supervisor, and I am proud of the work that I have
+accomplished.
+
+As I move forward from this thesis, I look forward to applying the
+knowledge and skills I have gained in my future academic and
+professional pursuits. I am excited to see where this journey will take
+me and am confident that the experiences and lessons learned from this
+thesis will continue to guide me throughout my career.
 
 # References
 
