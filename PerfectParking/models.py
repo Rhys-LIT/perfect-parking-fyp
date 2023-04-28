@@ -1,6 +1,7 @@
+from geopy.distance import geodesic
 import random
 from django.db import models
-from haversine import haversine
+
 # Create your models here.
 class ParkingLot(models.Model):
     id = models.AutoField(primary_key=True)
@@ -35,8 +36,9 @@ class ParkingLotMonitor(models.Model):
     """status: True = online, False = offline"""
     image = models.ImageField(upload_to='images/parking-lot-monitor/', blank=True)
     
-    def get_distance_from_lat_lang(self, latitude: float, longitude: float) -> float:
-        return self.get_distance_from_point((latitude, longitude))
+    def get_distance_from_lat_lang(self, latitude, longitude) -> float:
+        point:tuple = (latitude, longitude)
+        return self.get_distance_from_point(point)
     
     def get_distance_from_point(self, user_point: tuple) -> float:
         """Gets the distance in Kilometers from the user GPS coordinates to the parking lot coordinates.
@@ -44,7 +46,8 @@ class ParkingLotMonitor(models.Model):
         Returns:
             float: The distance in Kilometers from the user GPS coordinates to the parking lot coordinates.
         """
-        return haversine(self.get_gps_point(), user_point)
+        return round(geodesic(self.get_gps_point(), user_point).km, 2)
+
     
     def get_gps_point(self) -> tuple:
         """Gets the GPS coordinates of the parking lot.
