@@ -87,48 +87,47 @@ space.*
 [2.1 Object Recognition and AI
 [14](#object-recognition-and-ai)](#object-recognition-and-ai)
 
-[2.1.0 Machine Learning [14](#machine-learning)](#machine-learning)
+[2.1.0 Machine Learning [14](#_Toc133322545)](#_Toc133322545)
 
-[2.1.1 Computer Vision [15](#computer-vision)](#computer-vision)
+[2.1.1 Computer Vision
+[15](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
 
-[2.1.2 Object Detection [15](#object-detection)](#object-detection)
+[2.1.2 Object Detection [15](#_Toc133322547)](#_Toc133322547)
 
 [2.1.3 Cascading classifiers
 [15](#cascading-classifiers)](#cascading-classifiers)
 
-[2.1.4 Haar-like feature [16](#haar-like-feature)](#haar-like-feature)
+[2.1.4 Haar-like feature
+[16](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
 
 [2.2 Conclusion: The Need for a Software Solution
-[17](#conclusion-the-need-for-a-software-solution)](#conclusion-the-need-for-a-software-solution)
+[17](#classifier-background-haar-like-features)](#classifier-background-haar-like-features)
 
 [Chapter 3 Project Management
 [19](#project-management)](#project-management)
 
 [3.1 Weekly Meetings [19](#weekly-meetings)](#weekly-meetings)
 
-[3.2 Source code management (SCM)
-[19](#source-code-management-scm)](#source-code-management-scm)
+[3.2 Source code management (SCM) [19](#_Toc133322553)](#_Toc133322553)
 
 [3.3 Code Style Guide [19](#code-style-guide)](#code-style-guide)
 
-[3.4 Collaboration Tools
-[19](#collaboration-tools)](#collaboration-tools)
+[3.4 Collaboration Tools [19](#_Toc133322555)](#_Toc133322555)
 
-[3.4.1 GitHub [19](#github)](#github)
+[3.4.1 GitHub [19](#_Toc133322556)](#_Toc133322556)
 
-[3.4.2 Microsoft Office Online
-[19](#microsoft-office-online)](#microsoft-office-online)
+[3.4.2 Microsoft Office Online [19](#_Toc133322557)](#_Toc133322557)
 
 [Chapter 4 Analysis and Design
 [20](#analysis-and-design)](#analysis-and-design)
 
-[4.1 Unique Selling Point
-[20](#unique-selling-point)](#unique-selling-point)
+[4.1 Unique Selling Point [20](#_Toc133322559)](#_Toc133322559)
 
-[4.2 The Application [20](#the-application)](#the-application)
+[4.2 The Application
+[20](#computer-vision-opencv)](#computer-vision-opencv)
 
 [4.3 Users Use Case Diagram
-[21](#users-use-case-diagram.)](#users-use-case-diagram.)
+[21](#usersbots-use-case-diagram.)](#usersbots-use-case-diagram.)
 
 [4.4 System Actors [21](#system-actors)](#system-actors)
 
@@ -357,14 +356,37 @@ narrowed, allowing for a more focused and efficient development process.
 
 ## Report Structure
 
-The following is the report structure for the Perfect Parking Thesis.
-The report has six chapters, Introduction, literature review, analysis
-and design, Implementation, Testing and results and conclusions
-gratitude to those who contributed to the project. The report also
-includes an Abstract, which provides a brief overview of the project\'s
-purpose, scope, methods, and findings. A table of contents and a table
-of figures are generated automatically, providing a quick and easy way
-for readers to navigate through the report.
+This thesis is structured with five chapters:
+
+Literature Review:
+
+This chapter discusses the different types of data and the problems with
+gathering data, it also discusses about object recognition and AI. The
+literature review also touches on the parking business sector and the
+global and Irish trends, while also discussing the software solution.
+
+Analysis and Design:
+
+This chapter discusses the design of the application such as the use
+cases and the database design. The chapter also goes on to discuss about
+computer vision and how OpenCV makes it possible.
+
+Implementation:
+
+This chapter discusses how the project was implemented. It also
+discusses the tools that were used to develop this application such as
+the Django framework and how other tools such as GitHub were used to
+make the development possible.
+
+Testing and Results:
+
+The testing and results chapter goes on to show how different software
+testing techniques were used to test the program such as Unit Testing.
+
+Conclusions:
+
+The Analysis and Design also discusses a look to the future which is
+about how this project could be scaled up in the future.
 
 # Literature Review
 
@@ -478,23 +500,6 @@ systems to train algorithms to recognize and classify objects. This
 technology has a wide range of applications, from self-driving cars to
 medical diagnosis to robotics. (Tech Target, n.d.)
 
-### Machine Learning
-
-A subset of artificial intelligence called machine learning involves
-training algorithms to recognize patterns and correlations in data.
-
-### Computer Vision
-
-The powerful library OpenCV provides a wide range of features for
-computer vision applications. It is widely used across many different
-industries, including robotics, driverless cars, medical imaging, and
-more.
-
-To extract useful information or features, OpenCV processes visual data,
-such as photos or videos. Image filtering, feature detection, object
-recognition, and tracking are just a few of the techniques that OpenCV
-offers to process and analyze visual data. (Boesch, 2023)
-
 ### Object Detection
 
 Object detection is a technique in computer vision that involves
@@ -502,17 +507,17 @@ detecting objects of interest within an image or video stream. Finding
 the object(s) within a picture and categorizing them into various
 categories are the goals of object detection. Since object detection
 requires locating and recognizing multiple objects inside a picture, it
-is a more advanced technique than object recognition. (Patel, 2020)
+is a more advanced technique than object recognition (Patel, 2020).
 
 ### Cascading classifiers
 
-One kind of machine learning technique used in computer vision for
-object detection is called a cascading classifier. In their
-groundbreaking study \"Rapid Object Detection using a Boosted Cascade of
-Simple Features\" published in 2001, Viola and Jones introduced them for
-the first time. The approach is based on the concept of \"cascading\"
-the solution of a complex detection problem into several smaller, easier
-sub-problems. (Michael Jones, 2001)
+Cascade classifiers One kind of machine learning technique used in
+computer vision for object detection is called a cascading classifier.
+In their groundbreaking study \"Rapid Object Detection using a Boosted
+Cascade of Simple Features\" published in 2001, Viola and Jones
+introduced them for the first time. The approach is based on the concept
+of \"cascading\" the solution of a complex detection problem into
+several smaller, easier sub-problems. (Michael Jones, 2001)
 
 The basic idea behind cascading classifiers is to use a series of
 classifiers, each with increasing complexity, to detect objects of
@@ -526,18 +531,21 @@ negative samples. (Lee, 2022)
 
 One of the main advantages of cascading classifiers is their ability to
 achieve high detection rates with low false positive rates. This is
-accomplished by employing a number of classifiers, each of which is
-trained to quickly reject negative samples. As a result, there are fewer
-false positives because the algorithm can swiftly reject pictures that
-don\'t include the object of interest. (Bąk, 2023)
+accomplished by employing several classifiers, each of which is trained
+to quickly reject negative samples. As a result, there are fewer false
+positives because the algorithm can swiftly reject pictures that don\'t
+include the object of interest. (Bąk, 2023)
 
 When used in object detection tasks like face detection, cascading
 classifiers have been shown to be highly accurate and effective. (Bąk,
-2023) Several pre-trained cascading classifiers, including the
-well-known Haar cascades for face detection, are available in OpenCV for
-object detection.
+2023).
 
-### Haar-like feature
+### Classifier Background (Haar-like features)
+
+Classifiers are based upon Haar wavelets theory using Haar-like
+features, which are extracted from images using rectangular filters and
+then fed into a classifier to learn to distinguish between different
+classes based on the extracted features.
 
 An image feature type used in computer vision for object detection is
 called a Haar-like feature. They have the name of the Haar wavelet,
@@ -549,9 +557,9 @@ coefficients.
 By comparing the average pixel values in adjacent rectangular regions of
 an image, Haar-like features can be extracted from the Haar wavelet. The
 difference between the sum of pixel intensities in a rectangular region
-with a light colour and the sum of pixel intensities in a rectangle
-region with a dark colour is the precise definition of Haar-like
-features. (Arunachalam, 2014)
+with a light color and the sum of pixel intensities in a rectangle
+region with a dark color is the precise definition of Haar-like features
+(Arunachalam, 2014).
 
 These rectangular areas can be positioned anywhere in the image and come
 in a variety of sizes and shapes. It is feasible to gather details about
@@ -572,30 +580,59 @@ is their computational efficiency. They are suitable for real-time
 applications like video surveillance since they are rapid and effective
 to compute utilizing integral images. (Bąk, 2023)
 
-## Conclusion: The Need for a Software Solution
+## Parking Business Sector
 
-In this project, the parking application is being created for
-educational purposes in an effort to solve the widespread parking issue
-in our cities. Time is lost, gasoline is consumed, and traffic is backed
-up due to Limerick City\'s old and inefficient parking systems. To
-increase the efficiency of identifying parking spaces and reduce the
-stress experienced by users searching for parking spaces, a new and
-creative software solution is required.
+Parking management software is expected to see a compound annual growth
+rate (CAGR) of 12.8% and expand to a global market size of \$11.3
+billion by 2024. Additionally, it is anticipated that the market for
+artificial intelligence (AI) in parking management will increase by 20%
+yearly to \$1.5 billion by 2025. With these numbers in mind, it is
+obvious that the parking sector needs creative solutions that can
+harness the potential of AI to enhance parking management.
 
-Perfect Parking aims to develop a fluid and stress-free parking
-experience for road users by utilizing the Django framework structure
-and putting into practice techniques like APIs that display users
-exactly where parking is available and provide directions straight to
-the area. Additionally, a parking monitor powered by OpenCV will be used
-to detect if a parking spot has been filled or made empty, further
-improving the effectiveness of the system.
+### Irish Trends
+
+These statistics suggest that there are several factors that could
+encourage people to drive more in the future, such as improved traffic
+congestion, access to parking, and lower costs. This is where the
+Perfect Parking application can help, by reducing the traffic congestion
+and reducing the fuel prices. (CSO.ie, 2019)
+
+![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
+height="3.160416666666667in"}
+
+Figure 1: CSO.ie - Factors that would encourage more driving,
+
+### Global Trends
 
 The present approaches for locating parking spaces are inefficient and
 wasteful, requiring a large amount of time and fuel. People spend an
 average of 17 hours a year searching for parking spaces, according to
-(McCoy, n.d.) and Irish people waste four days a year. (Sawer, 2017) I
-intend to end this time and energy waste by creating Perfect Parking,
-which will be advantageous to both users and the environment.
+(McCoy, n.d.) and Irish people waste four days a year. (Sawer, 2017) the
+solution intends to end this time and energy waste which will be
+advantageous to both users and the environment.
+
+It is anticipated that the global market for automated parking systems
+will increase from \$1.3 billion in 2020 to \$3.6 billion in 2025. By
+creating an AI-powered parking management system that can maximize
+parking spot use, lessen traffic congestion, and more, the Perfect
+Parking project seeks to meet this expanding need. and improve the
+overall user experience for drivers. (abdalslam, 2023).
+
+## A Software Solution
+
+By leveraging the latest technologies and market trends, the Perfect
+Parking project seeks to revolutionize the parking industry and provide
+a comprehensive solution to the challenges faced by parking operators
+and drivers alike.
+
+In this project, the parking application is being created for
+educational purposes to solve the widespread parking issue in our
+cities. Time is lost, gasoline is consumed, and traffic is backed up due
+to Limerick City\'s old and inefficient parking systems. To increase the
+efficiency of identifying parking spaces and reduce the stress
+experienced by users searching for parking spaces, a new and creative
+software solution is required.
 
 The lack of obvious availability of parking spaces is another issue with
 the present parking schemes. Due to the limited vision created by
@@ -621,8 +658,6 @@ flow, and create a stress-free parking experience for all road users.
 
 # Analysis and Design
 
-## Unique Selling Point
-
 Parking is an issue that contributes to traffic congestion, especially
 in cities. Cars driving around and around a city for parking adds to the
 traffic. Cars hovering for parking spots or cars double parked can cause
@@ -634,20 +669,50 @@ availability, pricing, stay-hours, zones, and disability status.
 Additional benefits include reducing traffic congestion, fuel savings,
 time and reducing stress.
 
-## The Application
+### Computer Vision: OpenCV
+
+The powerful library OpenCV provides a wide range of features for
+computer vision applications. It is widely used across many different
+industries, including robotics, driverless cars, medical imaging, and
+more.
+
+To extract useful information or features, OpenCV processes visual data,
+such as photos or videos. Image filtering, feature detection, object
+recognition, and tracking are just a few of the techniques that OpenCV
+offers to process and analyze visual data. (Boesch, 2023)
+
+Several pre-trained cascading classifiers, including the well-known Haar
+cascades for face detection, are available in OpenCV for object
+detection. A parking monitor app powered by OpenCV will be used to
+detect if a parking spot has been filled or made empty, further
+improving the effectiveness of the system.
+
+## The Main Software Application
 
 Perfect Parking is a web application that will allow users to find
 parking in a city. The application will allow users to search for
 parking near a specific location and will show the user data the nearest
 parking to their location.
 
-## Users Use-case Diagram.
+## The supporting client Applications
+
+The client application sends data to the server and monitors the video
+feeds. The client application works as a parking lot monitor on certain
+car parks across Limerick city and provides live updates to the Perfect
+Parking website once a change in the car park is detected such as a spot
+becomes available or full.
+
+Sensors could also be used in the same way as the monitor but instead of
+monitoring video feeds it would send updates to the server once an
+object passes through it.
+
+## Users/Bots use-case Diagram.
 
 ![Alt
-text](./docs/images/thesis/media/image3.png){width="5.694444444444445in"
+text](./docs/images/thesis/media/image4.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc133414128 .anchor}Figure 1: User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure 2: User Use Case Diagram
 
 ## System Actors
 
@@ -684,6 +749,7 @@ Trigger Event:
 Preconditions:
 
 -   The user is logged in to the application.
+
 -   The website has permission to access the user's GPS location.
 
 Post conditions:
@@ -712,7 +778,7 @@ Description:
 
 A user registers for an account on the application.
 
-**Actors:**
+Actors:
 
 -   Guest user
 
@@ -723,7 +789,9 @@ Trigger Event:
 Preconditions:
 
 -   The guest user is not logged in to the application.
+
 -   The guest user has not registered for an account on the application.
+
 -   The guest has a valid email address.
 
 Post conditions:
@@ -733,9 +801,13 @@ Post conditions:
 Main Flow:
 
 1.  The guest user clicks on the "Register" button.
+
 2.  The guest user enters their details into the registration form.
+
 3.  The guest user clicks on the "Register" button.
+
 4.  The application creates a user account for the guest user.
+
 5.  The guest logs in to the application.
 
 Alternative Flows:
@@ -823,27 +895,27 @@ Alternative Flows:
 
 ### Use Case: User changes password.
 
-**Description:**
+Description:
 
 -   A user changes their password.
 
-**Actors:**
+Actors:
 
 -   User
 
-**Trigger Event:**
+Trigger Event:
 
 -   A user wants or is required to change their password.
 
-**Preconditions:**
+Preconditions:
 
 -   The user is logged in to the application.
 
-**Post conditions:**
+Post conditions:
 
 -   The user's password is changed.
 
-**Main Flow:**
+Main Flow:
 
 1.  The user clicks on the "Change Password" button.
 
@@ -851,7 +923,7 @@ Alternative Flows:
 
 3.  The user clicks on the "Change Password" button.
 
-**Alternative Flows:**
+Alternative Flows:
 
 -   If the user enters an incorrect password, the application will
     display an error message.
@@ -881,15 +953,15 @@ or busy.
 
 ## A look to the future
 
-While developing the Perfect Parking application there was a major
-challenge when it came to incorporating parking sensors into the
-application. Due to budget and time constraints, it was determined that
-such sensors were beyond the scope of the project. While doing the
-project it was recognized that parking sensors would have been a
-valuable addition to the application but understood that this would
-require collecting large amounts of personal data from users. Since the
-project was not focused on data collection, the idea of the parking
-monitor came to light and so took priority over the parking sensors.
+While developing the Perfect Parking application there was a challenge
+when it came to incorporating parking sensors into the application. Due
+to budget and time constraints, it was determined that such sensors were
+beyond the scope of the project. While doing the project it was
+recognized that parking sensors would have been a valuable addition to
+the application but understood that this would require collecting large
+amounts of personal data from users. Since the project was not focused
+on data collection, the idea of the parking monitor came to light and so
+took priority over the parking sensors.
 
 ### Sensors
 
@@ -905,24 +977,24 @@ the status of the car parking space.
 When tech companies are building applications such as parking
 applications, they are given a budget by the parking company, and this
 enables them to put in these parking sensors or put in barriers to
-gather the real-time data for the users. This is where I face a big
-problem with gathering this data, since TUS carpark and other car parks
-in the city is monitored by another parking company called APCOA I am
-very limited to what data I can gather. Since I'm building this
-application on a very small scale gathering real-time data is going to
-be nearly impossible. One solution that I did think of would be to build
-my own parking space sensor using a raspberry pi and putting this down
-in a parking space in either my college or in the city, with doing this
-brings even more problems, these problems being:
+gather the real-time data for the users. This is where there is a big
+problem with gathering this data for Perfect Parking, since TUS carpark
+and other car parks in the city is monitored by another parking company
+called APCOA there is limitations gathering this data. Since Perfect
+Parking is on a very small scale, gathering real-time data is going to
+be nearly impossible. One solution would be to build a parking space
+sensor using a raspberry pi and putting this down in a parking space in
+either the college or in the city, with doing this brings even more
+problems, these problems being:
 
 -   Permission must be sought from APCAO to allow a sensor to be placed
     on their parking premises.
 
--   If I do get permission since the sensor would only be on a raspberry
-    pi it could easily get damaged or stolen.
+-   If permission is granted the sensor would only be on a raspberry pi
+    it could easily get damaged or stolen.
 
--   I would only be able to build one sensor for one single parking spot
-    which wouldn't gather much real-time data for the users.
+-   Only one sensor could be built for one single parking spot which
+    wouldn't gather much real-time data for the users.
 
 ## Development limitations
 
@@ -934,46 +1006,28 @@ file instead of a camera.
 ## Database design
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image4.png){width="5.395833333333333in"
+generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
 height="5.15625in"}
 
-[]{#_Toc132726761 .anchor}Figure 2 - Database Design
+[]{#_Toc132726761 .anchor}Figure 3 - Database Design
 
-The database for this project is composed of three tables: \"User\",
-\"ParkingLotMonitor\", and \"ParkingLot\".
-
-The \"User\" table has three columns: \"Id\" (primary key),
-\"Username\", and \"Password\". This table stores the login information
-for users of the parking application.
-
-The \"ParkingLotMonitor\" table has six columns: \"Id\" (primary key),
-\"ParkingLotId\" (foreign key), \"ProbabilityParkingAvailable\",
-\"LastUpdated\", \"Status\", and \"DataTime\". This table tracks the
-parking availability at each parking lot monitored by the application.
-The \"ParkingLotId\" column acts as a connection point, linking the
-\"ParkingLotMonitor\" table to the \"ParkingLot\" table.
-
-The \"ParkingLot\" table has seven columns: \"Id\" (primary key),
-\"Name\", \"Address\", \"Image\", \"Hours\", \"IsPaidParking\",
-\"Latitude\", and \"Longitude\". This table stores information about
-each parking lot, including its name, address, image, hours of
-operation, and whether it is a paid parking lot. The \"Latitude\" and
-\"Longitude\" columns allow the parking application to display the
-parking lot location on a map.
-
-The diagrams depict a relationship between the \"ParkingLotMonitor\" and
-\"ParkingLot\" tables using the \"has\" symbol. The \"ParkingLotId\"
-column in the \"ParkingLotMonitor\" table serves as a foreign key to
-link the two tables, allowing the application to track parking
-availability at each parking lot.
+The database for this project comprises three tables: \"User\",
+\"ParkingLotMonitor\", and \"ParkingLot\". Login information for users
+of the parking application is kept in the \"User\" table. The
+\"ParkingLot\" table keeps records of each parking lot\'s name, address,
+image, operating hours, and method of payment while the
+\"ParkingLotMonitor\" table keeps track of parking availability for
+monitored car parks. The \"ParkingLotMonitor\" table is linked to the
+\"ParkingLot\" table through the \"ParkingLotId\" column to enable the
+parking application to track parking availability at each location.
 
 ## User Parking Sequence diagram
 
 ![A screenshot of a computer Description automatically
-generated](./docs/images/thesis/media/image5.png){width="6.268055555555556in"
+generated](./docs/images/thesis/media/image6.png){width="6.268055555555556in"
 height="2.0875in"}
 
-[]{#_Toc132726762 .anchor}Figure 3- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 4- User Parking Sequence Diagram
 
 this is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -985,11 +1039,11 @@ multiple parking lot monitors:
 
 -   Henry St Parking Lot Monitor
 
--   LowerHartstongeParkingLotMonitor
+-   Lower Hartstonge Parking Lot Monitor
 
--   MallowStreetPart1ParkingLotMonitor
+-   Mallow Street Part1 Parking Lot Monitor
 
--   and MallowStreetPart2ParkingLotMonitor
+-   and Mallow Street Part2 Parking Lot Monitor
 
 The Henry St Parking Lot Monitor responds that parking is 97% available,
 the Lower Hartstonge Parking Lot Monitor responds 87%,
@@ -1000,7 +1054,33 @@ Finally, the application then sends a response to the user indicating
 that there are 3 parking lots available near their location, with the
 names Henry St, Lower Hartstonge, and Mallow Street Part1.
 
+## Agile Development
+
+Agile development is a software development methodology that emphasizes
+flexibility, collaboration, and iterative development. Agile development
+teams divide the work into smaller, more manageable chunks called
+\"sprints\" rather than working on a project in a linear fashion with a
+precise plan set in stone from the beginning. A working prototype or
+product increment that can be tested and evaluated is produced by each
+sprint, which lasts typically two to four weeks. Agile development
+promotes regular communication and collaboration between team members
+and stakeholders and favors working software over documentation. The
+Agile manifesto identifies four basic values: valuing people over
+processes and technologies, emphasizing working software over thorough
+documentation, prioritizing communication with customers over contract
+negotiations, and reacting to change over planning ahead. (atlassian,
+n.d.)
+
+![Les raisons pour utiliser les méthodes Agile en
+entreprise](./docs/images/thesis/media/image7.jpeg){width="4.258333333333334in"
+height="4.258333333333334in"}
+
+Figure 5: Agile Development (Feer, 2020)
+
 # Implementation
+
+In this chapter the implementation of Perfect parking is discussed with
+regard to (1) .. (2) .. (3) .. and 4
 
 ## Object Recognition in Images
 
@@ -1188,7 +1268,7 @@ probabilityParkingAvailable, free_parking_spaces, dateTimeLastUpdated,
 status, and image.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image6.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image8.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
 serializers.py defines the serializers used to convert the ParkingLot
@@ -1225,13 +1305,15 @@ the request. The server then sends a response back to the client, which
 includes a status code indicating whether the request was successful or
 not, any data to include in the response body, and any headers to
 include with the response. The client-side then processes the response,
-displaying the data in the website for probability of parking available
+displaying the data on the website for probability of parking available
 so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image7.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image9.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
+
+Figure 6: How they work together
 
 ## Project Management
 
@@ -1243,18 +1325,7 @@ under the headings of (i) sub-topic 1 (cf. 1.1.0), and (ii) sub-topic 2
 This chapter will begin by outlining the (cf. 1.1) for the purpose of
 writing a Report for a Project and outlining paragraphs.
 
-### Source code management (SCM)
-
 ### Code Style Guide
-
-### Collaboration Tools
-
-#### GitHub
-
-#### Microsoft Office Online
-
-This chapter will begin by outlining the (cf. 1.1) for the purpose of
-writing a Report for a Project and outlining paragraphs.
 
 ## Source Control and versioning
 
@@ -1482,13 +1553,15 @@ returning the expected response status code.
 
 3\.     free_spaces_in_frame: float = 3
 
-4\.     probability_parking_available: .5 \# (3/6)
+4\.     probability_parking_available: 0.5  # (3/6)
 
-5\.     response: request.Response = MotionDetector
+5\.     response: request.Response =
+RestApiUtility.update_server_parking_monitor_data(
 
-6\. .update_server_parking_monitor_data(parking_monitor_data,
+6\.         parking_monitor_data, free_spaces_in_frame,
+probability_parking_available
 
-7\. free_spaces_in_frame, probability_parking_available)
+7\.     )
 
 8\.     expected_response_status_code = 200
 
@@ -1548,10 +1621,10 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image8.png){width="4.025in"
+1](./docs/images/thesis/media/image10.png){width="4.025in"
 height="2.2642989938757654in"}
 
-Figure 4: BDD development cycle (Collidu, n.d.)
+Figure 7: BDD development cycle (Collidu, n.d.)
 
 ### BDD In Perfect Parking
 
@@ -1612,10 +1685,10 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image9.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image11.png){width="3.4380238407699037in"
 height="2.775in"}
 
-Figure 5: How TDD Works (BasuMallick, 2022)
+Figure 8: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
