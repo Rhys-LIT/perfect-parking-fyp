@@ -1,5 +1,6 @@
 # The paths for the templates.
 PARKING_LOTS = 'parking-lots'
+"""The path for the parking lots page."""
 REGISTER_USER = 'register-user'
 PARKING_LOT_MONITOR = 'parking-lot-monitor'
 PARKING_LOT_MONITORS = 'parking-lot-monitors'

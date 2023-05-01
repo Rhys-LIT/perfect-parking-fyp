@@ -148,6 +148,13 @@ class MotionDetector:
         return status
 
     def on_free_parking_spaces_changed(self, spaces_in_frame: int, free_spaces_in_frame: float) -> None:
+        """Event handler for when the number of free parking spaces changes.
+        Calls the RestApiUtility to update the server with the new data.
+
+        Args:
+            spaces_in_frame (int): The total number of parking spaces in the frame
+            free_spaces_in_frame (float): The number of free parking spaces in the frame
+        """
         probability_parking_available = free_spaces_in_frame/spaces_in_frame
         RestApiUtility.update_server_parking_monitor_data(
             self.parking_monitor_data, free_spaces_in_frame, probability_parking_available)

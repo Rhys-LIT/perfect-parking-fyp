@@ -7,6 +7,7 @@ import random
 import time
 
 def main():
+    """Main function"""
     logging.basicConfig(level=logging.INFO)
 
     # Initialize the mock data array with five mock config files
@@ -38,6 +39,11 @@ def get_random_seconds_time_delay()->int:
     return seconds
 
 def send_mock_put_request(parking_monitor_data:ParkingMonitorData):
+    """Sends a mock PUT request to the server with random data
+
+    Args:
+        parking_monitor_data (ParkingMonitorData): The ParkingMonitorData object to send the PUT request with
+    """
     parking_spaces:int = int(parking_monitor_data.parking_spaces)
     free_spaces_in_frame:int = random.randint(0, parking_spaces)
     probability_parking_available:float = free_spaces_in_frame / parking_spaces

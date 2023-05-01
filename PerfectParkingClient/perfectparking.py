@@ -53,7 +53,7 @@ class RestApiUtility:
         """_summary_
 
         Args:
-            parking_monitor_data (ParkingMonitorData): _description_
+            parking_monitor_data (ParkingMonitorData): The parking monitor data to build the json for.
             free_spaces_in_frame (float): _description_
             probability_parking_available (float): _description_
 

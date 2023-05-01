@@ -107,5 +107,7 @@ Open a terminal and run the following command:
 python PerfectParkingClient/mock.py
 ```
 
+You can stop the mock client by pressing `q` at any time.
+
 ---
 Copyright &copy; 2023, [Rhys Quilter](https://github.com/rhys-lit)

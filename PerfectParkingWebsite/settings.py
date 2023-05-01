@@ -36,11 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'PerfectParking.apps.PerfectParkingConfig',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'django.contrib.humanize', 
+    'django.contrib.staticfiles', # This is the static files app
+    'PerfectParking.apps.PerfectParkingConfig', # This is the (my) PerfectParking app
+    'rest_framework', # This enables the Django REST Framework
+    'rest_framework.authtoken', # This enables the Django REST Framework authentication token
+    'django.contrib.humanize', # This enables the humanize app for formatting numbers in html views
 ]
 
 MIDDLEWARE = [
