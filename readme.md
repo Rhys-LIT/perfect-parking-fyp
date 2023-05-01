@@ -35,7 +35,7 @@ There are three applications in this project: the website server, a client parki
 1. Install dependencies
     - With Pip (To fast execute, run on Windows [pip-install.bat](./pip-install.bat))
 
-        ```py
+        ```bash
         pip install -r requirements.txt
         ```
 
@@ -73,7 +73,7 @@ For the client parking monitor to run, the server must be running.
 1. Install dependencies
     - With Pip (To fast execute, run on Windows [PerfectParkingClient/pip-install.bat](./PerfectParkingClient/pip-install.bat))
 
-        ```py
+        ```bash
         pip install -r PerfectParkingClient/requirements.txt
         ```
 
