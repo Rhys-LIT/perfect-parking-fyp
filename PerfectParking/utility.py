@@ -4,6 +4,12 @@ from PerfectParking.models import ParkingLotMonitor
 
 
 def build_all_config_ini_content() -> str:
+    """
+    Builds a string containing the configuration content for all parking lot monitors.
+
+    Returns:
+        A string containing the configuration content for all parking lot monitors.
+    """
     text: str = ""
     parking_lot_monitors: list(ParkingLotMonitor) = ParkingLotMonitor.objects.all()
     for parking_lot_monitor in parking_lot_monitors:

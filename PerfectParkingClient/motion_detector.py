@@ -22,14 +22,14 @@ class MotionDetector:
         self.parking_monitor_data = parking_monitor_data
 
     def detect_motion(self)->bool:
-        """_summary_
+        """Detects motion in the video and updates the internal state of the MotionDetector object accordingly.
 
-        Raises:
-            CaptureReadError: _description_
+    Raises:
+        CaptureReadError: If there is an error reading the video capture.
 
-        Returns:
-            bool: returns True if the video was stopped by a key press, False otherwise
-        """        
+    Returns:
+        bool: True if the video was stopped by a key press, False otherwise.
+    """ 
         
         capture = open_cv.VideoCapture(self.video)
         capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)

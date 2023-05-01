@@ -30,6 +30,19 @@ def index(request):
 
 
 def login_user(request):
+    """
+    Authenticates and logs in a user based on their submitted username and password.
+
+    Args:
+        request: An HttpRequest object that contains metadata about the current request.
+
+    Returns:
+        If the submitted form data is valid and the user exists, redirects to the parking lots page. Otherwise,
+        redirects to the login page.
+
+    Raises:
+        None
+    """
     if request.method == "POST":  # FORM SUBMITTED
         username = request.POST["username"]
         password = request.POST["password"]

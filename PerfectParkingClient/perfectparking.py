@@ -32,16 +32,20 @@ class RestApiUtility:
     
     @staticmethod
     def update_server_parking_monitor_data(parking_monitor_data: ParkingMonitorData, free_spaces_in_frame: float, probability_parking_available: float) -> requests.Response:
-        """_summary_
+        """
+    Updates the parking monitor data on the server with new free spaces and probability data.
 
-        Args:
-            parking_monitor_data (ParkingMonitorData): _description_
-            free_spaces_in_frame (float): _description_
-            probability_parking_available (float): _description_
+    Args:
+        parking_monitor_data: A ParkingMonitorData object representing the parking monitor being updated.
+        free_spaces_in_frame: A float representing the number of free spaces in the current video frame.
+        probability_parking_available: A float representing the probability that a parking spot is available.
 
-        Returns:
-            requests.Response: _description_
-        """             
+    Returns:
+        A requests.Response object representing the server's response to the PUT request.
+
+    Raises:
+        None
+    """
         parking_monitor_data_json: dict = RestApiUtility.build_parking_monitor_data_json(
             parking_monitor_data,
             free_spaces_in_frame,
@@ -50,15 +54,15 @@ class RestApiUtility:
 
     @staticmethod
     def build_parking_monitor_data_json(parking_monitor_data: ParkingMonitorData, free_spaces_in_frame: float, probability_parking_available: float) -> dict:
-        """_summary_
+        """ this method builds the json for the parking monitor data
 
         Args:
-            parking_monitor_data (ParkingMonitorData): The parking monitor data to build the json for.
-            free_spaces_in_frame (float): _description_
-            probability_parking_available (float): _description_
+            parking_monitor_data (ParkingMonitorData): the parking monitor data
+            free_spaces_in_frame (float): the free spaces in the frame
+            probability_parking_available (float): the probability that a parking spot is available
 
         Returns:
-            _type_: _description_
+            dict: the json for the parking monitor data
         """
         return {
             "id": parking_monitor_data.id,
@@ -72,14 +76,14 @@ class RestApiUtility:
 
     @staticmethod
     def build_and_send_parking_monitor_data_put_request(parking_monitor_data: ParkingMonitorData, request_json: dict) -> requests.Response:
-        """_summary_
+        """Builds and sends a PUT request to the server and returns the response.
 
         Args:
-            parking_monitor_data (ParkingMonitorData): _description_
-            request_json (dict): _description_
+            parking_monitor_data (ParkingMonitorData): the parking monitor data
+            request_json (dict): the json for the request
 
         Returns:
-            requests.Response: _description_
+            requests.Response: the response from the server
         """
         request_headers = {
             "Authorization": f"Token {parking_monitor_data.app_token}",
