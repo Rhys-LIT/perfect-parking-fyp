@@ -16,10 +16,10 @@ John Jennings
 
 # Acknowledgments
 
-I would like to thank my supervisor John Jennings for helping me to
-complete my research. In addition, I would like to thank my parents Sean
-and Beverley, and my girlfriend Laura for their support during my time
-at TUS.
+I would like to thank my supervisor John Jennings and my second reader
+Gerry Guinane for helping me to complete my research. In addition, I
+would like to thank my parents Sean and Beverley, and my girlfriend
+Laura for their support during my time at TUS.
 
 # Ethical Declaration
 
@@ -43,16 +43,15 @@ for Undergraduate and Taught Postgraduate Programmes policy document.
 
 # Abstract
 
-*This project is a Parking application for academic purpose. The aim of
-Perfect Parking is to create a parking system that will replace outdated
-systems and to help stop the widespread problem that is parking in our
-cities. So, the goal in this project is to improve the effectiveness of
-finding parking spaces and to also relieve the stress of the users
-looking for parking by implementing new and innovative features. I will
-do this by building a client server APIs and website that will show the
-user exactly where the parking is. The sever will be supported by
-parking monitor clients powered by OpenCV to detect if a parking spot
-has been filled or made empty.*
+The aim of Perfect Parking is to create a parking system that will
+replace outdated systems and to help stop the widespread problem that is
+parking in our cities. The goal in this project is to improve the
+effectiveness of finding parking spaces and to also relieve the stress
+of the users looking for parking by implementing new and innovative
+features. This will be done by building a client server APIs and website
+that will show the user exactly where the parking is. The sever will be
+supported by parking monitor clients powered by OpenCV to detect if a
+parking spot has been filled or made empty.
 
 # Table of Contents {#table-of-contents .unnumbered}
 
@@ -62,7 +61,7 @@ has been filled or made empty.*
 
 [Abstract [iv](#abstract)](#abstract)
 
-[Table of Contents [v](#_Toc133600664)](#_Toc133600664)
+[Table of Contents [v](#_Toc133651940)](#_Toc133651940)
 
 [Table of Figure [ix](#table-of-figure)](#table-of-figure)
 
@@ -82,7 +81,7 @@ has been filled or made empty.*
 [1.5 The scope of the solution
 [12](#the-scope-of-the-solution)](#the-scope-of-the-solution)
 
-[1.6 Solution developed.
+[1.6 The developed Solution
 [12](#the-developed-solution)](#the-developed-solution)
 
 [1.7 Report structure [12](#report-structure)](#report-structure)
@@ -110,7 +109,7 @@ has been filled or made empty.*
 [2.3 Object Recognition and AI
 [16](#object-recognition-and-ai)](#object-recognition-and-ai)
 
-[2.3.1 Object Detection [16](#_Toc133600682)](#_Toc133600682)
+[2.3.1 Object Detection [16](#_Toc133651958)](#_Toc133651958)
 
 [2.3.2 Cascading classifiers
 [16](#cascading-classifiers)](#cascading-classifiers)
@@ -128,196 +127,229 @@ has been filled or made empty.*
 [2.5 A Software Solution
 [19](#a-software-solution)](#a-software-solution)
 
+[2.6 Agile Software Development Paradigm
+[20](#agile-software-development-paradigm)](#agile-software-development-paradigm)
+
 [Chapter 3 Analysis and Design
-[21](#agile-software-development-paradigm)](#agile-software-development-paradigm)
+[22](#analysis-and-design)](#analysis-and-design)
 
 [3.1 The Main Software Application
-[21](#the-main-software-application)](#the-main-software-application)
+[22](#the-main-software-application)](#the-main-software-application)
 
 [3.2 The supporting client Applications
-[21](#the-supporting-client-applications)](#the-supporting-client-applications)
+[22](#the-supporting-client-applications)](#the-supporting-client-applications)
 
-[3.3 Computer Vision: OpenCV
-[21](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[3.2.1 Identifying the free/busy car parking spaces
+[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
 
-[3.4 Users/Bots use-case Diagram. [22](#_Toc133600693)](#_Toc133600693)
+[3.3 Technologies [22](#technologies)](#technologies)
 
-[3.5 System Actors [22](#anaconda)](#anaconda)
+[3.3.1 Computer Vision: OpenCV
+[22](#computer-vision-opencv)](#computer-vision-opencv)
+
+[3.3.2 Anaconda [23](#anaconda)](#anaconda)
+
+[3.3.3 Django Rest API [24](#django-rest-api)](#django-rest-api)
+
+[3.4 Application Database design
+[24](#application-database-design)](#application-database-design)
+
+[3.5 System Actors [25](#system-actors)](#system-actors)
 
 [3.6 Use Case Descriptions
-[23](#users-use-case-diagram)](#users-use-case-diagram)
+[26](#use-case-descriptions)](#use-case-descriptions)
 
 [3.6.1 Use Case: Find Parking
-[23](#use-case-find-parking)](#use-case-find-parking)
+[26](#use-case-find-parking)](#use-case-find-parking)
 
 [3.6.2 Use Case: Register User
-[24](#use-case-register-user)](#use-case-register-user)
+[27](#use-case-register-user)](#use-case-register-user)
 
 [3.6.3 Use Case: Update Parking Lot Status
-[25](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
+[29](#use-case-update-parking-lot-status)](#use-case-update-parking-lot-status)
 
 [3.6.4 Use Case: User changes password.
-[26](#use-case-user-changes-password.)](#use-case-user-changes-password.)
+[30](#use-case-user-changes-password.)](#use-case-user-changes-password.)
 
-[3.7 Website Layout
-[27](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
+[3.7 User Parking Sequence diagram
+[31](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
-[3.7.1 Parking Lots View [27](#parking-lots-view)](#parking-lots-view)
+[3.8 Website Layout [31](#website-layout)](#website-layout)
 
-[3.7.2 Parking Lot View [27](#parking-lot-view)](#parking-lot-view)
+[3.8.1 Parking Lots View [31](#parking-lots-view)](#parking-lots-view)
 
-[3.7.3 Parking Lot Monitors
-[28](#parking-lot-monitors)](#parking-lot-monitors)
+[3.8.2 Parking Lot View [32](#parking-lot-view)](#parking-lot-view)
 
-[3.7.4 Parking Lot Monitor
-[29](#parking-lot-monitor)](#parking-lot-monitor)
+[3.8.3 Parking Lot Monitors
+[32](#parking-lot-monitors)](#parking-lot-monitors)
 
-[3.7.5 Know your Location Feature
-[29](#know-your-location-feature)](#know-your-location-feature)
+[3.8.4 Parking Lot Monitor
+[33](#parking-lot-monitor)](#parking-lot-monitor)
 
-[3.7.6 Search Near Me [30](#search-near-me)](#search-near-me)
+[3.8.5 Know your Location Feature
+[34](#know-your-location-feature)](#know-your-location-feature)
 
-[3.8 Identifying the free/busy car parking spaces
-[30](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[3.8.6 Search Near Me [35](#search-near-me)](#search-near-me)
 
-[3.9 Machine Learning / Artificial Intelligence (AI)
-[31](#login)](#login)
+[3.8.7 Login [35](#login)](#login)
 
-[3.10 A look to the future [31](#_Toc133600709)](#_Toc133600709)
+[3.8.8 Sign up (User Registration)
+[36](#sign-up-user-registration)](#sign-up-user-registration)
 
-[3.10.1 Sensors [31](#sensors)](#sensors)
+[3.9 Rest API layout [37](#rest-api-layout)](#rest-api-layout)
 
-[3.10.2 Collecting of data
-[31](#collecting-of-data)](#collecting-of-data)
+[3.9.1 API Root [37](#api-root)](#api-root)
 
-[3.11 Development limitations [32](#_Toc133600712)](#_Toc133600712)
+[3.9.2 Parking Lots [37](#parking-lots)](#parking-lots)
 
-[3.12 Database design [33](#anaconda)](#anaconda)
+[3.9.3 Parking Lot Monitors
+[38](#parking-lot-monitors-1)](#parking-lot-monitors-1)
 
-[3.13 User Parking Sequence diagram
-[34](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
+[3.9.4 Parking Lot Monitor
+[39](#parking-lot-monitor-1)](#parking-lot-monitor-1)
 
-[3.14 Agile Development
-[34](#agile-software-development-paradigm)](#agile-software-development-paradigm)
+[3.9.5 Parking Lot [39](#parking-lot)](#parking-lot)
 
-[Chapter 4 Implementation [36](#implementation)](#implementation)
+[Chapter 4 Implementation [41](#implementation)](#implementation)
 
-[4.1 How Object Recognition works in Perfect Parking clients
-[36](#project-management)](#project-management)
+[4.1 Project Management [41](#project-management)](#project-management)
 
-[4.2 ParkingLot by Rocheeva [36](#the-client-app)](#the-client-app)
+[4.1.1 Source Control and versioning
+[41](#source-control-and-versioning)](#source-control-and-versioning)
 
-[4.2.1 Determining a parking space's status
-[36](#determining-a-parking-spaces-status)](#determining-a-parking-spaces-status)
+[4.1.2 Tools Used [41](#tools-used)](#tools-used)
 
-[4.2.2 A quick note on source code quality
-[36](#a-quick-note-on-source-code-quality)](#a-quick-note-on-source-code-quality)
+[4.1.3 How to Install Anaconda
+[42](#how-to-install-anaconda)](#how-to-install-anaconda)
 
-[4.2.3 How a parking space status is determined
-[36](#how-a-parking-space-status-is-determined)](#how-a-parking-space-status-is-determined)
+[4.2 How Object Recognition works in Perfect Parking clients
+[43](#how-object-recognition-works-in-perfect-parking-clients)](#how-object-recognition-works-in-perfect-parking-clients)
 
-[4.3 Modifying ParkingLot
-[37](#modifying-parkinglot)](#modifying-parkinglot)
+[4.3 The Client App [43](#the-client-app)](#the-client-app)
 
-[4.4 Perfect Parking Client additions to "ParkingLot"
-[39](#perfect-parking-client-additions-to-parkinglot)](#perfect-parking-client-additions-to-parkinglot)
+[4.3.1 ParkingLot by Rocheeva
+[43](#parkinglot-by-rocheeva)](#parkinglot-by-rocheeva)
 
-[4.5 Client and Server Architecture with Rest framework
-[40](#perfect-parking-with-django)](#perfect-parking-with-django)
+[4.3.2 Modifying ParkingLot
+[44](#modifying-parkinglot)](#modifying-parkinglot)
 
-[4.5.1 The Monitor [40](#_Toc133600725)](#_Toc133600725)
+[4.4 Perfect Parking with Django
+[47](#perfect-parking-with-django)](#perfect-parking-with-django)
 
-[4.5.2 Server [40](#server)](#server)
+[4.4.1 Customising Django
+[48](#customising-django)](#customising-django)
 
-[4.5.3 How They Work Together
-[41](#how-they-work-together)](#how-they-work-together)
+[4.5 Enable Django REST framework.
+[53](#enable-django-rest-framework.)](#enable-django-rest-framework.)
 
-[4.6 Project Management [42](#project-management)](#project-management)
+[4.5.1 Server [53](#server)](#server)
 
-[4.6.1 Weekly Meetings [42](#_Toc133600729)](#_Toc133600729)
+[4.5.2 Working with GPS data
+[53](#working-with-gps-data)](#working-with-gps-data)
 
-[4.6.2 Code Style Guide [42](#_Toc133600730)](#_Toc133600730)
+[4.6 Custom tags [54](#custom-tags)](#custom-tags)
 
-[4.7 Source Control and versioning
-[42](#source-control-and-versioning)](#source-control-and-versioning)
+[4.7 Getting user's location
+[55](#getting-users-location)](#getting-users-location)
 
-[4.8 Tools Used [43](#project-management)](#project-management)
-
-[4.9 Django Rest API [43](#django-rest-api)](#django-rest-api)
-
-[4.9.1 Perfect Parking with Django
-[44](#perfect-parking-with-django)](#perfect-parking-with-django)
-
-[4.10 Anaconda [45](#anaconda)](#anaconda)
-
-[4.10.1 How to Install Anaconda
-[45](#how-to-install-anaconda)](#how-to-install-anaconda)
+[4.7.1 How They Work Together
+[56](#how-they-work-together)](#how-they-work-together)
 
 [Chapter 5 Testing and Results
-[47](#testing-and-results)](#testing-and-results)
+[58](#testing-and-results)](#testing-and-results)
 
-[5.1 Unit Testing [47](#unit-testing)](#unit-testing)
+[5.1 Unit Testing [58](#unit-testing)](#unit-testing)
 
 [5.1.1 Unit Tests Used in The Project
-[47](#unit-tests-used-in-the-project)](#unit-tests-used-in-the-project)
+[58](#unit-tests-used-in-the-project)](#unit-tests-used-in-the-project)
 
 [5.2 Behaviour Driven Development (BBD) Testing
-[48](#behaviour-driven-development-bbd-testing)](#behaviour-driven-development-bbd-testing)
+[59](#behaviour-driven-development-bbd-testing)](#behaviour-driven-development-bbd-testing)
 
 [5.2.1 BDD In Perfect Parking
-[49](#bdd-in-perfect-parking)](#bdd-in-perfect-parking)
+[60](#bdd-in-perfect-parking)](#bdd-in-perfect-parking)
 
 [5.3 Test Driven Development (TDD)
-[49](#test-driven-development-tdd)](#test-driven-development-tdd)
+[60](#test-driven-development-tdd)](#test-driven-development-tdd)
 
 [5.3.1 TDD in Perfect Parking
-[51](#tdd-in-perfect-parking)](#tdd-in-perfect-parking)
+[62](#tdd-in-perfect-parking)](#tdd-in-perfect-parking)
 
-[5.4 Functionality [52](#functionality)](#functionality)
+[5.4 Functionality [63](#functionality)](#functionality)
 
-[5.5 Usability [52](#usability)](#usability)
+[5.5 Usability [63](#usability)](#usability)
 
-[References
-[54](#something-about-howe-the-app-performed.)](#something-about-howe-the-app-performed.)
+[Chapter 6 Conclusions [65](#conclusions)](#conclusions)
 
-[Glossary [59](#glossary)](#glossary)
+[6.1 Application Performance
+[65](#application-performance)](#application-performance)
+
+[6.2 Future Development [65](#future-development)](#future-development)
+
+[6.2.1 Sensors [65](#sensors)](#sensors)
+
+[6.2.2 Collecting of data
+[65](#collecting-of-data)](#collecting-of-data)
+
+[6.3 Reflections [66](#reflections)](#reflections)
+
+[References [67](#_Toc133652029)](#_Toc133652029)
 
 # Table of Figure
 
 [Figure 1: CSO.ie - Factors that would encourage more driving,
 [19](#_Toc133573279)](#_Toc133573279)
 
-[Figure 2: User Use Case Diagram [22](#_Toc133414128)](#_Toc133414128)
+[Figure 2: Agile Development (Feer, 2020)
+[21](#_Toc133573289)](#_Toc133573289)
 
-[Figure 3: Parking Lots View [27](#_Toc133573281)](#_Toc133573281)
+[Figure 3 - Database Design [25](#_Toc132726761)](#_Toc132726761)
 
-[Figure 4: Parking Lot View [28](#_Toc133573282)](#_Toc133573282)
+[Figure 4: User Use Case Diagram [26](#_Toc133414128)](#_Toc133414128)
 
-[Figure 5: Parking lot Monitors View
-[28](#_Toc133573283)](#_Toc133573283)
+[Figure 5- User Parking Sequence Diagram
+[31](#_Toc132726762)](#_Toc132726762)
 
-[Figure 7: Parking Lot Monitor View
-[29](#_Toc133573284)](#_Toc133573284)
+[Figure 6: Parking Lots View [32](#_Toc133573281)](#_Toc133573281)
 
-[Figure 8: Location Sharing [30](#_Toc133573285)](#_Toc133573285)
+[Figure 7: Parking Lot View [32](#_Toc133573282)](#_Toc133573282)
 
-[Figure 9: Search Near Me Feature [30](#_Toc133573286)](#_Toc133573286)
+[Figure 8: Parking lot Monitors View
+[33](#_Toc133573283)](#_Toc133573283)
 
-[Figure 10 - Database Design [33](#_Toc132726761)](#_Toc132726761)
+[Figure 9: Parking Lot Monitor View
+[34](#_Toc133573284)](#_Toc133573284)
 
-[Figure 11- User Parking Sequence Diagram
-[34](#_Toc132726762)](#_Toc132726762)
+[Figure 10: Location Sharing [34](#_Toc133573285)](#_Toc133573285)
 
-[Figure 12: Agile Development (Feer, 2020)
-[35](#_Toc133573289)](#_Toc133573289)
+[Figure 11: Search Near Me Feature [35](#_Toc133573286)](#_Toc133573286)
 
-[Figure 13: How they work together [42](#_Toc133573290)](#_Toc133573290)
+[Figure 12: User Login [36](#_Toc133647165)](#_Toc133647165)
 
-[Figure 14: BDD development cycle (Collidu, n.d.)
-[49](#_Toc133573291)](#_Toc133573291)
+[Figure 13: User Registration [36](#_Toc133647166)](#_Toc133647166)
 
-[Figure 15: How TDD Works (BasuMallick, 2022)
-[50](#_Toc133573292)](#_Toc133573292)
+[Figure 14: Django Rest Framework API Root
+[37](#_Toc133647167)](#_Toc133647167)
+
+[Figure 15: Parking Lot List [38](#_Toc133647168)](#_Toc133647168)
+
+[Figure 16: Parking Lot Monitor List
+[39](#_Toc133647169)](#_Toc133647169)
+
+[Figure 17: Parking Monitor Instance
+[39](#_Toc133647170)](#_Toc133647170)
+
+[Figure 18: Parking lot Instance [40](#_Toc133647171)](#_Toc133647171)
+
+[Figure 19: Class Diagram [52](#_Toc133647172)](#_Toc133647172)
+
+[Figure 20: How they work together [57](#_Toc133573290)](#_Toc133573290)
+
+[Figure 21: BDD development cycle (Collidu, n.d.)
+[60](#_Toc133573291)](#_Toc133573291)
+
+[Figure 22: How TDD Works (BasuMallick, 2022)
+[61](#_Toc133573292)](#_Toc133573292)
 
 # Introduction
 
@@ -704,8 +736,8 @@ future. In the top three are traffic congestion, and access to parking.
 ![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
 height="3.160416666666667in"}
 
-[]{#_Toc133573279 .anchor}Figure : CSO.ie - Factors that would encourage
-more driving,
+[]{#_Toc133573279 .anchor}Figure 1: CSO.ie - Factors that would
+encourage more driving,
 
 ### Global Trends
 
@@ -781,7 +813,7 @@ n.d.)
 entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
-[]{#_Toc133573289 .anchor}Figure : Agile Development (Feer, 2020)
+[]{#_Toc133573289 .anchor}Figure 2: Agile Development (Feer, 2020)
 
 # Analysis and Design
 
@@ -913,7 +945,7 @@ parking application to track parking availability at each location.
 generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
-[]{#_Toc132726761 .anchor}Figure - Database Design
+[]{#_Toc132726761 .anchor}Figure 3 - Database Design
 
 ## System Actors
 
@@ -931,11 +963,11 @@ height="5.071345144356956in"}
 -   Monitor Bot: A monitor is a bot that will be monitoring a car park.
     The monitor will be updating the status of the car park.
 
-[]{#users-use-case-diagram .anchor}![Alt
+![Alt
 text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc133414128 .anchor}Figure : User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure 4: User Use Case Diagram
 
 ## Use Case Descriptions
 
@@ -1156,7 +1188,7 @@ Alternative Flows:
 generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
 height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 5- User Parking Sequence Diagram
 
 This is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1197,7 +1229,7 @@ parking lots.
 generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
 height="2.218305993000875in"}
 
-[]{#_Toc133573281 .anchor}Figure : Parking Lots View
+[]{#_Toc133573281 .anchor}Figure 6: Parking Lots View
 
 ### Parking Lot View
 
@@ -1208,7 +1240,7 @@ information about that specific parking lot.
 ![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
 height="4.149245406824147in"}
 
-[]{#_Toc133573282 .anchor}Figure : Parking Lot View
+[]{#_Toc133573282 .anchor}Figure 7: Parking Lot View
 
 ### Parking Lot Monitors
 
@@ -1221,7 +1253,7 @@ there is a change in parking behaviour.
 ![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
 
-[]{#_Toc133573283 .anchor}Figure : Parking lot Monitors View
+[]{#_Toc133573283 .anchor}Figure 8: Parking lot Monitors View
 
 ### Parking Lot Monitor 
 
@@ -1235,7 +1267,7 @@ parking lot compared to Figure 5 above.
 ![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
 height="4.893287401574804in"}
 
-[]{#_Toc133573284 .anchor}Figure : Parking Lot Monitor View
+[]{#_Toc133573284 .anchor}Figure 9: Parking Lot Monitor View
 
 ### Know your Location Feature
 
@@ -1247,7 +1279,7 @@ near me feature can be used.
 generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
-[]{#_Toc133573285 .anchor}Figure : Location Sharing
+[]{#_Toc133573285 .anchor}Figure 10: Location Sharing
 
 ### Search Near Me
 
@@ -1259,11 +1291,31 @@ automatically
 generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
 height="3.0840277777777776in"}
 
-[]{#_Toc133573286 .anchor}Figure : Search Near Me Feature
+[]{#_Toc133573286 .anchor}Figure 11: Search Near Me Feature
 
 ### Login
 
+This is the login for the application. Django comes with a built-in
+authentication system to help with assisting the user logging in.
+
+![Graphical user interface Description automatically
+generated](./docs/images/thesis/media/image14.png){width="4.541666666666667in"
+height="3.3645833333333335in"}
+
+[]{#_Toc133647165 .anchor}Figure 12: User Login
+
 ### Sign up (User Registration)
+
+This is the sign-up page for the application. As with the login feature
+Django also has built-in authentication system to help with assisting
+the user during sign up.
+
+![Graphical user interface, text, application, email Description
+automatically
+generated](./docs/images/thesis/media/image15.png){width="5.277134733158356in"
+height="4.038522528433946in"}
+
+[]{#_Toc133647166 .anchor}Figure 13: User Registration
 
 ## Rest API layout
 
@@ -1285,42 +1337,67 @@ This is the API Root page; you can see all the endpoints from the
 application.
 
 ![Table Description automatically
-generated](./docs/images/thesis/media/image14.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
 height="2.29375in"}
 
-Figure : Django Rest Framework API Root
+[]{#_Toc133647167 .anchor}Figure 14: Django Rest Framework API Root
 
 The two of the most interesting endpoints would be parking-lots and
 parking-lot-monitors:
 
 ### Parking Lots
 
-Say something
+Parking Lots is a list of five endpoint, each with a unique identifier,
+latitude, and longitude coordinates. The \"count\" field indicates the
+total number of locations in the list, and the \"next\" and \"previous\"
+fields provide links to the next and previous pages of results if
+available.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image15.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image17.png){width="5.905555555555556in"
 height="4.209722222222222in"}
 
-Figure : Parking Lot List
+[]{#_Toc133647168 .anchor}Figure 15: Parking Lot List
 
 ### Parking Lot Monitors
 
-Say about
+This is a list of five parking monitors, each with a unique identifier,
+latitude, longitude coordinates, and a probability of available parking
+at the corresponding location. The \"count\" field indicates the total
+number of monitors in the list, and the \"next\" and \"previous\" fields
+provide links to the next and previous pages of results if available.
 
 ![Graphical user interface, application, Word Description automatically
-generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image18.png){width="5.905555555555556in"
 height="4.06875in"}
 
-Figure : Parking Lot Monitor List
+[]{#_Toc133647169 .anchor}Figure 16: Parking Lot Monitor List
 
 ### Parking Lot Monitor
 
-One
+This is one instance of the parking lot monitor from here you can do all
+the GET for Json and APIs. You can also see the id, name, latitude,
+longitude, and the probability of parking available for that for that
+certain parking lot
+
+![Graphical user interface, text, application Description automatically
+generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
+height="1.886111111111111in"}
+
+[]{#_Toc133647170 .anchor}Figure 17: Parking Monitor Instance
+
+### Parking Lot
+
+This is one instance of the parking lot, from here you can see the id,
+name, latitude, and longitude.
+
+![Graphical user interface, application, Teams Description automatically
+generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
+height="2.0709930008748905in"}
+
+[]{#_Toc133647171 .anchor}Figure 18: Parking lot Instance
 
 # Implementation
-
-In this chapter the implementation of Perfect parking is discussed with
-regard to (1) .. (2) .. (3) .. and 4
 
 ## Project Management
 
@@ -1754,11 +1831,6 @@ perfectparking.py -- class RestApiUtility
 -   The purpose of this class is to update and send parking monitor data
     to a server using HTTP PUT request.
 
-### Perfect Parking Client additions to "ParkingLot"
-
-RestApi as well as to deliver real-time updates on parking spot
-availability.
-
 ## Perfect Parking with Django
 
 The Perfect Parking application was created using the popular web
@@ -1794,19 +1866,257 @@ web applications of all sizes and complexities.
 ### Customising Django
 
 The server-side code for this Django project consists of several files,
-including admin.py, apps.py, models.py, urls.py, and views.py.
+including admin.py, models.py, urls.py, and views.py.
 
-admin.py registers the app\'s ParkingLot and ParkingLotMonitor models
-with Django\'s admin site.
+settings.py in PerfectParkingWebsite defines the app\'s configuration,
+including its name and default auto field.
 
-apps.py defines the app\'s configuration, including its name and default
-auto field.
+1\. \"\"\"
+
+2\. Django settings for PerfectParkingWebsite project.
+
+3\. \"\"\"
+
+4\.  
+
+5\. from pathlib import Path
+
+6\.  
+
+7\. \# Build paths inside the project like this: BASE_DIR / \'subdir\'.
+
+8\. BASE_DIR = Path(\_\_file\_\_).resolve().parent.parent
+
+9\.  
+
+10\. #\...
+
+11\.  
+
+12\. \# Application definition
+
+13\.  
+
+14\. INSTALLED_APPS = \[
+
+15\.     \'django.contrib.admin\',
+
+16\.     \'django.contrib.auth\',
+
+17\.     \'django.contrib.contenttypes\',
+
+18\.     \'django.contrib.sessions\',
+
+19\.     \'django.contrib.messages\',
+
+20\.     \'django.contrib.staticfiles\',
+
+21\.     \'PerfectParking.apps.PerfectParkingConfig\', #Import my app
+
+22\.     \'rest_framework\', \# Import rest_framework
+
+23\.     \'rest_framework.authtoken\', \# Import
+rest_framework.authtoken
+
+24\.     \'django.contrib.humanize\',  # Import django.contrib.humanize
+
+25\. \]
+
+26\.  
+
+27\. #\...
+
+28\. #\...
+
+29\.  
+
+30\. \# Static files (CSS, JavaScript, Images)
+
+31\. \# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+32\.  
+
+33\. STATIC_URL = \'/static/\'
+
+34\.  
+
+35\. \# Default primary key field type
+
+36\. \#
+https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+37\.  
+
+38\. DEFAULT_AUTO_FIELD = \'django.db.models.BigAutoField\'
+
+39\.  
+
+40\. REST_FRAMEWORK = {
+
+41\.     \'DEFAULT_PAGINATION_CLASS\':
+\'rest_framework.pagination.PageNumberPagination\',
+
+42\.     \# Use Django\'s standard \`django.contrib.auth\` permissions,
+or allow read-only access for unauthenticated users.
+
+43\.     \'DEFAULT_PERMISSION_CLASSES\': \[
+
+44\.        
+\'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly\'
+
+45\.     \],
+
+46\.     \'PAGE_SIZE\': 10
+
+47\. }
+
+48\.  
+
+49\. LOGIN_REDIRECT_URL = \"/\"
+
+50\.  
+
+51\.  
+
+setting.py
 
 models.py defines the data structures of ParkingLot and
 ParkingLotMoniton.
 
+1\. from geopy.distance import geodesic
+
+2\. import random
+
+3\. from django.db import models
+
+4\.  
+
+5\. \# Create your models here.
+
+6\. class ParkingLot(models.Model):
+
+7\.     id = models.AutoField(primary_key=True)
+
+8\.     name = models.CharField(max_length=100, unique=True)
+
+9\.     address = models.CharField(max_length=255)
+
+10\.     hours = models.CharField(max_length=255)
+
+11\.     isPaidParking = models.BooleanField(default=True)
+
+12\.     latitude = models.DecimalField(max_digits=17,
+decimal_places=15)
+
+13\.     longitude = models.DecimalField(max_digits=17,
+decimal_places=15)
+
+14\.     image = models.ImageField(upload_to=\'images/parking-lot/\',
+blank=True)
+
+15\.     parking_spaces = models.IntegerField(default=1)
+
+16\.    
+
+17\.     def \_\_str\_\_(self):
+
+18\.         return self.name
+
+19\.  
+
+models.py
+
 urls.py defines the app\'s URLs, including paths for the home page,
 parking lots list, parking lot detail page, user registration,
+
+1\. from django.urls import include, path
+
+2\. from . import WebPaths
+
+3\. from . import views
+
+4\. from django.contrib.auth import views as auth_views
+
+5\.  
+
+6\. urlpatterns = \[
+
+7\.     path(WebPaths.ROOT, views.index, name=\'index\'),
+
+8\.     path(\'logout-user/\', views.logout_user, name=\'logout-user\'),
+
+9\.     path(WebPaths.PARKING_LOTS, views.parking_lots,
+name=\'parking-lots\'),
+
+10\.     path(f\'{WebPaths.PARKING_LOTS}/\<int:parking_lot_id\>\',
+views.parking_lot, name=\'parking-lot\'),
+
+11\.     path(WebPaths.REGISTER_USER, views.register_user,
+name=\'register-user\'),
+
+12\.     path(WebPaths.PARKING_LOT_MONITORS, views.parking_lot_monitors,
+name=\'parking-lot-monitors\'),
+
+13\.    
+path(f\'{WebPaths.PARKING_LOT_MONITOR}/\<int:parking_lot_monitor_id\>\',
+views.parking_lot_monitor, name=\'parking-lot-monitor\'),
+
+14\.  
+
+PerfectParking\\urls.py
+
+To add the app URLs to the website use PerfectParkingWebsite\\urls.py
+
+1\. from django.conf import settings
+
+2\. from django.conf.urls.static import static
+
+3\. from django.contrib import admin
+
+4\. from django.urls import include, path
+
+5\. from rest_framework import routers
+
+6\. import PerfectParking.viewsets as viewsets
+
+7\.  
+
+8\. router = routers.DefaultRouter()
+
+9\. router.register(r\'users\', viewsets.UserViewSet)
+
+10\. router.register(r\'groups\', viewsets.GroupViewSet)
+
+11\. router.register(r\'parking-lots\', viewsets.ParkingLotViewSet)
+
+12\. router.register(r\'parking-lot-monitors\',
+viewsets.ParkingLotMonitorViewSet)
+
+13\.  
+
+14\. urlpatterns = \[
+
+15\.     path(\'\', include(\'PerfectParking.urls\')),
+
+16\.     path(\'admin/\', admin.site.urls),
+
+17\.     path(\"accounts/\", include(\"django.contrib.auth.urls\")),
+
+18\.     path(\'api-auth/\', include(router.urls)),
+
+19\.     path(\'api-auth/\', include(\'rest_framework.urls\',
+namespace=\'rest_framework\')),
+
+20\. \]
+
+21\. urlpatterns += static(settings.MEDIA_URL,
+document_root=settings.MEDIA_ROOT)
+
+22\.  
+
+23\.  
+
+PerfectParkingWebsite\\urls.py
 
 user login, user logout, and API endpoints for the ParkingLot and
 ParkingLotMonitor models.
@@ -1819,16 +2129,81 @@ also includes functions for handling API requests, including getting a
 list of all parking lots, getting details for a specific parking lot,
 and updating the parking lot monitor data.
 
+1\. from django.shortcuts import render, redirect
+
+2\. from django.contrib.auth.forms import UserCreationForm
+
+3\.  
+
+4\. from django.urls import reverse_lazy
+
+5\. from . import WebPaths
+
+6\.  
+
+7\. \# \...
+
+8\.  
+
+9\. def parking_lot_monitors(request):
+
+10\.  
+
+11\.     parking_lot_monitors: list = ParkingLotMonitor.objects.all()
+
+12\.  
+
+13\.     if request.method == \"POST\":  # FORM SUBMITTED
+
+14\.         latitude = request.POST\[\"latitude\"\]
+
+15\.         longitude = request.POST\[\"longitude\"\]
+
+16\.  
+
+17\.         context = {
+
+18\.             \"parking_lot_monitors\": parking_lot_monitors,
+
+19\.             \"user_point\": {\"latitude\": latitude, \"longitude\":
+longitude},
+
+20\.         }
+
+21\.         return render(request, WebPages.PARKING_LOT_MONITORS,
+context)
+
+22\.  
+
+23\.     return render(
+
+24\.         request,
+
+25\.         WebPages.PARKING_LOT_MONITORS,
+
+26\.         {\"parking_lot_monitors\": parking_lot_monitors},
+
+27\.     )
+
+28\.  
+
+29\.  
+
+views.py
+
+admin.py registers the app\'s ParkingLot and ParkingLotMonitor models
+with Django\'s admin site.
+
 Overall, the client-side code is responsible for providing a
 user-friendly interface for the app, handling user input and
 interactions, and communicating with the server-side code to retrieve
 and display data.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image17.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image21.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
-Figure : Class Diagram
+[]{#_Toc133647172 .anchor}Figure 19: Class Diagram
 
 ## Enable Django REST framework.
 
@@ -1943,25 +2318,29 @@ PerfectParking\\models.py
 
 ## Custom tags
 
-from django import template
+1\. from django import template
 
-register = template.Library()
+2\.  
 
-@register\.simple_tag
+3\. register = template.Library()
 
-def get_distance_from_lat_lang(parking_lot_monitor, latitude,
+4\.  
+
+5\. \@register.simple_tag
+
+6\. def get_distance_from_lat_lang(parking_lot_monitor, latitude,
 longitude):
 
-    return parking_lot_monitor.get_distance_from_lat_lang(latitude,
+7\.     return parking_lot_monitor.get_distance_from_lat_lang(latitude,
 longitude)
 
 PerfectParking\\templatetags\\get_distance_from_lat_lang.py
 
-To use the custom tag
-
-Line 2 to import the tag
-
-Used on line 23
+This snippet defines a custom template tag named
+\"get_distance_from_lat_lang\". The function retrieves the distance
+between the parking lot monitor\'s coordinates and the given latitude
+and longitude coordinates and returns this value to be used in the
+template.
 
 1\. {% extends \'master.html\' %}
 
@@ -2027,78 +2406,95 @@ user_point.latitude user_point.longitude %}\</td\>
 
 ## Getting user's location
 
-Javascript
+This JavaScript code defines a function called setPosition that checks
+if the user\'s browser supports geolocation. If it does, it uses the
+browser\'s geolocation to get the user\'s current position and assigns
+the latitude and longitude values to form fields with IDs \"latitude\"
+and \"longitude\". If geolocation is not supported, it displays a
+message in an HTML element with ID \"display\" and disables a button
+with ID \"search-near-me-button\". The
 
-\<script type=\"text/javascript\"\>
+1\. \<script type=\"text/javascript\"\>
 
-    var displayElement = document.getElementById(\"display\");
+2\.     var displayElement = document.getElementById(\"display\");
 
-    var searchNearMeButton =
+3\.     var searchNearMeButton =
 document.getElementById(\"search-near-me-button\");
 
-    function setPosition() {
+4\.  
 
-        if (navigator && navigator.geolocation) {
+5\.     function setPosition() {
 
-           
+6\.         if (navigator && navigator.geolocation) {
+
+7\.            
 navigator.geolocation.getCurrentPosition(assignPositionToForm);
 
-            searchNearMeButton.disabled = false;
+8\.             searchNearMeButton.disabled = false;
 
-        }
+9\.         }
 
-        else {
+10\.         else {
 
-            displayElement.innerHTML = \"Geolocation is not supported by
-this browser.\";
+11\.             displayElement.innerHTML = \"Geolocation is not
+supported by this browser.\";
 
-            searchNearMeButton.disabled = true;
+12\.             searchNearMeButton.disabled = true;
 
-        }
+13\.         }
 
-    }
+14\.     }
 
-    function assignPositionToForm(position) {
+15\.     function assignPositionToForm(position) {
 
-        document.getElementById(\"latitude\").value =
+16\.         document.getElementById(\"latitude\").value =
 position.coords.latitude;
 
-        document.getElementById(\"longitude\").value =
+17\.         document.getElementById(\"longitude\").value =
 position.coords.longitude;
 
-    }
+18\.     }
 
-   
+19\.    
 
-    \$(document).ready(documentReady);
+20\.     \$(document).ready(documentReady);
 
-    function documentReady() {
+21\.  
 
-       setPosition();
+22\.     function documentReady() {
 
-    }
+23\.        setPosition();
 
-\</script\>
+24\.     }
+
+25\. \</script\>
+
+26\.  
 
 PerfectParking\\templates\\website\\parking-lot-monitors.html -
 Javascript
 
-HTML Form
+This is a HTML form that has two hidden input fields for latitude and
+longitude values. When the \"Search Near Me\" button is clicked, the
+form is submitted using the HTTP POST method, including the latitude and
+longitude values in the form data.
 
-\<form method=\"post\"\>
+1\. \<form method=\"post\"\>
 
-    {% csrf_token %}
+2\.     {% csrf_token %}
 
-    \<p id=\"display\" class=\"text-danger\"\>\</p\>
+3\.     \<p id=\"display\" class=\"text-danger\"\>\</p\>
 
-    \<input type=\"hidden\" name=\"latitude\" id=\"latitude\"/\>
+4\.     \<input type=\"hidden\" name=\"latitude\" id=\"latitude\"/\>
 
-    \<input type=\"hidden\" name=\"longitude\" id=\"longitude\"/\>
+5\.     \<input type=\"hidden\" name=\"longitude\" id=\"longitude\"/\>
 
-    \<button type=\"submit\" id=\"search-near-me-button\" class=\"btn
-btn-primary\"\>Search Near Me\</button\>
+6\.     \<button type=\"submit\" id=\"search-near-me-button\"
+class=\"btn btn-primary\"\>Search Near Me\</button\>
 
-\</form\>
+7\. \</form\>
+
+8\.  
 
 PerfectParking\\templates\\website\\parking-lot-monitors.html -- HTML
 Form
@@ -2114,16 +2510,16 @@ database or performing other operations based on the data included in
 the request. The server then sends a response back to the client, which
 includes a status code indicating whether the request was successful or
 not, any data to include in the response body, and any headers to
-include with the response. The client-side then processes the response,
+include with the response. The server-side then processes the response,
 displaying the data on the website for probability of parking available
 so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image18.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image22.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-[]{#_Toc133573290 .anchor}Figure : How they work together
+[]{#_Toc133573290 .anchor}Figure 20: How they work together
 
 # Testing and Results
 
@@ -2236,10 +2632,11 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image19.png){width="4.025in"
+1](./docs/images/thesis/media/image23.png){width="4.025in"
 height="2.2642989938757654in"}
 
-[]{#_Toc133573291 .anchor}Figure : BDD development cycle (Collidu, n.d.)
+[]{#_Toc133573291 .anchor}Figure 21: BDD development cycle (Collidu,
+n.d.)
 
 ### BDD In Perfect Parking
 
@@ -2300,10 +2697,10 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image20.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image24.png){width="3.4380238407699037in"
 height="2.775in"}
 
-[]{#_Toc133573292 .anchor}Figure : How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure 22: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
@@ -2411,9 +2808,14 @@ effective solution for identifying the status of parking spots
 (free/taken) in towns and cities such as Limerick. By implementing this
 technology, it is possible to monitor car parks in real-time,
 
-## Something about howe the app performed.
+## Application Performance
 
-A quick few sentences
+The PerfectParking application performed exceptionally well, exceeding
+expectations. The application was able to efficiently send updates to
+the server and display the results in the application, which was even
+better than expected. This highlights the effectiveness of the
+application\'s design and development, as it was able to meet and
+surpass the needs and expectations.
 
 ## Future Development
 
@@ -2444,47 +2846,35 @@ the city, but be aware of doing this brings problems:
 
 ## Reflections
 
-In this FYP, I have gained a deep understanding of computer vision
-techniques and their practical applications using OpenCV. Additionally,
-I have learned about the historical development of Haar classifiers and
-wavelets, which has helped me to appreciate the evolution of these key
-concepts in the field.
+During this FYP, a deep understanding of computer vision techniques and
+their practical applications using OpenCV was gained. Additionally, the
+historical development of Haar classifiers and wavelets was studied,
+which helped appreciate the evolution of these key concepts in the
+field.
 
-Furthermore, I have honed my programming skills, particularly in Python,
-through the implementation of this project. This experience has taught
-me valuable lessons in project management, design, and implementation. I
-am proud of my accomplishments and feel that I have made a meaningful
-contribution to the field of computer vision through my work.
+Furthermore, programming skills, particularly in Python, were honed
+through the implementation of this project. This experience taught
+valuable lessons in project management, design, and implementation.
+Accomplishments were made and a meaningful contribution to the field of
+computer vision was achieved.
 
-Overall, the knowledge I have gained and the skills I have developed
-have broadened my understanding of computer vision and have prepared me
-to take on new challenges in this exciting and rapidly evolving field. I
-am grateful for the opportunity to have pursued this research and look
-forward to applying my new skills and knowledge in future endeavours.
+Overall, the knowledge gained, and the skills developed broadened the
+understanding of computer vision and prepared for taking on new
+challenges in this exciting and rapidly evolving field. The opportunity
+to pursue this research was appreciated and the new skills and knowledge
+will be applied in future endeavours.
 
-To conclude this thesis, it has been a challenging yet rewarding journey
-that has allowed me to delve deeply into the field of computer vision.
-Through my research and implementation of the FYP project, I have gained
-valuable knowledge and skills that will serve me well in my future
-academic and professional pursuits.
+To conclude this thesis, a challenging yet rewarding journey was
+experienced that allowed delving deeply into the field of computer
+vision. Through research and implementation of the FYP project, valuable
+knowledge and skills were gained that will serve well in future academic
+and professional pursuits.
 
-I have explored the rich history of Haar classifiers and wavelets and
-gained a thorough understanding of computer vision techniques using
-OpenCV. Additionally, I have honed my programming skills, particularly
-in Python, and developed valuable experience in managing and
-implementing a large-scale project.
-
-Overall, I believe that this thesis represents a meaningful contribution
-to the field of computer vision, and I hope that it will inspire further
-research and innovation in this area. I am grateful for the guidance and
-support of my Supervisor, and I am proud of the work that I have
-accomplished.
-
-As I move forward from this thesis, I look forward to applying the
-knowledge and skills I have gained in my future academic and
-professional pursuits. I am excited to see where this journey will take
-me and am confident that the experiences and lessons learned from this
-thesis will continue to guide me throughout my career.
+Looking ahead, the knowledge and skills acquired through this thesis
+will be utilized in future academic and professional endeavours. The
+prospects of this journey are exciting and there is a strong belief that
+the lessons learned, and experiences gained will serve as valuable
+guidance throughout the upcoming career.
 
 # References
 
@@ -2710,19 +3100,3 @@ University of Limerick, 2022. *Facts and figures.* \[Online\]\
 Available at:
 [https://www.ul.ie/presidents-office/university-profile/facts-and-figures]{.underline}\
 \[Accessed 16 01 2023\].
-
-# Glossary
-
-  ------------------ ----------------------------------------------------
-  Term 1             This chapter will begin by outlining the (cf. 1.1)
-                     for the purpose of writing a Report for a Project
-                     and outlining paragraphs
-
-  Term 1             This chapter will begin by outlining the (cf. 1.1)
-                     for the purpose of writing a Report for a Project
-                     and outlining paragraphs
-
-  Term 1             This chapter will begin by outlining the (cf. 1.1)
-                     for the purpose of writing a Report for a Project
-                     and outlining paragraphs
-  ------------------ ----------------------------------------------------
