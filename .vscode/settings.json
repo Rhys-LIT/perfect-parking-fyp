@@ -17,10 +17,10 @@
 		"startproject",
 		"viewsets"
 	],
-    "plantuml.diagramsRoot": "docs\\diargrams",
+    "plantuml.diagramsRoot": "docs\\diagrams",
     "plantuml.exportFormat": "png",
     "plantuml.exportIncludeFolderHeirarchy": false,
-	"plantuml.exportOutDir": "docs\\diargrams",
+	"plantuml.exportOutDir": "docs\\diagrams",
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.python"
 	},
