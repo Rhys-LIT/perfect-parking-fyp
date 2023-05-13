@@ -44,6 +44,7 @@ def send_mock_put_request(parking_monitor_data:ParkingMonitorData):
     Args:
         parking_monitor_data (ParkingMonitorData): The ParkingMonitorData object to send the PUT request with
     """
+    logging.info(f"Sending Mock Data for : {parking_monitor_data.name}")
     parking_spaces:int = int(parking_monitor_data.parking_spaces)
     free_spaces_in_frame:int = random.randint(0, parking_spaces)
     probability_parking_available:float = free_spaces_in_frame / parking_spaces
