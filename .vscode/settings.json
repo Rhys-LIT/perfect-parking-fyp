@@ -25,4 +25,13 @@
 		"editor.defaultFormatter": "ms-python.python"
 	},
 	"python.formatting.provider": "black",
+	"python.testing.unittestArgs": [
+		"-v",
+		"-s",
+		"./PerfectParkingClient",
+		"-p",
+		"*tests.py"
+	],
+	"python.testing.pytestEnabled": false,
+	"python.testing.unittestEnabled": true,
 }
