@@ -26,6 +26,15 @@
             "justMyCode": true
         },
         {
+            "name": "Client - Config",
+            "type": "python",
+            "request": "launch",
+            "program": "PerfectParkingClient/main.py",
+            "args": ["--image", "PerfectParkingClient/images/parking_lot_1.png", "--data", "PerfectParkingClient/data/coordinates_1.yml", "--video", "PerfectParkingClient/videos/parking_lot_1.mp4", "--start-frame", "400"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "Mock Client - ParkingLot",
             "type": "python",
             "request": "launch",
