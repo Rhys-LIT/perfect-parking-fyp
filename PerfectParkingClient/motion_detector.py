@@ -74,16 +74,14 @@ class MotionDetector:
                 break
 
             if not result:
-                raise CaptureReadError(
-                    "Error reading video capture on frame %s" % str(frame))
+                raise CaptureReadError("Error reading video capture on frame %s" % str(frame))
 
             blurred = open_cv.GaussianBlur(frame.copy(), (5, 5), 3)
             grayed = open_cv.cvtColor(blurred, open_cv.COLOR_BGR2GRAY)
             new_frame = frame.copy()
             logging.debug("new_frame: %s", new_frame)
 
-            position_in_seconds = capture.get(
-                open_cv.CAP_PROP_POS_MSEC) / 1000.0
+            position_in_seconds = capture.get(open_cv.CAP_PROP_POS_MSEC) / 1000.0
 
             for index, c in enumerate(coordinates_data):
                 status = self.__apply(grayed, index, c)
@@ -105,8 +103,7 @@ class MotionDetector:
                 coordinates = self._coordinates(p)
 
                 color = COLOR_GREEN if statuses[index] else COLOR_BLUE
-                draw_contours(new_frame, coordinates, str(
-                    p["id"] + 1), COLOR_WHITE, color)
+                draw_contours(new_frame, coordinates, str(p["id"] + 1), COLOR_WHITE, color)
 
             open_cv.imshow(str(self.video), new_frame)
 
@@ -133,16 +130,14 @@ class MotionDetector:
         rect = self.bounds[index]
         logging.debug("rect: %s", rect)
 
-        roi_gray = grayed[rect[1]:(rect[1] + rect[3]),
-                          rect[0]:(rect[0] + rect[2])]
+        roi_gray = grayed[rect[1]:(rect[1] + rect[3]), rect[0]:(rect[0] + rect[2])]
         laplacian = open_cv.Laplacian(roi_gray, open_cv.CV_64F)
         logging.debug("laplacian: %s", laplacian)
 
         coordinates[:, 0] = coordinates[:, 0] - rect[0]
         coordinates[:, 1] = coordinates[:, 1] - rect[1]
 
-        status = np.mean(
-            np.abs(laplacian * self.mask[index])) < MotionDetector.LAPLACIAN
+        status = np.mean(np.abs(laplacian * self.mask[index])) < MotionDetector.LAPLACIAN
         logging.debug("status: %s", status)
 
         return status
