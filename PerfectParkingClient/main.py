@@ -23,9 +23,9 @@ def main():
             generator.generate()
 
     with open(data_file, "r") as data:
-        points = yaml.full_load(data)
+        parking_spaces:list = yaml.full_load(data)
         parking_monitor_data = ParkingMonitorData()
-        detector = MotionDetector(args.video_file, points, int(start_frame), parking_monitor_data)
+        detector = MotionDetector(args.video_file, parking_spaces, int(start_frame), parking_monitor_data)
         while True:
             was_stopped = detector.detect_motion()
             if was_stopped:

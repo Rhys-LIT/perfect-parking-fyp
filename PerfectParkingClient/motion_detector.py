@@ -1,6 +1,8 @@
 from perfectparking import ParkingMonitorData, RestApiUtility
 from colors import COLOR_GREEN, COLOR_WHITE, COLOR_BLUE
 from drawing_utils import draw_contours
+from cv2 import VideoCapture
+import cv2
 import cv2 as open_cv
 import logging
 import numpy as np
@@ -31,14 +33,16 @@ class MotionDetector:
         bool: True if the video was stopped by a key press, False otherwise.
     """ 
         
-        capture = open_cv.VideoCapture(self.video)
-        capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)
+        #video_capture:VideoCapture = VideoCapture(self.video)
+        video_capture:VideoCapture = VideoCapture(0, cv2.CAP_DSHOW)
+        video_capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)
 
-        coordinates_data = self.coordinates_data
-        logging.debug("coordinates data: %s", coordinates_data)
+        parking_spaces = self.coordinates_data
+        logging.debug("coordinates data: %s", parking_spaces)
 
-        for p in coordinates_data:
-            coordinates = self._coordinates(p)
+        for parking_space_dict in parking_spaces:
+            
+            coordinates = np.array(parking_space_dict["coordinates"])
             logging.debug("coordinates: %s", coordinates)
 
             rect = open_cv.boundingRect(coordinates)
@@ -64,12 +68,12 @@ class MotionDetector:
             self.mask.append(mask)
             logging.debug("mask: %s", self.mask)
 
-        statuses = [False] * len(coordinates_data)
-        times = [None] * len(coordinates_data)
+        statuses = [False] * len(parking_spaces)
+        times = [None] * len(parking_spaces)
 
         free_spaces: int = 0
-        while capture.isOpened():
-            result, frame = capture.read()
+        while video_capture.isOpened():
+            result, frame = video_capture.read()
             if frame is None:
                 break
 
@@ -81,9 +85,9 @@ class MotionDetector:
             new_frame = frame.copy()
             logging.debug("new_frame: %s", new_frame)
 
-            position_in_seconds = capture.get(open_cv.CAP_PROP_POS_MSEC) / 1000.0
+            position_in_seconds = video_capture.get(open_cv.CAP_PROP_POS_MSEC) / 1000.0
 
-            for index, c in enumerate(coordinates_data):
+            for index, c in enumerate(parking_spaces):
                 status = self.__apply(grayed, index, c)
 
                 if times[index] is not None and self.same_status(statuses, index, status):
@@ -99,11 +103,11 @@ class MotionDetector:
                 if times[index] is None and self.status_changed(statuses, index, status):
                     times[index] = position_in_seconds
 
-            for index, p in enumerate(coordinates_data):
-                coordinates = self._coordinates(p)
+            for index, parking_space in enumerate(parking_spaces):
+                coordinates = self._coordinates(parking_space)
 
                 color = COLOR_GREEN if statuses[index] else COLOR_BLUE
-                draw_contours(new_frame, coordinates, str(p["id"] + 1), COLOR_WHITE, color)
+                draw_contours(new_frame, coordinates, str(parking_space["id"] + 1), COLOR_WHITE, color)
 
             open_cv.imshow(str(self.video), new_frame)
 
@@ -119,7 +123,7 @@ class MotionDetector:
             if k == ord("q"):
                 return True
             time.sleep(SECONDS_TIME_DELAY)
-        capture.release()
+        video_capture.release()
         open_cv.destroyAllWindows()
         return False
 
