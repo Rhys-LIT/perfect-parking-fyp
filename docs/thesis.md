@@ -430,6 +430,22 @@ The time for a car park solution is long overdue in many Irish towns,
 the solution is to create an application that monitors parking spaces
 and sends updates to a web application for the users to query.
 
+## Envisioned App: A Distributed Parking Application 
+
+The envisioned app, Perfect Parking, is a proof-of-concept distributed
+parking application that leverages the power of computer vision and
+remote client-server architecture. The app\'s goal is to illustrate the
+possibility and potential of using computer vision technology to manage
+parking spaces more efficiently. Perfect Parking uses a distributed
+strategy, using remote clients equipped with cameras to capture images
+of parking spaces. These clients use computer vision techniques to do
+real-time image processing and occupancy monitoring. The image
+processing results, which indicate whether a parking space is vacant or
+occupied, are then sent back to the central server. Through this
+proof-of-concept application, Perfect Parking showcases the benefits of
+distributed monitoring and computer vision for effective parking space
+management.
+
 ## Objectives
 
 Perfect Parking application aims to develop a user-friendly parking
@@ -612,6 +628,287 @@ abilities to spot patterns, trends, and insights. Addressing these
 challenges effectively is critical to realizing the potential benefits
 of Big Data, including improved decision-making, increased efficiency,
 and enhanced innovation. (Sharma, 2022)
+
+## Distributed System/App
+
+A distributed system is a networked collection of autonomous entities
+(such as computers or devices) that collaborate to achieve a common
+goal or perform a particular task. Unlike a traditional centralized
+system, in which all processing and decision-making takes place within a
+single entity, a distributed system divides and distributes the workload
+across numerous interconnected entities.
+
+Each entity in a distributed system, known as a node or client,
+functions independently and communicates with other nodes over a
+network. These nodes can be distributed geographically and have varying
+capabilities and rolls within the system. By leveraging the collective
+resources and capabilities of multiple nodes, a distributed system can
+achieve higher scalability, fault tolerance, and performance compared to
+a centralized system. (S.Gillis, 2022)
+
+A distributed app, often known as an application, is a form of
+distributed system that focuses on providing functionality or services
+to end users. It includes the software components, communication
+protocols, and architectural design that allow the application to run in
+a distributed fashion. Distributed apps exploit the distributed nature
+of the underlying system to handle large-scale data processing,
+concurrent user interactions, and complicated computations. (Lutkevich,
+2022)
+
+The use of distributed systems and apps has grown in popularity in a
+variety of fields, including e-commerce, social networks, cloud
+computing, and the Internet of Things (IoT). These systems have
+advantages such as higher availability, fault tolerance, and
+scalability, allowing for more efficient resource utilization and
+improved performance. (Cirrus, 2018)
+
+In the context of the Perfect Parking app, the distributed system/app
+architecture allows for the seamless integration of multiple client apps
+equipped with cameras and a central server.
+
+In the context of the Perfect Parking app, the distributed system/app
+architecture allows for the seamless integration of multiple client apps
+equipped with cameras and a central server. The distributed system/app
+design allows for the smooth integration of many client applications
+equipped with cameras and a central server in the context of the Perfect
+Parking app. This distributed strategy provides efficient monitoring and
+management of parking spaces across multiple locations by leveraging the
+client apps\' combined computing capacity while centralizing data
+storage and analysis.
+
+Perfect Parking seeks to improve scalability, fault tolerance, and
+real-time monitoring capabilities by incorporating distributed system
+principles and utilizing distributed apps. The app\'s distributed design
+enables effective utilization of resources and seamless cooperation of
+many entities, thereby boosting the overall functionality and
+performance of the parking management system.
+
+## RESTful APIs and Distributed Apps
+
+RESTful APIs are critical in providing seamless communication and
+interaction between different components or entities through the web in
+the context of distributed apps. RESTful APIs, which are founded on the
+concepts of Representational State Transfer (REST), offer a consistent
+and scalable strategy for developing distributed online applications.
+
+RESTful APIs facilitate distributed apps by offering the following key
+advantages:
+
+-   **Standardized Interface:** RESTful APIs define a
+    Standardized interface for client-server communication. This
+    interface interacts with resources identified by unique URLs by
+    using HTTP methods (GET, POST, PUT, DELETE). Distributed
+    applications can achieve interoperability and compatibility across
+    platforms, programming languages, and devices by adhering to this
+    uniform interface.
+
+-   **Statelessness:** RESTful APIs are stateless, which means that each
+    request from a client to a server includes all the information
+    required to process the request. Between requests, the server does
+    not store any client state. Because it eliminates the need for
+    complicated session management and assures that each request may be
+    processed independently, statelessness simplifies the design and
+    implementation of distributed applications.
+
+-   **Decoupling of Components:** RESTful APIs allow for the decoupling
+    of components inside a distributed app. The client and server can
+    evolve independently if they follow the agreed-upon API contract.
+    Because changes or updates in one component do not necessarily
+    necessitate modifications in other components, this decoupling
+    provides for greater flexibility, scalability, and easier
+    maintenance of distributed apps.
+
+-   **Distributed Data and Resource Access:** : RESTful APIs offer a
+    consistent and scalable solution to accessing and modifying
+    distributed data and resources. Clients can retrieve, create,
+    update, or remove server resources using HTTP methods. This
+    distributed access to resources enables efficient collaboration and
+    coordination among the app\'s various components, regardless of
+    their physical location.
+
+-   **Integration and Interoperability:** RESTful APIs support the
+    integration and interoperability of distributed apps with external
+    systems or services. RESTful APIs can effortlessly communicate with
+    other online services by adhering to well-defined standards and
+    protocols such as HTTP and JSON, allowing distributed programs to
+    make use of external functionality, data sources, or third-party
+    services.
+
+by leveraging the power of RESTful APIs, Perfect Parking can achieve
+efficient communication, data exchange, and collaboration among its
+distributed components. The RESTful API acts as a bridge, allowing the
+distributed app to fully exploit the web\'s possibilities, allowing for
+the construction of scalable, interoperable, and robust distributed
+apps.(**Needs Citations)**
+
+## Computer Vision
+
+### What Is Computer Vision
+
+Computer vision is a multifaceted field of study aimed at teaching
+computers how to interpret and process visual information from images or
+videos. It entails the creation of algorithms and approaches for
+extracting useful insights from visual data. (Simplilearn, 2023) In the
+context of the Perfect Parking application, computer vision utilizing
+OpenCV allows for pixel intensity analysis to detect whether a parking
+space is occupied or vacant. The system can detect the presence of
+vehicles in real-time by utilizing image processing, pattern
+recognition, and feature extraction.
+
+### Applications of Computer Vision
+
+Computer vision has a wide range of applications across various
+industries. Some notable applications include:
+
+-   **Object Detection and Recognition**: Computer vision algorithms can
+    identify and classify objects within images or video streams. This
+    technology is used in autonomous vehicles, surveillance systems, and
+    facial recognition systems.
+
+-   **Augmented Reality**: Computer vision enables the overlay of
+    digital information onto the real world, enhancing user experiences
+    in areas such as gaming, advertising, and training simulations.
+
+-   **Medical Imaging:** Computer vision techniques assist in medical
+    image analysis, aiding in the detection and diagnosis of diseases,
+    as well as in surgical planning and monitoring.
+
+-   **Quality Control and Inspection**: Computer vision can automate
+    quality control processes by identifying defects or anomalies in
+    products on assembly lines, ensuring consistency and accuracy.
+
+-   **Robotics and Automation**: Computer vision plays a vital role in
+    robotics, enabling robots to perceive and understand their
+    environment, navigate autonomously, and interact with objects and
+    humans. **(needs Citation)**
+
+### Utilizing Computer Vision in Perfect Parking
+
+Computer vision, particularly when combined with OpenCV, offers a wide
+range of applications, including car park occupancy detection. In
+general, computer vision algorithms can be used to analyse pixel
+intensities in images and video frames acquired by cameras to identify
+whether a parking spot is occupied or vacant.
+
+In the Perfect Parking application, computer vision using OpenCV plays a
+pivotal role in facilitating car park occupancy detection. By deploying
+cameras strategically within the car park, the system can capture images
+or video frames in real-time. Through the analysis of pixel intensities,
+the system can differentiate between occupied and vacant parking spaces.
+The model can then be deployed to continuously monitor the car park and
+provide up-to-date information on parking space availability to the
+users of your application.
+
+In conclusion, computer vision, particularly when combined with OpenCV,
+provides a versatile method for detecting car park occupancy. While its
+application goes beyond the project to a variety of sectors, the
+implementation within the perfect parking  application provides
+real-time monitoring of parking space availability, improving the
+overall user experience, and maximizing parking space utilization.
+
+### Future implications of Computer Vision in Parking Systems
+
+The use of computer vision techniques in parking systems has significant
+implications for parking management in the future. Parking systems can
+become more efficient, user-friendly, and automated with the use of
+computer vision algorithms. Aside from detecting car park occupancy,
+computer vision can be used for actions such as license plate
+recognition, vehicle tracking, and advanced parking analytics. Computer
+vision in parking systems has the ability to simplify parking
+operations, maximize space utilization, minimize congestion, and improve
+overall user experience. As computer vision technology advances, it will
+most certainly disrupt the parking sector and open the door for creative
+parking solutions. (brouton Lab, n.d.)
+
+## Restful APIs
+
+### What is a Restful API
+
+A RESTful API (Representational State Transfer Application Programming
+Interface) is a design style and set of constraints used for developing
+online services that allow systems to communicate and interact with one
+another via the internet. RESTful APIs are built on the REST concepts,
+which Roy Fielding introduced in his doctoral dissertation in the
+year 2000.
+
+Resources (such as data or functionality) in a RESTful API are
+identified by unique URLs (Uniform Resource Locators). Standard HTTP
+methods, such as GET (retrieve data), POST (create data), PUT (update
+data), and DELETE (delete data), can then be used to manipulate these
+resources.
+
+The key characteristics of a Restful API are:
+
+-   Stateless: Each request from a client to the server must provide all
+    of the information required to interpret and process the request.
+    The server does not store any client state between requests.
+
+-   Uniform Interface: RESTful APIs use a consistent and standard set of
+    methods (GET, POST, PUT, DELETE) and resource identifiers (URLs) to
+    interact with resources.
+
+-   Client-Server Architecture: The client and server are different
+    entities that can evolve independently. The client is in charge of
+    the user interface, whereas the server is in charge of data storage
+    and business logic.
+
+-   Self-descriptive Messages: Each request and response contains all of
+    the information required to understand the message, including the
+    media type and how to process it.
+
+-   HATEOAS (Hypermedia as the Engine of Application State): is a
+    crucial REST principle, it enables the server to dynamically deliver
+    relevant links to guide clients through the application\'s state
+    transitions.
+
+RESTful APIs are commonly used in online and mobile apps to enable
+smooth integration between multiple systems and to provide a scalable
+and flexible method of accessing and manipulating data and services via
+the internet.
+
+### Benefits of Restful APIs
+
+Restful APIs offer numerous advantages for web and mobile application
+development such as:
+
+-   Simplicity: Restful APIs have a simple design that uses conventional
+    HTTP methods, making them simple to understand and implement. This
+    ease of use speeds up the development process and decreases the
+    learning curve for developers.
+
+-   Scalability: Restful APIs enable applications to scale efficiently
+    in response to increased traffic and user demand. Because they are
+    stateless, servers can process requests independently, allowing for
+    horizontal growth by adding more servers.
+
+-   ease of integration: Restful APIs use widely recognized web
+    standards such as HTTP and JSON, allowing for smooth integration
+    with a variety of platforms and programming languages. This
+    compatibility encourages developer and team collaboration.
+
+Restful APIs are not limited to any one platform or operating system
+because they rely on web technology. This flexibility allows clients to
+access the API from various devices and environments.
+
+### Common Use Cases:
+
+Restful APIs are used in various domains such as:
+
+-   Social Media Integration: Social media sites expose Restful APIs
+    that allow developers to incorporate sharing, login, and user
+    authentication services into their apps.
+
+-   E-commerce: Restful APIs are used by e-commerce websites to manage
+    product catalogues, process orders, and handle payments.
+
+-   Location-Based Services: Mapping providers such as Google Maps
+    provide Restful APIs for accessing geolocation data and route
+    information, making map integration easier.
+
+-   IoT (Internet of Things): Restful APIs are critical for IoT devices
+    to communicate and share data with one another as well as with cloud
+    platforms, enabling smart home and industrial automation
+    applications.(**Citations needed)**
 
 ## Object Recognition and AI
 
