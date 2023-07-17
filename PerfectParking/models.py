@@ -1,6 +1,7 @@
 from geopy.distance import geodesic
 from django.db import models
 
+
 # Create your models here.
 class ParkingLot(models.Model):
     """
@@ -20,6 +21,7 @@ class ParkingLot(models.Model):
     Methods:
         __str__(): Returns the name of the parking lot as a string.
     """
+
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
     address = models.CharField(max_length=255)
@@ -27,12 +29,13 @@ class ParkingLot(models.Model):
     isPaidParking = models.BooleanField(default=True)
     latitude = models.DecimalField(max_digits=17, decimal_places=15)
     longitude = models.DecimalField(max_digits=17, decimal_places=15)
-    image = models.ImageField(upload_to='images/parking-lot/', blank=True)
+    image = models.ImageField(upload_to="images/parking-lot/", blank=True)
     parking_spaces = models.IntegerField(default=1)
-    
-    def __str__(self):
-        return self.name
-    
+
+    def __str__(self) -> str:
+        return str(self.name)
+
+
 class ParkingLotMonitor(models.Model):
     """
     A model representing a parking lot monitor.
@@ -52,6 +55,7 @@ class ParkingLotMonitor(models.Model):
     Methods:
         None.
     """
+
     id = models.AutoField(primary_key=True)
     parkingLot = models.ForeignKey(ParkingLot, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, unique=True)
@@ -62,14 +66,16 @@ class ParkingLotMonitor(models.Model):
     """The latitude of the parking lot monitor"""
     longitude = models.DecimalField(max_digits=17, decimal_places=15)
     """The longitude of the parking lot monitor"""
-    probabilityParkingAvailable = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    probabilityParkingAvailable = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0
+    )
     """The probability that the parking lot is available."""
     free_parking_spaces = models.IntegerField(default=0)
     dateTimeLastUpdated = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)
     """status: True = online, False = offline"""
-    image = models.ImageField(upload_to='images/parking-lot-monitor/', blank=True)
-    
+    image = models.ImageField(upload_to="images/parking-lot-monitor/", blank=True)
+
     def get_distance_from_lat_lang(self, latitude, longitude) -> float:
         """Calculates the distance between the current object and a point specified by latitude and longitude.
 
@@ -83,9 +89,9 @@ class ParkingLotMonitor(models.Model):
         Raises:
             None.
         """
-        point:tuple = (latitude, longitude)
+        point: tuple = (latitude, longitude)
         return self.get_distance_from_point(point)
-    
+
     def get_distance_from_point(self, user_point: tuple) -> float:
         """Gets the distance in Kilometers from the user GPS coordinates to the parking lot coordinates.
 
@@ -94,7 +100,6 @@ class ParkingLotMonitor(models.Model):
         """
         return round(geodesic(self.get_gps_point(), user_point).km, 2)
 
-    
     def get_gps_point(self) -> tuple:
         """Gets the GPS coordinates of the parking lot.
 
@@ -102,6 +107,6 @@ class ParkingLotMonitor(models.Model):
             tuple: The GPS coordinates of the parking lot.
         """
         return (self.latitude, self.longitude)
-    
-    def __str__(self):
-        return self.name
+
+    def __str__(self) -> str:
+        return str(self.name)

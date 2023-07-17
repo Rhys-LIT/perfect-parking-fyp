@@ -6,6 +6,7 @@
 		"createsuperuser",
 		"djangorestframework",
 		"dtype",
+		"geopy",
 		"Hartstonge",
 		"imshow",
 		"makemigrations",

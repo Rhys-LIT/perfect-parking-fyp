@@ -78,7 +78,7 @@ class MotionDetector:
                 break
 
             if not result:
-                raise CaptureReadError("Error reading video capture on frame %s" % str(frame))
+                raise CaptureReadError(f"Error reading video capture on frame {frame}")
 
             blurred = open_cv.GaussianBlur(frame.copy(), (5, 5), 3)
             grayed = open_cv.cvtColor(blurred, open_cv.COLOR_BGR2GRAY)
