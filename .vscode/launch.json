@@ -17,7 +17,16 @@
             "justMyCode": true
         },
         {
-            "name": "Client - ParkingLot",
+            "name": "Client - ParkingLot Live",
+            "type": "python",
+            "request": "launch",
+            "program": "PerfectParkingClient/main.py",
+            "args": ["--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://192.168.188.64:4747/video", "--start-frame", "400"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Client - ParkingLot Recording",
             "type": "python",
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
@@ -26,7 +35,16 @@
             "justMyCode": true
         },
         {
-            "name": "Client - Config",
+            "name": "Client - Config Live",
+            "type": "python",
+            "request": "launch",
+            "program": "PerfectParkingClient/main.py",
+            "args": ["--image", "PerfectParkingClient/images/camera-feed-2023-08aug-01.png", "--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://192.168.188.64:4747/video", "--start-frame", "400"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Client - Config Recording",
             "type": "python",
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
