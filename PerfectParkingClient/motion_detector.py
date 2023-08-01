@@ -1,7 +1,7 @@
 from perfectparking import ParkingMonitorData, RestApiUtility
 from colors import COLOR_GREEN, COLOR_WHITE, COLOR_BLUE
 from drawing_utils import draw_contours
-from cv2 import VideoCapture
+from cv2 import VideoCapture,Mat 
 import cv2
 import cv2 as open_cv
 import logging
@@ -32,10 +32,9 @@ class MotionDetector:
     Returns:
         bool: True if the video was stopped by a key press, False otherwise.
     """ 
-        
-        #video_capture:VideoCapture = VideoCapture(self.video)
-        video_capture:VideoCapture = VideoCapture(0, cv2.CAP_DSHOW)
-        video_capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)
+        video_capture:VideoCapture = VideoCapture(self.video)
+        #video_capture:VideoCapture = VideoCapture(0, cv2.CAP_DSHOW)
+        #video_capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)
 
         parking_spaces = self.coordinates_data
         logging.debug("coordinates data: %s", parking_spaces)
@@ -72,17 +71,20 @@ class MotionDetector:
         times = [None] * len(parking_spaces)
 
         free_spaces: int = 0
-        while video_capture.isOpened():
-            result, frame = video_capture.read()
-            if frame is None:
+        while True:
+            is_open:bool = False
+            video_frame:Mat = None
+            is_open, video_frame = video_capture.read()
+            if video_frame is None:
                 break
 
-            if not result:
-                raise CaptureReadError(f"Error reading video capture on frame {frame}")
+            if not is_open:
+                raise CaptureReadError(f"Error reading video capture on frame {video_frame}")
 
-            blurred = open_cv.GaussianBlur(frame.copy(), (5, 5), 3)
+            blurred = open_cv.GaussianBlur(video_frame.copy(), (5, 5), 3)
             grayed = open_cv.cvtColor(blurred, open_cv.COLOR_BGR2GRAY)
-            new_frame = frame.copy()
+            new_frame = video_frame.copy()
+            
             logging.debug("new_frame: %s", new_frame)
 
             position_in_seconds = video_capture.get(open_cv.CAP_PROP_POS_MSEC) / 1000.0

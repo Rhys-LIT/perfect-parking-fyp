@@ -6,9 +6,9 @@ print("https://apps.apple.com/ie/app/droidcam-webcam-obs-camera/id1510258102")
 print("https://play.google.com/store/apps/details?id=com.dev47apps.droidcam")
 print("You should see a URL with the IP address of your phone and port 4747 displayed on your screen.")
 
-image_dimensions:tuple = (1920, 1080)
+image_dimensions:tuple = (480, 640)
 
-zoom_factor:float = 0.5
+zoom_factor:float = 1
 
 display_dimensions:tuple = (int(image_dimensions[0] * zoom_factor),
                                       int(image_dimensions[1] * zoom_factor))
