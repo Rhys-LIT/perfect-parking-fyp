@@ -73,7 +73,6 @@ class ParkingSpot:
         
 class MotionDetector:
     LAPLACIAN = 1.4
-    DETECT_DELAY = 1
 
     def __init__(self, video, parking_spots_json_dict, start_frame, parking_monitor_data: ParkingMonitorData):
         self.video = video
