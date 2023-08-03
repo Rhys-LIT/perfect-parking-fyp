@@ -1,74 +1,98 @@
-from perfectparking import ParkingMonitorData, RestApiUtility
+import time
+import cv2
+import numpy
 from colors import COLOR_GREEN, COLOR_WHITE, COLOR_BLUE
 from drawing_utils import draw_contours
-from cv2 import VideoCapture,Mat 
-import cv2
-import cv2 as open_cv
-import logging
-import numpy as np
-import time
+from cv2 import boundingRect, cvtColor, destroyAllWindows, drawContours, GaussianBlur, imshow, Laplacian, Mat, VideoCapture
+from numpy import ndarray
+from perfectparking import ParkingMonitorData, RestApiUtility
 
 SECONDS_TIME_DELAY = .002 # Lower value means faster processing
 
+class ParkingSpot:
+    """The ParkingSpot class is responsible for storing the coordinates of a parking spot 
+    and the status of the parking spot."""
+
+    def __init__(self, coordinates: ndarray, parking_spot_id: int):
+        self.coordinates: ndarray = coordinates
+        self.is_occupied: bool = False
+        self.parking_spot_id: int = parking_spot_id
+        self.rect = boundingRect(self.coordinates)
+        self.time = None
+        self.mask = self._create_mask()
+
+    def _create_mask(self):
+        new_coordinates = self.coordinates.copy()
+        new_coordinates[:, 0] = self.coordinates[:, 0] - self.rect[0]
+        new_coordinates[:, 1] = self.coordinates[:, 1] - self.rect[1]
+
+        mask = drawContours(
+            numpy.zeros((self.rect[3], self.rect[2]), dtype=numpy.uint8),
+            [new_coordinates],
+            contourIdx=-1,
+            color=255,
+            thickness=-1,
+            lineType=cv2.LINE_8)
+
+        mask = mask == 255
+        return mask
+
+    def has_changed(self, is_occupied: bool) -> bool:
+        """Checks if the parking occupancy has changed.
+
+        Args:
+            is_occupied (bool): True if the parking spot is occupied, False otherwise.
+
+        Returns:
+            bool: Returns True if the parking spot occupancy has changed, False otherwise.
+        """
+        return self.is_occupied != is_occupied
+
+    def has_not_changed(self, is_occupied: bool) -> bool:
+        """Checks if the parking occupancy has not changed.
+
+        Args:
+            is_occupied (bool): True if the parking spot is occupied, False otherwise.
+
+        Returns:
+            bool: Returns True if the parking spot occupancy has not changed, False otherwise.
+        """
+        return self.is_occupied == is_occupied
+
+    def is_occupied_in_image(self, image:Mat) -> bool:
+        x, y, width, height = self.rect
+
+        roi_gray = image[y:(y + height), x:(x + width)]
+        laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
+        
+        return numpy.mean(numpy.abs(laplacian * self.mask)) < MotionDetector.LAPLACIAN
+
+        
 class MotionDetector:
     LAPLACIAN = 1.4
     DETECT_DELAY = 1
 
-    def __init__(self, video, coordinates, start_frame, parking_monitor_data: ParkingMonitorData):
+    def __init__(self, video, parking_spots_json_dict, start_frame, parking_monitor_data: ParkingMonitorData):
         self.video = video
-        self.coordinates_data = coordinates
+        self.parking_spots: list = [
+            ParkingSpot(numpy.array(parking_spot_json_dict["coordinates"]), parking_spot_json_dict["id"])
+            for parking_spot_json_dict in parking_spots_json_dict
+        ]
+     
         self.start_frame = start_frame
-        self.contours = []
-        self.bounds = []
-        self.mask = []
         self.parking_monitor_data = parking_monitor_data
 
     def detect_motion(self)->bool:
         """Detects motion in the video and updates the internal state of the MotionDetector object accordingly.
+        Raises:
+            CaptureReadError: If there is an error reading the video capture.
 
-    Raises:
-        CaptureReadError: If there is an error reading the video capture.
-
-    Returns:
-        bool: True if the video was stopped by a key press, False otherwise.
-    """ 
+        Returns:
+            bool: True if the video was stopped by a key press, False otherwise.
+        """
         video_capture:VideoCapture = VideoCapture(self.video)
         #video_capture:VideoCapture = VideoCapture(0, cv2.CAP_DSHOW)
-        #video_capture.set(open_cv.CAP_PROP_POS_FRAMES, self.start_frame)
-
-        parking_spaces = self.coordinates_data
-        logging.debug("coordinates data: %s", parking_spaces)
-
-        for parking_space_dict in parking_spaces:
-            
-            coordinates = np.array(parking_space_dict["coordinates"])
-            logging.debug("coordinates: %s", coordinates)
-
-            rect = open_cv.boundingRect(coordinates)
-            logging.debug("rect: %s", rect)
-
-            new_coordinates = coordinates.copy()
-            new_coordinates[:, 0] = coordinates[:, 0] - rect[0]
-            new_coordinates[:, 1] = coordinates[:, 1] - rect[1]
-            logging.debug("new_coordinates: %s", new_coordinates)
-
-            self.contours.append(coordinates)
-            self.bounds.append(rect)
-
-            mask = open_cv.drawContours(
-                np.zeros((rect[3], rect[2]), dtype=np.uint8),
-                [new_coordinates],
-                contourIdx=-1,
-                color=255,
-                thickness=-1,
-                lineType=open_cv.LINE_8)
-
-            mask = mask == 255
-            self.mask.append(mask)
-            logging.debug("mask: %s", self.mask)
-
-        statuses = [False] * len(parking_spaces)
-        times = [None] * len(parking_spaces)
+        #video_capture.set(cv2.CAP_PROP_POS_FRAMES, self.start_frame)
 
         free_spaces: int = 0
         while True:
@@ -78,75 +102,62 @@ class MotionDetector:
             if video_frame is None:
                 break
 
+            position_in_seconds = video_capture.get(cv2.CAP_PROP_POS_MSEC) / 1000.0
+            
             if not is_open:
                 raise CaptureReadError(f"Error reading video capture on frame {video_frame}")
 
-            blurred = open_cv.GaussianBlur(video_frame.copy(), (5, 5), 3)
-            grayed = open_cv.cvtColor(blurred, open_cv.COLOR_BGR2GRAY)
+            blurred = GaussianBlur(video_frame.copy(), (5, 5), 3)
+            grayed_image: Mat = cvtColor(blurred, cv2.COLOR_BGR2GRAY)
             new_frame = video_frame.copy()
             
-            logging.debug("new_frame: %s", new_frame)
+            for parking_spot in self.parking_spots:
+                is_occupied:bool = parking_spot.is_occupied_in_image(grayed_image)
 
-            position_in_seconds = video_capture.get(open_cv.CAP_PROP_POS_MSEC) / 1000.0
-
-            for index, c in enumerate(parking_spaces):
-                status = self.__apply(grayed, index, c)
-
-                if times[index] is not None and self.same_status(statuses, index, status):
-                    times[index] = None
+                if parking_spot.time is not None and parking_spot.has_not_changed(is_occupied):
+                    parking_spot.time = None
                     continue
 
-                if times[index] is not None and self.status_changed(statuses, index, status):
-                    if position_in_seconds - times[index] >= MotionDetector.DETECT_DELAY:
-                        statuses[index] = status
-                        times[index] = None
+                if parking_spot.time is not None and parking_spot.has_changed(is_occupied):
+                    if position_in_seconds - parking_spot.time >= MotionDetector.DETECT_DELAY:
+                        parking_spot.is_occupied = is_occupied
+                        parking_spot.time = None
                     continue
 
-                if times[index] is None and self.status_changed(statuses, index, status):
-                    times[index] = position_in_seconds
+                if parking_spot.time is None and parking_spot.has_changed(is_occupied):
+                    parking_spot.time = position_in_seconds
 
-            for index, parking_space in enumerate(parking_spaces):
-                coordinates = self._coordinates(parking_space)
+            for parking_spot in self.parking_spots:
 
-                color = COLOR_GREEN if statuses[index] else COLOR_BLUE
-                draw_contours(new_frame, coordinates, str(parking_space["id"] + 1), COLOR_WHITE, color)
+                color = COLOR_GREEN if parking_spot.is_occupied else COLOR_BLUE
+                draw_contours(new_frame, parking_spot.coordinates, str(parking_spot.parking_spot_id), COLOR_WHITE, color)
 
-            open_cv.imshow(str(self.video), new_frame)
+            imshow(str(self.video), new_frame)
 
             # Wait 10 seconds and then print the number of empty spaces
-            free_spaces_in_frame = len(statuses) - statuses.count(0)
+            free_spaces_in_frame = len(self.parking_spots) - self.count_occupied_parking_spaces()
             if free_spaces != free_spaces_in_frame:
                 self.on_free_parking_spaces_changed(
-                    len(statuses), free_spaces_in_frame)
+                    len(self.parking_spots), free_spaces_in_frame)
                 free_spaces = free_spaces_in_frame
 
-            k = open_cv.waitKey(1)
+            k = cv2.waitKey(1)
 
             if k == ord("q"):
                 return True
             time.sleep(SECONDS_TIME_DELAY)
         video_capture.release()
-        open_cv.destroyAllWindows()
+        cv2.destroyAllWindows()
         return False
+    
+    def count_occupied_parking_spaces(self) -> int:
+        """Counts the number of occupied parking spaces.
 
-    def __apply(self, grayed, index, p):
-        coordinates = self._coordinates(p)
-        logging.debug("points: %s", coordinates)
+        Returns:
+            int: The number of occupied parking spaces.
+        """
+        return sum(1 for parking_spot in self.parking_spots if parking_spot.is_occupied)
 
-        rect = self.bounds[index]
-        logging.debug("rect: %s", rect)
-
-        roi_gray = grayed[rect[1]:(rect[1] + rect[3]), rect[0]:(rect[0] + rect[2])]
-        laplacian = open_cv.Laplacian(roi_gray, open_cv.CV_64F)
-        logging.debug("laplacian: %s", laplacian)
-
-        coordinates[:, 0] = coordinates[:, 0] - rect[0]
-        coordinates[:, 1] = coordinates[:, 1] - rect[1]
-
-        status = np.mean(np.abs(laplacian * self.mask[index])) < MotionDetector.LAPLACIAN
-        logging.debug("status: %s", status)
-
-        return status
 
     def on_free_parking_spaces_changed(self, spaces_in_frame: int, free_spaces_in_frame: float) -> None:
         """Event handler for when the number of free parking spaces changes.
@@ -159,18 +170,6 @@ class MotionDetector:
         probability_parking_available = free_spaces_in_frame/spaces_in_frame
         RestApiUtility.update_server_parking_monitor_data(
             self.parking_monitor_data, free_spaces_in_frame, probability_parking_available)
-
-    @staticmethod
-    def _coordinates(p):
-        return np.array(p["coordinates"])
-
-    @staticmethod
-    def same_status(coordinates_status, index, status):
-        return status == coordinates_status[index]
-
-    @staticmethod
-    def status_changed(coordinates_status, index, status):
-        return status != coordinates_status[index]
 
 
 class CaptureReadError(Exception):
