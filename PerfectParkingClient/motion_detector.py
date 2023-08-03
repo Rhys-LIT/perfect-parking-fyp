@@ -18,15 +18,17 @@ class ParkingSpot:
         self.is_occupied: bool = False
         self.parking_spot_id: int = parking_spot_id
         self.rect = boundingRect(self.coordinates)
-        self.mask = self._create_mask()
+        self.mask:list = self._create_mask()
 
-    def _create_mask(self):
+    def _create_mask(self)->list:
         new_coordinates = self.coordinates.copy()
-        new_coordinates[:, 0] = self.coordinates[:, 0] - self.rect[0]
-        new_coordinates[:, 1] = self.coordinates[:, 1] - self.rect[1]
 
-        mask = drawContours(
-            numpy.zeros((self.rect[3], self.rect[2]), dtype=numpy.uint8),
+        x, y, width, height = self.rect
+        new_coordinates[:, 0] = self.coordinates[:, 0] - x
+        new_coordinates[:, 1] = self.coordinates[:, 1] - y
+
+        mask:list = drawContours(
+            numpy.zeros((height, width), dtype=numpy.uint8),
             [new_coordinates],
             contourIdx=-1,
             color=255,
