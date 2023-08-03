@@ -18,7 +18,6 @@ class ParkingSpot:
         self.is_occupied: bool = False
         self.parking_spot_id: int = parking_spot_id
         self.rect = boundingRect(self.coordinates)
-        self.time = None
         self.mask = self._create_mask()
 
     def _create_mask(self):
@@ -36,6 +35,16 @@ class ParkingSpot:
 
         mask = mask == 255
         return mask
+
+    def determine_and_mark_occupancy_from_image(self, image:Mat):
+        """Determines if the parking spot is occupied from the image and marks the parking spot as
+        occupied or not occupied."""
+        x, y, width, height = self.rect
+
+        roi_gray = image[y:(y + height), x:(x + width)]
+        laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
+
+        self.is_occupied = numpy.mean(numpy.abs(laplacian * self.mask)) < MotionDetector.LAPLACIAN
 
     def has_changed(self, is_occupied: bool) -> bool:
         """Checks if the parking occupancy has changed.
@@ -58,14 +67,6 @@ class ParkingSpot:
             bool: Returns True if the parking spot occupancy has not changed, False otherwise.
         """
         return self.is_occupied == is_occupied
-
-    def is_occupied_in_image(self, image:Mat) -> bool:
-        x, y, width, height = self.rect
-
-        roi_gray = image[y:(y + height), x:(x + width)]
-        laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
-        
-        return numpy.mean(numpy.abs(laplacian * self.mask)) < MotionDetector.LAPLACIAN
 
         
 class MotionDetector:
@@ -102,37 +103,18 @@ class MotionDetector:
             if video_frame is None:
                 break
 
-            position_in_seconds = video_capture.get(cv2.CAP_PROP_POS_MSEC) / 1000.0
-            
             if not is_open:
                 raise CaptureReadError(f"Error reading video capture on frame {video_frame}")
 
             blurred = GaussianBlur(video_frame.copy(), (5, 5), 3)
             grayed_image: Mat = cvtColor(blurred, cv2.COLOR_BGR2GRAY)
-            new_frame = video_frame.copy()
-            
-            for parking_spot in self.parking_spots:
-                is_occupied:bool = parking_spot.is_occupied_in_image(grayed_image)
-
-                if parking_spot.time is not None and parking_spot.has_not_changed(is_occupied):
-                    parking_spot.time = None
-                    continue
-
-                if parking_spot.time is not None and parking_spot.has_changed(is_occupied):
-                    if position_in_seconds - parking_spot.time >= MotionDetector.DETECT_DELAY:
-                        parking_spot.is_occupied = is_occupied
-                        parking_spot.time = None
-                    continue
-
-                if parking_spot.time is None and parking_spot.has_changed(is_occupied):
-                    parking_spot.time = position_in_seconds
 
             for parking_spot in self.parking_spots:
+                parking_spot.determine_and_mark_occupancy_from_image(grayed_image)
 
-                color = COLOR_GREEN if parking_spot.is_occupied else COLOR_BLUE
-                draw_contours(new_frame, parking_spot.coordinates, str(parking_spot.parking_spot_id), COLOR_WHITE, color)
 
-            imshow(str(self.video), new_frame)
+
+            self.display_image(video_frame)
 
             # Wait 10 seconds and then print the number of empty spaces
             free_spaces_in_frame = len(self.parking_spots) - self.count_occupied_parking_spaces()
@@ -149,6 +131,13 @@ class MotionDetector:
         video_capture.release()
         cv2.destroyAllWindows()
         return False
+
+    def display_image(self, video_frame:Mat):
+        for parking_spot in self.parking_spots:
+            color:tuple = COLOR_GREEN if parking_spot.is_occupied else COLOR_BLUE
+            parking_spot_text:str = str(parking_spot.parking_spot_id)
+            draw_contours(video_frame, parking_spot.coordinates, parking_spot_text, COLOR_WHITE, color)
+        imshow(str(self.video), video_frame)
     
     def count_occupied_parking_spaces(self) -> int:
         """Counts the number of occupied parking spaces.
