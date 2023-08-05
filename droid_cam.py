@@ -1,5 +1,5 @@
 """Open CV."""
-from cv2 import destroyAllWindows, imshow, INTER_CUBIC, Mat, resize, VideoCapture, waitKey
+from cv2 import destroyAllWindows, imshow, imwrite, INTER_CUBIC, Mat, resize, VideoCapture, waitKey
 
 print("Download and install DroidCam on your phone from the App Store.")
 print("https://apps.apple.com/ie/app/droidcam-webcam-obs-camera/id1510258102")
@@ -13,10 +13,11 @@ zoom_factor:float = 1
 display_dimensions:tuple = (int(image_dimensions[0] * zoom_factor),
                                       int(image_dimensions[1] * zoom_factor))
 
-
-url:str = 'http://192.168.188.64:4747/video' # YOUR IP ADDRESS MAY BE DIFFERENT
+ip_address:str = "192.168.178.25"
+url:str = f'http://{ip_address}:4747/video' # YOUR IP ADDRESS MAY BE DIFFERENT
 video_capture:VideoCapture = VideoCapture(url)
 window_name:str = "DroidCam"
+image_file_path:str = "PerfectParkingClient/images/camera-live-feed.png"
 
 
 while True:
@@ -32,6 +33,7 @@ while True:
     imshow(window_name, display_video_frame)
 
     if waitKey(1) & 0xFF == ord('q'):
+        imwrite(image_file_path, video_frame)
         break
 
 video_capture.release()
