@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      PerfectParking{% block title %}{% endblock %}
+      PerfectParking {% block title %}{% endblock %}
     </title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    {% block head %}{% endblock %}
   </head>
   <body>
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -27,19 +28,12 @@
                 </a>
         
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Home</a></li>
                     <li><a href="{% url 'parking-lots' %}" class="nav-link px-2 link-dark">Parking Lots</a></li>
-                    <li><a href="{% url 'parking-lot-monitors' %}" class="nav-link px-2 link-dark">Parking Lot Monitors</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Search</a></li>
+                    <li><a href="{% url 'parking-lot-monitors' %}" class="nav-link px-2 link-dark">Search</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Change Password</a></li>
-                </ul>
-            </div>
-    
-
-            <div class="col-md-3 text-end">
-                <ul class="nav">
                   {% if user.is_authenticated %}
-                  <li class="nav-item"><a href="{% url 'logout' %}"class="nav-link px-2 link-dark">Sign out</a></li>
+                    <li class="nav-item"><a href="{% url 'logout' %}"class="nav-link px-2 link-dark">Sign out</a></li>
                   {% else %}
                     <li class="nav-item"><a href="{% url 'login' %}" class="nav-link px-2 link-dark">Sign in</a></li>
                     <li class="nav-item"><a href="{% url 'register-user' %}" class="nav-link px-2 link-dark">Sign up</a></li>

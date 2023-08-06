@@ -26,7 +26,8 @@ class WebPages:
 
 
 def index(request):
-    return render(request, WebPages.HOME_PAGE)
+    parking_lots: list = ParkingLot.objects.all()
+    return render(request, WebPages.HOME_PAGE, {"parking_lots": parking_lots})
 
 
 def login_user(request):

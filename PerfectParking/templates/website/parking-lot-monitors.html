@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% load get_distance_from_lat_lang %}
 {% load humanize %}
-{% block title %}Parking Monitors{% endblock %}
+{% block title %}Search{% endblock %}
 
 {% block main %}
 <script type="text/javascript">
@@ -30,7 +30,7 @@
        setPosition();
     }
 </script>
-<h1>Parking Monitors</h1>
+<h1>Search</h1>
 <form method="post">
     {% csrf_token %}
     <p id="display" class="text-danger"></p>
