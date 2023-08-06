@@ -2,7 +2,48 @@
 
 {% block title %}Home{% endblock %}
 
+{% block head %}
+<style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
 {% block main %}
 <h1>Welcome to Perfect Parking</h1>
 <p>Perfect Parking is a web application that allows you to find parking spots in your area.</p>
+
+<div id="map"></div>
+
+  <script>
+    // Array of locations with latitude and longitude
+    const locations = [
+    {% for parking_lot in parking_lots %}
+        { lat: {{ parking_lot.latitude }}, lng: {{ parking_lot.longitude }}, name: "{{parking_lot.name}}" },
+    {% endfor %}
+    ];
+
+    // Initialize and display the map
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: { lat: 52.6593486, lng: -8.6246133 }, // Center of the map
+      });
+
+      // Add markers for each location
+      locations.forEach(location => {
+        new google.maps.Marker({
+          position: { lat: location.lat, lng: location.lng },
+          map,
+          title: location.name,
+        });
+      });
+    }
+  </script>
+
+  <!-- Load the Google Maps JavaScript API without an API key (subject to usage limits) -->
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
 {% endblock %}
