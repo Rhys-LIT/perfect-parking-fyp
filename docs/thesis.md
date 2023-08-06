@@ -133,13 +133,13 @@ parking spot has been filled or made empty.
 [22](#analysis-and-design)](#analysis-and-design)
 
 [3.1 The Main Software Application
-[22](#the-main-software-application)](#the-main-software-application)
+[22](#the-server-and-website)](#the-server-and-website)
 
 [3.2 The supporting client Applications
-[22](#the-supporting-client-applications)](#the-supporting-client-applications)
+[22](#the-client-application)](#the-client-application)
 
 [3.2.1 Identifying the free/busy car parking spaces
-[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[22](#image-processing-identifying-a-parking-spaces-occupancy.)](#image-processing-identifying-a-parking-spaces-occupancy.)
 
 [3.3 Technologies [22](#technologies)](#technologies)
 
@@ -624,26 +624,34 @@ and enhanced innovation. (Sharma, 2022)
 
 A distributed system is a networked collection of autonomous entities
 (such as computers or devices) that collaborate to achieve a common
-goal or perform a particular task. Unlike a traditional centralized
-system, in which all processing and decision-making takes place within a
-single entity, a distributed system divides and distributes the workload
-across numerous interconnected entities.
+goal or perform a particular task. Unlike a centralized system, in which
+all processing and decision-making takes place within a single entity, a
+distributed system divides and distributes the workload across numerous
+interconnected entities.
 
 Each entity in a distributed system, known as a node or client,
-functions independently and communicates with other nodes over a
-network. These nodes can be distributed geographically and have varying
-capabilities and rolls within the system. By leveraging the collective
-resources and capabilities of multiple nodes, a distributed system can
-achieve higher scalability, fault tolerance, and performance compared to
-a centralized system. (S.Gillis, 2022)
+functions independently and can communicate with other client nodes or a
+server on a network. These nodes can be distributed geographically and
+have varying capabilities and rolls within the system. By leveraging the
+collective resources and capabilities of multiple nodes, a distributed
+system can achieve higher scalability, fault tolerance, and performance
+compared to a centralized system. (S.Gillis, 2022)
+
+![Star network -
+Wikipedia](./docs/images/thesis/media/image3.png){width="1.5277777777777777in"
+height="1.2916666666666667in"}
+
+Figure : Distributed Clients communicating with a server on a Star
+Network
 
 [A distributed application, is a form of distributed system that focuses
 on providing functionality or services to end users. It includes the
 software components, communication protocols, and architectural design
 that allow the application to run in a distributed fashion. Distributed
-apps exploit the distributed nature of the underlying system to handle
-large-scale data processing, concurrent user interactions, and
-complicated computations.]{.mark} [(Lutkevich, 2022)]{.mark}
+apps exploit the distributed nature of the underlying local
+hardware/recourses to handle large-scale data processing, concurrent
+user interactions, and complicated computations.]{.mark} [(Lutkevich,
+2022)]{.mark}
 
 The use of distributed systems and apps has grown in popularity in a
 variety of fields, including e-commerce, social networks, cloud
@@ -665,14 +673,104 @@ storage and analysis.]{.mark}
 [Perfect Parking seeks to improve scalability, fault tolerance, and
 real-time monitoring capabilities by incorporating distributed system
 principles and utilizing distributed apps. The app\'s distributed design
-enables effective utilization of resources and seamless cooperation of
-many entities, thereby boosting the overall functionality and
-performance of the parking management system.]{.mark}
+enables effective utilization of local resources and seamless
+cooperation of many entities, thereby boosting the overall (coverage)
+functionality and performance of the parking management system.]{.mark}
 
-A REST API can provide communication between clients apps and a server
+A Server REST API allows clients apps to provide updates to the server
 across the internet.
 
-## REST APIs and Distributed Apps
+## REST APIs
+
+### What is a Restful API
+
+A RESTful API (Representational State Transfer Application Programming
+Interface) is a design style and set of constraints used for developing
+online services that allow systems to communicate and interact with one
+another via the internet. RESTful APIs are built on the REST concepts,
+which Roy Fielding introduced in his doctoral dissertation in the
+year 2000.
+
+Resources (such as data or functionality) in a RESTful API are
+identified by unique URLs (Uniform Resource Locators). Standard HTTP
+methods, such as GET (retrieve data), POST (create data), PUT (update
+data), and DELETE (delete data), can then be used to manipulate these
+resources.
+
+The key characteristics of a Restful API are:
+
+-   Stateless: Each request from a client to the server must provide all
+    of the information required to interpret and process the request.
+    The server does not store any client state between requests.
+
+-   Uniform Interface: RESTful APIs use a consistent and standard set of
+    methods (GET, POST, PUT, DELETE) and resource identifiers (URLs) to
+    interact with resources.
+
+-   Client-Server Architecture: The client and server are different
+    entities that can evolve independently. The client is in charge of
+    the user interface, whereas the server is in charge of data storage
+    and business logic.
+
+-   Self-descriptive Messages: Each request and response contains all of
+    the information required to understand the message, including the
+    media type and how to process it.
+
+-   HATEOAS (Hypermedia as the Engine of Application State): is a
+    crucial REST principle, it enables the server to dynamically deliver
+    relevant links to guide clients through the application\'s state
+    transitions.
+
+RESTful APIs are commonly used in online and mobile apps to enable
+smooth integration between multiple systems and to provide a scalable
+and flexible method of accessing and manipulating data and services via
+the internet.
+
+### Benefits of Restful APIs
+
+Restful APIs offer numerous advantages for web and mobile application
+development such as:
+
+-   Simplicity: Restful APIs have a simple design that uses conventional
+    HTTP methods, making them simple to understand and implement. This
+    ease of use speeds up the development process and decreases the
+    learning curve for developers.
+
+-   Scalability: Restful APIs enable applications to scale efficiently
+    in response to increased traffic and user demand. Because they are
+    stateless, servers can process requests independently, allowing for
+    horizontal growth by adding more servers.
+
+-   ease of integration: Restful APIs use widely recognized web
+    standards such as HTTP and JSON, allowing for smooth integration
+    with a variety of platforms and programming languages. This
+    compatibility encourages developer and team collaboration.
+
+Restful APIs are not limited to any one platform or operating system
+because they rely on web technology. This flexibility allows clients to
+access the API from various devices and environments.
+
+### Common Use Cases:
+
+Restful APIs are used in various domains such as:
+
+-   Social Media Integration: Social media sites expose Restful APIs
+    that allow developers to incorporate sharing, login, and user
+    authentication services into their apps.
+
+-   E-commerce: Restful APIs are used by e-commerce websites to manage
+    product catalogues, process orders, and handle payments.
+
+-   Location-Based Services: Mapping providers such as Google Maps
+    provide Restful APIs for accessing geolocation data and route
+    information, making map integration easier.
+
+-   IoT (Internet of Things): Restful APIs are critical for IoT devices
+    to communicate and share data with one another as well as with cloud
+    platforms, enabling smart home and industrial automation
+    applications.(**Citations needed)**
+
+## REST APIs 
 
 REST APIs are critical in providing seamless communication and
 interaction between different components or entities through the web in
@@ -803,101 +901,11 @@ become more efficient, user-friendly, and automated with the use of
 computer vision algorithms. Aside from detecting car park occupancy,
 computer vision can be used for actions such as license plate
 recognition, vehicle tracking, and advanced parking analytics. Computer
-vision in parking systems has the ability to simplify parking
-operations, maximize space utilization, minimize congestion, and improve
-overall user experience. As computer vision technology advances, it will
-most certainly disrupt the parking sector and open the door for creative
+vision in parking systems can simplify parking operations, maximize
+space utilization, minimize congestion, and improve overall user
+experience. As computer vision technology advances, it will most
+certainly disrupt the parking sector and open the door for creative
 parking solutions. (brouton Lab, n.d.)
-
-## Restful APIs
-
-### What is a Restful API
-
-A RESTful API (Representational State Transfer Application Programming
-Interface) is a design style and set of constraints used for developing
-online services that allow systems to communicate and interact with one
-another via the internet. RESTful APIs are built on the REST concepts,
-which Roy Fielding introduced in his doctoral dissertation in the
-year 2000.
-
-Resources (such as data or functionality) in a RESTful API are
-identified by unique URLs (Uniform Resource Locators). Standard HTTP
-methods, such as GET (retrieve data), POST (create data), PUT (update
-data), and DELETE (delete data), can then be used to manipulate these
-resources.
-
-The key characteristics of a Restful API are:
-
--   Stateless: Each request from a client to the server must provide all
-    of the information required to interpret and process the request.
-    The server does not store any client state between requests.
-
--   Uniform Interface: RESTful APIs use a consistent and standard set of
-    methods (GET, POST, PUT, DELETE) and resource identifiers (URLs) to
-    interact with resources.
-
--   Client-Server Architecture: The client and server are different
-    entities that can evolve independently. The client is in charge of
-    the user interface, whereas the server is in charge of data storage
-    and business logic.
-
--   Self-descriptive Messages: Each request and response contains all of
-    the information required to understand the message, including the
-    media type and how to process it.
-
--   HATEOAS (Hypermedia as the Engine of Application State): is a
-    crucial REST principle, it enables the server to dynamically deliver
-    relevant links to guide clients through the application\'s state
-    transitions.
-
-RESTful APIs are commonly used in online and mobile apps to enable
-smooth integration between multiple systems and to provide a scalable
-and flexible method of accessing and manipulating data and services via
-the internet.
-
-### Benefits of Restful APIs
-
-Restful APIs offer numerous advantages for web and mobile application
-development such as:
-
--   Simplicity: Restful APIs have a simple design that uses conventional
-    HTTP methods, making them simple to understand and implement. This
-    ease of use speeds up the development process and decreases the
-    learning curve for developers.
-
--   Scalability: Restful APIs enable applications to scale efficiently
-    in response to increased traffic and user demand. Because they are
-    stateless, servers can process requests independently, allowing for
-    horizontal growth by adding more servers.
-
--   ease of integration: Restful APIs use widely recognized web
-    standards such as HTTP and JSON, allowing for smooth integration
-    with a variety of platforms and programming languages. This
-    compatibility encourages developer and team collaboration.
-
-Restful APIs are not limited to any one platform or operating system
-because they rely on web technology. This flexibility allows clients to
-access the API from various devices and environments.
-
-### Common Use Cases:
-
-Restful APIs are used in various domains such as:
-
--   Social Media Integration: Social media sites expose Restful APIs
-    that allow developers to incorporate sharing, login, and user
-    authentication services into their apps.
-
--   E-commerce: Restful APIs are used by e-commerce websites to manage
-    product catalogues, process orders, and handle payments.
-
--   Location-Based Services: Mapping providers such as Google Maps
-    provide Restful APIs for accessing geolocation data and route
-    information, making map integration easier.
-
--   IoT (Internet of Things): Restful APIs are critical for IoT devices
-    to communicate and share data with one another as well as with cloud
-    platforms, enabling smart home and industrial automation
-    applications.(**Citations needed)**
 
 ## Object Recognition and AI
 
@@ -1019,7 +1027,7 @@ several suggestions that could encourage people to drive more in the
 future. In the top three are traffic congestion, and access to parking.
 (CSO.ie, 2019)
 
-![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
+![](./docs/images/thesis/media/image4.png){width="5.896527777777778in"
 height="3.160416666666667in"}
 
 []{#_Toc133573279 .anchor}Figure : CSO.ie - Factors that would encourage
@@ -1096,7 +1104,7 @@ negotiations, and reacting to change over planning ahead. (atlassian,
 n.d.)
 
 ![Les raisons pour utiliser les méthodes Agile en
-entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
+entreprise](./docs/images/thesis/media/image5.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
 []{#_Toc133573289 .anchor}Figure : Agile Development (Feer, 2020)
@@ -1114,9 +1122,7 @@ availability, pricing, stay-hours, zones, and disability status.
 Additional benefits include reducing traffic congestion, fuel savings,
 time and reducing stress.
 
-## Automated Real-Time Parking Detection System.
-
-### Requirements Analysis: Automated Real-Time Parking Detection System
+## Automated Real-Time Parking Detection System
 
 The Automated Real-Time Parking Detection System is a critical component
 of the Perfect Parking application, ensuring effective monitoring of all
@@ -1159,29 +1165,27 @@ that users have a hassle-free parking experience, while the seamless
 integration ensures a full view of parking space availability across all
 sites.
 
-## The Main Software Application
+## The Server and Website
 
 Perfect Parking is a web application that will allow users to find
 parking in a city. The application will allow users to search for
 parking near a specific location and will show the user data the nearest
 parking to their location.
 
-## The supporting client Applications
+## The Client Application
 
-The client applications monitor the video feeds and other sensors of
-parking lots across a city and provides live updates to the Perfect
-Parking website once a change in the car park is detected such as a spot
-becomes available or is taken.
+The client application monitors the video feed of a parking lots across
+a city and provides live updates to the Perfect Parking website once a
+change in the car park is detected such as a spot becomes available or
+occupied.
 
-### Identifying the free/busy car parking spaces
+### Image Processing: Identifying a parking space's occupancy.
 
 A key design goal of the application is to find a low-cost, accurate,
 and scalable solution to identify if a car parking space is free or
-busy. To accomplish this goal, the application will use a combination of
-sensors and machine learning to identify if a car parking space is free
-or busy. The sensors will monitor the car parking space and will send
-data to a central server. The central server will then use a machine
-learning algorithm to identify if the car parking space is free or busy.
+busy. To accomplish this goal, the client application will use image
+processing to identify if a car parking space is free or busy. If the
+client detects a change, it will send updated data to the server.
 
 ## Technologies
 
@@ -1194,12 +1198,12 @@ Machine learning is a key component of the application as it will be
 used to identify if a car parking space is free or busy. The powerful
 library OpenCV provides a wide range of features for computer vision
 applications. It is widely used across many different industries,
-including robotics, driverless cars, medical imaging, and more.
+including robotics, driverless cars, medical imaging, and
+more.\[refencer\]
 
-To extract useful information or features, OpenCV processes visual data,
-such as photos or videos. Image filtering, feature detection, object
-recognition, and tracking are just a few of the techniques that OpenCV
-offers to process and analyze visual data. (Boesch, 2023)
+Image filtering, feature detection, object recognition, and tracking are
+just a few of the techniques that OpenCV offers to process and analyze
+visual data. (Boesch, 2023)
 
 Several pre-trained cascading classifiers, including the well-known Haar
 cascades for face detection, are available in OpenCV for object
@@ -1273,7 +1277,7 @@ monitored car parks. The \"ParkingLotMonitor\" table is linked to the
 parking application to track parking availability at each location.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
+generated](./docs/images/thesis/media/image6.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
 []{#_Toc132726761 .anchor}Figure - Database Design
@@ -1295,7 +1299,7 @@ height="5.071345144356956in"}
     The monitor will be updating the status of the car park.
 
 ![Alt
-text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
+text](./docs/images/thesis/media/image7.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
 []{#_Toc133414128 .anchor}Figure : User Use Case Diagram
@@ -1516,7 +1520,7 @@ Alternative Flows:
 ## User Parking Sequence diagram
 
 ![Graphical user interface, application, table Description automatically
-generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image8.png){width="5.905555555555556in"
 height="2.1in"}
 
 []{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
@@ -1557,7 +1561,7 @@ of the parking lots available with some information about the different
 parking lots.
 
 ![Graphical user interface, application Description automatically
-generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
+generated](./docs/images/thesis/media/image9.png){width="6.6075240594925635in"
 height="2.218305993000875in"}
 
 []{#_Toc133573281 .anchor}Figure : Parking Lots View
@@ -1568,7 +1572,7 @@ Clicking on a parking lot name will display information on the selected
 parking lot such as a map and an image of the car park as well as other
 information about that specific parking lot.
 
-![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
+![](./docs/images/thesis/media/image10.png){width="5.865909886264217in"
 height="4.149245406824147in"}
 
 []{#_Toc133573282 .anchor}Figure : Parking Lot View
@@ -1581,7 +1585,7 @@ will be asked to share the location by the browser. Information such as
 the probability of parking available is displayed which updates whenever
 there is a change in parking behaviour.
 
-![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
+![](./docs/images/thesis/media/image11.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
 
 []{#_Toc133573283 .anchor}Figure : Parking lot Monitors View
@@ -1595,7 +1599,7 @@ every time there is a change and the website is refreshed. In the image
 below you can see that the probability has changed for this specific
 parking lot compared to Figure 5 above.
 
-![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
+![](./docs/images/thesis/media/image12.png){width="6.650247156605424in"
 height="4.893287401574804in"}
 
 []{#_Toc133573284 .anchor}Figure : Parking Lot Monitor View
@@ -1607,7 +1611,7 @@ browser will ask you to share your location. This is done so the Search
 near me feature can be used.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
+generated](./docs/images/thesis/media/image13.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
 []{#_Toc133573285 .anchor}Figure : Location Sharing
@@ -1619,7 +1623,7 @@ that are monitored by how close they are to your location.
 
 ![A picture containing graphical user interface Description
 automatically
-generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image14.png){width="5.905555555555556in"
 height="3.0840277777777776in"}
 
 []{#_Toc133573286 .anchor}Figure : Search Near Me Feature
@@ -1630,7 +1634,7 @@ This is the login for the application. Django comes with a built-in
 authentication system to help with assisting the user logging in.
 
 ![Graphical user interface Description automatically
-generated](./docs/images/thesis/media/image14.png){width="4.541666666666667in"
+generated](./docs/images/thesis/media/image15.png){width="4.541666666666667in"
 height="3.3645833333333335in"}
 
 []{#_Toc133647165 .anchor}Figure : User Login
@@ -1643,7 +1647,7 @@ the user during sign up.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./docs/images/thesis/media/image15.png){width="5.277134733158356in"
+generated](./docs/images/thesis/media/image16.png){width="5.277134733158356in"
 height="4.038522528433946in"}
 
 []{#_Toc133647166 .anchor}Figure : User Registration
@@ -1668,7 +1672,7 @@ This is the API Root page; you can see all the endpoints from the
 application.
 
 ![Table Description automatically
-generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image17.png){width="5.905555555555556in"
 height="2.29375in"}
 
 []{#_Toc133647167 .anchor}Figure : Django Rest Framework API Root
@@ -1685,7 +1689,7 @@ fields provide links to the next and previous pages of results if
 available.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image17.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image18.png){width="5.905555555555556in"
 height="4.209722222222222in"}
 
 []{#_Toc133647168 .anchor}Figure : Parking Lot List
@@ -1699,7 +1703,7 @@ number of monitors in the list, and the \"next\" and \"previous\" fields
 provide links to the next and previous pages of results if available.
 
 ![Graphical user interface, application, Word Description automatically
-generated](./docs/images/thesis/media/image18.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
 height="4.06875in"}
 
 []{#_Toc133647169 .anchor}Figure : Parking Lot Monitor List
@@ -1712,7 +1716,7 @@ longitude, and the probability of parking available for that for that
 certain parking lot
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
 height="1.886111111111111in"}
 
 []{#_Toc133647170 .anchor}Figure : Parking Monitor Instance
@@ -1723,7 +1727,7 @@ This is one instance of the parking lot, from here you can see the id,
 name, latitude, and longitude.
 
 ![Graphical user interface, application, Teams Description automatically
-generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image21.png){width="5.905555555555556in"
 height="2.0709930008748905in"}
 
 []{#_Toc133647171 .anchor}Figure : Parking lot Instance
@@ -2531,7 +2535,7 @@ interactions, and communicating with the server-side code to retrieve
 and display data.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image21.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image22.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
 []{#_Toc133647172 .anchor}Figure : Class Diagram
@@ -2847,7 +2851,7 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image22.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image23.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
 []{#_Toc133573290 .anchor}Figure : How they work together
@@ -2963,7 +2967,7 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image23.png){width="4.025in"
+1](./docs/images/thesis/media/image24.png){width="4.025in"
 height="2.2642989938757654in"}
 
 []{#_Toc133573291 .anchor}Figure : BDD development cycle (Collidu, n.d.)
@@ -3027,7 +3031,7 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image24.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image25.png){width="3.4380238407699037in"
 height="2.775in"}
 
 []{#_Toc133573292 .anchor}Figure : How TDD Works (BasuMallick, 2022)
