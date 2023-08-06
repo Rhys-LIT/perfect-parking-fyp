@@ -1,6 +1,6 @@
 Perfect Parking
 
-An AI Application to Assist Drivers Finding Parking in Busy Cities
+An AI System to Assist Drivers Finding Parking in Busy Cities
 
 Rhys Quilter
 
@@ -1022,8 +1022,8 @@ future. In the top three are traffic congestion, and access to parking.
 ![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
 height="3.160416666666667in"}
 
-[]{#_Toc133573279 .anchor}Figure 1: CSO.ie - Factors that would
-encourage more driving,
+[]{#_Toc133573279 .anchor}Figure : CSO.ie - Factors that would encourage
+more driving,
 
 ### Global Trends
 
@@ -1099,7 +1099,7 @@ n.d.)
 entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
-[]{#_Toc133573289 .anchor}Figure 2: Agile Development (Feer, 2020)
+[]{#_Toc133573289 .anchor}Figure : Agile Development (Feer, 2020)
 
 # Analysis and Design
 
@@ -1276,7 +1276,7 @@ parking application to track parking availability at each location.
 generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
-[]{#_Toc132726761 .anchor}Figure 3 - Database Design
+[]{#_Toc132726761 .anchor}Figure - Database Design
 
 ## System Actors
 
@@ -1298,7 +1298,7 @@ height="5.071345144356956in"}
 text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc133414128 .anchor}Figure 4: User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure : User Use Case Diagram
 
 ## Use Case Descriptions
 
@@ -1519,7 +1519,7 @@ Alternative Flows:
 generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
 height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure 5- User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
 
 This is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1560,7 +1560,7 @@ parking lots.
 generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
 height="2.218305993000875in"}
 
-[]{#_Toc133573281 .anchor}Figure 6: Parking Lots View
+[]{#_Toc133573281 .anchor}Figure : Parking Lots View
 
 ### Parking Lot View
 
@@ -1571,7 +1571,7 @@ information about that specific parking lot.
 ![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
 height="4.149245406824147in"}
 
-[]{#_Toc133573282 .anchor}Figure 7: Parking Lot View
+[]{#_Toc133573282 .anchor}Figure : Parking Lot View
 
 ### Parking Lot Monitors
 
@@ -1584,7 +1584,7 @@ there is a change in parking behaviour.
 ![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
 
-[]{#_Toc133573283 .anchor}Figure 8: Parking lot Monitors View
+[]{#_Toc133573283 .anchor}Figure : Parking lot Monitors View
 
 ### Parking Lot Monitor 
 
@@ -1598,7 +1598,7 @@ parking lot compared to Figure 5 above.
 ![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
 height="4.893287401574804in"}
 
-[]{#_Toc133573284 .anchor}Figure 9: Parking Lot Monitor View
+[]{#_Toc133573284 .anchor}Figure : Parking Lot Monitor View
 
 ### Know your Location Feature
 
@@ -1610,7 +1610,7 @@ near me feature can be used.
 generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
-[]{#_Toc133573285 .anchor}Figure 10: Location Sharing
+[]{#_Toc133573285 .anchor}Figure : Location Sharing
 
 ### Search Near Me
 
@@ -1622,7 +1622,7 @@ automatically
 generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
 height="3.0840277777777776in"}
 
-[]{#_Toc133573286 .anchor}Figure 11: Search Near Me Feature
+[]{#_Toc133573286 .anchor}Figure : Search Near Me Feature
 
 ### Login
 
@@ -1633,7 +1633,7 @@ authentication system to help with assisting the user logging in.
 generated](./docs/images/thesis/media/image14.png){width="4.541666666666667in"
 height="3.3645833333333335in"}
 
-[]{#_Toc133647165 .anchor}Figure 12: User Login
+[]{#_Toc133647165 .anchor}Figure : User Login
 
 ### Sign up (User Registration)
 
@@ -1646,7 +1646,7 @@ automatically
 generated](./docs/images/thesis/media/image15.png){width="5.277134733158356in"
 height="4.038522528433946in"}
 
-[]{#_Toc133647166 .anchor}Figure 13: User Registration
+[]{#_Toc133647166 .anchor}Figure : User Registration
 
 ## Rest API layout
 
@@ -1671,7 +1671,7 @@ application.
 generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
 height="2.29375in"}
 
-[]{#_Toc133647167 .anchor}Figure 14: Django Rest Framework API Root
+[]{#_Toc133647167 .anchor}Figure : Django Rest Framework API Root
 
 The two of the most interesting endpoints would be parking-lots and
 parking-lot-monitors:
@@ -1688,7 +1688,7 @@ available.
 generated](./docs/images/thesis/media/image17.png){width="5.905555555555556in"
 height="4.209722222222222in"}
 
-[]{#_Toc133647168 .anchor}Figure 15: Parking Lot List
+[]{#_Toc133647168 .anchor}Figure : Parking Lot List
 
 ### Parking Lot Monitors
 
@@ -1702,7 +1702,7 @@ provide links to the next and previous pages of results if available.
 generated](./docs/images/thesis/media/image18.png){width="5.905555555555556in"
 height="4.06875in"}
 
-[]{#_Toc133647169 .anchor}Figure 16: Parking Lot Monitor List
+[]{#_Toc133647169 .anchor}Figure : Parking Lot Monitor List
 
 ### Parking Lot Monitor
 
@@ -1715,7 +1715,7 @@ certain parking lot
 generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
 height="1.886111111111111in"}
 
-[]{#_Toc133647170 .anchor}Figure 17: Parking Monitor Instance
+[]{#_Toc133647170 .anchor}Figure : Parking Monitor Instance
 
 ### Parking Lot
 
@@ -1726,7 +1726,7 @@ name, latitude, and longitude.
 generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
 height="2.0709930008748905in"}
 
-[]{#_Toc133647171 .anchor}Figure 18: Parking lot Instance
+[]{#_Toc133647171 .anchor}Figure : Parking lot Instance
 
 # Implementation
 
@@ -2534,7 +2534,7 @@ and display data.
 generated](./docs/images/thesis/media/image21.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
-[]{#_Toc133647172 .anchor}Figure 19: Class Diagram
+[]{#_Toc133647172 .anchor}Figure : Class Diagram
 
 ## Enable Django REST framework.
 
@@ -2850,7 +2850,7 @@ client and server are linked together in a web application.
 generated](./docs/images/thesis/media/image22.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-[]{#_Toc133573290 .anchor}Figure 20: How they work together
+[]{#_Toc133573290 .anchor}Figure : How they work together
 
 # Testing and Results
 
@@ -2966,8 +2966,7 @@ end-users.
 1](./docs/images/thesis/media/image23.png){width="4.025in"
 height="2.2642989938757654in"}
 
-[]{#_Toc133573291 .anchor}Figure 21: BDD development cycle (Collidu,
-n.d.)
+[]{#_Toc133573291 .anchor}Figure : BDD development cycle (Collidu, n.d.)
 
 ### BDD In Perfect Parking
 
@@ -3031,7 +3030,7 @@ TDD typically involves theses following steps:
 Development)?](./docs/images/thesis/media/image24.png){width="3.4380238407699037in"
 height="2.775in"}
 
-[]{#_Toc133573292 .anchor}Figure 22: How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure : How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
