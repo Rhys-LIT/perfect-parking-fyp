@@ -1,6 +1,9 @@
+"""Used to calculate the distance between two GPS coordinates."""
 from geopy.distance import geodesic
 from django.db import models
-
+from django.db.models.signals import post_save
+"""Import User model from django.contrib.auth.models"""
+from django.contrib.auth.models import User
 
 # Create your models here.
 class ParkingLot(models.Model):
@@ -67,7 +70,7 @@ class ParkingLotMonitor(models.Model):
     longitude = models.DecimalField(max_digits=17, decimal_places=15)
     """The longitude of the parking lot monitor"""
     probabilityParkingAvailable = models.DecimalField(
-        max_digits=5, decimal_places=2, default=0
+        max_digits=5, decimal_places=2, default=0.0
     )
     """The probability that the parking lot is available."""
     free_parking_spaces = models.IntegerField(default=0)
@@ -110,3 +113,42 @@ class ParkingLotMonitor(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+
+class ParkingLotLog(models.Model):
+    """
+    A model representing a parking lot log. This model is used to store the history of parking lot monitor updates.
+    The date-time, free parking spaces, and probability parking available are stored.
+
+    Attributes:
+        id (int): The primary key of the parking lot monitor.
+        parking_lot (ForeignKey): A foreign key to the ParkingLot that this monitor is associated with.
+        free_parking_spaces (int): The number of free parking spaces available (default 0).
+        time_stamp (DateTimeField): The date and time when the monitor was last updated (auto_now=True).
+
+    Methods:
+        None.
+    """
+
+    id = models.AutoField(primary_key=True)
+    parking_lot = models.ForeignKey(ParkingLot, on_delete=models.CASCADE)
+    logged_by_monitor = models.ForeignKey(ParkingLotMonitor, on_delete=models.CASCADE)
+    free_parking_spaces = models.IntegerField(default=0)
+    time_stamp = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return f"{self.parking_lot.name} - {self.time_stamp}"
+
+
+class ParkingRequestLog(models.Model):
+    """
+    A model representing a parking request log. This model is used to store the history of parking requests.
+    The date-time, user, user-location are stored.
+    """
+
+    id = models.AutoField(primary_key=True)
+    user_ip_address = models.CharField(max_length=15)
+    area_of_interest_latitude = models.DecimalField(max_digits=17, decimal_places=15)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    """The latitude of the parking lot monitor"""
+    area_of_interest_longitude = models.DecimalField(max_digits=17, decimal_places=15)

@@ -18,16 +18,16 @@ class ParkingSpot:
         self.is_occupied: bool = False
         self.parking_spot_id: int = parking_spot_id
         self.rect = boundingRect(self.coordinates)
-        self.mask:list = self._create_mask()
+        self.mask:list = self.create_contours_mask()
 
-    def _create_mask(self)->list:
+    def create_contours_mask(self)->list:
         new_coordinates = self.coordinates.copy()
 
         x, y, width, height = self.rect
         new_coordinates[:, 0] = self.coordinates[:, 0] - x
         new_coordinates[:, 1] = self.coordinates[:, 1] - y
 
-        mask:list = drawContours(
+        contours:list = drawContours(
             numpy.zeros((height, width), dtype=numpy.uint8),
             [new_coordinates],
             contourIdx=-1,
@@ -35,8 +35,8 @@ class ParkingSpot:
             thickness=-1,
             lineType=cv2.LINE_8)
 
-        mask = mask == 255
-        return mask
+        contours = contours == 255
+        return contours
 
     def determine_and_mark_occupancy_from_image(self, image:Mat):
         """Determines if the parking spot is occupied from the image and marks the parking spot as
