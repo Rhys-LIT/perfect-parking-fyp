@@ -13,8 +13,9 @@ zoom_factor:float = 1
 display_dimensions:tuple = (int(image_dimensions[0] * zoom_factor),
                                       int(image_dimensions[1] * zoom_factor))
 
-ip_address:str = "192.168.178.25"
-url:str = f'http://{ip_address}:4747/video' # YOUR IP ADDRESS MAY BE DIFFERENT
+ip_address:str = "192.168.188.64" # YOUR IP ADDRESS MAY BE DIFFERENT
+ip_address = input(f"Enter the IP address of your phone (default: {ip_address}): ") or ip_address
+url:str = f'http://{ip_address}:4747/video'
 video_capture:VideoCapture = VideoCapture(url)
 window_name:str = "DroidCam"
 image_file_path:str = "PerfectParkingClient/images/camera-live-feed.png"

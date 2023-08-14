@@ -1,8 +1,6 @@
-from django.urls import include, path
-from . import WebPaths
-from . import views
-from django.contrib.auth import views as auth_views
-
+""" PerfectParking URL Configuration"""
+from django.urls import path
+from . import views, WebPaths
 
 urlpatterns = [
     path(WebPaths.ROOT, views.index, name='home'),

@@ -1,18 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from . import WebPaths
 from .models import ParkingLot, ParkingLotMonitor
+from .utility import record_user_query
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render, redirect
-from django.views import generic
 from django.contrib.auth import logout
-from django.urls import reverse
-
-from django.urls import reverse_lazy
-from . import WebPaths
 
 
 class WebPages:
@@ -101,14 +96,16 @@ def parking_lot_monitors(request):
     Returns:
         _type_: _description_
     """
-    parking_lot_monitors: list = ParkingLotMonitor.objects.all()
+    parking_lot_monitor_list: list = ParkingLotMonitor.objects.all()
 
     if request.method == "POST":  # FORM SUBMITTED
         latitude = request.POST["latitude"]
         longitude = request.POST["longitude"]
 
+        record_user_query(latitude, longitude, request)
+
         context = {
-            "parking_lot_monitors": parking_lot_monitors,
+            "parking_lot_monitors": parking_lot_monitor_list,
             "user_point": {"latitude": latitude, "longitude": longitude},
         }
         return render(request, WebPages.PARKING_LOT_MONITORS, context)
@@ -116,7 +113,7 @@ def parking_lot_monitors(request):
     return render(
         request,
         WebPages.PARKING_LOT_MONITORS,
-        {"parking_lot_monitors": parking_lot_monitors},
+        {"parking_lot_monitors": parking_lot_monitor_list},
     )
 
 

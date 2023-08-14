@@ -147,8 +147,9 @@ class ParkingRequestLog(models.Model):
     """
 
     id = models.AutoField(primary_key=True)
-    user_ip_address = models.CharField(max_length=15)
     area_of_interest_latitude = models.DecimalField(max_digits=17, decimal_places=15)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     """The latitude of the parking lot monitor"""
     area_of_interest_longitude = models.DecimalField(max_digits=17, decimal_places=15)
+    time_stamp = models.DateTimeField(auto_now=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user_ip_address = models.CharField(max_length=15)

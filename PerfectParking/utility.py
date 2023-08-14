@@ -1,7 +1,6 @@
-# Utility for the PerfectParking project
-
-from PerfectParking.models import ParkingLotMonitor
-
+""" Utility for the PerfectParking project"""
+from django.contrib.auth.models import User
+from .models import ParkingLotMonitor, ParkingRequestLog
 
 def build_all_config_ini_content() -> str:
     """
@@ -38,3 +37,19 @@ Token=0f412f508358b8c1156d688d1db671e5ba4f1457
 Username=parkingMonitor
 Password=Letmein1$
 ServerUrl=http://127.0.0.1:8000/api-auth/parking-lot-monitors"""
+
+def record_user_query(area_of_interest_latitude, area_of_interest_longitude, request):
+    """Records a user query in the database.
+
+    Args:
+        latitude (float): The latitude of the user query.
+        longitude (float): The longitude of the user query.
+    """
+
+    parking_request_log:ParkingRequestLog = ParkingRequestLog()
+    parking_request_log.area_of_interest_latitude = area_of_interest_latitude
+    parking_request_log.area_of_interest_longitude = area_of_interest_longitude
+    parking_request_log.user = User.objects.get(username=request.user.username)
+    parking_request_log.user_ip_address = request.META.get("REMOTE_ADDR")
+
+    parking_request_log.save()
