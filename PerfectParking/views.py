@@ -1,13 +1,13 @@
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from . import WebPaths
-from .models import ParkingLot, ParkingLotMonitor
-from .utility import record_user_query
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
+from .models import ParkingLot, ParkingLotMonitor
+from . import WebPaths
+from .utility import record_user_query
 
 
 class WebPages:

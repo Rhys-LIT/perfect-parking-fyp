@@ -1,8 +1,6 @@
 """Used to calculate the distance between two GPS coordinates."""
 from geopy.distance import geodesic
 from django.db import models
-from django.db.models.signals import post_save
-"""Import User model from django.contrib.auth.models"""
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -113,6 +111,16 @@ class ParkingLotMonitor(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+    # override update method to create a parking lot log
+    def update(self, *args, **kwargs):
+        super(ParkingLotMonitor, self).save(*args, **kwargs)
+        ParkingLotLog.objects.create(parking_lot=self.parkingLot, logged_by_monitor=self, free_parking_spaces=self.free_parking_spaces)
+
+    # override save method to create a parking lot log
+    def save(self, *args, **kwargs):
+        super(ParkingLotMonitor, self).save(*args, **kwargs)
+        ParkingLotLog.objects.create(parking_lot=self.parkingLot, logged_by_monitor=self, free_parking_spaces=self.free_parking_spaces)
 
 
 class ParkingLotLog(models.Model):
