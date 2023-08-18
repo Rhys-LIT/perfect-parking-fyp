@@ -70,8 +70,7 @@ parking spot has been filled or made empty.
 [1.1 The academic objectives
 [10](#the-academic-objectives)](#the-academic-objectives)
 
-[1.2 The problem statement
-[10](#the-problem-statement)](#the-problem-statement)
+[1.2 The problem statement [10](#the-problem)](#the-problem)
 
 [1.3 Perfect Parking: a solution [11](#_Toc133651945)](#_Toc133651945)
 
@@ -89,18 +88,17 @@ parking spot has been filled or made empty.
 [14](#literature-review)](#literature-review)
 
 [2.1 Big Data and Realtime Data
-[14](#big-data-and-realtime-data)](#big-data-and-realtime-data)
+[14](#parking-business-sector)](#parking-business-sector)
 
-[2.1.1 What is Big Data? [14](#what-is-big-data)](#what-is-big-data)
+[2.1.1 What is Big Data? [14](#_Toc133651952)](#_Toc133651952)
 
 [2.1.2 Why is Big Data important?
 [14](#why-is-big-data-important)](#why-is-big-data-important)
 
-[2.1.3 What is Real Time data
-[15](#what-is-real-time-data)](#what-is-real-time-data)
+[2.1.3 What is Real Time data [15](#statistics)](#statistics)
 
 [2.1.4 What is the importance of Real Time data?
-[15](#what-is-the-importance-of-real-time-data)](#what-is-the-importance-of-real-time-data)
+[15](#the-importance-of-real-time-data)](#the-importance-of-real-time-data)
 
 [2.2 Problems with gathering data.
 [16](#problems-with-gathering-data.)](#problems-with-gathering-data.)
@@ -133,15 +131,16 @@ parking spot has been filled or made empty.
 [22](#analysis-and-design)](#analysis-and-design)
 
 [3.1 The Main Software Application
-[22](#the-main-software-application)](#the-main-software-application)
+[22](#utilizing-computer-vision-in-perfect-parking)](#utilizing-computer-vision-in-perfect-parking)
 
 [3.2 The supporting client Applications
-[22](#the-supporting-client-applications)](#the-supporting-client-applications)
+[22](#utilizing-computer-vision-in-perfect-parking)](#utilizing-computer-vision-in-perfect-parking)
 
 [3.2.1 Identifying the free/busy car parking spaces
-[22](#identifying-the-freebusy-car-parking-spaces)](#identifying-the-freebusy-car-parking-spaces)
+[22](#image-processing-identifying-a-parking-spaces-occupancy.)](#image-processing-identifying-a-parking-spaces-occupancy.)
 
-[3.3 Technologies [22](#technologies)](#technologies)
+[3.3 Technologies
+[22](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
 [3.3.1 Computer Vision: OpenCV
 [22](#computer-vision-opencv)](#computer-vision-opencv)
@@ -153,10 +152,11 @@ parking spot has been filled or made empty.
 [3.4 Application Database design
 [24](#application-database-design)](#application-database-design)
 
-[3.5 System Actors [25](#system-actors)](#system-actors)
+[3.5 System Actors
+[25](#application-database-design)](#application-database-design)
 
 [3.6 Use Case Descriptions
-[26](#use-case-descriptions)](#use-case-descriptions)
+[26](#utilizing-computer-vision-in-perfect-parking)](#utilizing-computer-vision-in-perfect-parking)
 
 [3.6.1 Use Case: Find Parking
 [26](#use-case-find-parking)](#use-case-find-parking)
@@ -173,7 +173,7 @@ parking spot has been filled or made empty.
 [3.7 User Parking Sequence diagram
 [31](#user-parking-sequence-diagram)](#user-parking-sequence-diagram)
 
-[3.8 Website Layout [31](#website-layout)](#website-layout)
+[3.8 Website Layout [31](#the-website)](#the-website)
 
 [3.8.1 Parking Lots View [31](#parking-lots-view)](#parking-lots-view)
 
@@ -230,7 +230,7 @@ parking spot has been filled or made empty.
 [43](#parkinglot-by-rocheeva)](#parkinglot-by-rocheeva)
 
 [4.3.2 Modifying ParkingLot
-[44](#modifying-parkinglot)](#modifying-parkinglot)
+[44](#a-quick-note-on-source-code-quality)](#a-quick-note-on-source-code-quality)
 
 [4.4 Perfect Parking with Django
 [47](#perfect-parking-with-django)](#perfect-parking-with-django)
@@ -296,59 +296,66 @@ parking spot has been filled or made empty.
 
 # Table of Figure
 
-[Figure 1: CSO.ie - Factors that would encourage more driving,
-[19](#_Toc133573279)](#_Toc133573279)
+[Figure 1 Map Camera Counting [14](#_Toc142913781)](#_Toc142913781)
 
-[Figure 2: Agile Development (Feer, 2020)
-[21](#_Toc133573289)](#_Toc133573289)
+[Figure 2: CSO.ie - Factors that would encourage more driving,
+[16](#_Toc133573279)](#_Toc133573279)
 
-[Figure 3 - Database Design [25](#_Toc132726761)](#_Toc132726761)
+[Figure 3 Google Example Data [18](#_Toc142913783)](#_Toc142913783)
 
-[Figure 4: User Use Case Diagram [26](#_Toc133414128)](#_Toc133414128)
+[Figure 4: Distributed Clients communicating with a server on a Star
+Network [25](#_Toc142913784)](#_Toc142913784)
 
-[Figure 5- User Parking Sequence Diagram
-[31](#_Toc132726762)](#_Toc132726762)
+[Figure 5: Agile Development (Feer, 2020)
+[31](#_Toc133573289)](#_Toc133573289)
 
-[Figure 6: Parking Lots View [32](#_Toc133573281)](#_Toc133573281)
+[Figure 6 - Database Design [37](#_Toc132726761)](#_Toc132726761)
 
-[Figure 7: Parking Lot View [32](#_Toc133573282)](#_Toc133573282)
+[Figure 7: User Use Case Diagram [38](#_Toc133414128)](#_Toc133414128)
 
-[Figure 8: Parking lot Monitors View
-[33](#_Toc133573283)](#_Toc133573283)
+[Figure 8- User Parking Sequence Diagram
+[43](#_Toc132726762)](#_Toc132726762)
 
-[Figure 9: Parking Lot Monitor View
-[34](#_Toc133573284)](#_Toc133573284)
+[Figure 9: Parking Lots View [44](#_Toc133573281)](#_Toc133573281)
 
-[Figure 10: Location Sharing [34](#_Toc133573285)](#_Toc133573285)
+[Figure 10: Parking Lot View [44](#_Toc133573282)](#_Toc133573282)
 
-[Figure 11: Search Near Me Feature [35](#_Toc133573286)](#_Toc133573286)
+[Figure 11: Parking lot Monitors View
+[45](#_Toc133573283)](#_Toc133573283)
 
-[Figure 12: User Login [36](#_Toc133647165)](#_Toc133647165)
+[Figure 12: Parking Lot Monitor View
+[46](#_Toc133573284)](#_Toc133573284)
 
-[Figure 13: User Registration [36](#_Toc133647166)](#_Toc133647166)
+[Figure 13: Location Sharing [46](#_Toc133573285)](#_Toc133573285)
 
-[Figure 14: Django Rest Framework API Root
-[37](#_Toc133647167)](#_Toc133647167)
+[Figure 14: Search Near Me Feature [47](#_Toc133573286)](#_Toc133573286)
 
-[Figure 15: Parking Lot List [38](#_Toc133647168)](#_Toc133647168)
+[Figure 15: User Login [48](#_Toc133647165)](#_Toc133647165)
 
-[Figure 16: Parking Lot Monitor List
-[39](#_Toc133647169)](#_Toc133647169)
+[Figure 16: User Registration [48](#_Toc133647166)](#_Toc133647166)
 
-[Figure 17: Parking Monitor Instance
-[39](#_Toc133647170)](#_Toc133647170)
+[Figure 17: Django Rest Framework API Root
+[49](#_Toc133647167)](#_Toc133647167)
 
-[Figure 18: Parking lot Instance [40](#_Toc133647171)](#_Toc133647171)
+[Figure 18: Parking Lot List [50](#_Toc133647168)](#_Toc133647168)
 
-[Figure 19: Class Diagram [52](#_Toc133647172)](#_Toc133647172)
+[Figure 19: Parking Lot Monitor List
+[51](#_Toc133647169)](#_Toc133647169)
 
-[Figure 20: How they work together [57](#_Toc133573290)](#_Toc133573290)
+[Figure 20: Parking Monitor Instance
+[51](#_Toc133647170)](#_Toc133647170)
 
-[Figure 21: BDD development cycle (Collidu, n.d.)
-[60](#_Toc133573291)](#_Toc133573291)
+[Figure 21: Parking lot Instance [52](#_Toc133647171)](#_Toc133647171)
 
-[Figure 22: How TDD Works (BasuMallick, 2022)
-[61](#_Toc133573292)](#_Toc133573292)
+[Figure 22: Class Diagram [64](#_Toc133647172)](#_Toc133647172)
+
+[Figure 23: How they work together [69](#_Toc133573290)](#_Toc133573290)
+
+[Figure 24: BDD development cycle (Collidu, n.d.)
+[72](#_Toc133573291)](#_Toc133573291)
+
+[Figure 25: How TDD Works (BasuMallick, 2022)
+[73](#_Toc133573292)](#_Toc133573292)
 
 # Introduction
 
@@ -386,7 +393,7 @@ working with AI and object detection in images. The chosen problem used
 for this study is to help to reduce the traffic congestion in cities
 such as Limerick.
 
-## The problem statement
+## The problem
 
 Ineffective ways of finding an available parking space which is a waste
 of time, very fuel consuming and causes traffic jams. hen road users are
@@ -435,11 +442,11 @@ of using computer vision technology to manage parking spaces more
 efficiently. Perfect Parking uses a distributed strategy, using remote
 clients equipped with cameras to capture images of parking spaces. These
 clients use computer vision techniques to perform real-time image
-processing and monitoring sending the parking-occupancy (which indicates
-whether a parking space is vacant or occupied) result to a central
-server. Through this proof-of-concept application, Perfect Parking
-showcases the benefits of distributed monitoring and computer vision for
-effective parking space management.
+processing and monitoring, sending the parking-occupancy (which
+indicates whether a parking space is vacant or occupied) result to a
+central server. Through this proof-of-concept application, Perfect
+Parking showcases the benefits of distributed monitoring and computer
+vision for effective parking space management.
 
 The technology watches a video feed and allows the user to query for
 parking spaces in parking areas. Once the parking monitor detects a
@@ -456,18 +463,49 @@ The objectives of this project solution are:
 
 ## The scope of the solution
 
-The scope of the Perfect Parking solution is limited to the use of
-prerecorded video demonstrations to showcase the car detection
-capabilities of the application. Due to time and budget constraints,
-live feeds from cities or colleges were not included in the scope of the
-project. Instead, prerecorded videos are used to demonstrate the
-application\'s ability to detect available parking spaces. The solution
-also includes a server demonstration to showcase the end-user usage of
-the application and its overall viability as a product. By focusing on
-these key aspects of the application, the scope of the solution is
-narrowed, allowing for a more focused and efficient development process.
+The scope of the Perfect Parking solution includes both a model car park
+made from cardboard and toy cars, and prerecorded video feeds, utilizing
+a laptop and camera setup. In addition to showcasing the car detection
+capabilities through prerecorded videos, a live feed option was
+introduced using a camera and laptop to demonstrate the feasibility of
+real-time video. Due to time and budget constraints, live feeds from
+cities or colleges were not extensively integrated within the scope of
+the project. Instead, prerecorded and model car park live feed remains a
+primary method to illustrate the application\'s proficiency in detecting
+available parking spaces. The solution also encompasses a server
+demonstration, highlighting end-user interactions with the application
+and its overall viability as a marketable product. By addressing these
+key components, the solution\'s focus is refined, facilitating a more
+concentrated and efficient development process**.**
 
-## The developed Solution
+It is estimated that it would take about 960 camera-feeds/clients to
+comprehensively monitor the parking spots of Limerick City. The estimate
+is derived from the assumption that a street like O'Connell St. will
+need 2 to 3 camera-feeds/clients for one side of a street.
+
+The calculations are:
+
+-   A street needs 3 camera-feeds/clients.
+
+-   A block has 4 sides i.e., 4 streets.
+
+-   Total number of cameras per block: 12 cameras (3 cameras for 4
+    streets)
+
+-   Limerick has approximately 40 blocks of interest.
+
+-   Total number of cameras: 480 cameras (12 cameras for 40 blocks)
+
+![](./docs/images/thesis/media/image3.png){width="5.908333333333333in"
+height="4.65in"}
+
+[]{#_Toc142913781 .anchor}Figure 1 Map Camera Counting
+
+It\'s important to note that the actual number of cameras required may
+differ based on factors such as street layout, street parking allowed,
+parking density, and camera coverage angles.
+
+## The developed solution
 
 The developed solution is an AI application to assist drivers finding
 parking in busy cities. The applications are written in Python; The
@@ -512,12 +550,134 @@ about how this project could be scaled up in the future.
 
 # Literature Review
 
-## Big Data and Realtime Data
+A brief review of the literature about Parking monitor software, the
+business sector, Big data/live, disturbing comped system and AI/Computer
+vision
 
-A large amount of live data will be required to provide a comprehensive
-parking software application solution.
+## Parking Business Sector
 
-### What is Big Data? 
+Parking management software is expected to see a compound annual growth
+rate (CAGR) of 12.8% and expand to a global market size of \$11.3
+billion by 2024. Additionally, it is anticipated that the market for
+artificial intelligence (AI) in parking management will increase by 20%
+yearly to \$1.5 billion by 2025. With these numbers in mind, it is
+obvious that the parking sector needs creative solutions that can
+harness the potential of AI to enhance parking management.
+
+### Irish Trends
+
+Statistics from the Central Statistics office (CSO) of Ireland gives
+several suggestions that could encourage people to drive more in the
+future. In the top three are traffic congestion, and access to parking.
+(CSO.ie, 2019)
+
+![A graph of a car driving test Description automatically generated with
+medium
+confidence](./docs/images/thesis/media/image4.png){width="5.896527777777778in"
+height="3.160416666666667in"}
+
+[]{#_Toc133573279 .anchor}Figure 2: CSO.ie - Factors that would
+encourage more driving,
+
+### Global Trends
+
+The present approaches for locating parking spaces are inefficient and
+wasteful, requiring a large amount of time and fuel. People spend an
+average of 17 hours a year searching for parking spaces, according to
+(McCoy, n.d.) and Irish people waste four days a year. (Sawer, 2017) the
+solution intends to end this time and energy waste which will be
+advantageous to both users and the environment.
+
+It is anticipated that the global market for automated parking systems
+will increase from \$1.3 billion in 2020 to \$3.6 billion in 2025. By
+creating an AI-powered parking management system that can maximize
+parking spot use, lessen traffic congestion, and more, the Perfect
+Parking project seeks to meet this expanding need. and improve the
+overall user experience for drivers. (abdalslam, 2023).
+
+### Statistics
+
+The utilization of statistics in modern technology has altered the way
+we interact with our surroundings, especially in settings where
+population density and activity levels can have a substantial impact on
+decision-making. An example of this integration may be found in the
+digital realm, where platforms such as Google utilize data to present
+users with real-time information into the congestion and availability of
+various businesses.
+
+In such circumstances, the combination of statistics and technology
+demonstrates the power of data-driven insights. As we progress into the
+digital age, the refinement of algorithms and the integration of more
+diverse data sources will most likely improve the accuracy of these
+estimates, providing users with a valuable tool for efficiently planning
+their activities and businesses with a way to better cater to their
+customers\' needs.
+
+## Real-time data
+
+Real time data is data that is available as soon as its created and
+acquired. The data is pushed to clients as soon as its collected and is
+immediately available without delay. T this is crucial for supporting
+live, in the moment decision making (Splunk, 2021). Parking Applications
+need a large amount of live data to provide users with useable
+information.
+
+### The importance of Real-time data
+
+Real-Time data is a necessity to stay relevant for today's business and
+it needs to be delivered by sophisticated electronic communications
+tools such as digital signage and data dashboards, to remain appealing
+to today's tech savvy workforce from call centres to retailers.
+(Barnett, 2017)
+
+Real time data is important in many parking applications, these
+applications use real-time data to show users if there is parking spaces
+in the carpark which they have selected, this data can be gathered by
+the carpark having a barrier that counts the amount of cars that go in
+or the amount of cars that exit, some carparks also have sensors on each
+of the parking spaces this allows users to see what actual spaces are
+available, this is the most ideal as it allows people that need disabled
+parking to see if that type of parking space is available.
+
+### How Google collects and uses data
+
+Google collects endless amounts of real time data. They use a device
+that billions of people in the world have i.e., smart phones. (Turner,
+2023). When people sign into google on their phone Google starts
+creating real time data and transmitting in real time to google.
+
+When looking for a business on Google basic information such as location
+and opening hours is provided and data that indicates the company\'s
+level of activity at various times of the day.
+
+Google accomplishes this combination of data sources, which includes
+real-time mobile device GPS position data, the user's query,
+user-generated evaluations to create reliable estimates of how crowded a
+location may be at any given time. (Reid, 2016)
+
+Google using the saved data and statistical analysis can predict peak
+hours of a business and thus potentially longer wait times by evaluating
+patterns and trends from a wide range of data points. It can pinpoint
+times when a site is less busy, providing users to avail of times with
+shorter lines and a more convenient experience for consumers. This data
+not only helps individuals make informed decisions about when to visit a
+location, but it also allows businesses to optimize their operations,
+staffing, and customer service methods based on anticipated traffic.
+(Ashish, 2022)
+
+![A screenshot of a computer Description automatically
+generated](./docs/images/thesis/media/image5.png){width="4.891482939632546in"
+height="2.021820866141732in"}
+
+[]{#_Toc142913783 .anchor}Figure 3 Google Example Data
+
+## Statistics and Big Data
+
+A user wants to find parking for dinner this evening at 6 pm. Live data
+does not exist for the future, but predictions can be made using
+historical data. We looked at how Google collects large amounts of live
+data and uses statistics to make predictions for shops. This large
+amount of data is referred to as big data.
 
 Big Data is a combination of structured, semi structured, and
 unstructured data that is collected by organizations, this data can be
@@ -542,6 +702,15 @@ deployments often involve terabytes, petabytes or even in some cases
 exabytes of data that is created and collected over time. (Botelho,
 2020).
 
+Big data refers to a wide range of digital sources that provide valuable
+insights into human behaviour and preferences. User browsing history,
+for example, provides web interactions and engagement patterns, whilst
+search queries provide insights into information-seeking behaviours.
+Email text reveals communication patterns, but photographs document
+aesthetic preferences and experiences. These examples demonstrate big
+data\'s vast potential to influence decision-making and obtain a deeper
+understanding across multiple disciplines.
+
 ### Why is Big Data important?
 
 Big Data importance lies in the fact of how a company utilizes the
@@ -563,47 +732,7 @@ with the pandemic and how the HSE in Ireland were able to monitor the
 amount of covid -- 19 infections per county, and how they were able to
 create the Covid App with this data. (Botelho, 2020)
 
-### What is Real Time data
-
-Real time data is data that is available as soon as its created and
-acquired. Rather than being stored, data is pushed to users as soon as
-its collected and is immediately available without and delay, this is
-crucial for supporting live, in the moment decision making. This real
-time data is a big part of our everyday lives, it powers everything from
-bank transactions and GPS this was also seen in the many Covid-19 maps
-that emerged during the pandemic. (Splunk, 2021)
-
-We see a lot more of real time data then we think, Google collects
-endless amounts of real time data and the way they do it is very smart,
-they use a device that 6.6 billion people in the world have and that
-being smart phones. (Turner, 2023) if people have smart phones, then
-nearly everyone has the google map application and GPS in their phones.
-When people sign into google on their phone Google starts creating real
-time data through the GPS and other apps, for example, when your using
-Google Maps on your phone it shows loads of data such as the estimated
-time of arrival to your destination and also if there is any traffic on
-your route, Google knows this by using real time data from other people
-that are taking that route and that might be stuck in traffic and this
-is all taken from the GPS location on smart phones. (Ashish, 2022)
-
-### What is the importance of Real Time data?
-
-Real-Time data is a necessity to stay relevant for today's business and
-it needs to be delivered by sophisticated electronic communications
-tools such as digital signage and data dashboards, to remain appealing
-to today's tech savvy workforce from call centres to retailers.
-(Barnett, 2017)
-
-Real time data is important in many parking applications, these
-applications use real-time data to show users if there is parking spaces
-in the carpark which they have selected, this data can be gathered by
-the carpark having a barrier that counts the amount of cars that go in
-or the amount of cars that exit, some carparks also have sensors on each
-of the parking spaces this allows users to see what actual spaces are
-available, this is the most ideal as it allows people that need disabled
-parking to see if that type of parking space is available.
-
-## Problems with gathering data.
+### Problems with gathering data.
 
 Collecting Big Data can be a challenging task that presents various
 problems, irrespective of the domain or industry. The sheer amount of
@@ -620,121 +749,36 @@ challenges effectively is critical to realizing the potential benefits
 of Big Data, including improved decision-making, increased efficiency,
 and enhanced innovation. (Sharma, 2022)
 
-## Distributed System/App
+### Urban Planning and Infrastructure Development
 
-A distributed system is a networked collection of autonomous entities
-(such as computers or devices) that collaborate to achieve a common
-goal or perform a particular task. Unlike a traditional centralized
-system, in which all processing and decision-making takes place within a
-single entity, a distributed system divides and distributes the workload
-across numerous interconnected entities.
+The integration of data-driven insights from platforms such as Google
+has become a useful tool in determining the need for new car parking
+facilities within a city or locality in the realm of urban planning and
+infrastructure development. The abundance of information collected and
+made available to users via such platforms not only assists individual
+decision-making but also provides a complete overview of traffic
+patterns and congestion levels, which can inform larger-scale urban
+planning projects.
 
-Each entity in a distributed system, known as a node or client,
-functions independently and communicates with other nodes over a
-network. These nodes can be distributed geographically and have varying
-capabilities and rolls within the system. By leveraging the collective
-resources and capabilities of multiple nodes, a distributed system can
-achieve higher scalability, fault tolerance, and performance compared to
-a centralized system. (S.Gillis, 2022)
+Data offered by platforms such as Google, particularly real-time
+information on company activity, provides insight into the dynamics of
+urban mobility and the need for parking spots. When aggregated over time
+and across multiple sites, this data can reveal major trends and
+patterns in parking demand. This data can be used by urban planners and
+city officials to identify places that typically experience high
+congestion and low parking availability.
 
-[A distributed application, is a form of distributed system that focuses
-on providing functionality or services to end users. It includes the
-software components, communication protocols, and architectural design
-that allow the application to run in a distributed fashion. Distributed
-apps exploit the distributed nature of the underlying system to handle
-large-scale data processing, concurrent user interactions, and
-complicated computations.]{.mark} [(Lutkevich, 2022)]{.mark}
-
-The use of distributed systems and apps has grown in popularity in a
-variety of fields, including e-commerce, social networks, cloud
-computing, and the Internet of Things (IoT). These systems have
-advantages such as higher availability, fault tolerance, and
-scalability, allowing for more efficient resource utilization and
-improved performance. (Cirrus, 2018)
-
-In the context of the Perfect Parking app, the distributed system/app
-architecture allows for the seamless integration of multiple client apps
-equipped with cameras and a central server. [The distributed system/app
-design allows for the smooth integration of many client applications
-equipped with cameras and a central server in the context of the Perfect
-Parking app. This distributed strategy provides efficient monitoring and
-management of parking spaces across multiple locations by leveraging the
-client apps\' combined computing capacity while centralizing data
-storage and analysis.]{.mark}
-
-[Perfect Parking seeks to improve scalability, fault tolerance, and
-real-time monitoring capabilities by incorporating distributed system
-principles and utilizing distributed apps. The app\'s distributed design
-enables effective utilization of resources and seamless cooperation of
-many entities, thereby boosting the overall functionality and
-performance of the parking management system.]{.mark}
-
-A REST API can provide communication between clients apps and a server
-across the internet.
-
-## REST APIs and Distributed Apps
-
-REST APIs are critical in providing seamless communication and
-interaction between different components or entities through the web in
-the context of distributed apps. RESTful APIs, which are founded on the
-concepts of Representational State Transfer (REST), offer a consistent
-and scalable strategy for developing distributed online applications.
-
-RESTful APIs facilitate distributed apps by offering the following key
-advantages:
-
--   **Standardized Interface:** RESTful APIs define a
-    Standardized interface for client-server communication. This
-    interface interacts with resources identified by unique URLs by
-    using HTTP methods (GET, POST, PUT, DELETE). Distributed
-    applications can achieve interoperability and compatibility across
-    platforms, programming languages, and devices by adhering to this
-    uniform interface.
-
--   **Statelessness:** RESTful APIs are stateless, which means that each
-    request from a client to a server includes all the information
-    required to process the request. Between requests, the server does
-    not store any client state. Because it eliminates the need for
-    complicated session management and assures that each request may be
-    processed independently, statelessness simplifies the design and
-    implementation of distributed applications.
-
--   **Decoupling of Components:** RESTful APIs allow for the decoupling
-    of components inside a distributed app. The client and server can
-    evolve independently if they follow the agreed-upon API contract.
-    Because changes or updates in one component do not necessarily
-    necessitate modifications in other components, this decoupling
-    provides for greater flexibility, scalability, and easier
-    maintenance of distributed apps.
-
--   **Distributed Data and Resource Access:** : RESTful APIs offer a
-    consistent and scalable solution to accessing and modifying
-    distributed data and resources. Clients can retrieve, create,
-    update, or remove server resources using HTTP methods. This
-    distributed access to resources enables efficient collaboration and
-    coordination among the app\'s various components, regardless of
-    their physical location.
-
--   **Integration and Interoperability:** RESTful APIs support the
-    integration and interoperability of distributed apps with external
-    systems or services. RESTful APIs can effortlessly communicate with
-    other online services by adhering to well-defined standards and
-    protocols such as HTTP and JSON, allowing distributed programs to
-    make use of external functionality, data sources, or third-party
-    services.
-
-by leveraging the power of RESTful APIs, Perfect Parking can achieve
-efficient communication, data exchange, and collaboration among its
-distributed components. The RESTful API acts as a bridge, allowing the
-distributed app to fully exploit the web\'s possibilities, allowing for
-the construction of scalable, interoperable, and robust distributed
-apps.(**Needs Citations)**
+In turn, the data can reveal situations when existing parking
+infrastructure is underutilized. If specific places continually display
+low traffic levels and plenty of parking, it may imply that the present
+parking facilities are properly fulfilling the needs of the community.
+In such instances, investing in new car parking structures may not be a
+high-priority activity, allowing city planners to more effectively
+allocate resources to other important urban development initiatives.
 
 ## Computer Vision
 
-### What Is Computer Vision
-
-Computer vision is a multifaceted field of study aimed at teaching
+Computer vision is a multifaceted field of study aimed at training
 computers how to interpret and process visual information from images or
 videos. It entails the creation of algorithms and approaches for
 extracting useful insights from visual data. (Simplilearn, 2023) In the
@@ -771,135 +815,7 @@ industries. Some notable applications include:
     environment, navigate autonomously, and interact with objects and
     humans. **(needs Citation)**
 
-### Utilizing Computer Vision in Perfect Parking
-
-Computer vision, particularly when combined with OpenCV, offers a wide
-range of applications, including car park occupancy detection. In
-general, computer vision algorithms can be used to analyse pixel
-intensities in images and video frames acquired by cameras to identify
-whether a parking spot is occupied or vacant.
-
-In the Perfect Parking application, computer vision using OpenCV plays a
-pivotal role in facilitating car park occupancy detection. By deploying
-cameras strategically within the car park, the system can capture images
-or video frames in real-time. Through the analysis of pixel intensities,
-the system can differentiate between occupied and vacant parking spaces.
-The model can then be deployed to continuously monitor the car park and
-provide up-to-date information on parking space availability to the
-users of your application.
-
-In conclusion, computer vision, particularly when combined with OpenCV,
-provides a versatile method for detecting car park occupancy. While its
-application goes beyond the project to a variety of sectors, the
-implementation within the perfect parking  application provides
-real-time monitoring of parking space availability, improving the
-overall user experience, and maximizing parking space utilization.
-
-### Future implications of Computer Vision in Parking Systems
-
-The use of computer vision techniques in parking systems has significant
-implications for parking management in the future. Parking systems can
-become more efficient, user-friendly, and automated with the use of
-computer vision algorithms. Aside from detecting car park occupancy,
-computer vision can be used for actions such as license plate
-recognition, vehicle tracking, and advanced parking analytics. Computer
-vision in parking systems has the ability to simplify parking
-operations, maximize space utilization, minimize congestion, and improve
-overall user experience. As computer vision technology advances, it will
-most certainly disrupt the parking sector and open the door for creative
-parking solutions. (brouton Lab, n.d.)
-
-## Restful APIs
-
-### What is a Restful API
-
-A RESTful API (Representational State Transfer Application Programming
-Interface) is a design style and set of constraints used for developing
-online services that allow systems to communicate and interact with one
-another via the internet. RESTful APIs are built on the REST concepts,
-which Roy Fielding introduced in his doctoral dissertation in the
-year 2000.
-
-Resources (such as data or functionality) in a RESTful API are
-identified by unique URLs (Uniform Resource Locators). Standard HTTP
-methods, such as GET (retrieve data), POST (create data), PUT (update
-data), and DELETE (delete data), can then be used to manipulate these
-resources.
-
-The key characteristics of a Restful API are:
-
--   Stateless: Each request from a client to the server must provide all
-    of the information required to interpret and process the request.
-    The server does not store any client state between requests.
-
--   Uniform Interface: RESTful APIs use a consistent and standard set of
-    methods (GET, POST, PUT, DELETE) and resource identifiers (URLs) to
-    interact with resources.
-
--   Client-Server Architecture: The client and server are different
-    entities that can evolve independently. The client is in charge of
-    the user interface, whereas the server is in charge of data storage
-    and business logic.
-
--   Self-descriptive Messages: Each request and response contains all of
-    the information required to understand the message, including the
-    media type and how to process it.
-
--   HATEOAS (Hypermedia as the Engine of Application State): is a
-    crucial REST principle, it enables the server to dynamically deliver
-    relevant links to guide clients through the application\'s state
-    transitions.
-
-RESTful APIs are commonly used in online and mobile apps to enable
-smooth integration between multiple systems and to provide a scalable
-and flexible method of accessing and manipulating data and services via
-the internet.
-
-### Benefits of Restful APIs
-
-Restful APIs offer numerous advantages for web and mobile application
-development such as:
-
--   Simplicity: Restful APIs have a simple design that uses conventional
-    HTTP methods, making them simple to understand and implement. This
-    ease of use speeds up the development process and decreases the
-    learning curve for developers.
-
--   Scalability: Restful APIs enable applications to scale efficiently
-    in response to increased traffic and user demand. Because they are
-    stateless, servers can process requests independently, allowing for
-    horizontal growth by adding more servers.
-
--   ease of integration: Restful APIs use widely recognized web
-    standards such as HTTP and JSON, allowing for smooth integration
-    with a variety of platforms and programming languages. This
-    compatibility encourages developer and team collaboration.
-
-Restful APIs are not limited to any one platform or operating system
-because they rely on web technology. This flexibility allows clients to
-access the API from various devices and environments.
-
-### Common Use Cases:
-
-Restful APIs are used in various domains such as:
-
--   Social Media Integration: Social media sites expose Restful APIs
-    that allow developers to incorporate sharing, login, and user
-    authentication services into their apps.
-
--   E-commerce: Restful APIs are used by e-commerce websites to manage
-    product catalogues, process orders, and handle payments.
-
--   Location-Based Services: Mapping providers such as Google Maps
-    provide Restful APIs for accessing geolocation data and route
-    information, making map integration easier.
-
--   IoT (Internet of Things): Restful APIs are critical for IoT devices
-    to communicate and share data with one another as well as with cloud
-    platforms, enabling smart home and industrial automation
-    applications.(**Citations needed)**
-
-## Object Recognition and AI
+### Object Recognition and AI
 
 Object recognition refers to the process of teaching a computer how to
 identify and classify objects within digital images or videos. It\'s
@@ -913,14 +829,12 @@ systems to train algorithms to recognize and classify objects. This
 technology has a wide range of applications, from self-driving cars to
 medical diagnosis to robotics. (Tech Target, n.d.)
 
-### Object Detection
-
 Object detection is a technique in computer vision that involves
 detecting objects of interest within an image or video stream. Finding
-the object(s) within a picture and categorizing them into various
-categories are the goals of object detection. Since object detection
-requires locating and recognizing multiple objects inside a picture, it
-is a more advanced technique than object recognition (Patel, 2020).
+objects within a picture and categorizing them into various categories
+are the goals of object detection. Since object detection requires
+locating and recognizing multiple objects inside a picture, it is a more
+advanced technique than object recognition (Patel, 2020).
 
 ### Cascading classifiers
 
@@ -1002,44 +916,140 @@ is their computational efficiency. They are suitable for real-time
 applications like video surveillance since they are rapid and effective
 to compute utilizing integral images. (Bąk, 2023)
 
-## Parking Business Sector
+### Future implications of Computer Vision in Parking Systems
 
-Parking management software is expected to see a compound annual growth
-rate (CAGR) of 12.8% and expand to a global market size of \$11.3
-billion by 2024. Additionally, it is anticipated that the market for
-artificial intelligence (AI) in parking management will increase by 20%
-yearly to \$1.5 billion by 2025. With these numbers in mind, it is
-obvious that the parking sector needs creative solutions that can
-harness the potential of AI to enhance parking management.
+The use of computer vision techniques in parking systems has significant
+implications for parking management in the future. Parking systems can
+become more efficient, user-friendly, and automated with the use of
+computer vision algorithms. Aside from detecting car park occupancy,
+computer vision can be used for actions such as license plate
+recognition, vehicle tracking, and advanced parking analytics. Computer
+vision in parking systems can simplify parking operations, maximize
+space utilization, minimize congestion, and improve overall user
+experience. As computer vision technology advances, it will most
+certainly disrupt the parking sector and open the door for creative
+parking solutions. (brouton Lab, n.d.)
 
-### Irish Trends
+## Distributed System/App
 
-Statistics from the Central Statistics office (CSO) of Ireland gives
-several suggestions that could encourage people to drive more in the
-future. In the top three are traffic congestion, and access to parking.
-(CSO.ie, 2019)
+A distributed system is a networked collection of autonomous entities
+(such as computers or devices) that collaborate to achieve a common goal
+or perform a particular task. Unlike a centralized system, in which all
+processing and decision-making takes place within a single entity, a
+distributed system divides and distributes the workload across entities
+over a large area.
 
-![](./docs/images/thesis/media/image3.png){width="5.896527777777778in"
-height="3.160416666666667in"}
+Each entity in a distributed system, known as a node or client,
+functions independently and can communicate with other client nodes or a
+server on a network. These nodes can be distributed geographically and
+have varying capabilities and rolls within the system. By leveraging the
+collective resources and capabilities of multiple nodes, a distributed
+system can achieve higher scalability, fault tolerance, and performance
+compared to a centralized system. (S.Gillis, 2022)
 
-[]{#_Toc133573279 .anchor}Figure : CSO.ie - Factors that would encourage
-more driving,
+![Star network -
+Wikipedia](./docs/images/thesis/media/image6.png){width="1.5277777777777777in"
+height="1.2916666666666667in"}
 
-### Global Trends
+[]{#_Toc142913784 .anchor}Figure 4: Distributed Clients communicating
+with a server on a Star Network
 
-The present approaches for locating parking spaces are inefficient and
-wasteful, requiring a large amount of time and fuel. People spend an
-average of 17 hours a year searching for parking spaces, according to
-(McCoy, n.d.) and Irish people waste four days a year. (Sawer, 2017) the
-solution intends to end this time and energy waste which will be
-advantageous to both users and the environment.
+[A distributed application, is a form of distributed system that focuses
+on providing functionality or services to end users. It includes the
+software components, communication protocols, and architectural design
+that allow the application to run in a distributed fashion. Distributed
+apps exploit the distributed nature of the underlying local
+hardware/recourses to handle large-scale data processing, concurrent
+user interactions, and complicated computations.]{.mark} [(Lutkevich,
+2022)]{.mark}
 
-It is anticipated that the global market for automated parking systems
-will increase from \$1.3 billion in 2020 to \$3.6 billion in 2025. By
-creating an AI-powered parking management system that can maximize
-parking spot use, lessen traffic congestion, and more, the Perfect
-Parking project seeks to meet this expanding need. and improve the
-overall user experience for drivers. (abdalslam, 2023).
+The use of distributed systems and apps has grown in popularity in a
+variety of fields, including e-commerce, social networks, cloud
+computing, and the Internet of Things (IoT). These systems have
+advantages such as higher availability, fault tolerance, and
+scalability, allowing for more efficient resource utilization and
+improved performance. (Cirrus, 2018)
+
+In the context of the Perfect Parking app, the distributed system/app
+architecture allows for the seamless integration of multiple client apps
+equipped with cameras and a central server. [The distributed system/app
+design allows for the smooth integration of many client applications
+equipped with cameras and a central server in the context of the Perfect
+Parking app. This distributed strategy provides efficient monitoring and
+management of parking spaces across multiple locations by leveraging the
+client apps\' combined computing capacity while centralizing data
+storage and analysis.]{.mark}
+
+[Perfect Parking seeks to improve scalability, fault tolerance, and
+real-time monitoring capabilities by incorporating distributed system
+principles and utilizing distributed apps. The app\'s distributed design
+enables effective utilization of local resources and seamless
+cooperation of many entities, thereby boosting the overall (coverage)
+functionality and performance of the parking management system.]{.mark}
+
+A Server REST API allows clients apps to provide updates to the server
+across the internet.
+
+### REST APIs
+
+#### Introduction to Restful API
+
+A RESTful API (Representational State Transfer Application Programming
+Interface) is a design style and set of constraints used for developing
+online services that allow systems to communicate and interact with one
+another via the internet. RESTful APIs are built on the REST concepts
+introduced by Roy Fielding in his doctoral dissertation in the year
+2000. These APIs enable the seamless interaction between distributed
+components, offering a standardized approach for accessing and
+manipulating resources.
+
+Resources in a RESTful API are identified by unique URLs (Uniform
+Resource Locators), and standard HTTP methods such as GET (retrieve
+data), POST (create data), PUT (update data), and DELETE (delete data)
+are employed to manipulate these resources. The key characteristics of a
+RESTful API include being stateless, having a uniform interface,
+following a client-server architecture, using self-descriptive messages,
+and incorporating HATEOAS (Hypermedia as the Engine of Application
+State) to guide clients through state transitions.
+
+#### Benefits and Use Cases of Restful APIs
+
+Restful APIs offer numerous advantages for web and mobile application
+development. They provide simplicity through their straightforward
+design, using conventional HTTP methods for ease of implementation.
+Additionally, they support scalability, enabling applications to
+efficiently handle increased traffic by distributing requests across
+servers. The ease of integration is another benefit, as Restful APIs
+utilize widely recognized web standards like HTTP and JSON, promoting
+compatibility across various platforms and languages.
+
+Restful APIs find application in various domains. They are crucial for
+social media integration, enabling sharing and user authentication
+services. E-commerce websites use them to manage product catalogues and
+process orders, while mapping providers leverage Restful APIs for
+location-based services. On the Internet of Things (IoT), these APIs
+facilitate communication between devices and cloud platforms,
+contributing to smart home and industrial automation applications.
+
+#### Role of REST APIs in Distributed Applications
+
+REST APIs play a pivotal role in enabling seamless communication and
+interaction between distributed components within applications. Founded
+on the principles of Representational State Transfer (REST), these APIs
+provide a standardized and scalable approach for developing distributed
+online applications.
+
+Key advantages of REST APIs include a standardized interface for
+client-server communication, statelessness which simplifies request
+processing, decoupling of components for flexibility and scalability,
+distributed data and resource access through HTTP methods, and support
+for integration and interoperability with external systems.
+
+By leveraging RESTful APIs, Perfect Parking achieves efficient
+communication, data exchange, and collaboration among its distributed
+components. The RESTful API acts as a bridge, allowing the app to
+harness the web\'s capabilities for constructing scalable,
+interoperable, and robust distributed applications.
 
 ## A Software Solution
 
@@ -1096,10 +1106,10 @@ negotiations, and reacting to change over planning ahead. (atlassian,
 n.d.)
 
 ![Les raisons pour utiliser les méthodes Agile en
-entreprise](./docs/images/thesis/media/image4.jpeg){width="4.258333333333334in"
+entreprise](./docs/images/thesis/media/image7.jpeg){width="4.258333333333334in"
 height="4.258333333333334in"}
 
-[]{#_Toc133573289 .anchor}Figure : Agile Development (Feer, 2020)
+[]{#_Toc133573289 .anchor}Figure 5: Agile Development (Feer, 2020)
 
 # Analysis and Design
 
@@ -1114,9 +1124,7 @@ availability, pricing, stay-hours, zones, and disability status.
 Additional benefits include reducing traffic congestion, fuel savings,
 time and reducing stress.
 
-## Automated Real-Time Parking Detection System.
-
-### Requirements Analysis: Automated Real-Time Parking Detection System
+## Automated Real-Time Parking Detection System
 
 The Automated Real-Time Parking Detection System is a critical component
 of the Perfect Parking application, ensuring effective monitoring of all
@@ -1132,24 +1140,24 @@ has a network of strategically located client apps known as parking
 monitors. These monitors continuously gather video footage of the
 parking lots and use OpenCV computer vision algorithms to autonomously
 identify parking spaces within the video footage to declare if the
-parking spots are available or occupied. (**Insert relevant code here)**
+parking spots are available or occupied.
 
 ### Seamless Integration and Centralized Updates
 
 Real-time data updates and occupancy changes are automatically pushed to
-the server **(relevant code needed)**, allowing for smooth integration
-with the Perfect Parking application. This centralized data flow ensures
-that the website and other client apps receive real-time updates on
-parking space availability in each monitored car park.
+the server allowing for smooth integration with the Perfect Parking
+application. This centralized data flow ensures that the website receive
+real-time updates on parking space availability in each monitored car
+park.
 
 ### User-Independent Monitoring
 
-The Automated Real-Time Parking Detection System, powered by OpenCV,
-operates with complete autonomy, requiring no user intervention for spot
-identification or updates. Users of the Perfect Parking app can depend
-on the system to deliver accurate and up-to-date information on parking
-space availability without having to interact with the video monitoring
-process manually.
+The Automated Real-Time Parking Detection System functions autonomously,
+eliminating the need for user involvement in spot identification or
+updates. Users of the Perfect Parking app can rely on the system to
+provide precise and current parking space availability information,
+streamlining the process without requiring manual interaction with the
+video monitoring process.
 
 Perfect Parking achieves a highly efficient and user-independent
 monitoring solution for each carpark in the database by implementing the
@@ -1159,106 +1167,42 @@ that users have a hassle-free parking experience, while the seamless
 integration ensures a full view of parking space availability across all
 sites.
 
-## The Main Software Application
+## Utilizing Computer Vision in Perfect Parking
 
-Perfect Parking is a web application that will allow users to find
-parking in a city. The application will allow users to search for
-parking near a specific location and will show the user data the nearest
-parking to their location.
+Computer vision, particularly when combined with OpenCV, offers a wide
+range of applications, including car park occupancy detection. In
+general, computer vision algorithms can be used to analyse pixel
+intensities in images and video frames acquired by cameras to identify
+whether a parking spot is occupied or vacant.
 
-## The supporting client Applications
+In the Perfect Parking application, computer vision using OpenCV plays a
+pivotal role in facilitating car park occupancy detection. By deploying
+cameras strategically within the car park, the system can capture images
+or video frames in real-time. Through the analysis of pixel intensities,
+the system can differentiate between occupied and vacant parking spaces.
+The model can then be deployed to continuously monitor the car park and
+provide up-to-date information on parking space availability to the
+users of your application.
 
-The client applications monitor the video feeds and other sensors of
-parking lots across a city and provides live updates to the Perfect
-Parking website once a change in the car park is detected such as a spot
-becomes available or is taken.
+In conclusion, computer vision, particularly when combined with OpenCVc,
+provides a versatile method for detecting car park occupancy. While its
+application goes beyond the project to a variety of sectors, the
+implementation within the perfect parking  application provides
+real-time monitoring of parking space availability, improving the
+overall user experience, and maximizing parking space utilization.
 
-### Identifying the free/busy car parking spaces
+## The Client Application
 
-A key design goal of the application is to find a low-cost, accurate,
-and scalable solution to identify if a car parking space is free or
-busy. To accomplish this goal, the application will use a combination of
-sensors and machine learning to identify if a car parking space is free
-or busy. The sensors will monitor the car parking space and will send
-data to a central server. The central server will then use a machine
-learning algorithm to identify if the car parking space is free or busy.
+The client application monitors the video feed of a parking lots across
+a city and provides live updates to the Perfect Parking website once a
+change in the car park is detected such as a spot becomes available or
+occupied.
 
-## Technologies
+### Image Processing: Identifying a parking space's occupancy.
 
-The technologies discussed and their usefulness evaluation for use in
-the project.
-
-### Computer Vision: OpenCV
-
-Machine learning is a key component of the application as it will be
-used to identify if a car parking space is free or busy. The powerful
-library OpenCV provides a wide range of features for computer vision
-applications. It is widely used across many different industries,
-including robotics, driverless cars, medical imaging, and more.
-
-To extract useful information or features, OpenCV processes visual data,
-such as photos or videos. Image filtering, feature detection, object
-recognition, and tracking are just a few of the techniques that OpenCV
-offers to process and analyze visual data. (Boesch, 2023)
-
-Several pre-trained cascading classifiers, including the well-known Haar
-cascades for face detection, are available in OpenCV for object
-detection. A parking monitor app powered by OpenCV will be used to
-detect if a parking spot has been filled or made empty, further
-improving the effectiveness of the system.
-
-The machine learning algorithm will be trained using data collected from
-the sensors (video camera). The machine learning algorithm will then be
-used to identify if a car parking space is free or busy.
-
-### Anaconda
-
-Anaconda is a popular distribution of the Python programming language
-that is widely used for data science and scientific computing. It comes
-with a sizable number of pre-installed libraries and tools that are
-frequently used in these domains, including Jupyter Notebook, NumPy,
-Pandas, and Matplotlib. (Root, 2020)
-
-Anaconda is designed to make it easy to set up and manage Python
-environments, which are essentially separate installations of Python
-with their own dependencies and libraries. When working on several
-projects with various requirements, this is especially helpful because
-it enables you to keep them separate from one another. (Root, 2020)
-
-The Conda package manager, which lets you easily install, update, and
-manage additional software packages and libraries, is included with
-Anaconda in addition to Python and its libraries. When working with
-non-Python libraries that are necessary for your project, this can be
-helpful. (McKinney, 2022)
-
-Utilising Anaconda has several benefits, one of which is how much easier
-it makes it to set up a Python environment for data research or
-scientific computing. It removes the need to individually install and
-configure each library, which can be a time-consuming and error-prone
-operation, by offering a pre-built distribution with many of the
-frequently used libraries already installed. (O Reilly, n.d.)
-
-Overall, Anaconda is a robust and adaptable tool that is well-liked by
-those who work in data research and scientific computing. Researchers,
-developers, and data analysts all favour it because of how simple it is
-to use and the extensive library of tools that are already installed.
-
-### Django Rest API
-
-Django is a popular web development framework that is written in Python.
-It provides a set of tools and features that make it easy to build
-complex web applications quickly and efficiently. Django was created by
-Adrian Holovaty and Simon Willison in 2005, it features a vast
-collection of classes, libraries and modules that can be implemented in
-individual projects. With Django, you can create web applications that
-follow the Model-View-Controller (MVC) architecture, which helps to
-separate the different components of your application and make it easier
-to manage. Additionally, Django comes with a lot of built-in
-functionality, including an ORM for database interactions, an admin
-interface for managing site content, and a templating system for
-rendering HTML pages. Overall, Django is a powerful and flexible
-framework that is well-suited for building all kinds of web
-applications. (Johnson, n.d.)
+To accomplish this goal, the client application will use image
+processing to identify if a car parking space is free or busy. If the
+client detects a change, it will send updated data to the server.
 
 ## Application Database design
 
@@ -1273,10 +1217,10 @@ monitored car parks. The \"ParkingLotMonitor\" table is linked to the
 parking application to track parking availability at each location.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image5.png){width="5.395833333333333in"
+generated](./docs/images/thesis/media/image8.png){width="5.395833333333333in"
 height="5.071345144356956in"}
 
-[]{#_Toc132726761 .anchor}Figure - Database Design
+[]{#_Toc132726761 .anchor}Figure 6 - Database Design
 
 ## System Actors
 
@@ -1295,10 +1239,10 @@ height="5.071345144356956in"}
     The monitor will be updating the status of the car park.
 
 ![Alt
-text](./docs/images/thesis/media/image6.png){width="5.694444444444445in"
+text](./docs/images/thesis/media/image9.png){width="5.694444444444445in"
 height="4.458333333333333in"}
 
-[]{#_Toc133414128 .anchor}Figure : User Use Case Diagram
+[]{#_Toc133414128 .anchor}Figure 7: User Use Case Diagram
 
 ## Use Case Descriptions
 
@@ -1516,10 +1460,10 @@ Alternative Flows:
 ## User Parking Sequence diagram
 
 ![Graphical user interface, application, table Description automatically
-generated](./docs/images/thesis/media/image7.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image10.png){width="5.905555555555556in"
 height="2.1in"}
 
-[]{#_Toc132726762 .anchor}Figure - User Parking Sequence Diagram
+[]{#_Toc132726762 .anchor}Figure 8- User Parking Sequence Diagram
 
 This is the sequence diagram of the process where a user is searching
 for parking near their location using the application. The user asks the
@@ -1548,6 +1492,131 @@ Finally, the application then sends a response to the user indicating
 that there are 5 parking lots available near their location, with the
 names The Henry St, O'Connell Street, Merchants Quay, Barrington Street.
 
+## Technologies
+
+The following section explores a range of technologies and assesses
+their relevance for implementation within the project.
+
+### Computer Vision: OpenCV
+
+Machine learning is a key component of the application as it will be
+used to identify if a car parking space is free or busy. The powerful
+library OpenCV provides a wide range of features for computer vision
+applications. It is widely used across many different industries,
+including robotics, driverless cars, medical imaging, and
+more.\[refencer\]
+
+Image filtering, feature detection, object recognition, and tracking are
+just a few of the techniques that OpenCV offers to process and analyze
+visual data. (Boesch, 2023)
+
+Several pre-trained cascading classifiers, including the well-known Haar
+cascades for face detection, are available in OpenCV for object
+detection. A parking monitor app powered by OpenCV will be used to
+detect if a parking spot has been filled or made empty, further
+improving the effectiveness of the system.
+
+The machine learning algorithm will be trained using data collected from
+the sensors (video camera). The machine learning algorithm will then be
+used to identify if a car parking space is free or busy.
+
+### Anaconda
+
+Anaconda is a popular distribution of the Python programming language
+that is widely used for data science and scientific computing. It comes
+with a sizable number of pre-installed libraries and tools that are
+frequently used in these domains, including Jupyter Notebook, NumPy,
+Pandas, and Matplotlib. (Root, 2020)
+
+Anaconda is designed to make it easy to set up and manage Python
+environments, which are essentially separate installations of Python
+with their own dependencies and libraries. When working on several
+projects with various requirements, this is especially helpful because
+it enables you to keep them separate from one another. (Root, 2020)
+
+The Conda package manager, which lets you easily install, update, and
+manage additional software packages and libraries, is included with
+Anaconda in addition to Python and its libraries. When working with
+non-Python libraries that are necessary for your project, this can be
+helpful. (McKinney, 2022)
+
+Utilising Anaconda has several benefits, one of which is how much easier
+it makes it to set up a Python environment for data research or
+scientific computing. It removes the need to individually install and
+configure each library, which can be a time-consuming and error-prone
+operation, by offering a pre-built distribution with many of the
+frequently used libraries already installed. (O Reilly, n.d.)
+
+Overall, Anaconda is a robust and adaptable tool that is well-liked by
+those who work in data research and scientific computing. Researchers,
+developers, and data analysts all favour it because of how simple it is
+to use and the extensive library of tools that are already installed.
+
+### Django Rest API
+
+Django is a popular web development framework that is written in Python.
+It provides a set of tools and features that make it easy to build
+complex web applications quickly and efficiently. Django was created by
+Adrian Holovaty and Simon Willison in 2005, it features a vast
+collection of classes, libraries and modules that can be implemented in
+individual projects. With Django, you can create web applications that
+follow the Model-View-Controller (MVC) architecture, which helps to
+separate the different components of your application and make it easier
+to manage. Additionally, Django comes with a lot of built-in
+functionality, including an ORM for database interactions, an admin
+interface for managing site content, and a templating system for
+rendering HTML pages. Overall, Django is a powerful and flexible
+framework that is well-suited for building all kinds of web
+applications. (Johnson, n.d.)
+
+## The Website
+
+Perfect Parking is a web application that will allow users to search for
+parking in a city.
+
+The application will allow users to search for parking near a specific
+location and will show the user data the nearest parking to their
+location.
+
+The web application allows the user to access real time data on parking
+space availability in multiple carparks and shows the user the distance
+to each car park in the database. Here is how the system works.
+
+1.  **Geolocation Retrieval:** When a user accesses the web application,
+    the system utilizes JavaScript to retrieve the user\'s current
+    geolocation (latitude and longitude) through the browser\'s
+    geolocation service this is triggered once the user clicks the
+    "Search Near Me" button on the Parking lot page.
+
+2.  **Data Query and Processing:** Upon clicking the \"Search Near Me\"
+    button, the web application queries a server-side backend or API to
+    obtain carpark monitor data within the specified radius from the
+    user\'s location.
+
+3.  **Probability Calculation:** The received carpark monitor data is
+    processed to calculate the probability of parking space availability
+    in each car-park. The system determines the likelihood of finding an
+    available parking spot based on the data obtained from the carpark
+    monitors i.e., how many spots are free or occupied.
+
+4.  ~~**Real-Time Updates:** The web application automatically updates
+    the table on the web page to display the probability of parking
+    spaces available in each carpark. The table includes relevant
+    details such as the car-park name, address, hours of operation, and
+    whether it is a paid parking area.~~
+
+5.  **User-Friendly Presentation:** The web application presents the
+    results in a user-friendly format, allowing users to easily view and
+    compare parking space availability in various carparks and shows the
+    distance to each carpark so the user can verify which carpark is
+    more convenient.
+
+To conclude, the web application provides users with real-time
+information into parking space availability, allowing them to make
+decisions when searching for a parking lot. The system enhances the
+parking management efficiency and user convenience, contributing to a
+smoother parking experience in urban areas.
+
 ## Website Layout
 
 ### Parking Lots View
@@ -1557,10 +1626,10 @@ of the parking lots available with some information about the different
 parking lots.
 
 ![Graphical user interface, application Description automatically
-generated](./docs/images/thesis/media/image8.png){width="6.6075240594925635in"
+generated](./docs/images/thesis/media/image11.png){width="6.6075240594925635in"
 height="2.218305993000875in"}
 
-[]{#_Toc133573281 .anchor}Figure : Parking Lots View
+[]{#_Toc133573281 .anchor}Figure 9: Parking Lots View
 
 ### Parking Lot View
 
@@ -1568,10 +1637,10 @@ Clicking on a parking lot name will display information on the selected
 parking lot such as a map and an image of the car park as well as other
 information about that specific parking lot.
 
-![](./docs/images/thesis/media/image9.png){width="5.865909886264217in"
+![](./docs/images/thesis/media/image12.png){width="5.865909886264217in"
 height="4.149245406824147in"}
 
-[]{#_Toc133573282 .anchor}Figure : Parking Lot View
+[]{#_Toc133573282 .anchor}Figure 10: Parking Lot View
 
 ### Parking Lot Monitors
 
@@ -1581,10 +1650,10 @@ will be asked to share the location by the browser. Information such as
 the probability of parking available is displayed which updates whenever
 there is a change in parking behaviour.
 
-![](./docs/images/thesis/media/image10.png){width="6.52001312335958in"
+![](./docs/images/thesis/media/image13.png){width="6.52001312335958in"
 height="3.1174004811898515in"}
 
-[]{#_Toc133573283 .anchor}Figure : Parking lot Monitors View
+[]{#_Toc133573283 .anchor}Figure 11: Parking lot Monitors View
 
 ### Parking Lot Monitor 
 
@@ -1595,10 +1664,10 @@ every time there is a change and the website is refreshed. In the image
 below you can see that the probability has changed for this specific
 parking lot compared to Figure 5 above.
 
-![](./docs/images/thesis/media/image11.png){width="6.650247156605424in"
+![](./docs/images/thesis/media/image14.png){width="6.650247156605424in"
 height="4.893287401574804in"}
 
-[]{#_Toc133573284 .anchor}Figure : Parking Lot Monitor View
+[]{#_Toc133573284 .anchor}Figure 12: Parking Lot Monitor View
 
 ### Know your Location Feature
 
@@ -1607,10 +1676,10 @@ browser will ask you to share your location. This is done so the Search
 near me feature can be used.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image12.png){width="3.4689293525809273in"
+generated](./docs/images/thesis/media/image15.png){width="3.4689293525809273in"
 height="2.8643963254593174in"}
 
-[]{#_Toc133573285 .anchor}Figure : Location Sharing
+[]{#_Toc133573285 .anchor}Figure 13: Location Sharing
 
 ### Search Near Me
 
@@ -1619,10 +1688,10 @@ that are monitored by how close they are to your location.
 
 ![A picture containing graphical user interface Description
 automatically
-generated](./docs/images/thesis/media/image13.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
 height="3.0840277777777776in"}
 
-[]{#_Toc133573286 .anchor}Figure : Search Near Me Feature
+[]{#_Toc133573286 .anchor}Figure 14: Search Near Me Feature
 
 ### Login
 
@@ -1630,10 +1699,10 @@ This is the login for the application. Django comes with a built-in
 authentication system to help with assisting the user logging in.
 
 ![Graphical user interface Description automatically
-generated](./docs/images/thesis/media/image14.png){width="4.541666666666667in"
+generated](./docs/images/thesis/media/image17.png){width="4.541666666666667in"
 height="3.3645833333333335in"}
 
-[]{#_Toc133647165 .anchor}Figure : User Login
+[]{#_Toc133647165 .anchor}Figure 15: User Login
 
 ### Sign up (User Registration)
 
@@ -1643,10 +1712,10 @@ the user during sign up.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./docs/images/thesis/media/image15.png){width="5.277134733158356in"
+generated](./docs/images/thesis/media/image18.png){width="5.277134733158356in"
 height="4.038522528433946in"}
 
-[]{#_Toc133647166 .anchor}Figure : User Registration
+[]{#_Toc133647166 .anchor}Figure 16: User Registration
 
 ## Rest API layout
 
@@ -1668,10 +1737,10 @@ This is the API Root page; you can see all the endpoints from the
 application.
 
 ![Table Description automatically
-generated](./docs/images/thesis/media/image16.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
 height="2.29375in"}
 
-[]{#_Toc133647167 .anchor}Figure : Django Rest Framework API Root
+[]{#_Toc133647167 .anchor}Figure 17: Django Rest Framework API Root
 
 The two of the most interesting endpoints would be parking-lots and
 parking-lot-monitors:
@@ -1685,10 +1754,10 @@ fields provide links to the next and previous pages of results if
 available.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image17.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
 height="4.209722222222222in"}
 
-[]{#_Toc133647168 .anchor}Figure : Parking Lot List
+[]{#_Toc133647168 .anchor}Figure 18: Parking Lot List
 
 ### Parking Lot Monitors
 
@@ -1699,10 +1768,10 @@ number of monitors in the list, and the \"next\" and \"previous\" fields
 provide links to the next and previous pages of results if available.
 
 ![Graphical user interface, application, Word Description automatically
-generated](./docs/images/thesis/media/image18.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image21.png){width="5.905555555555556in"
 height="4.06875in"}
 
-[]{#_Toc133647169 .anchor}Figure : Parking Lot Monitor List
+[]{#_Toc133647169 .anchor}Figure 19: Parking Lot Monitor List
 
 ### Parking Lot Monitor
 
@@ -1712,10 +1781,10 @@ longitude, and the probability of parking available for that for that
 certain parking lot
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image19.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image22.png){width="5.905555555555556in"
 height="1.886111111111111in"}
 
-[]{#_Toc133647170 .anchor}Figure : Parking Monitor Instance
+[]{#_Toc133647170 .anchor}Figure 20: Parking Monitor Instance
 
 ### Parking Lot
 
@@ -1723,10 +1792,10 @@ This is one instance of the parking lot, from here you can see the id,
 name, latitude, and longitude.
 
 ![Graphical user interface, application, Teams Description automatically
-generated](./docs/images/thesis/media/image20.png){width="5.905555555555556in"
+generated](./docs/images/thesis/media/image23.png){width="5.905555555555556in"
 height="2.0709930008748905in"}
 
-[]{#_Toc133647171 .anchor}Figure : Parking lot Instance
+[]{#_Toc133647171 .anchor}Figure 21: Parking lot Instance
 
 # Implementation
 
@@ -1847,21 +1916,125 @@ Parking. (Rocheeva, 2018)
 
 ### ParkingLot by Rocheeva
 
-The project ParkingLot preforms various pre-processing techniques on an
-image such as grey-scaling and blurring to reduce noise, to improve the
-accuracy of the object detection and to identify if vehicles are present
-or not in the designated parking spaces. The programme overlays the
-designated parking spaces onto the video, initialising them as available
-or occupied depending on the presence of cars. The code can identify
-when a car is present in a location by analyzing the average pixel
-intensity within the marked area and comparing it to a threshold value.
-A location is regarded as available if the average intensity is below
-the threshold value and seen as occupied if it is above the threshold.
+The project ParkingLot pre-processes an image by first blurring and then
+grey scaling the image to reduce noise to improve the accuracy of
+parking spot occupancy detection.
 
-#### Determining a parking space's status
+1\. def detect_motion(self)-\>bool:
 
-The function detectmotion() in motion_detector.py is responsible for
-determining if the status of parking spaces.
+2\.     #\...
+
+3\.     free_spaces: int = 0
+
+4\.     while True:
+
+5\.         #\...
+
+6\.         is_open, video_frame = video_capture.read()
+
+7\.         #\...
+
+8\.         blurred = GaussianBlur(video_frame.copy(), (5, 5), 3)
+
+9\.         grayed_image: Mat = cvtColor(blurred, cv2.COLOR_BGR2GRAY)
+
+10\.  
+
+11\.         for parking_spot in self.parking_spots:
+
+12\.            
+parking_spot.determine_and_mark_occupancy_from_image(grayed_image)
+
+13\.  
+
+The programme overlays the designated parking spaces onto the video,
+initialising them as available or occupied depending on the presence of
+cars.
+
+1\. def display_image(self, video_frame:Mat):
+
+2\.     for parking_spot in self.parking_spots:
+
+3\.         color:tuple = COLOR_GREEN if parking_spot.is_occupied else
+COLOR_BLUE
+
+4\.         parking_spot_text:str = str(parking_spot.parking_spot_id)
+
+5\.         draw_contours(video_frame, parking_spot.coordinates,
+parking_spot_text, COLOR_WHITE, color)
+
+6\.     imshow(str(self.video), video_frame)
+
+7\.  
+
+#### How a parking space status is determined
+
+The code can identify when a car is present in a location by analyzing
+the average pixel intensity within the marked area and comparing it to a
+threshold value. A location is regarded as available if the average
+intensity is below the threshold value and seen as occupied if it is
+above the threshold.
+
+The function determine_and_mark_occupancy_from_image() in
+motion_detector.py is responsible for determining if the status of
+parking spaces. the Laplacian operator helps enhance and emphasize edges
+and intensity variations in an image, which can aid in detecting
+features and boundaries. In the context of the code, it assists in
+determining the occupancy of a parking space by analysing the intensity
+changes within a region of interest. The contours, on the other hand,
+help create a mask that represents the detected object\'s boundary,
+which can be useful for further analysis and segmentation.
+
+1\.     def create_contours_mask(self)-\>list:
+
+2\.         new_coordinates = self.coordinates.copy()
+
+3\.  
+
+4\.         x, y, width, height = self.rect
+
+5\.         new_coordinates\[:, 0\] = self.coordinates\[:, 0\] - x
+
+6\.         new_coordinates\[:, 1\] = self.coordinates\[:, 1\] - y
+
+7\.  
+
+8\.         contours:list = drawContours(
+
+9\.             numpy.zeros((height, width), dtype=numpy.uint8),
+
+10\.             \[new_coordinates\],
+
+11\.             contourIdx=-1,
+
+12\.             color=255,
+
+13\.             thickness=-1,
+
+14\.             lineType=cv2.LINE_8)
+
+15\.  
+
+16\.         contours = contours == 255
+
+17\.         return contours
+
+18\.  
+
+19\.     def determine_and_mark_occupancy_from_image(self, image:Mat):
+
+20\.         x, y, width, height = self.rect
+
+21\.  
+
+22\.         roi_gray = image\[y:(y + height), x:(x + width)\]
+
+23\.         laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
+
+24\.  
+
+25\.         self.is_occupied = numpy.mean(numpy.abs(laplacian \*
+self.mask)) \< MotionDetector.LAPLACIAN
 
 #### A quick note on source code quality
 
@@ -1870,68 +2043,6 @@ above the allowed 15 according to sonarlint (Sonar Rules, n.d.) and
 refactoring the function is recommended. Also, the code seems to lack a
 consistent intuitive naming convention coupled with a sever lack of much
 needed comments.
-
-#### How a parking space status is determined
-
-As best as far as this author can figure; the following sections of
-detect motion are responsible for determining the average pixel insanity
-of a marked location (coordinates).
-
-1\. def detect_motion(self):
-
-2\.     \# \...
-
-3\.     coordinates = self.\_coordinates(p)
-
-4\.    
-
-5\.  
-
-6\.     rect = open_cv.boundingRect(coordinates)
-
-7\.    
-
-8\.  
-
-9\.     new_coordinates = coordinates.copy()
-
-10\.     new_coordinates\[:, 0\] = coordinates\[:, 0\] - rect\[0\]
-
-11\.     new_coordinates\[:, 1\] = coordinates\[:, 1\] - rect\[1\]
-
-12\.     \# \...
-
-13\.  
-
-14\.     \# \...
-
-15\.  
-
-16\.     mask = open_cv.drawContours(
-
-17\.         np.zeros((rect\[3\], rect\[2\]), dtype=np.uint8),
-
-18\.         \[new_coordinates\],
-
-19\.         contourIdx=-1,
-
-20\.         color=255,
-
-21\.         thickness=-1,
-
-22\.         lineType=open_cv.LINE_8)
-
-23\.  
-
-24\.     mask = mask == 255
-
-25\.     self.mask.append(mask)
-
-26\.    
-
-27\.     \# \...
-
-28\.  
 
 ### Modifying ParkingLot
 
@@ -2531,10 +2642,10 @@ interactions, and communicating with the server-side code to retrieve
 and display data.
 
 ![Diagram Description automatically
-generated](./docs/images/thesis/media/image21.png){width="1.6993766404199475in"
+generated](./docs/images/thesis/media/image24.png){width="1.6993766404199475in"
 height="3.2812445319335084in"}
 
-[]{#_Toc133647172 .anchor}Figure : Class Diagram
+[]{#_Toc133647172 .anchor}Figure 22: Class Diagram
 
 ## Enable Django REST framework.
 
@@ -2847,10 +2958,10 @@ so the user can view it. This cycle of request and response is how the
 client and server are linked together in a web application.
 
 ![Graphical user interface, text, application Description automatically
-generated](./docs/images/thesis/media/image22.png){width="4.080948162729658in"
+generated](./docs/images/thesis/media/image25.png){width="4.080948162729658in"
 height="2.5342760279965004in"}
 
-[]{#_Toc133573290 .anchor}Figure : How they work together
+[]{#_Toc133573290 .anchor}Figure 23: How they work together
 
 # Testing and Results
 
@@ -2963,10 +3074,11 @@ software being developed meets the requirements and expectations of the
 end-users.
 
 ![Behavior Driven Development (BDD) Cycle - Slide
-1](./docs/images/thesis/media/image23.png){width="4.025in"
+1](./docs/images/thesis/media/image26.png){width="4.025in"
 height="2.2642989938757654in"}
 
-[]{#_Toc133573291 .anchor}Figure : BDD development cycle (Collidu, n.d.)
+[]{#_Toc133573291 .anchor}Figure 24: BDD development cycle (Collidu,
+n.d.)
 
 ### BDD In Perfect Parking
 
@@ -3027,10 +3139,10 @@ TDD typically involves theses following steps:
     tests until the desired functionality is complete. (Steinfeld, 2020)
 
 ![What is TDD (Test Driven
-Development)?](./docs/images/thesis/media/image24.png){width="3.4380238407699037in"
+Development)?](./docs/images/thesis/media/image27.png){width="3.4380238407699037in"
 height="2.775in"}
 
-[]{#_Toc133573292 .anchor}Figure : How TDD Works (BasuMallick, 2022)
+[]{#_Toc133573292 .anchor}Figure 25: How TDD Works (BasuMallick, 2022)
 
 TDD can help increase productivity in addition to code quality by
 decreasing time spent on debugging and by establishing a clear set of
