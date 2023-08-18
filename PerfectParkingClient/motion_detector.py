@@ -38,15 +38,17 @@ class ParkingSpot:
         contours = contours == 255
         return contours
 
-    def determine_and_mark_occupancy_from_image(self, image:Mat):
+    def determine_and_mark_occupancy_from_image(self, blurred_grayed_image:Mat):
         """Determines if the parking spot is occupied from the image and marks the parking spot as
         occupied or not occupied."""
         x, y, width, height = self.rect
 
-        roi_gray = image[y:(y + height), x:(x + width)]
-        laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
+        parking_spot_image:Mat = blurred_grayed_image[y:(y + height), x:(x + width)]
+        laplacian = cv2.Laplacian(parking_spot_image, cv2.CV_64F)
 
-        self.is_occupied = numpy.mean(numpy.abs(laplacian * self.mask)) < MotionDetector.LAPLACIAN
+        laplacian_mean: float = numpy.mean(numpy.abs(laplacian * self.mask))
+        self.is_occupied = laplacian_mean < MotionDetector.LAPLACIAN_UPPER_LIMIT
+
 
     def has_changed(self, is_occupied: bool) -> bool:
         """Checks if the parking occupancy has changed.
@@ -72,7 +74,7 @@ class ParkingSpot:
 
         
 class MotionDetector:
-    LAPLACIAN = 1.4
+    LAPLACIAN_UPPER_LIMIT = 1.4
 
     def __init__(self, video, parking_spots_json_dict, start_frame, parking_monitor_data: ParkingMonitorData):
         self.video = video
@@ -107,11 +109,11 @@ class MotionDetector:
             if not is_open:
                 raise CaptureReadError(f"Error reading video capture on frame {video_frame}")
 
-            blurred = GaussianBlur(video_frame.copy(), (5, 5), 3)
-            grayed_image: Mat = cvtColor(blurred, cv2.COLOR_BGR2GRAY)
+            blurred_image = GaussianBlur(video_frame.copy(), (5, 5), 3)
+            blurred_grayed_image: Mat = cvtColor(blurred_image, cv2.COLOR_BGR2GRAY)
 
             for parking_spot in self.parking_spots:
-                parking_spot.determine_and_mark_occupancy_from_image(grayed_image)
+                parking_spot.determine_and_mark_occupancy_from_image(blurred_grayed_image)
 
 
 
