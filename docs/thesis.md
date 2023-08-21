@@ -285,10 +285,9 @@ parking spot has been filled or made empty.
 
 [6.2 Future Development [65](#future-development)](#future-development)
 
-[6.2.1 Sensors [65](#sensors)](#sensors)
+[6.2.1 Sensors [65](#_Toc133652026)](#_Toc133652026)
 
-[6.2.2 Collecting of data
-[65](#collecting-of-data)](#collecting-of-data)
+[6.2.2 Collecting of data [65](#_Toc133652027)](#_Toc133652027)
 
 [6.3 Reflections [66](#reflections)](#reflections)
 
@@ -703,13 +702,14 @@ exabytes of data that is created and collected over time. (Botelho,
 2020).
 
 Big data refers to a wide range of digital sources that provide valuable
-insights into human behaviour and preferences. User browsing history,
-for example, provides web interactions and engagement patterns, whilst
-search queries provide insights into information-seeking behaviours.
-Email text reveals communication patterns, but photographs document
-aesthetic preferences and experiences. These examples demonstrate big
-data\'s vast potential to influence decision-making and obtain a deeper
-understanding across multiple disciplines.
+insights into human behaviour and preferences. Examples such as:
+
+-   User browsing history provides web interactions and engagement
+    patterns.
+
+-   Search queries provide insights into information-seeking behaviours.
+
+-   Emails reveals communication patterns.
 
 ### Why is Big Data important?
 
@@ -781,12 +781,10 @@ allocate resources to other important urban development initiatives.
 Computer vision is a multifaceted field of study aimed at training
 computers how to interpret and process visual information from images or
 videos. It entails the creation of algorithms and approaches for
-extracting useful insights from visual data. (Simplilearn, 2023) In the
-context of the Perfect Parking application, computer vision utilizing
-OpenCV allows for pixel intensity analysis to detect whether a parking
-space is occupied or vacant. The system can detect the presence of
-vehicles in real-time by utilizing image processing, pattern
-recognition, and feature extraction.
+extracting useful insights from visual data. (Simplilearn, 2023). In the
+context of the proposed Parking application Computer vision can detect
+the presence of vehicle in a parking spot in real-time by utilizing
+image processing, pattern recognition, and feature extraction.
 
 ### Applications of Computer Vision
 
@@ -930,7 +928,7 @@ experience. As computer vision technology advances, it will most
 certainly disrupt the parking sector and open the door for creative
 parking solutions. (brouton Lab, n.d.)
 
-## Distributed System/App
+## Distributed Systems
 
 A distributed system is a networked collection of autonomous entities
 (such as computers or devices) that collaborate to achieve a common goal
@@ -990,9 +988,7 @@ functionality and performance of the parking management system.]{.mark}
 A Server REST API allows clients apps to provide updates to the server
 across the internet.
 
-### REST APIs
-
-#### Introduction to Restful API
+### RESTful APIs
 
 A RESTful API (Representational State Transfer Application Programming
 Interface) is a design style and set of constraints used for developing
@@ -1012,7 +1008,7 @@ following a client-server architecture, using self-descriptive messages,
 and incorporating HATEOAS (Hypermedia as the Engine of Application
 State) to guide clients through state transitions.
 
-#### Benefits and Use Cases of Restful APIs
+### Benefits and Use Cases of Restful APIs
 
 Restful APIs offer numerous advantages for web and mobile application
 development. They provide simplicity through their straightforward
@@ -1031,7 +1027,7 @@ location-based services. On the Internet of Things (IoT), these APIs
 facilitate communication between devices and cloud platforms,
 contributing to smart home and industrial automation applications.
 
-#### Role of REST APIs in Distributed Applications
+### Role of REST APIs in Distributed Applications
 
 REST APIs play a pivotal role in enabling seamless communication and
 interaction between distributed components within applications. Founded
@@ -1124,21 +1120,214 @@ availability, pricing, stay-hours, zones, and disability status.
 Additional benefits include reducing traffic congestion, fuel savings,
 time and reducing stress.
 
-## Automated Real-Time Parking Detection System
+## Providing Website and Real-Time Services
 
-The Automated Real-Time Parking Detection System is a critical component
-of the Perfect Parking application, ensuring effective monitoring of all
-car parks registered in the database. This innovative system uses client
-apps with advanced video processing capabilities, powered by the OpenCV
-library, to seamlessly detect and monitor parking spaces.
+This subsection delves into the architectural analysis and design
+considerations of the Perfect Parking web application. It investigates
+Django\'s contribution to delivering the website and explains how the
+website functions as a service for end users looking for real-time
+parking space availability information. This analysis provides insights
+into the underlying technology and design principles that contribute to
+the Perfect Parking application\'s user-friendliness and efficiency.
 
-### Video Processing and Automated Spot Identification with OpenCV
+### Providing the website using Django
 
-The intelligent video processing module, which uses the strong
-capabilities of OpenCV, is at the heart of the system. Each parking lot
-has a network of strategically located client apps known as parking
-monitors. These monitors continuously gather video footage of the
-parking lots and use OpenCV computer vision algorithms to autonomously
+Django, a high-level Python web framework, plays an important role in
+providing the web-based application to users. Its reliable architecture
+makes developing and deploying web applications easier. In the context
+of this project, Django acts as the server-side framework responsible
+for handling user requests and delivering the Perfect Parking website.
+
+Here\'s a rundown of how Django is utilized to provide the website:
+
+### Web Application Architecture
+
+The architecture of the Perfect Parking web application is built on
+Django\'s Model-View-Controller (MVC) framework, also known as
+Model-View-Template (MVT) in Django. This architecture ensures a clear
+separation of concerns, making it easier to manage the application\'s
+various components.
+
+### Model Creation and Database Management
+
+The heart of the Perfect Parking web application\'s database structure
+is defined within the models.py class using Django\'s Object-Relational
+Mapping (ORM) system. This class defines the attributes and structure of
+the database tables, including parking lots and monitors. For instance,
+the ParkingLot model encapsulates crucial details such as name, address,
+hours, and availability. Similarly, the ParkingLotMonitor model
+represents monitor data, including location, availability probability,
+and last update timestamp.
+
+### User Request Handling
+
+When a user accesses the website, their request is routed through
+Django\'s URL dispatcher. This dispatcher maps the URL to a specific
+view function that will process the request.
+
+### View Functions and Templates
+
+Python view functions handle the processing of user requests. They
+interact with the models of the application to retrieve data, perform
+calculations, and generate dynamic content. The view functions render
+templates once the processing is complete.
+
+### Templates for Dynamic Content
+
+Templates are HTML files with placeholders for dynamic content. These
+templates are populated with data from the view functions and are
+responsible for generating the final HTML that is sent to the user\'s
+browser.
+
+### Rendering the Response
+
+Django\'s template engine renders the dynamic content into HTML,
+creating a complete response. This response is then sent to the user\'s
+browser, which interprets and displays the content.
+
+## Providing a Service to the End User
+
+The Perfect Parking website is designed to provide an efficient and
+user-friendly service to end users seeking real-time information on
+parking space availability. Here\'s how the website serves the end user:
+
+### Real-Time Parking Space Availability
+
+The website allows users to initiate a search for available parking
+spaces within Limerick City and will show the user the distance in
+kilometres to the parking lots. Users are presented with a \"Search Near
+Me\" button, which triggers the geolocation retrieval and data query
+process.
+
+### Geolocation Retrieval and Query
+
+Upon clicking the \"Search Near Me\" button, the website retrieves the
+user\'s current geolocation through JavaScript. The obtained latitude
+and longitude coordinates are sent to the server to query carpark
+monitor data within the specified radius.
+
+### Probability Calculation and Presentation
+
+The server processes the carpark monitor data and calculates the
+probability of parking space availability for each carpark. The results
+are dynamically presented in a table format on the website.
+
+### User Friendly Interface
+
+The website has an easy-to-use layout that allows users to readily
+interpret the results. The table provides useful details such as
+car-park names, addresses, operating hours, and the probability of
+parking availability.
+
+### Real Time Updates
+
+As users interact with the website, it dynamically updates the table
+based on their location to the carpark and how busy the carpark is. This
+real-time update ensures that users receive accurate and up-to-date
+information.
+
+In summary, Django serves as the backbone of the Perfect Parking web
+application, facilitating the delivery of the website to users. The
+website offers an easy-to-use service, leveraging geolocation and
+dynamic data processing to provide real-time parking space availability
+information, thereby enhancing parking management and user convenience.
+The model creation using the models**.**py class defines the database
+structure, supporting seamless data management and interaction with the
+application\'s backend.
+
+## Real-Time Communication and Parking Data Updates: REST API Integration
+
+This subsection delves into the intricacies of integrating the car-park
+camera monitoring API within the Perfect Parking system. It explores how
+the REST architecture facilitates communication between client
+applications (parking monitors) and the server, leading to real-time
+updates of parking data. This analysis sheds light on the efficiency and
+reliability of the communication process, ensuring accurate parking
+availability information for end users.
+
+### Car-Park Camera Monitoring API and Communication via REST
+
+The car-park camera monitoring API forms a crucial link in the Perfect
+Parking system, enabling seamless communication between the client
+applications, representing the parking monitors, and the server. This
+communication occurs through the utilization of the Representational
+State Transfer (REST) architectural style.
+
+### REST Communication Principles
+
+REST offers a standardized approach for exchanging data between
+distributed systems. In the context of Perfect Parking, the car-park
+camera monitoring API follows the principles of REST to ensure efficient
+and scalable communication:
+
+-   **Resource-Based Interaction:** Each monitored parking lot is
+    treated as a resource, identified by a unique URL. For instance, a
+    parking lot monitor can be accessed via its own URL, and actions
+    like updating its status or availability can be triggered using
+    standard HTTP methods like POST, PUT, or DELETE.
+
+-   **Statelessness**: REST APIs are stateless, meaning that each
+    request from a client to the server must contain all necessary
+    information to process the request. This simplifies server
+    management and supports scalability.
+
+-   **Uniform Interface**: REST APIs adhere to a consistent set of
+    methods and resource identifiers (URLs). This uniformity enhances
+    interoperability and allows different clients to interact with the
+    server using the same conventions.
+
+### Client-Server Interaction
+
+The client applications, which represent the carpark monitors, initiate
+communication with the server using RESTful endpoints. These endpoints
+correspond to specific functionalities related to parking data updates.
+For instance:
+
+-   The client application can send a POST request to update the
+    availability status of parking spaces as cars enter or exit.
+
+-   A PUT request can be utilized to update the probability of parking
+    availability, calculated based on real-time data analysis.
+
+### Parking Data Updates
+
+During this communication, the clients update various parking data
+attributes on the server:
+
+-   **Availability Status**: As vehicles enter or leave parking spaces,
+    the car-park monitors send data to the server, updating the status
+    of each parking spot. The server interprets these updates and
+    adjusts the availability status accordingly.
+
+```{=html}
+<!-- -->
+```
+-   **Probability Calculation**: The clients periodically send data
+    related to occupancy, which the server uses to calculate the
+    probability of available parking spaces. This dynamic probability is
+    then communicated back to users in real-time through the website.
+
+### Real Time Updates and Reliability
+
+The RESTful communication between clients and the server ensures that
+the parking data is consistently updated, maintaining the accuracy and
+reliability of the information presented to users. This real-time
+interaction enables users to access current parking availability
+probabilities, enhancing their decision-making process.
+
+In summary, the car-park camera monitoring client API implements RESTful
+communication principles to facilitate a robust connection between
+itself and the server. Through this connection, real-time parking data
+updates are seamlessly transmitted, ensuring the accuracy of the
+information presented to users on the website. This architecture
+supports the overall goal of providing users with real-time insights
+into parking availability.
+
+## Automated Real-Time Parking Detection
+
+The Parking Monitor clients monitor the car parks registered in the
+database. This network of client applications will use advanced video
+processing capabilities, powered by the OpenCV library to autonomously
 identify parking spaces within the video footage to declare if the
 parking spots are available or occupied.
 
@@ -1146,50 +1335,16 @@ parking spots are available or occupied.
 
 Real-time data updates and occupancy changes are automatically pushed to
 the server allowing for smooth integration with the Perfect Parking
-application. This centralized data flow ensures that the website receive
-real-time updates on parking space availability in each monitored car
-park.
-
-### User-Independent Monitoring
-
-The Automated Real-Time Parking Detection System functions autonomously,
-eliminating the need for user involvement in spot identification or
-updates. Users of the Perfect Parking app can rely on the system to
-provide precise and current parking space availability information,
-streamlining the process without requiring manual interaction with the
-video monitoring process.
-
-Perfect Parking achieves a highly efficient and user-independent
-monitoring solution for each carpark in the database by implementing the
-Automated Real-Time Parking Detection System with OpenCV. The system\'s
-automated video processing using OpenCV, and real-time updates ensure
-that users have a hassle-free parking experience, while the seamless
-integration ensures a full view of parking space availability across all
-sites.
+application. This centralized data flow ensures that the server receives
+real-time updates on parking space availability.
 
 ## Utilizing Computer Vision in Perfect Parking
 
-Computer vision, particularly when combined with OpenCV, offers a wide
-range of applications, including car park occupancy detection. In
-general, computer vision algorithms can be used to analyse pixel
-intensities in images and video frames acquired by cameras to identify
-whether a parking spot is occupied or vacant.
-
-In the Perfect Parking application, computer vision using OpenCV plays a
-pivotal role in facilitating car park occupancy detection. By deploying
-cameras strategically within the car park, the system can capture images
-or video frames in real-time. Through the analysis of pixel intensities,
-the system can differentiate between occupied and vacant parking spaces.
-The model can then be deployed to continuously monitor the car park and
-provide up-to-date information on parking space availability to the
-users of your application.
-
-In conclusion, computer vision, particularly when combined with OpenCVc,
-provides a versatile method for detecting car park occupancy. While its
-application goes beyond the project to a variety of sectors, the
-implementation within the perfect parking  application provides
-real-time monitoring of parking space availability, improving the
-overall user experience, and maximizing parking space utilization.
+Cameras deployed within the car park capture video in real-time. The
+Perfect Parking monitor application will use OpenCV to detect a car park
+spot's occupancy by analysing video frames. The monitor application
+continuously monitors the car park and provide up-to-date information on
+parking space availability to the server.
 
 ## The Client Application
 
@@ -1910,7 +2065,123 @@ The Perfect Parking Server receives parking status data from client
 applications. A client monitor app is responsible for processing video
 and determining if parking is available. A proof-of-concept project by
 Olga Rocheeva was sourced on GitHub and built upon to work with Perfect
-Parking. (Rocheeva, 2018)
+Parking (Rocheeva, 2018).
+
+## Implementation of Car-Park Monitoring and Data Reporting using REST API
+
+This section provides an in-depth insight into the practical
+implementation of the client application responsible for carpark
+monitoring. The client application\'s core functionality is to detect
+parking space availability and communicate this data to the central
+server using a REST API.
+
+The client application, known as PerfectParkingClient, encapsulates
+crucial classes that enable the monitoring and reporting of parking
+spaces:
+
+-   ParkingMonitorData: This class stores key parking monitor data. It
+    receives configuration data from a file and stores attributes such
+    as the ID, name, position, parking spots, and authentication
+    credentials of the monitor.
+
+-   RestApiUtility: This class is essential for providing updates to the
+    central server over the REST API. It creates and transmits PUT
+    requests containing updated parking monitor data, such as the number
+    of available parking spaces and the probability of parking
+    availability.
+
+-   ParkingSpot: This class represents individual parking spaces,
+    recording their coordinates as well as their occupancy state. Based
+    on visual processing, it determines whether a parking space is
+    occupied.
+
+-   MotionDetector: This class manages the monitoring of parking spaces.
+    It detects the occupancy state of each parking spot in a video feed
+    using image processing algorithms. When the parking occupancy
+    changes, the RestApiUtility sends the information to the central
+    server.
+
+The process involves capturing a video feed, processing frames to
+determine parking spot occupancy, and then reporting the number of
+available spaces and parking availability probability to the server
+through the REST API.
+
+Furthermore, the communication with the server utilizes the
+update_server_parking_monitor_data method of the RestApiUtility class.
+This method constructs a JSON object with the relevant parking monitor
+data, encapsulates it within a PUT request, and sends it to the server.
+The server responds with the outcome of the update.
+
+Real-time parking space monitoring and reporting are made possible by
+seamlessly integrating the client application with the server via
+RESTful communication, resulting in an accurate and up-to-date parking
+availability display for end users.
+
+## Implementation of Perfect Parking Web Application
+
+The Perfect Parking web application is developed using the Django
+framework, enabling the creation of a robust parking management system.
+This application acts as a hub for users to access real-time parking
+information and monitor the availability of parking spaces in multiple
+parking lots.
+
+### Model Based Data Management
+
+The data structure of the application is designed using Django\'s
+model-driven architecture. The application defines two key classes in
+the models.py file: ParkingLot and ParkingLotMonitor. The ParkingLot
+class contains information about parking lots such as their name,
+address, hours of operation, and available parking spaces. The
+ParkingLotMonitor class, on the other hand, contains information about
+the parking lot monitors, such as parking availability probability, and
+status.
+
+### User Friendly Interface
+
+The Perfect Parking application\'s front-end was designed to be simple
+and easy to use. Users can easily interact with the web
+application by web browsers. When users use the app, they are met with
+an interactive interface that displays real-time parking information.
+
+### Views and Templates
+
+To successfully present data to users, the application takes advantage
+of Django\'s views and templates. Views, which are implemented as Python
+functions, handle incoming HTTP requests and generate appropriate
+responses The user interface is rendered using templates, which are
+structured as HTML files with placeholders for dynamic data.
+
+The views of the application retrieve data from the models and send it
+to templates for rendering. For example, a view could query the database
+to get information about available parking lots and the monitoring
+devices that go with them. This data is then organized and sent to
+templates to sgenerate user-readable output.
+
+### Real time Data Integration
+
+The application\'s real-time data update approach is one of its most
+notable features. This is done by frequent interactions with parking lot
+monitors\' REST APIs. These APIs provide the most recent parking
+availability data. This data is processed by the application\'s views,
+which dynamically update the user interface to reflect changes in
+parking status.
+
+### User Query Tracking
+
+The application also tracks user queries and interactions. When users
+search for parking lots based on specific geographic coordinates, these
+queries are logged and stored in the database. This feature not only
+enhances user experience but also provides valuable insights into user
+preferences and trends.
+
+### Implementation Highlights
+
+The Perfect Parking web application implementation demonstrates the use
+of Django\'s models for structured data management. The user interface
+is simple to use, and templates dynamically render real-time data. The
+application keeps users informed about parking space availability by
+interacting with REST APIs. Furthermore, the system logs user inquiries,
+providing a detailed view of user behaviour.
 
 ## The Client App
 
@@ -1977,13 +2248,35 @@ above the threshold.
 
 The function determine_and_mark_occupancy_from_image() in
 motion_detector.py is responsible for determining if the status of
-parking spaces. the Laplacian operator helps enhance and emphasize edges
-and intensity variations in an image, which can aid in detecting
-features and boundaries. In the context of the code, it assists in
-determining the occupancy of a parking space by analysing the intensity
-changes within a region of interest. The contours, on the other hand,
-help create a mask that represents the detected object\'s boundary,
-which can be useful for further analysis and segmentation.
+parking spaces. The Laplacian operator helps enhance and emphasize edges
+and intensity variations in an image aiding in detecting features and
+boundaries.
+
+1\. def determine_and_mark_occupancy_from_image(self,
+blurred_grayed_image:Mat):
+
+2\.     x, y, width, height = self.rect
+
+3\.  
+
+4\.     parking_spot_image:Mat = blurred_grayed_image\[y:(y + height),
+x:(x + width)\]
+
+5\.     laplacian = cv2.Laplacian(parking_spot_image, cv2.CV_64F)
+
+6\.  
+
+7\.     laplacian_mean: float = numpy.mean(numpy.abs(laplacian \*
+self.mask))
+
+8\.     self.is_occupied = laplacian_mean \<
+MotionDetector.LAPLACIAN_UPPER_LIMIT
+
+In the context of the code, it assists in determining the occupancy of a
+parking space by analysing the intensity changes within a region of
+interest. The contours, on the other hand, help create a mask that
+represents the detected object\'s boundary, which can be useful for
+further analysis and segmentation.
 
 1\.     def create_contours_mask(self)-\>list:
 
@@ -2018,23 +2311,6 @@ which can be useful for further analysis and segmentation.
 16\.         contours = contours == 255
 
 17\.         return contours
-
-18\.  
-
-19\.     def determine_and_mark_occupancy_from_image(self, image:Mat):
-
-20\.         x, y, width, height = self.rect
-
-21\.  
-
-22\.         roi_gray = image\[y:(y + height), x:(x + width)\]
-
-23\.         laplacian = cv2.Laplacian(roi_gray, cv2.CV_64F)
-
-24\.  
-
-25\.         self.is_occupied = numpy.mean(numpy.abs(laplacian \*
-self.mask)) \< MotionDetector.LAPLACIAN
 
 #### A quick note on source code quality
 
@@ -3261,18 +3537,44 @@ surpass the needs and expectations.
 
 ## Future Development
 
-While developing the Perfect Parking application there was a challenge
-when it came to incorporating parking sensors into the application. Due
-to budget and time constraints, it was determined that such sensors were
-beyond the scope of the project. While doing the project it was
-recognized that parking sensors would have been a valuable addition to
-the application but understood that this would require collecting large
-amounts of personal data from users.
+While developing the Perfect Parking application the use of statistical
+analysis and machine learning on big data was limited by
+time.[]{#_Toc133652027 .anchor} For example, here is a graph based on
+randomly generated records of car park activity generated.
 
-### Sensors
+![A graph with blue lines Description automatically
+generated](./docs/images/thesis/media/image28.png){width="5.885416666666667in"
+height="4.416666666666667in"}
 
-Overhead Cameras will watch the car parking space and will feed the
-video stream to a local client application.
+Figure 26 Parking Test Data Histogram
+
+Using Machine learning with collected real world big data the
+application could give predictions of a car park's occupancy for a time
+in the future and answer user queries e.g., "Will there be available
+parking like tomorrow at 3:00 PM in Limerick city?"
+
+By adding local and cultural context to data points predictions could be
+improved beyond a typical Monday to Sunday and hours predication e.g.,
+parking in Limerick city at 3:00 PM on an average Tuesday is not the
+same as parking on 3:00 PM on Christmas EVE on a Tuesday. With enough
+collected data over long time spans the application could make
+predictions for holidays.
+
+This data analysis and the predictions could be used to help with urban
+planning i.e., the need to build (or not) more car parks.
+
+![A graph with blue bars Description automatically
+generated](./docs/images/thesis/media/image29.png){width="5.770833333333333in"
+height="4.5in"}
+
+Figure 27 User Request Talley for A Given Monday
+
+The initial work for this is detailed in two Juyter notebooks
+[parking-log-data-analysis.ipynb](https://github.com/rhys-lit/perfect-parking-fyp/blob/master/notebooks/parking-log-data-analysis.ipynb)
+and
+[parking-request-data-analysis.ipynb](https://github.com/rhys-lit/perfect-parking-fyp/blob/master/notebooks/parking-request-data-analysis.ipynb)
+at
+<https://github.com/rhys-lit/perfect-parking-fyp/tree/master/notebooks>
 
 ### Collecting of data
 
