@@ -1,4 +1,4 @@
-"""Used to calculate the distance between two GPS coordinates."""
+"""Defines the models used in the PerfectParking app."""
 from geopy.distance import geodesic
 from django.db import models
 from django.contrib.auth.models import User
@@ -112,13 +112,13 @@ class ParkingLotMonitor(models.Model):
     def __str__(self) -> str:
         return str(self.name)
 
-    # override update method to create a parking lot log
     def update(self, *args, **kwargs):
+        """Overrides the update method to create a parking lot log."""
         super(ParkingLotMonitor, self).save(*args, **kwargs)
         ParkingLotLog.objects.create(parking_lot=self.parkingLot, logged_by_monitor=self, free_parking_spaces=self.free_parking_spaces)
 
-    # override save method to create a parking lot log
     def save(self, *args, **kwargs):
+        """Overrides the save method to create a parking lot log."""
         super(ParkingLotMonitor, self).save(*args, **kwargs)
         ParkingLotLog.objects.create(parking_lot=self.parkingLot, logged_by_monitor=self, free_parking_spaces=self.free_parking_spaces)
 

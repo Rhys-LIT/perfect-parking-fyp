@@ -140,7 +140,7 @@ class MotionDetector:
             color:tuple = COLOR_GREEN if parking_spot.is_occupied else COLOR_BLUE
             parking_spot_text:str = str(parking_spot.parking_spot_id)
             draw_contours(video_frame, parking_spot.coordinates, parking_spot_text, COLOR_WHITE, color)
-        imshow(str(self.video), video_frame)
+        imshow("Press q to quit", video_frame)
     
     def count_occupied_parking_spaces(self) -> int:
         """Counts the number of occupied parking spaces.

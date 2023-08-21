@@ -1,3 +1,4 @@
+"""This module is used to generate coordinates for parking spots."""
 import cv2 as open_cv
 import numpy as np
 
@@ -11,7 +12,7 @@ class CoordinatesGenerator:
 
     def __init__(self, image, output, color):
         self.output = output
-        self.caption = image
+        self.caption = "Press q after you create your parking spots."
         self.color = color
 
         self.image = open_cv.imread(image).copy()
@@ -74,7 +75,7 @@ class CoordinatesGenerator:
 
         draw_contours(self.image, coordinates, str(self.ids + 1), COLOR_WHITE)
 
-        for i in range(0, 4):
+        for _ in range(0, 4):
             self.coordinates.pop()
 
         self.ids += 1

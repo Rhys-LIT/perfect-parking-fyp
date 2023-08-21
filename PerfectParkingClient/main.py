@@ -1,14 +1,16 @@
-import time
-from colors import COLOR_RED
-from coordinates_generator import CoordinatesGenerator
-from motion_detector import MotionDetector
-from perfectparking import ParkingMonitorData
+"""This module is the main module of the PerfectParkingClient package."""
 import argparse
 import logging
 import yaml
+from perfectparking import create_image_from_video, ParkingMonitorData
+from colors import COLOR_RED
+from coordinates_generator import CoordinatesGenerator
+from motion_detector import MotionDetector
 
 
 def main():
+    """Main method of the PerfectParkingClient package.
+    """
     logging.basicConfig(level=logging.INFO)
 
     args = parse_args()
@@ -18,11 +20,12 @@ def main():
     start_frame = args.start_frame
 
     if image_file is not None:
-        with open(data_file, "w+") as points:
+        create_image_from_video(image_file, args.video_file)
+        with open(data_file, "wb+") as points:
             generator = CoordinatesGenerator(image_file, points, COLOR_RED)
             generator.generate()
 
-    with open(data_file, "r") as data:
+    with open(data_file, "rb") as data:
         parking_spaces:list = yaml.full_load(data)
         parking_monitor_data = ParkingMonitorData()
         detector = MotionDetector(args.video_file, parking_spaces, int(start_frame), parking_monitor_data)
@@ -30,10 +33,10 @@ def main():
             was_stopped = detector.detect_motion()
             if was_stopped:
                 break
-           
 
 
 def parse_args():
+    """Parses the command line arguments."""
     parser = argparse.ArgumentParser(description='Generates Coordinates File')
 
     parser.add_argument("--image",

@@ -1,6 +1,8 @@
+"""This module contains the PerfectParking classes and functions."""
 from configparser import ConfigParser
 from requests.auth import HTTPBasicAuth
 import requests
+from cv2 import destroyAllWindows, imshow, imwrite, INTER_CUBIC, Mat, resize, VideoCapture, waitKey
 
 
 class ParkingMonitorData:
@@ -29,7 +31,8 @@ class ParkingMonitorData:
         
 
 class RestApiUtility:
-    
+    """This class contains utility methods for interacting with the server REST API"""
+
     @staticmethod
     def update_server_parking_monitor_data(parking_monitor_data: ParkingMonitorData, free_spaces_in_frame: float, probability_parking_available: float) -> requests.Response:
         """
@@ -118,3 +121,40 @@ class RestApiUtility:
 
         return response
 
+def create_image_from_video(image_file_path:str, video_connection_string:str) -> None:
+    """ Creates an image file from a video source.
+
+    Args:
+        image_file_path (str): The path to save the image file
+        video_connection_string (str): The connection string to the video source
+    """
+
+    image_dimensions:tuple = (480, 640)
+
+    zoom_factor:float = 1
+
+    display_dimensions:tuple = (int(image_dimensions[0] * zoom_factor),
+                                        int(image_dimensions[1] * zoom_factor))
+
+    video_capture:VideoCapture = VideoCapture(video_connection_string)
+    window_name:str = "Press 's' to save image"
+
+
+    while True:
+        is_open:bool = False
+        video_frame:Mat = None
+        is_open, video_frame = video_capture.read()
+
+        if not is_open:
+            print("Unable to video connection")
+            break
+
+        display_video_frame:Mat = resize(video_frame, display_dimensions, interpolation = INTER_CUBIC)
+        imshow(window_name, display_video_frame)
+
+        if waitKey(1) & 0xFF == ord('s'):
+            imwrite(image_file_path, video_frame)
+            break
+
+    video_capture.release()
+    destroyAllWindows()
