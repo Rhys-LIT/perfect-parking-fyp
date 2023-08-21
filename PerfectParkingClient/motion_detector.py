@@ -74,6 +74,7 @@ class ParkingSpot:
 
         
 class MotionDetector:
+    """The MotionDetector class is responsible for detecting motion in a video."""
     LAPLACIAN_UPPER_LIMIT = 1.4
 
     def __init__(self, video, parking_spots_json_dict, start_frame, parking_monitor_data: ParkingMonitorData):
@@ -82,7 +83,7 @@ class MotionDetector:
             ParkingSpot(numpy.array(parking_spot_json_dict["coordinates"]), parking_spot_json_dict["id"])
             for parking_spot_json_dict in parking_spots_json_dict
         ]
-     
+
         self.start_frame = start_frame
         self.parking_monitor_data = parking_monitor_data
 

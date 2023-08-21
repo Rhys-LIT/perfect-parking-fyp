@@ -77,6 +77,23 @@ class ParkingLotMonitor(models.Model):
     """status: True = online, False = offline"""
     image = models.ImageField(upload_to="images/parking-lot-monitor/", blank=True)
 
+
+    def get_occupancy_rate(self) -> int:
+        """Gets the occupancy % rate of the parking lot.
+
+        Returns:
+            int: The occupancy % rate of the parking lot.
+        """
+        return round(100 - self.probabilityParkingAvailable * 100)
+
+    def get_vacancy_rate(self) -> int:
+        """Gets the vacancy % rate of the parking lot.
+
+        Returns:
+            int: The vacancy % rate of the parking lot.
+        """
+        return round(self.probabilityParkingAvailable * 100)
+
     def get_distance_from_lat_lang(self, latitude, longitude) -> float:
         """Calculates the distance between the current object and a point specified by latitude and longitude.
 
