@@ -35,6 +35,15 @@
             "justMyCode": true
         },
         {
+            "name": "Client - Model Car Park Recording",
+            "type": "python",
+            "request": "launch",
+            "program": "PerfectParkingClient/main.py",
+            "args": ["--data", "PerfectParkingClient/data/coordinates-live-sample.yml", "--video", "PerfectParkingClient/videos/live-sample-3.mp4", "--start-frame", "400"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "Client - Config Live",
             "type": "python",
             "request": "launch",
@@ -49,6 +58,15 @@
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
             "args": ["--image", "PerfectParkingClient/images/parking_lot_1.png", "--data", "PerfectParkingClient/data/coordinates_1.yml", "--video", "PerfectParkingClient/videos/parking_lot_1.mp4", "--start-frame", "400"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Client - Config Model Car Park Recording",
+            "type": "python",
+            "request": "launch",
+            "program": "PerfectParkingClient/main.py",
+            "args": ["--image", "PerfectParkingClient/images/live-sample-3.png", "--data", "PerfectParkingClient/data/coordinates-live-sample.yml", "--video", "PerfectParkingClient/videos/live-sample-3.mp4", "--start-frame", "400"],
             "console": "integratedTerminal",
             "justMyCode": true
         },
