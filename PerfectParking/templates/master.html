@@ -31,8 +31,6 @@
                     <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Home</a></li>
                     <li><a href="{% url 'parking-lots' %}" class="nav-link px-2 link-dark">Parking Lots</a></li>
                     <li><a href="{% url 'parking-lot-monitors' %}" class="nav-link px-2 link-dark">Search</a></li>
-                    <li><a href='privacy-policy' class="nav-link px-2 link-dark">Privacy Policy</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">Change Password</a></li>
                   {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}"class="nav-link px-2 link-dark">Sign out</a></li>
                   {% else %}
@@ -47,5 +45,17 @@
       {% block main %}
       {% endblock %}
     </main>
+    <footer class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-top">
+        <div class="container">
+            <div>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                  <li><a href="{% url 'privacy-policy' %}" class="nav-link px-2 link-dark">Privacy Policy</a></li>
+                  <li><a href="https://github.com/rhys-lit/perfect-parking-fyp" class="nav-link px-2 link-dark">GitHub</a></li>
+                  <li><a href="https://github.com/rhys-lit/perfect-parking-fyp/blob/master/docs/thesis.pdf" class="nav-link px-2 link-dark">Report</a></li>
+                  <li><a href="https://github.com/rhys-lit" class="nav-link px-2 link-dark">&copy; Rhys Quilter 2021</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
   </body>
 </html>
