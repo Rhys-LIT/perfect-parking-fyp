@@ -1,10 +1,9 @@
-from django.shortcuts import get_object_or_404, render
-from django.shortcuts import render, redirect
+"""This module contains the views for the Perfect Parking website."""
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
-from django.contrib.auth.models import User
 from .models import ParkingLot, ParkingLotMonitor
 from . import WebPaths
 from .utility import record_user_query
@@ -18,6 +17,7 @@ class WebPages:
     PARKING_LOTS = "website/parking-lots.html"
     REGISTER_USER = "website/register-user.html"
     LOGIN_USER = "website/login-user.html"
+    PRIVACY_POLICY = "website/privacy-policy.html"
 
 
 def index(request):
@@ -116,6 +116,9 @@ def parking_lot_monitors(request):
         {"parking_lot_monitors": parking_lot_monitor_list},
     )
 
+def privacy_policy(request):
+    """Builds the privacy policy page."""
+    return render(request, WebPages.PRIVACY_POLICY)
 
 def register_user(request):
     """Guest User registers to use the app

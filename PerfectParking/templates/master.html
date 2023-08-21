@@ -31,6 +31,7 @@
                     <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Home</a></li>
                     <li><a href="{% url 'parking-lots' %}" class="nav-link px-2 link-dark">Parking Lots</a></li>
                     <li><a href="{% url 'parking-lot-monitors' %}" class="nav-link px-2 link-dark">Search</a></li>
+                    <li><a href='privacy-policy' class="nav-link px-2 link-dark">Privacy Policy</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Change Password</a></li>
                   {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'logout' %}"class="nav-link px-2 link-dark">Sign out</a></li>

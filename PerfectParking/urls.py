@@ -10,4 +10,5 @@ urlpatterns = [
     path(WebPaths.REGISTER_USER, views.register_user, name='register-user'),
     path(WebPaths.PARKING_LOT_MONITORS, views.parking_lot_monitors, name='parking-lot-monitors'),
     path(f'{WebPaths.PARKING_LOT_MONITOR}/<int:parking_lot_monitor_id>', views.parking_lot_monitor, name='parking-lot-monitor'),
+    path(WebPaths.PRIVACY_POLICY, views.privacy_policy, name='privacy-policy'),
 ]
