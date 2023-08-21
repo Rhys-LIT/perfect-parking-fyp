@@ -1,0 +1,53 @@
+classDiagram
+    class ParkingLotMonitor {
+        +int Id
+        +int ParkingLotId
+        +double ProbabilityParkingAvailable
+        +DateTime LastUpdated
+        +Boolean Status
+        +float getDistanceFromLatLang(float latitude, float longitude)
+        +float getDistanceFromPoint(tuple userPoint)
+        +tuple getGpsPoint()
+    }
+
+    class ParkingLotLog {
+        +int Id
+        +int ParkingLotId
+        +int LoggedByMonitorId
+        +int FreeParkingSpaces
+        +DateTime TimeStamp
+    }
+
+    class ParkingLot {
+        +int Id
+        +string Name
+        +string Address
+        +string Image
+        +string Hours
+        +Boolean IsPaidParking
+        +string Latitude
+        +string Longitude
+    }
+
+    class User {
+        +int Id
+        +string Username
+        +string Password
+        +string Email
+        +string FirstName
+        +string LastName
+    }
+
+    class ParkingRequestLog {
+        +int Id
+        +float AreaOfInterestLatitude
+        +float AreaOfInterestLongitude
+        +int UserId
+        +String UserIpAddress
+        +DateTime TimeStamp
+    }
+
+    ParkingLotMonitor --|> ParkingLot : has
+    ParkingLotMonitor --|> ParkingLotLog : has
+    ParkingLot --|> ParkingLotLog : has
+    User --|> ParkingRequestLog : makes

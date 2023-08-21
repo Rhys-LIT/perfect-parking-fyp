@@ -1,9 +1,15 @@
 erDiagram
     ParkingLotMonitor ||..|| ParkingLot : has
+    ParkingLotMonitor ||..|| ParkingLotLog : has
+    ParkingLot ||..|| ParkingLotLog : has
+    User ||..|| ParkingRequestLog : makes
     User {
         int Id PK
         string Username
         string Password
+        string Email
+        string FirstName
+        string LastName
     }
     ParkingLotMonitor {
         int Id PK
@@ -21,4 +27,19 @@ erDiagram
         Boolean IsPaidParking
         string Latitude
         string Longitude
+    }
+    ParkingLotLog {
+        int Id PK
+        int ParkingLotId FK
+        int LoggedByMonitorId FK
+        int FreeParkingSpaces
+        DateTime TimeStamp
+    }
+    ParkingRequestLog {
+        int Id PK
+        float AreaOfInterestLatitude
+        float AreaOfInterestLongitude
+        int UserId FK
+        String UserIpAddress
+        DateTime TimeStamp
     }
