@@ -21,11 +21,11 @@ def main():
 
     if image_file is not None:
         create_image_from_video(image_file, args.video_file)
-        with open(data_file, "wb+") as points:
+        with open(data_file, "w+") as points:
             generator = CoordinatesGenerator(image_file, points, COLOR_RED)
             generator.generate()
 
-    with open(data_file, "rb") as data:
+    with open(data_file, "r") as data:
         parking_spaces:list = yaml.full_load(data)
         parking_monitor_data = ParkingMonitorData()
         detector = MotionDetector(args.video_file, parking_spaces, int(start_frame), parking_monitor_data)
