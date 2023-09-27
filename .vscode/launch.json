@@ -21,7 +21,7 @@
             "type": "python",
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
-            "args": ["--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://192.168.188.106:4747/video", "--start-frame", "400"],
+            "args": ["--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://172.21.0.111:4747/video", "--start-frame", "400"],
             "console": "integratedTerminal",
             "justMyCode": true
         },
@@ -48,7 +48,7 @@
             "type": "python",
             "request": "launch",
             "program": "PerfectParkingClient/main.py",
-            "args": ["--image", "PerfectParkingClient/images/camera-live-feed.png", "--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://192.168.188.106:4747/video", "--start-frame", "400"],
+            "args": ["--image", "PerfectParkingClient/images/camera-live-feed.png", "--data", "PerfectParkingClient/data/coordinates-live.yml", "--video", "http://172.21.0.111:4747/video", "--start-frame", "400"],
             "console": "integratedTerminal",
             "justMyCode": true
         },
